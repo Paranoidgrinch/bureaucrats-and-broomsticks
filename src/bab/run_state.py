@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from random import Random
 
 from bab.combat_state import CombatState, Combatant
@@ -13,6 +13,7 @@ from bab.models import (
     EnemyDefinition,
     StatusDefinition,
 )
+from bab.run_map import MapNode, RunMap, generate_act_map
 
 
 @dataclass
@@ -25,6 +26,9 @@ class RunState:
     rng: Random
     run_deck: list[Card]
     current_hp: int
+    run_map: RunMap
+    current_node_id: str | None = None
+    completed_node_ids: list[str] = field(default_factory=list)
     act: int = 1
     fight_number: int = 1
     max_fights: int = 3
@@ -34,9 +38,24 @@ class RunState:
 
     def is_defeated(self) -> bool:
         return self.current_hp <= 0
-    
+
     def displayed_fight_number(self) -> int:
         return min(self.fight_number, self.max_fights)
+
+    def current_node(self) -> MapNode | None:
+        if self.current_node_id is None:
+            return None
+
+        return self.run_map.get_node(self.current_node_id)
+
+    def available_map_nodes(self) -> list[MapNode]:
+        if self.current_node_id is None:
+            return [
+                self.run_map.get_node(node_id)
+                for node_id in self.run_map.start_node_ids
+            ]
+
+        return self.run_map.available_next_nodes(self.current_node_id)
 
 
 def create_new_run(
@@ -49,6 +68,8 @@ def create_new_run(
     rng: Random | None = None,
     act: int = 1,
     max_fights: int = 3,
+    map_steps_before_boss: int = 6,
+    map_width: int = 3,
 ) -> RunState:
     if rng is None:
         rng = Random()
@@ -56,6 +77,13 @@ def create_new_run(
     run_deck = build_deck(
         character_class.starting_deck,
         card_database,
+    )
+
+    run_map = generate_act_map(
+        rng,
+        act=act,
+        steps_before_boss=map_steps_before_boss,
+        width=map_width,
     )
 
     return RunState(
@@ -67,10 +95,58 @@ def create_new_run(
         rng=rng,
         run_deck=run_deck,
         current_hp=character_class.max_hp,
+        run_map=run_map,
+        current_node_id=None,
+        completed_node_ids=[],
         act=act,
         fight_number=1,
         max_fights=max_fights,
     )
+
+
+def enter_map_node(
+    run_state: RunState,
+    node_id: str,
+) -> None:
+    if run_state.current_node_id is None:
+        if node_id not in run_state.run_map.start_node_ids:
+            raise ValueError("The first map node must be one of the start nodes.")
+
+        run_state.current_node_id = node_id
+        return
+
+    if run_state.current_node_id not in run_state.completed_node_ids:
+        raise ValueError("Current map node must be completed before advancing.")
+
+    current_node = run_state.run_map.get_node(run_state.current_node_id)
+
+    if node_id not in current_node.next_node_ids:
+        raise ValueError("Cannot advance to a node that is not connected.")
+
+    run_state.current_node_id = node_id
+
+
+def complete_current_map_node(run_state: RunState) -> None:
+    if run_state.current_node_id is None:
+        raise ValueError("Cannot complete a map node before entering one.")
+
+    if run_state.current_node_id not in run_state.completed_node_ids:
+        run_state.completed_node_ids.append(run_state.current_node_id)
+
+
+def _combat_difficulty_for_run_state(
+    run_state: RunState,
+    fallback_difficulty: EncounterDifficulty,
+) -> EncounterDifficulty:
+    current_node = run_state.current_node()
+
+    if current_node is None:
+        return fallback_difficulty
+
+    if current_node.encounter_difficulty is None:
+        raise ValueError("Current map node does not contain a combat encounter.")
+
+    return current_node.encounter_difficulty
 
 
 def create_combat_state_for_next_encounter(
@@ -84,11 +160,16 @@ def create_combat_state_for_next_encounter(
     if run_state.is_complete():
         raise ValueError("Cannot start combat because the run is already complete.")
 
+    encounter_difficulty = _combat_difficulty_for_run_state(
+        run_state,
+        difficulty,
+    )
+
     encounter = choose_random_encounter(
         run_state.encounter_database,
         run_state.rng,
         act=run_state.act,
-        difficulty=difficulty,
+        difficulty=encounter_difficulty,
     )
 
     enemies = create_enemies_for_encounter(
@@ -127,3 +208,6 @@ def finish_victorious_combat(
 
     run_state.current_hp = combat_state.player.hp
     run_state.fight_number += 1
+
+    if run_state.current_node_id is not None:
+        complete_current_map_node(run_state)

@@ -4,9 +4,6 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from bab.models import Card
-from bab.rewards import add_card_reward_to_deck, choose_card_rewards
-
 from bab.combat_state import CombatState, Combatant
 from bab.data_loader import (
     load_card_database,
@@ -15,12 +12,27 @@ from bab.data_loader import (
     load_enemy_database,
     load_status_database,
 )
-from bab.deck import build_deck, play_card_from_hand, shuffle_draw_pile
-from bab.encounters import choose_random_encounter
-from bab.enemies import create_enemies_for_encounter
-from bab.turns import end_player_turn, run_enemy_turn, start_player_turn
+from bab.deck import play_card_from_hand
+from bab.rewards import add_card_reward_to_deck, choose_card_rewards
+from bab.run_state import (
+    RunState,
+    create_combat_state_for_next_encounter,
+    create_new_run,
+    finish_victorious_combat,
+)
+from bab.models import Card
 
 console = Console()
+
+
+def print_run_state(run_state: RunState) -> None:
+    text = (
+        f"Act: {run_state.act}\n"
+        f"Fight: {run_state.fight_number}/{run_state.max_fights}\n"
+        f"HP: {run_state.current_hp}/{run_state.character_class.max_hp}\n"
+        f"Deck size: {len(run_state.run_deck)}"
+    )
+    console.print(Panel(text, title="Run State"))
 
 
 def print_combat_state(state: CombatState) -> None:
@@ -81,6 +93,28 @@ def print_hand(state: CombatState) -> None:
         table.add_row(
             str(index),
             card.name,
+            str(card.cost),
+            card.type,
+            card.text,
+        )
+
+    console.print(table)
+
+
+def print_card_rewards(rewards: list[Card]) -> None:
+    table = Table(title="Card Rewards")
+    table.add_column("#", justify="right")
+    table.add_column("Card", style="cyan")
+    table.add_column("Rarity")
+    table.add_column("Cost", justify="right")
+    table.add_column("Type")
+    table.add_column("Text")
+
+    for index, card in enumerate(rewards):
+        table.add_row(
+            str(index),
+            card.name,
+            card.rarity,
             str(card.cost),
             card.type,
             card.text,
@@ -190,7 +224,45 @@ def choose_target(state: CombatState) -> Combatant | None:
         return target
 
 
-def create_initial_state() -> tuple[CombatState, Random, dict[str, Card], list[Card]]:
+def offer_card_reward(run_state: RunState) -> None:
+    rewards = choose_card_rewards(
+        run_state.card_database,
+        run_state.rng,
+        count=3,
+    )
+
+    console.print()
+    print_card_rewards(rewards)
+
+    while True:
+        command = console.input(
+            "[bold yellow]Choose a reward number or 'skip': [/bold yellow]"
+        ).strip().lower()
+
+        if command == "skip":
+            console.print("[yellow]No reward chosen.[/yellow]")
+            return
+
+        if not command.isdigit():
+            console.print("[red]Invalid reward choice.[/red]")
+            continue
+
+        reward_index = int(command)
+
+        if reward_index < 0 or reward_index >= len(rewards):
+            console.print("[red]Invalid reward number.[/red]")
+            continue
+
+        selected_reward = rewards[reward_index]
+        add_card_reward_to_deck(run_state.run_deck, selected_reward)
+        console.print(
+            f"[green]Added {selected_reward.name} to deck. "
+            f"Current deck size: {len(run_state.run_deck)}.[/green]"
+        )
+        return
+
+
+def create_run_state() -> RunState:
     rng = Random()
 
     card_database = load_card_database(
@@ -216,45 +288,16 @@ def create_initial_state() -> tuple[CombatState, Random, dict[str, Card], list[C
         ]
     )
 
-    player = Combatant(
-        id=character_class.id,
-        name=character_class.name,
-        max_hp=character_class.max_hp,
-        hp=character_class.max_hp,
-    )
-
-    encounter = choose_random_encounter(
-        encounter_database,
-        rng,
-        act=1,
-        difficulty="normal",
-    )
-    enemies = create_enemies_for_encounter(
-        encounter.id,
-        encounter_database,
-        enemy_database,
-    )
-
-    starting_deck = build_deck(
-        character_class.starting_deck,
-        card_database,
-    )
-
-    run_deck = list(starting_deck)  # Make a copy to modify for rewards
-
-    state = CombatState(
-        player=player,
-        enemies=enemies,
-        max_energy=character_class.starting_energy,
-        energy=character_class.starting_energy,
-        draw_pile=list(run_deck),   
+    return create_new_run(
+        character_class=character_class,
+        card_database=card_database,
+        enemy_database=enemy_database,
+        encounter_database=encounter_database,
         status_database=status_database,
+        rng=rng,
+        act=1,
+        max_fights=3,
     )
-    state.log.append(f"Encounter chosen: {encounter.name}.")
-
-    shuffle_draw_pile(state, rng)
-
-    return state, rng, card_database, run_deck
 
 
 def player_action_loop(state: CombatState) -> None:
@@ -266,12 +309,15 @@ def player_action_loop(state: CombatState) -> None:
         print_combat_state(state)
         print_hand(state)
         print_piles(state)
+        print_recent_log(state, lines=5)
 
         command = console.input(
             "\n[bold yellow]Choose a card number, 'end', 'log', or 'quit': [/bold yellow]"
         ).strip().lower()
 
         if command == "end":
+            from bab.turns import end_player_turn
+
             end_player_turn(state)
             return
 
@@ -312,73 +358,18 @@ def player_action_loop(state: CombatState) -> None:
 
         if state.is_victory():
             return
-def print_card_rewards(rewards: list[Card]) -> None:
-    table = Table(title="Card Rewards")
-    table.add_column("#", justify="right")
-    table.add_column("Card", style="cyan")
-    table.add_column("Rarity")
-    table.add_column("Cost", justify="right")
-    table.add_column("Type")
-    table.add_column("Text")
-
-    for index, card in enumerate(rewards):
-        table.add_row(
-            str(index),
-            card.name,
-            card.rarity,
-            str(card.cost),
-            card.type,
-            card.text,
-        )
-
-    console.print(table)
 
 
-def offer_card_reward(
-    card_database: dict[str, Card],
-    rng: Random,
-    run_deck: list[Card],
-) -> None:
-    rewards = choose_card_rewards(card_database, rng, count=3)
+def run_single_combat(run_state: RunState) -> CombatState:
+    from bab.turns import run_enemy_turn, start_player_turn
 
-    console.print()
-    print_card_rewards(rewards)
-
-    while True:
-        command = console.input(
-            "[bold yellow]Choose a reward number or 'skip': [/bold yellow]"
-        ).strip().lower()
-
-        if command == "skip":
-            console.print("[yellow]No reward chosen.[/yellow]")
-            return
-
-        if not command.isdigit():
-            console.print("[red]Invalid reward choice.[/red]")
-            continue
-
-        reward_index = int(command)
-
-        if reward_index < 0 or reward_index >= len(rewards):
-            console.print("[red]Invalid reward number.[/red]")
-            continue
-
-        selected_reward = rewards[reward_index]
-        add_card_reward_to_deck(run_deck, selected_reward)
-        console.print(
-            f"[green]Added {selected_reward.name} to deck. "
-            f"Current deck size: {len(run_deck)}.[/green]"
-        )
-        return
-
-def main() -> None:
-    console.print("[bold green]Bureaucrats and Broomsticks[/bold green]")
-    console.print("Interactive combat prototype started.\n")
-
-    state, rng, card_database, run_deck = create_initial_state()
+    state = create_combat_state_for_next_encounter(
+        run_state,
+        difficulty="normal",
+    )
 
     while not state.is_victory() and not state.is_defeat():
-        start_player_turn(state, rng)
+        start_player_turn(state, run_state.rng)
         player_action_loop(state)
 
         if state.is_victory() or state.is_defeat():
@@ -386,15 +377,39 @@ def main() -> None:
 
         run_enemy_turn(state)
 
-    console.print()
-    print_combat_state(state)
-    print_full_log(state)
+    return state
 
-    if state.is_victory():
+
+def main() -> None:
+    console.print("[bold green]Bureaucrats and Broomsticks[/bold green]")
+    console.print("Interactive run prototype started.\n")
+
+    run_state = create_run_state()
+
+    while not run_state.is_complete() and not run_state.is_defeated():
+        console.print()
+        print_run_state(run_state)
+
+        state = run_single_combat(run_state)
+
+        console.print()
+        print_combat_state(state)
+        print_full_log(state)
+
+        if state.is_defeat():
+            run_state.current_hp = 0
+            console.print("[bold red]Defeat. The bureaucracy was insufficient.[/bold red]")
+            return
+
+        finish_victorious_combat(run_state, state)
         console.print("[bold green]Victory! The paperwork has prevailed.[/bold green]")
-        offer_card_reward(card_database, rng, run_deck)
-    elif state.is_defeat():
-        console.print("[bold red]Defeat. The bureaucracy was insufficient.[/bold red]")
+
+        if not run_state.is_complete():
+            offer_card_reward(run_state)
+
+    console.print()
+    print_run_state(run_state)
+    console.print("[bold green]Run complete! The office survives another day.[/bold green]")
 
 
 if __name__ == "__main__":

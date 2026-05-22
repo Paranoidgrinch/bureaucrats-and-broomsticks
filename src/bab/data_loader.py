@@ -7,9 +7,9 @@ from bab.models import (
     CharacterClass,
     EncounterDefinition,
     EnemyDefinition,
+    EventDefinition,
     StatusDefinition,
 )
-
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -42,7 +42,6 @@ def load_card_database(relative_paths: list[str]) -> dict[str, Card]:
         for card in cards:
             if card.id in card_database:
                 raise ValueError(f"Duplicate card id found: {card.id}")
-
             card_database[card.id] = card
 
     return card_database
@@ -71,7 +70,6 @@ def load_enemy_database(relative_paths: list[str]) -> dict[str, EnemyDefinition]
         for enemy in enemies:
             if enemy.id in enemy_database:
                 raise ValueError(f"Duplicate enemy id found: {enemy.id}")
-
             enemy_database[enemy.id] = enemy
 
     return enemy_database
@@ -95,7 +93,6 @@ def load_status_database(relative_paths: list[str]) -> dict[str, StatusDefinitio
         for status in statuses:
             if status.id in status_database:
                 raise ValueError(f"Duplicate status id found: {status.id}")
-
             status_database[status.id] = status
 
     return status_database
@@ -107,10 +104,15 @@ def load_encounters(relative_path: str) -> list[EncounterDefinition]:
     if not isinstance(raw_data, list):
         raise ValueError(f"Expected a list of encounters in {relative_path}")
 
-    return [EncounterDefinition.model_validate(encounter_data) for encounter_data in raw_data]
+    return [
+        EncounterDefinition.model_validate(encounter_data)
+        for encounter_data in raw_data
+    ]
 
 
-def load_encounter_database(relative_paths: list[str]) -> dict[str, EncounterDefinition]:
+def load_encounter_database(
+    relative_paths: list[str],
+) -> dict[str, EncounterDefinition]:
     encounter_database: dict[str, EncounterDefinition] = {}
 
     for relative_path in relative_paths:
@@ -119,7 +121,29 @@ def load_encounter_database(relative_paths: list[str]) -> dict[str, EncounterDef
         for encounter in encounters:
             if encounter.id in encounter_database:
                 raise ValueError(f"Duplicate encounter id found: {encounter.id}")
-
             encounter_database[encounter.id] = encounter
 
     return encounter_database
+
+
+def load_events(relative_path: str) -> list[EventDefinition]:
+    raw_data = load_json(relative_path)
+
+    if not isinstance(raw_data, list):
+        raise ValueError(f"Expected a list of events in {relative_path}")
+
+    return [EventDefinition.model_validate(event_data) for event_data in raw_data]
+
+
+def load_event_database(relative_paths: list[str]) -> dict[str, EventDefinition]:
+    event_database: dict[str, EventDefinition] = {}
+
+    for relative_path in relative_paths:
+        events = load_events(relative_path)
+
+        for event in events:
+            if event.id in event_database:
+                raise ValueError(f"Duplicate event id found: {event.id}")
+            event_database[event.id] = event
+
+    return event_database

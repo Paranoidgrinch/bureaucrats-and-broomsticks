@@ -20,7 +20,17 @@
     "weight": 3
   },
   {
-    "id": "city_medium_01",
+    "id": "city_easy_03",
+    "name": "A Suspiciously Damp Permit",
+    "act": 1,
+    "difficulty": "easy",
+    "enemies": [
+      "ink_well_imp"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_01",
     "name": "Minor Administrative Incident",
     "act": 1,
     "difficulty": "normal",
@@ -31,7 +41,7 @@
     "weight": 2
   },
   {
-    "id": "city_medium_02",
+    "id": "city_normal_02",
     "name": "Contractual Pest Control",
     "act": 1,
     "difficulty": "normal",
@@ -40,5 +50,57 @@
       "rat_with_legal_representation"
     ],
     "weight": 2
+  },
+  {
+    "id": "city_normal_03",
+    "name": "Permit Trouble",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "permit_goblin",
+      "ink_well_imp"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_04",
+    "name": "Unpaid Spiritual Liabilities",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "tax_ghoul"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_elite_01",
+    "name": "Quarterly Performance Ambush",
+    "act": 1,
+    "difficulty": "elite",
+    "enemies": [
+      "middle_management_ogre"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_elite_02",
+    "name": "The Cabinet That Filed Back",
+    "act": 1,
+    "difficulty": "elite",
+    "enemies": [
+      "departmental_mimic",
+      "ink_well_imp"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_boss_01",
+    "name": "Emergency Session of the Subcommittee",
+    "act": 1,
+    "difficulty": "boss",
+    "enemies": [
+      "chairman_of_the_subcommittee"
+    ],
+    "weight": 1
   }
 ]

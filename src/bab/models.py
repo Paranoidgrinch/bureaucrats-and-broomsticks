@@ -2,7 +2,6 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-
 CardClass = Literal["bureaucrat"]
 
 CardType = Literal[
@@ -77,6 +76,21 @@ EncounterDifficulty = Literal[
     "boss",
 ]
 
+EventType = Literal[
+    "narrative",
+    "risk_reward",
+    "deck",
+]
+
+EventEffectType = Literal[
+    "none",
+    "gain_card_reward",
+    "upgrade_card",
+    "remove_card",
+    "lose_percent_max_hp",
+    "gain_max_hp",
+]
+
 
 class Condition(BaseModel):
     model_config = ConfigDict(extra="forbid")
@@ -86,7 +100,6 @@ class Condition(BaseModel):
         "card_has_tag",
         "card_type_is",
     ]
-
     status: str | None = None
     tag: str | None = None
     card_type: str | None = None
@@ -97,13 +110,10 @@ class Effect(BaseModel):
 
     type: EffectType
     target: TargetType | None = None
-
     amount: int | None = None
     amount_per_stack: int | None = None
-
     status: str | None = None
     resource: str | None = None
-
     condition: Condition | None = None
 
 
@@ -142,11 +152,9 @@ class EnemyIntent(BaseModel):
     id: str
     name: str
     intent_type: EnemyIntentType
-
     damage: int | None = None
     block: int | None = None
     effects: list[Effect] = Field(default_factory=list)
-
     weight: int | None = None
 
 
@@ -182,3 +190,34 @@ class EncounterDefinition(BaseModel):
     difficulty: EncounterDifficulty
     enemies: list[str]
     weight: int = Field(default=1, gt=0)
+
+
+class EventEffect(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    type: EventEffectType
+    amount: int | None = None
+    card_id: str | None = None
+    tag: str | None = None
+
+
+class EventChoice(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    id: str
+    text: str
+    result_text: str
+    effects: list[EventEffect] = Field(default_factory=list)
+
+
+class EventDefinition(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    id: str
+    name: str
+    act: int = Field(ge=1)
+    event_type: EventType
+    weight: int = Field(default=1, gt=0)
+    text: str
+    choices: list[EventChoice] = Field(min_length=1)
+    tags: list[str] = Field(default_factory=list)

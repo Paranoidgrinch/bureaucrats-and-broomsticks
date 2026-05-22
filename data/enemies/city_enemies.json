@@ -93,5 +93,201 @@
       }
     ],
     "tags": ["demon", "contract", "city"]
+  },
+  {
+    "id": "permit_goblin",
+    "name": "Permit Goblin",
+    "max_hp": 34,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "rubber_mallet",
+        "name": "Rubber Mallet",
+        "intent_type": "attack",
+        "damage": 7
+      },
+      {
+        "id": "deny_application",
+        "name": "Deny Application",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "stampede",
+        "name": "Stampede",
+        "intent_type": "attack",
+        "damage": 9
+      }
+    ],
+    "tags": ["goblin", "city", "bureaucracy"]
+  },
+  {
+    "id": "ink_well_imp",
+    "name": "Ink-Well Imp",
+    "max_hp": 22,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "blot_splash",
+        "name": "Blot Splash",
+        "intent_type": "attack",
+        "damage": 5
+      },
+      {
+        "id": "smear_the_form",
+        "name": "Smear the Form",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "hide_in_margin",
+        "name": "Hide in the Margin",
+        "intent_type": "block",
+        "block": 10
+      }
+    ],
+    "tags": ["imp", "city", "paperwork"]
+  },
+  {
+    "id": "tax_ghoul",
+    "name": "Tax Ghoul",
+    "max_hp": 40,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "audit_bite",
+        "name": "Audit Bite",
+        "intent_type": "attack",
+        "damage": 8
+      },
+      {
+        "id": "deduct_vitality",
+        "name": "Deduct Vitality",
+        "intent_type": "attack",
+        "damage": 10
+      },
+      {
+        "id": "spectral_ledger",
+        "name": "Spectral Ledger",
+        "intent_type": "block",
+        "block": 9
+      }
+    ],
+    "tags": ["undead", "tax", "city"]
+  },
+  {
+    "id": "middle_management_ogre",
+    "name": "Middle-Management Ogre",
+    "max_hp": 58,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "mandatory_meeting",
+        "name": "Mandatory Meeting",
+        "intent_type": "attack",
+        "damage": 11
+      },
+      {
+        "id": "performance_review",
+        "name": "Performance Review",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "office_chair_wall",
+        "name": "Office Chair Wall",
+        "intent_type": "block",
+        "block": 14
+      }
+    ],
+    "tags": ["ogre", "elite", "bureaucracy"]
+  },
+  {
+    "id": "departmental_mimic",
+    "name": "Departmental Mimic",
+    "max_hp": 64,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "drawer_snap",
+        "name": "Drawer Snap",
+        "intent_type": "attack",
+        "damage": 9
+      },
+      {
+        "id": "consume_application",
+        "name": "Consume Application",
+        "intent_type": "attack",
+        "damage": 13
+      },
+      {
+        "id": "locked_cabinet",
+        "name": "Locked Cabinet",
+        "intent_type": "block",
+        "block": 16
+      }
+    ],
+    "tags": ["mimic", "elite", "city"]
+  },
+  {
+    "id": "chairman_of_the_subcommittee",
+    "name": "Chairman of the Subcommittee",
+    "max_hp": 96,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "call_to_order",
+        "name": "Call to Order",
+        "intent_type": "attack",
+        "damage": 12
+      },
+      {
+        "id": "endless_agenda",
+        "name": "Endless Agenda",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "procedural_fortress",
+        "name": "Procedural Fortress",
+        "intent_type": "block",
+        "block": 18
+      },
+      {
+        "id": "binding_resolution",
+        "name": "Binding Resolution",
+        "intent_type": "attack",
+        "damage": 16
+      }
+    ],
+    "tags": ["boss", "bureaucracy", "city"]
   }
 ]

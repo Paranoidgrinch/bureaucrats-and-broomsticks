@@ -27,6 +27,7 @@ from bab.run_state import (
     enter_map_node,
     finish_victorious_combat,
 )
+from bab.upgrades import upgrade_card_in_deck, upgradeable_card_indices
 
 console = Console()
 
@@ -54,6 +55,7 @@ def format_enemy_intent(combatant: Combatant) -> str:
     if intent.intent_type == "attack":
         if intent.damage is None:
             return "intends to attack"
+
         strength = combatant.get_status_amount("strength")
         shown_damage = intent.damage + strength
         return f"intends to attack for {shown_damage} damage"
@@ -360,6 +362,74 @@ def offer_card_reward(run_state: RunState) -> None:
         return
 
 
+def offer_card_upgrade(run_state: RunState) -> None:
+    upgradeable_indices = upgradeable_card_indices(run_state.run_deck)
+
+    if not upgradeable_indices:
+        console.print("[yellow]There are no cards that can be upgraded.[/yellow]")
+        return
+
+    table = Table(title="Upgradeable Cards")
+    table.add_column("#", justify="right")
+    table.add_column("Current Card", style="cyan")
+    table.add_column("Upgrade")
+    table.add_column("Current Text")
+    table.add_column("Upgraded Text")
+
+    visible_options: list[int] = []
+
+    for visible_index, deck_index in enumerate(upgradeable_indices):
+        card = run_state.run_deck[deck_index]
+
+        if card.upgrades_to is None:
+            continue
+
+        upgraded_card = run_state.card_database[card.upgrades_to]
+        visible_options.append(deck_index)
+
+        table.add_row(
+            str(visible_index),
+            card.name,
+            upgraded_card.name,
+            card.text,
+            upgraded_card.text,
+        )
+
+    console.print(table)
+
+    while True:
+        command = console.input(
+            "[bold yellow]Choose a card to upgrade or 'skip': [/bold yellow]"
+        ).strip().lower()
+
+        if command == "skip":
+            console.print("[yellow]No card upgraded.[/yellow]")
+            return
+
+        if not command.isdigit():
+            console.print("[red]Invalid upgrade choice.[/red]")
+            continue
+
+        visible_index = int(command)
+
+        if visible_index < 0 or visible_index >= len(visible_options):
+            console.print("[red]Invalid upgrade number.[/red]")
+            continue
+
+        deck_index = visible_options[visible_index]
+        old_card = run_state.run_deck[deck_index]
+        upgraded_card = upgrade_card_in_deck(
+            run_state.run_deck,
+            run_state.card_database,
+            deck_index,
+        )
+
+        console.print(
+            f"[green]Upgraded {old_card.name} into {upgraded_card.name}.[/green]"
+        )
+        return
+
+
 def create_run_state() -> RunState:
     rng = Random()
 
@@ -531,6 +601,12 @@ def apply_event_effect(run_state: RunState, effect: EventEffect) -> None:
             offer_card_reward(run_state)
         return
 
+    if effect.type == "upgrade_card":
+        amount = effect.amount or 1
+        for _ in range(amount):
+            offer_card_upgrade(run_state)
+        return
+
     if effect.type == "lose_percent_max_hp":
         percent = effect.amount or 0
         loss = ceil(run_state.character_class.max_hp * percent / 100)
@@ -543,10 +619,6 @@ def apply_event_effect(run_state: RunState, effect: EventEffect) -> None:
 
     if effect.type == "gain_max_hp":
         console.print("[yellow]Max HP events are not implemented yet.[/yellow]")
-        return
-
-    if effect.type == "upgrade_card":
-        console.print("[yellow]Card upgrades are not implemented yet.[/yellow]")
         return
 
     if effect.type == "remove_card":
@@ -596,7 +668,7 @@ def resolve_waiting_room_node(run_state: RunState) -> None:
     table.add_row(
         "0",
         "Do something productive.",
-        "Card upgrades are not implemented yet.",
+        "Upgrade one card.",
     )
     table.add_row(
         "1",
@@ -612,10 +684,7 @@ def resolve_waiting_room_node(run_state: RunState) -> None:
         ).strip().lower()
 
         if command == "0":
-            console.print(
-                "[yellow]You organize your forms. "
-                "Card upgrades will be added later.[/yellow]"
-            )
+            offer_card_upgrade(run_state)
             break
 
         if command == "1":

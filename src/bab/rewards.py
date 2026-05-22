@@ -18,7 +18,9 @@ def build_card_reward_pool(
     return [
         card
         for card in card_database.values()
-        if card.class_ == card_class and card.rarity in rarities
+        if card.class_ == card_class
+        and card.rarity in rarities
+        and "upgraded" not in card.tags
     ]
 
 

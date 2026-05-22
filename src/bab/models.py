@@ -132,6 +132,7 @@ class Card(BaseModel):
     text: str
     effects: list[Effect]
     tags: list[str]
+    upgrades_to: str | None = None
 
 
 class CharacterClass(BaseModel):

@@ -15,7 +15,26 @@
         "amount": 3
       }
     ],
-    "tags": ["bureaucracy", "paperwork"]
+    "tags": ["bureaucracy", "paperwork"],
+    "upgrades_to": "administrative_notice_plus"
+  },
+  {
+    "id": "administrative_notice_plus",
+    "name": "Administrative Notice+",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 4 Paperwork.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 4
+      }
+    ],
+    "tags": ["bureaucracy", "paperwork", "upgraded"]
   },
   {
     "id": "triplicate_objection",
@@ -33,7 +52,26 @@
         "amount": 3
       }
     ],
-    "tags": ["argument", "doubt"]
+    "tags": ["argument", "doubt"],
+    "upgrades_to": "triplicate_objection_plus"
+  },
+  {
+    "id": "triplicate_objection_plus",
+    "name": "Triplicate Objection+",
+    "class": "bureaucrat",
+    "type": "argument",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 4 Doubt.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 4
+      }
+    ],
+    "tags": ["argument", "doubt", "upgraded"]
   },
   {
     "id": "emergency_stamp",
@@ -50,7 +88,25 @@
         "amount": 9
       }
     ],
-    "tags": ["attack", "bureaucracy"]
+    "tags": ["attack", "bureaucracy"],
+    "upgrades_to": "emergency_stamp_plus"
+  },
+  {
+    "id": "emergency_stamp_plus",
+    "name": "Emergency Stamp+",
+    "class": "bureaucrat",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 12 damage.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 12
+      }
+    ],
+    "tags": ["attack", "bureaucracy", "upgraded"]
   },
   {
     "id": "reinforced_clipboard",
@@ -67,7 +123,25 @@
         "amount": 12
       }
     ],
-    "tags": ["block", "bureaucracy"]
+    "tags": ["block", "bureaucracy"],
+    "upgrades_to": "reinforced_clipboard_plus"
+  },
+  {
+    "id": "reinforced_clipboard_plus",
+    "name": "Reinforced Clipboard+",
+    "class": "bureaucrat",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 16 Block.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 16
+      }
+    ],
+    "tags": ["block", "bureaucracy", "upgraded"]
   },
   {
     "id": "compliance_review",
@@ -90,7 +164,31 @@
         "amount": 2
       }
     ],
-    "tags": ["attack", "bureaucracy", "paperwork"]
+    "tags": ["attack", "bureaucracy", "paperwork"],
+    "upgrades_to": "compliance_review_plus"
+  },
+  {
+    "id": "compliance_review_plus",
+    "name": "Compliance Review+",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 5 damage. Apply 3 Paperwork.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 5
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 3
+      }
+    ],
+    "tags": ["attack", "bureaucracy", "paperwork", "upgraded"]
   },
   {
     "id": "procedural_haze",
@@ -113,7 +211,31 @@
         "amount": 1
       }
     ],
-    "tags": ["block", "argument", "doubt"]
+    "tags": ["block", "argument", "doubt"],
+    "upgrades_to": "procedural_haze_plus"
+  },
+  {
+    "id": "procedural_haze_plus",
+    "name": "Procedural Haze+",
+    "class": "bureaucrat",
+    "type": "argument",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Gain 8 Block. Apply 2 Doubt.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 8
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": ["block", "argument", "doubt", "upgraded"]
   },
   {
     "id": "compounded_penalty",
@@ -131,7 +253,26 @@
         "amount_per_stack": 4
       }
     ],
-    "tags": ["attack", "bureaucracy", "paperwork", "payoff"]
+    "tags": ["attack", "bureaucracy", "paperwork", "payoff"],
+    "upgrades_to": "compounded_penalty_plus"
+  },
+  {
+    "id": "compounded_penalty_plus",
+    "name": "Compounded Penalty+",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 5 damage for each Paperwork on the target.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount_per_stack": 5
+      }
+    ],
+    "tags": ["attack", "bureaucracy", "paperwork", "payoff", "upgraded"]
   },
   {
     "id": "paper_fortress",
@@ -154,7 +295,31 @@
         "amount": 2
       }
     ],
-    "tags": ["block", "bureaucracy", "paperwork"]
+    "tags": ["block", "bureaucracy", "paperwork"],
+    "upgrades_to": "paper_fortress_plus"
+  },
+  {
+    "id": "paper_fortress_plus",
+    "name": "Paper Fortress+",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Gain 21 Block. Apply 3 Paperwork.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 21
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 3
+      }
+    ],
+    "tags": ["block", "bureaucracy", "paperwork", "upgraded"]
   },
   {
     "id": "final_warning",
@@ -177,6 +342,503 @@
         "amount": 2
       }
     ],
-    "tags": ["attack", "argument", "paperwork"]
+    "tags": ["attack", "argument", "paperwork"],
+    "upgrades_to": "final_warning_plus"
+  },
+  {
+    "id": "final_warning_plus",
+    "name": "Final Warning+",
+    "class": "bureaucrat",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "rare",
+    "text": "Deal 18 damage. Apply 3 Paperwork.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 18
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 3
+      }
+    ],
+    "tags": ["attack", "argument", "paperwork", "upgraded"]
+  },
+  {
+    "id": "fireball",
+    "name": "Fireball",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "common",
+    "text": "Deal 15 damage.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 15
+      }
+    ],
+    "tags": ["attack", "spell", "fire"],
+    "upgrades_to": "fireball_plus"
+  },
+  {
+    "id": "fireball_plus",
+    "name": "Fireball+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "common",
+    "text": "Deal 20 damage.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 20
+      }
+    ],
+    "tags": ["attack", "spell", "fire", "upgraded"]
+  },
+  {
+    "id": "frostbolt",
+    "name": "Frostbolt",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 6 damage. Apply 2 Doubt.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 6
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": ["attack", "spell", "ice", "doubt"],
+    "upgrades_to": "frostbolt_plus"
+  },
+  {
+    "id": "frostbolt_plus",
+    "name": "Frostbolt+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 8 damage. Apply 2 Doubt.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 8
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": ["attack", "spell", "ice", "doubt", "upgraded"]
+  },
+  {
+    "id": "lightning_bolt",
+    "name": "Lightning Bolt",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Deal 10 damage.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 10
+      }
+    ],
+    "tags": ["attack", "spell", "lightning"],
+    "upgrades_to": "lightning_bolt_plus"
+  },
+  {
+    "id": "lightning_bolt_plus",
+    "name": "Lightning Bolt+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Deal 13 damage.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 13
+      }
+    ],
+    "tags": ["attack", "spell", "lightning", "upgraded"]
+  },
+  {
+    "id": "hex_of_compliance",
+    "name": "Hex of Compliance",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 2 Paperwork. Apply 1 Doubt.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 2
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 1
+      }
+    ],
+    "tags": ["spell", "paperwork", "doubt"],
+    "upgrades_to": "hex_of_compliance_plus"
+  },
+  {
+    "id": "hex_of_compliance_plus",
+    "name": "Hex of Compliance+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 3 Paperwork. Apply 2 Doubt.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 3
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": ["spell", "paperwork", "doubt", "upgraded"]
+  },
+  {
+    "id": "boilerplate_charm",
+    "name": "Boilerplate Charm",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 6 Block. Apply 1 Paperwork.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 6
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 1
+      }
+    ],
+    "tags": ["spell", "block", "paperwork"],
+    "upgrades_to": "boilerplate_charm_plus"
+  },
+  {
+    "id": "boilerplate_charm_plus",
+    "name": "Boilerplate Charm+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 8 Block. Apply 2 Paperwork.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 8
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 2
+      }
+    ],
+    "tags": ["spell", "block", "paperwork", "upgraded"]
+  },
+  {
+    "id": "flaming_memo",
+    "name": "Flaming Memo",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Deal 8 damage. Apply 1 Paperwork.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 8
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 1
+      }
+    ],
+    "tags": ["attack", "spell", "fire", "paperwork"],
+    "upgrades_to": "flaming_memo_plus"
+  },
+  {
+    "id": "flaming_memo_plus",
+    "name": "Flaming Memo+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Deal 10 damage. Apply 2 Paperwork.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 10
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 2
+      }
+    ],
+    "tags": ["attack", "spell", "fire", "paperwork", "upgraded"]
+  },
+  {
+    "id": "broomstick_clause",
+    "name": "Broomstick Clause",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 9 Block.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 9
+      }
+    ],
+    "tags": ["spell", "block", "broom"],
+    "upgrades_to": "broomstick_clause_plus"
+  },
+  {
+    "id": "broomstick_clause_plus",
+    "name": "Broomstick Clause+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 12 Block.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 12
+      }
+    ],
+    "tags": ["spell", "block", "broom", "upgraded"]
+  },
+  {
+    "id": "desk_poltergeist",
+    "name": "Desk Poltergeist",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 11 damage. Apply 3 Paperwork.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 11
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 3
+      }
+    ],
+    "tags": ["attack", "spell", "paperwork", "haunted"],
+    "upgrades_to": "desk_poltergeist_plus"
+  },
+  {
+    "id": "desk_poltergeist_plus",
+    "name": "Desk Poltergeist+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 14 damage. Apply 4 Paperwork.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 14
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 4
+      }
+    ],
+    "tags": ["attack", "spell", "paperwork", "haunted", "upgraded"]
+  },
+  {
+    "id": "unauthorized_wand",
+    "name": "Unauthorized Wand",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 0,
+    "rarity": "rare",
+    "text": "Deal 5 damage. Apply 1 Panic to yourself.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 5
+      },
+      {
+        "type": "apply_status",
+        "target": "self",
+        "status": "panic",
+        "amount": 1
+      }
+    ],
+    "tags": ["attack", "spell", "risky"],
+    "upgrades_to": "unauthorized_wand_plus"
+  },
+  {
+    "id": "unauthorized_wand_plus",
+    "name": "Unauthorized Wand+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 0,
+    "rarity": "rare",
+    "text": "Deal 8 damage. Apply 1 Panic to yourself.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 8
+      },
+      {
+        "type": "apply_status",
+        "target": "self",
+        "status": "panic",
+        "amount": 1
+      }
+    ],
+    "tags": ["attack", "spell", "risky", "upgraded"]
+  },
+  {
+    "id": "witchs_annotation",
+    "name": "Witch's Annotation",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "rare",
+    "text": "Apply 6 Paperwork.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 6
+      }
+    ],
+    "tags": ["spell", "paperwork", "witch"],
+    "upgrades_to": "witchs_annotation_plus"
+  },
+  {
+    "id": "witchs_annotation_plus",
+    "name": "Witch's Annotation+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "rare",
+    "text": "Apply 8 Paperwork.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 8
+      }
+    ],
+    "tags": ["spell", "paperwork", "witch", "upgraded"]
+  },
+  {
+    "id": "lightning_audit",
+    "name": "Lightning Audit",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "rare",
+    "text": "Deal 13 damage. Apply 2 Doubt.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 13
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": ["attack", "spell", "lightning", "doubt"],
+    "upgrades_to": "lightning_audit_plus"
+  },
+  {
+    "id": "lightning_audit_plus",
+    "name": "Lightning Audit+",
+    "class": "bureaucrat",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "rare",
+    "text": "Deal 13 damage. Apply 2 Doubt.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 13
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": ["attack", "spell", "lightning", "doubt", "upgraded"]
   }
 ]

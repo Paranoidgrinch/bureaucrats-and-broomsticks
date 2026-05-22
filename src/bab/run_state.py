@@ -12,8 +12,10 @@ from bab.models import (
     EncounterDifficulty,
     EnemyDefinition,
     EventDefinition,
+    RelicDefinition,
     StatusDefinition,
 )
+from bab.relics import apply_combat_start_relics
 from bab.run_map import MapNode, RunMap, generate_act_map
 
 
@@ -29,7 +31,8 @@ class RunState:
     current_hp: int
     run_map: RunMap
     event_database: dict[str, EventDefinition] = field(default_factory=dict)
-    relics: list[str] = field(default_factory=list)
+    relic_database: dict[str, RelicDefinition] = field(default_factory=dict)
+    relics: list[RelicDefinition] = field(default_factory=list)
     current_node_id: str | None = None
     completed_node_ids: list[str] = field(default_factory=list)
     act: int = 1
@@ -72,6 +75,7 @@ def create_new_run(
     encounter_database: dict[str, EncounterDefinition],
     status_database: dict[str, StatusDefinition],
     event_database: dict[str, EventDefinition] | None = None,
+    relic_database: dict[str, RelicDefinition] | None = None,
     rng: Random | None = None,
     act: int = 1,
     max_fights: int = 99,
@@ -100,6 +104,8 @@ def create_new_run(
         encounter_database=encounter_database,
         status_database=status_database,
         event_database=event_database or {},
+        relic_database=relic_database or {},
+        relics=[],
         rng=rng,
         run_deck=run_deck,
         current_hp=character_class.max_hp,
@@ -109,7 +115,6 @@ def create_new_run(
         act=act,
         fight_number=1,
         max_fights=max_fights,
-        relics=[],
     )
 
 
@@ -203,6 +208,7 @@ def create_combat_state_for_next_encounter(
         status_database=run_state.status_database,
     )
     state.log.append(f"Encounter chosen: {encounter.name}.")
+    apply_combat_start_relics(state, run_state.relics)
     shuffle_draw_pile(state, run_state.rng)
 
     return state

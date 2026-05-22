@@ -13,6 +13,7 @@ from bab.data_loader import (
     load_enemy_database,
     load_event_database,
     load_status_database,
+    load_relic_database,
 )
 from bab.deck import play_card_from_hand, shuffle_draw_pile
 from bab.events import choose_random_event
@@ -30,18 +31,18 @@ from bab.run_state import (
 from bab.upgrades import upgrade_card_in_deck, upgradeable_card_indices
 from bab.encounters import choose_random_encounter
 from bab.enemies import create_enemies_for_encounter
+from bab.relics import (
+    apply_combat_start_relics,
+    apply_relic_pickup_effects,
+    card_reward_count_bonus,
+    choose_random_unowned_relic,
+)
 console = Console()
 
 WAITING_ROOM_HEAL_PERCENT = 25
 MIMIC_CHANCE = 0.20
 
-RELIC_POOL: tuple[str, ...] = (
-    "Self-Inking Stamp",
-    "Pocket-Sized Procedure Manual",
-    "Suspiciously Helpful Stapler",
-    "Certified Tea Mug",
-    "Minor Witching License",
-)
+
 
 def format_map_node(node: MapNode) -> str:
     node_type = node.node_type.replace("_", " ").title()
@@ -100,7 +101,7 @@ def print_run_state(run_state: RunState) -> None:
     else:
         current_node_text = format_map_node(current_node)
 
-    relic_text = ", ".join(run_state.relics)
+    relic_text = ", ".join(relic.name for relic in run_state.relics)
     if not relic_text:
         relic_text = "-"
 
@@ -339,10 +340,11 @@ def choose_target(state: CombatState) -> Combatant | None:
 
 
 def offer_card_reward(run_state: RunState) -> None:
+    reward_count = 3 + card_reward_count_bonus(run_state.relics)
     rewards = choose_card_rewards(
         run_state.card_database,
         run_state.rng,
-        count=3,
+        count=reward_count,
     )
 
     console.print()
@@ -474,6 +476,11 @@ def create_run_state() -> RunState:
             "data/events/act_1_city_events.json",
         ]
     )
+    relic_database = load_relic_database(
+        [
+            "data/relics/relics.json",
+        ]
+    )
 
     return create_new_run(
         character_class=character_class,
@@ -482,6 +489,7 @@ def create_run_state() -> RunState:
         encounter_database=encounter_database,
         status_database=status_database,
         event_database=event_database,
+        relic_database=relic_database,
         rng=rng,
         act=1,
         max_fights=99,
@@ -770,11 +778,30 @@ def resolve_map_node(run_state: RunState, node: MapNode) -> None:
     raise ValueError(f"Unsupported map node type: {node.node_type}")
 
 def grant_random_relic(run_state: RunState) -> None:
-    relic = run_state.rng.choice(RELIC_POOL)
-    run_state.relics.append(relic)
-    console.print(f"[green]Found relic: {relic}.[/green]")
-    console.print("[yellow]Relic effects are not implemented yet.[/yellow]")
+    try:
+        relic = choose_random_unowned_relic(
+            run_state.relic_database,
+            run_state.relics,
+            run_state.rng,
+        )
+    except ValueError:
+        console.print("[yellow]No unowned relics remain.[/yellow]")
+        return
 
+    run_state.relics.append(relic)
+
+    console.print(f"[green]Found relic: {relic.name}.[/green]")
+    console.print(f"[cyan]{relic.description}[/cyan]")
+
+    new_hp, messages = apply_relic_pickup_effects(
+        current_hp=run_state.current_hp,
+        max_hp=run_state.character_class.max_hp,
+        relic=relic,
+    )
+    run_state.current_hp = new_hp
+
+    for message in messages:
+        console.print(f"[green]{message}[/green]")
 
 def create_treasure_mimic_combat_state(run_state: RunState) -> CombatState:
     mimic_encounter_id = "city_elite_02"
@@ -811,6 +838,7 @@ def create_treasure_mimic_combat_state(run_state: RunState) -> CombatState:
         status_database=run_state.status_database,
     )
     state.log.append(f"Treasure chest was a Mimic: {encounter.name}.")
+    apply_combat_start_relics(state, run_state.relics)
     shuffle_draw_pile(state, run_state.rng)
 
     return state

@@ -7,7 +7,6 @@ from bab.effects import resolve_effect
 
 def start_player_turn(state: CombatState, rng: Random) -> None:
     state.log.append(f"--- Turn {state.turn} begins ---")
-
     state.player.block = 0
     state.reset_energy()
 
@@ -18,7 +17,6 @@ def start_player_turn(state: CombatState, rng: Random) -> None:
         draw_penalty = min(panic, draw_amount)
         draw_amount -= draw_penalty
         state.player.reduce_status("panic", 1)
-
         state.log.append(
             f"Player is affected by {state.status_name('panic')} "
             f"and draws {draw_penalty} fewer card(s)."
@@ -48,7 +46,6 @@ def run_enemy_turn(state: CombatState) -> None:
             enemy.advance_intent()
 
     apply_enemy_turn_end_statuses(state)
-
     state.turn += 1
 
 
@@ -84,13 +81,17 @@ def run_enemy_action(state: CombatState, enemy: Combatant) -> None:
     raise NotImplementedError(f"Enemy intent not implemented: {intent.intent_type}")
 
 
-def run_basic_attack(state: CombatState, enemy: Combatant, base_damage: int) -> None:
-    final_damage = base_damage
+def run_basic_attack(
+    state: CombatState,
+    enemy: Combatant,
+    base_damage: int,
+) -> None:
+    strength = enemy.get_status_amount("strength")
+    final_damage = base_damage + strength
 
     doubt = enemy.get_status_amount("doubt")
-
     if doubt > 0:
-        final_damage = max(0, round(base_damage * 0.75))
+        final_damage = max(0, round(final_damage * 0.75))
         enemy.reduce_status("doubt", 1)
         state.log.append(
             f"{enemy.name} is affected by {state.status_name('doubt')}. "
@@ -98,7 +99,6 @@ def run_basic_attack(state: CombatState, enemy: Combatant, base_damage: int) -> 
         )
 
     damage_dealt = state.player.take_damage(final_damage)
-
     state.log.append(
         f"{enemy.name} attacks for {final_damage}. "
         f"Player takes {damage_dealt} damage."
@@ -113,7 +113,6 @@ def apply_enemy_turn_end_statuses(state: CombatState) -> None:
             continue
 
         hp_lost = enemy.lose_hp(paperwork)
-
         state.log.append(
             f"{enemy.name} loses {hp_lost} HP from {state.status_name('paperwork')}."
         )

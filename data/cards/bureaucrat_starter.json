@@ -1,84 +1,77 @@
 [
   {
-    "id": "rubber_stamp",
-    "name": "Rubber Stamp",
+    "id": "paper_cut",
+    "name": "Paper Cut",
     "class": "bureaucrat",
     "type": "action",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 6 damage. Apply 1 Paperwork.",
+    "text": "Deal 6 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
         "amount": 6
-      },
-      {
-        "type": "apply_status",
-        "target": "enemy",
-        "status": "paperwork",
-        "amount": 1
       }
     ],
-    "tags": ["attack", "bureaucracy", "paperwork"]
+    "tags": ["attack", "bureaucracy"]
   },
   {
-    "id": "official_delay",
-    "name": "Official Delay",
+    "id": "cower_behind_a_desk",
+    "name": "Cower Behind a Desk",
     "class": "bureaucrat",
-    "type": "form",
+    "type": "action",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 8 Block. Apply 2 Paperwork.",
+    "text": "Gain 5 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 8
+        "amount": 5
+      }
+    ],
+    "tags": ["block", "cowardice", "office"]
+  },
+  {
+    "id": "strong_binder",
+    "name": "Strong Binder",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 1,
+    "rarity": "starter",
+    "text": "Gain 7 Block. Apply 1 Doubt.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 7
       },
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "paperwork",
-        "amount": 2
-      }
-    ],
-    "tags": ["block", "bureaucracy", "paperwork"]
-  },
-  {
-    "id": "fine_print",
-    "name": "Fine Print",
-    "class": "bureaucrat",
-    "type": "argument",
-    "cost": 1,
-    "rarity": "starter",
-    "text": "Apply 2 Doubt.",
-    "effects": [
-      {
-        "type": "apply_status",
-        "target": "enemy",
         "status": "doubt",
-        "amount": 2
+        "amount": 1
       }
     ],
-    "tags": ["argument", "doubt"]
+    "tags": ["block", "argument", "doubt"]
   },
   {
-    "id": "retroactive_fee",
-    "name": "Retroactive Fee",
+    "id": "permit_a38",
+    "name": "Permit A38",
     "class": "bureaucrat",
     "type": "form",
     "cost": 2,
     "rarity": "starter",
-    "text": "Deal 3 damage for each Paperwork on the target.",
+    "text": "Apply 5 Paperwork.",
     "effects": [
       {
-        "type": "damage_per_status",
+        "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount_per_stack": 3
+        "amount": 5
       }
     ],
-    "tags": ["attack", "bureaucracy", "paperwork", "payoff"]
+    "tags": ["bureaucracy", "paperwork"]
   }
 ]

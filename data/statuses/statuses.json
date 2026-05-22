@@ -25,5 +25,14 @@
     "trigger": "player_turn_start",
     "is_negative": true,
     "tags": ["mental", "draw_reduction"]
+  },
+  {
+    "id": "strength",
+    "name": "Strength",
+    "description": "This character's attacks deal additional damage equal to its Strength.",
+    "stacking": "intensity",
+    "trigger": "none",
+    "is_negative": false,
+    "tags": ["buff", "attack"]
   }
 ]

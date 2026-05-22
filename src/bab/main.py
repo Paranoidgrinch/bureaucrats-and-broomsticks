@@ -45,6 +45,43 @@ def format_map_node(node: MapNode) -> str:
     return node_type
 
 
+def format_enemy_intent(combatant: Combatant) -> str:
+    intent = combatant.current_intent()
+
+    if intent is None:
+        return "intends to attack for 6 damage"
+
+    if intent.intent_type == "attack":
+        if intent.damage is None:
+            return "intends to attack"
+        strength = combatant.get_status_amount("strength")
+        shown_damage = intent.damage + strength
+        return f"intends to attack for {shown_damage} damage"
+
+    if intent.intent_type == "buff":
+        strength_amount = next(
+            (
+                effect.amount
+                for effect in intent.effects
+                if effect.type == "gain_strength"
+            ),
+            None,
+        )
+
+        if strength_amount is not None:
+            return f"intends to buff itself (+{strength_amount} Strength)"
+
+        return "intends to buff itself"
+
+    if intent.intent_type == "debuff":
+        return "intends to apply a debuff"
+
+    if intent.intent_type == "block":
+        return "intends to defend"
+
+    return "intends to do something suspicious"
+
+
 def print_run_state(run_state: RunState) -> None:
     current_node = run_state.current_node()
     if current_node is None:
@@ -136,14 +173,7 @@ def print_combat_state(state: CombatState) -> None:
 
         intent_text = "-"
         if side.startswith("Enemy") and combatant.is_alive():
-            intent = combatant.current_intent()
-            if intent is not None:
-                if intent.intent_type == "attack":
-                    intent_text = f"{intent.name}: {intent.damage} damage"
-                elif intent.intent_type == "block":
-                    intent_text = f"{intent.name}: {intent.block} Block"
-                else:
-                    intent_text = intent.name
+            intent_text = format_enemy_intent(combatant)
 
         table.add_row(
             side,
@@ -253,15 +283,7 @@ def choose_target(state: CombatState) -> Combatant | None:
         if not statuses:
             statuses = "-"
 
-        intent_text = "-"
-        intent = enemy.current_intent()
-        if intent is not None:
-            if intent.intent_type == "attack":
-                intent_text = f"{intent.name}: {intent.damage} damage"
-            elif intent.intent_type == "block":
-                intent_text = f"{intent.name}: {intent.block} Block"
-            else:
-                intent_text = intent.name
+        intent_text = format_enemy_intent(enemy)
 
         table.add_row(
             str(index),

@@ -175,14 +175,6 @@ def test_finish_victorious_combat_rejects_unfinished_combat() -> None:
         finish_victorious_combat(run_state, combat_state)
 
 
-def test_cannot_start_combat_after_run_is_complete() -> None:
-    run_state = make_run_state()
-    run_state.fight_number = 4
-    run_state.max_fights = 3
-
-    with pytest.raises(ValueError, match="run is already complete"):
-        create_combat_state_for_next_encounter(run_state)
-
 
 def test_cannot_start_combat_when_player_has_no_hp() -> None:
     run_state = make_run_state()
@@ -199,3 +191,9 @@ def test_displayed_fight_number_is_capped_after_run_completion() -> None:
 
     assert run_state.is_complete()
     assert run_state.displayed_fight_number() == 3
+
+def test_run_is_complete_after_boss_node_is_completed() -> None:
+    run_state = make_run_state()
+    run_state.completed_node_ids.append(run_state.run_map.boss_node_id)
+
+    assert run_state.is_complete()

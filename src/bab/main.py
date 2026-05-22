@@ -13,16 +13,15 @@ from bab.data_loader import (
     load_status_database,
 )
 from bab.deck import build_deck, play_card_from_hand, shuffle_draw_pile
+from bab.encounters import choose_random_encounter
 from bab.enemies import create_enemies_for_encounter
 from bab.turns import end_player_turn, run_enemy_turn, start_player_turn
-
 
 console = Console()
 
 
 def print_combat_state(state: CombatState) -> None:
     table = Table(title="Combat State")
-
     table.add_column("Side")
     table.add_column("Name")
     table.add_column("HP", justify="right")
@@ -41,15 +40,12 @@ def print_combat_state(state: CombatState) -> None:
             f"{state.status_name(status.id)}: {status.amount}"
             for status in combatant.statuses.values()
         )
-
         if not statuses:
             statuses = "-"
 
         intent_text = "-"
-
         if side.startswith("Enemy") and combatant.is_alive():
             intent = combatant.current_intent()
-
             if intent is not None:
                 if intent.intent_type == "attack":
                     intent_text = f"{intent.name}: {intent.damage} damage"
@@ -72,7 +68,6 @@ def print_combat_state(state: CombatState) -> None:
 
 def print_hand(state: CombatState) -> None:
     table = Table(title="Hand")
-
     table.add_column("#", justify="right")
     table.add_column("Card", style="cyan")
     table.add_column("Cost", justify="right")
@@ -100,32 +95,26 @@ def print_piles(state: CombatState) -> None:
         f"Discard pile: {len(state.discard_pile)}\n"
         f"Exhaust pile: {len(state.exhaust_pile)}"
     )
-
     console.print(Panel(text, title="Piles"))
 
 
 def print_recent_log(state: CombatState, lines: int = 10) -> None:
     recent_log = state.log[-lines:]
     log_text = "\n".join(recent_log)
-
     if not log_text:
         log_text = "No combat events yet."
-
     console.print(Panel(log_text, title="Recent Combat Log"))
 
 
 def print_full_log(state: CombatState) -> None:
     log_text = "\n".join(state.log)
-
     if not log_text:
         log_text = "No combat events yet."
-
     console.print(Panel(log_text, title="Full Combat Log"))
 
 
 def choose_target(state: CombatState) -> Combatant | None:
     living_enemies = state.living_enemies()
-
     if not living_enemies:
         return None
 
@@ -148,13 +137,11 @@ def choose_target(state: CombatState) -> Combatant | None:
             f"{state.status_name(status.id)}: {status.amount}"
             for status in enemy.statuses.values()
         )
-
         if not statuses:
             statuses = "-"
 
         intent_text = "-"
         intent = enemy.current_intent()
-
         if intent is not None:
             if intent.intent_type == "attack":
                 intent_text = f"{intent.name}: {intent.damage} damage"
@@ -193,7 +180,6 @@ def choose_target(state: CombatState) -> Combatant | None:
             continue
 
         target = state.enemies[target_index]
-
         if not target.is_alive():
             console.print("[red]That target is already defeated.[/red]")
             continue
@@ -202,28 +188,24 @@ def choose_target(state: CombatState) -> Combatant | None:
 
 
 def create_initial_state() -> tuple[CombatState, Random]:
-    rng = Random(1)
+    rng = Random()
 
     card_database = load_card_database(
         [
             "data/cards/bureaucrat_starter.json",
         ]
     )
-
     character_class = load_character_class("data/classes/bureaucrat.json")
-
     enemy_database = load_enemy_database(
         [
             "data/enemies/city_enemies.json",
         ]
     )
-
     encounter_database = load_encounter_database(
         [
             "data/encounters/act_1_city.json",
         ]
     )
-
     status_database = load_status_database(
         [
             "data/statuses/statuses.json",
@@ -237,8 +219,14 @@ def create_initial_state() -> tuple[CombatState, Random]:
         hp=character_class.max_hp,
     )
 
+    encounter = choose_random_encounter(
+        encounter_database,
+        rng,
+        act=1,
+        difficulty="normal",
+    )
     enemies = create_enemies_for_encounter(
-        "city_medium_01",
+        encounter.id,
         encounter_database,
         enemy_database,
     )
@@ -256,6 +244,7 @@ def create_initial_state() -> tuple[CombatState, Random]:
         draw_pile=starting_deck,
         status_database=status_database,
     )
+    state.log.append(f"Encounter chosen: {encounter.name}.")
 
     shuffle_draw_pile(state, rng)
 
@@ -298,7 +287,6 @@ def player_action_loop(state: CombatState) -> None:
             continue
 
         selected_card = state.hand[hand_index]
-
         if selected_card.cost > state.energy:
             message = (
                 f"Not enough Energy to play {selected_card.name}. "
@@ -309,17 +297,16 @@ def player_action_loop(state: CombatState) -> None:
             continue
 
         target = choose_target(state)
-
         if target is None:
             console.print("[yellow]Card play cancelled.[/yellow]")
             continue
 
         play_card_from_hand(state, hand_index=hand_index, target=target)
-
         print_recent_log(state, lines=5)
 
         if state.is_victory():
             return
+
 
 def main() -> None:
     console.print("[bold green]Bureaucrats and Broomsticks[/bold green]")

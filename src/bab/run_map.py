@@ -9,6 +9,7 @@ MapNodeType = Literal[
     "elite",
     "event",
     "waiting_room",
+    "treasure",
     "boss",
 ]
 
@@ -49,11 +50,8 @@ def combat_difficulty_for_depth(
     depth: int,
     steps_before_boss: int,
 ) -> EncounterDifficulty:
-    if depth <= 1:
+    if depth <= 2:
         return "easy"
-
-    if depth >= steps_before_boss:
-        return "normal"
 
     return "normal"
 
@@ -68,44 +66,71 @@ def _choose_event_type(rng: Random) -> EventType:
     )
 
 
+def _choose_start_lanes(
+    rng: Random,
+    *,
+    width: int,
+) -> list[int]:
+    maximum_start_width = min(width, 4)
+    start_width = rng.choice(list(range(2, maximum_start_width + 1)))
+    return sorted(rng.sample(range(width), k=start_width))
+
+
 def _choose_node_type(
     *,
     rng: Random,
     depth: int,
-    lane: int,
+    lane_rank: int,
     steps_before_boss: int,
 ) -> MapNodeType:
     if depth == 1:
         return "combat"
 
+    if depth == 2 and lane_rank == 0:
+        return "event"
+
+    if depth == 3 and lane_rank == 0:
+        return "treasure"
+
+    if depth == 4 and lane_rank == 0:
+        return "elite"
+
+    if depth == 6 and lane_rank == 0:
+        return "waiting_room"
+
     if depth == steps_before_boss:
-        if lane == 0:
-            return "waiting_room"
-        if lane == 1:
-            return "elite"
-        return "combat"
-
-    forced_types_by_depth: dict[int, MapNodeType] = {
-        2: "event",
-        3: "elite",
-        4: "waiting_room",
-    }
-
-    if lane == 0 and depth in forced_types_by_depth:
-        return forced_types_by_depth[depth]
+        return rng.choices(
+            population=[
+                "combat",
+                "elite",
+                "treasure",
+                "event",
+                "waiting_room",
+            ],
+            weights=[
+                6,
+                1,
+                2,
+                1,
+                1,
+            ],
+            k=1,
+        )[0]
 
     return rng.choices(
         population=[
             "combat",
             "event",
-            "waiting_room",
+            "treasure",
             "elite",
+            "waiting_room",
         ],
         weights=[
-            5,
+            7,
             2,
-            2,
+            1.5,
             1,
+            0.7,
         ],
         k=1,
     )[0]
@@ -117,12 +142,13 @@ def _make_node(
     act: int,
     depth: int,
     lane: int,
+    lane_rank: int,
     steps_before_boss: int,
 ) -> MapNode:
     node_type = _choose_node_type(
         rng=rng,
         depth=depth,
-        lane=lane,
+        lane_rank=lane_rank,
         steps_before_boss=steps_before_boss,
     )
 
@@ -166,58 +192,180 @@ def _make_node(
     )
 
 
-def _next_layer_candidates(
+def _adjacent_lanes(
     *,
-    current_lane: int,
-    next_layer_ids: list[str],
-) -> list[str]:
-    candidate_lanes = [
-        current_lane - 1,
-        current_lane,
-        current_lane + 1,
+    lane: int,
+    width: int,
+) -> list[int]:
+    return [
+        candidate
+        for candidate in [lane - 1, lane + 1]
+        if 0 <= candidate < width
     ]
 
-    return [
-        next_layer_ids[lane]
-        for lane in candidate_lanes
-        if 0 <= lane < len(next_layer_ids)
-    ]
+
+def _choose_outgoing_lanes(
+    *,
+    rng: Random,
+    lane: int,
+    width: int,
+    no_split_streak: int,
+) -> set[int]:
+    split_chance = min(0.35 + 0.20 * no_split_streak, 0.85)
+
+    outgoing_lanes = {lane}
+
+    adjacent_lanes = _adjacent_lanes(
+        lane=lane,
+        width=width,
+    )
+
+    if adjacent_lanes and rng.random() < split_chance:
+        outgoing_lanes.add(rng.choice(adjacent_lanes))
+
+    return outgoing_lanes
+
+
+def _ensure_at_least_two_lanes(
+    *,
+    rng: Random,
+    lanes: set[int],
+    width: int,
+) -> set[int]:
+    if len(lanes) >= 2:
+        return lanes
+
+    only_lane = next(iter(lanes))
+    adjacent_lanes = _adjacent_lanes(
+        lane=only_lane,
+        width=width,
+    )
+
+    if adjacent_lanes:
+        lanes.add(rng.choice(adjacent_lanes))
+
+    return lanes
 
 
 def generate_act_map(
     rng: Random,
     *,
     act: int = 1,
-    steps_before_boss: int = 6,
-    width: int = 3,
+    steps_before_boss: int = 9,
+    width: int = 4,
 ) -> RunMap:
     if act < 1:
         raise ValueError("Act must be at least 1.")
 
-    if steps_before_boss < 4:
-        raise ValueError("Map needs at least 4 steps before the boss.")
+    if steps_before_boss < 6:
+        raise ValueError("Map needs at least 6 steps before the boss.")
 
     if width < 2:
         raise ValueError("Map width must be at least 2.")
 
     nodes: dict[str, MapNode] = {}
-    layers: list[list[str]] = []
+    layers: list[list[int]] = []
 
-    for depth in range(1, steps_before_boss + 1):
-        layer_ids: list[str] = []
+    current_lanes = _choose_start_lanes(
+        rng,
+        width=width,
+    )
+    layers.append(current_lanes)
 
-        for lane in range(width):
+    no_split_streak_by_lane: dict[int, int] = {
+        lane: 0
+        for lane in current_lanes
+    }
+
+    for rank, lane in enumerate(current_lanes):
+        node = _make_node(
+            rng=rng,
+            act=act,
+            depth=1,
+            lane=lane,
+            lane_rank=rank,
+            steps_before_boss=steps_before_boss,
+        )
+        nodes[node.id] = node
+
+    for depth in range(2, steps_before_boss + 1):
+        previous_lanes = current_lanes
+        outgoing_by_previous_lane: dict[int, set[int]] = {}
+
+        for previous_lane in previous_lanes:
+            outgoing_lanes = _choose_outgoing_lanes(
+                rng=rng,
+                lane=previous_lane,
+                width=width,
+                no_split_streak=no_split_streak_by_lane.get(previous_lane, 0),
+            )
+            outgoing_by_previous_lane[previous_lane] = outgoing_lanes
+
+        next_lanes = set().union(*outgoing_by_previous_lane.values())
+        next_lanes = _ensure_at_least_two_lanes(
+            rng=rng,
+            lanes=next_lanes,
+            width=width,
+        )
+        current_lanes = sorted(next_lanes)
+        layers.append(current_lanes)
+
+        for rank, lane in enumerate(current_lanes):
             node = _make_node(
                 rng=rng,
                 act=act,
                 depth=depth,
                 lane=lane,
+                lane_rank=rank,
                 steps_before_boss=steps_before_boss,
             )
             nodes[node.id] = node
-            layer_ids.append(node.id)
 
-        layers.append(layer_ids)
+        incoming_count_by_lane: dict[int, int] = {
+            lane: 0
+            for lane in current_lanes
+        }
+
+        for previous_lane, outgoing_lanes in outgoing_by_previous_lane.items():
+            previous_node_id = f"act_{act}_d{depth - 1:02d}_n{previous_lane:02d}"
+            next_node_ids = tuple(
+                f"act_{act}_d{depth:02d}_n{lane:02d}"
+                for lane in sorted(outgoing_lanes)
+                if lane in current_lanes
+            )
+
+            nodes[previous_node_id] = replace(
+                nodes[previous_node_id],
+                next_node_ids=next_node_ids,
+            )
+
+            for lane in outgoing_lanes:
+                if lane in incoming_count_by_lane:
+                    incoming_count_by_lane[lane] += 1
+
+        new_no_split_streak_by_lane: dict[int, int] = {}
+
+        for lane in current_lanes:
+            predecessors = [
+                previous_lane
+                for previous_lane, outgoing_lanes in outgoing_by_previous_lane.items()
+                if lane in outgoing_lanes
+            ]
+
+            if len(predecessors) == 1:
+                predecessor = predecessors[0]
+                predecessor_outgoing_count = len(outgoing_by_previous_lane[predecessor])
+
+                if predecessor_outgoing_count == 1:
+                    new_no_split_streak_by_lane[lane] = (
+                        no_split_streak_by_lane.get(predecessor, 0) + 1
+                    )
+                else:
+                    new_no_split_streak_by_lane[lane] = 0
+            else:
+                new_no_split_streak_by_lane[lane] = 0
+
+        no_split_streak_by_lane = new_no_split_streak_by_lane
 
     boss_depth = steps_before_boss + 1
     boss_node = MapNode(
@@ -229,38 +377,21 @@ def generate_act_map(
     )
     nodes[boss_node.id] = boss_node
 
-    for layer_index, layer_ids in enumerate(layers):
-        is_last_regular_layer = layer_index == len(layers) - 1
+    for lane in layers[-1]:
+        node_id = f"act_{act}_d{steps_before_boss:02d}_n{lane:02d}"
+        nodes[node_id] = replace(
+            nodes[node_id],
+            next_node_ids=(boss_node.id,),
+        )
 
-        if is_last_regular_layer:
-            for node_id in layer_ids:
-                nodes[node_id] = replace(
-                    nodes[node_id],
-                    next_node_ids=(boss_node.id,),
-                )
-            continue
-
-        next_layer_ids = layers[layer_index + 1]
-
-        for lane, node_id in enumerate(layer_ids):
-            candidates = _next_layer_candidates(
-                current_lane=lane,
-                next_layer_ids=next_layer_ids,
-            )
-
-            if len(candidates) <= 2:
-                next_node_ids = tuple(candidates)
-            else:
-                next_node_ids = tuple(sorted(rng.sample(candidates, k=2)))
-
-            nodes[node_id] = replace(
-                nodes[node_id],
-                next_node_ids=next_node_ids,
-            )
+    start_node_ids = tuple(
+        f"act_{act}_d01_n{lane:02d}"
+        for lane in layers[0]
+    )
 
     return RunMap(
         act=act,
         nodes=nodes,
-        start_node_ids=tuple(layers[0]),
+        start_node_ids=start_node_ids,
         boss_node_id=boss_node.id,
     )

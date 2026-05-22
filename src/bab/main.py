@@ -14,7 +14,7 @@ from bab.data_loader import (
     load_event_database,
     load_status_database,
 )
-from bab.deck import play_card_from_hand
+from bab.deck import play_card_from_hand, shuffle_draw_pile
 from bab.events import choose_random_event
 from bab.models import Card, EventChoice, EventDefinition, EventEffect
 from bab.rewards import add_card_reward_to_deck, choose_card_rewards
@@ -28,11 +28,20 @@ from bab.run_state import (
     finish_victorious_combat,
 )
 from bab.upgrades import upgrade_card_in_deck, upgradeable_card_indices
-
+from bab.encounters import choose_random_encounter
+from bab.enemies import create_enemies_for_encounter
 console = Console()
 
 WAITING_ROOM_HEAL_PERCENT = 25
+MIMIC_CHANCE = 0.20
 
+RELIC_POOL: tuple[str, ...] = (
+    "Self-Inking Stamp",
+    "Pocket-Sized Procedure Manual",
+    "Suspiciously Helpful Stapler",
+    "Certified Tea Mug",
+    "Minor Witching License",
+)
 
 def format_map_node(node: MapNode) -> str:
     node_type = node.node_type.replace("_", " ").title()
@@ -91,11 +100,16 @@ def print_run_state(run_state: RunState) -> None:
     else:
         current_node_text = format_map_node(current_node)
 
+    relic_text = ", ".join(run_state.relics)
+    if not relic_text:
+        relic_text = "-"
+
     text = (
         f"Act: {run_state.act}\n"
         f"Fights won: {run_state.fight_number - 1}\n"
         f"HP: {run_state.current_hp}/{run_state.character_class.max_hp}\n"
         f"Deck size: {len(run_state.run_deck)}\n"
+        f"Relics: {relic_text}\n"
         f"Current node: {current_node_text}\n"
         f"Completed nodes: {len(run_state.completed_node_ids)}"
     )
@@ -471,8 +485,8 @@ def create_run_state() -> RunState:
         rng=rng,
         act=1,
         max_fights=99,
-        map_steps_before_boss=6,
-        map_width=3,
+        map_steps_before_boss=9,
+        map_width=4,
     )
 
 
@@ -748,9 +762,107 @@ def resolve_map_node(run_state: RunState, node: MapNode) -> None:
     if node.node_type == "waiting_room":
         resolve_waiting_room_node(run_state)
         return
+    
+    if node.node_type == "treasure":
+        resolve_treasure_node(run_state)
+        return
 
     raise ValueError(f"Unsupported map node type: {node.node_type}")
 
+def grant_random_relic(run_state: RunState) -> None:
+    relic = run_state.rng.choice(RELIC_POOL)
+    run_state.relics.append(relic)
+    console.print(f"[green]Found relic: {relic}.[/green]")
+    console.print("[yellow]Relic effects are not implemented yet.[/yellow]")
+
+
+def create_treasure_mimic_combat_state(run_state: RunState) -> CombatState:
+    mimic_encounter_id = "city_elite_02"
+
+    if mimic_encounter_id in run_state.encounter_database:
+        encounter = run_state.encounter_database[mimic_encounter_id]
+    else:
+        encounter = choose_random_encounter(
+            run_state.encounter_database,
+            run_state.rng,
+            act=run_state.act,
+            difficulty="elite",
+        )
+
+    enemies = create_enemies_for_encounter(
+        encounter.id,
+        run_state.encounter_database,
+        run_state.enemy_database,
+    )
+
+    player = Combatant(
+        id=run_state.character_class.id,
+        name=run_state.character_class.name,
+        max_hp=run_state.character_class.max_hp,
+        hp=run_state.current_hp,
+    )
+
+    state = CombatState(
+        player=player,
+        enemies=enemies,
+        max_energy=run_state.character_class.starting_energy,
+        energy=run_state.character_class.starting_energy,
+        draw_pile=list(run_state.run_deck),
+        status_database=run_state.status_database,
+    )
+    state.log.append(f"Treasure chest was a Mimic: {encounter.name}.")
+    shuffle_draw_pile(state, run_state.rng)
+
+    return state
+
+
+def run_treasure_mimic_combat(run_state: RunState) -> CombatState:
+    from bab.turns import run_enemy_turn, start_player_turn
+
+    state = create_treasure_mimic_combat_state(run_state)
+
+    while not state.is_victory() and not state.is_defeat():
+        start_player_turn(state, run_state.rng)
+        player_action_loop(state)
+
+        if state.is_victory() or state.is_defeat():
+            break
+
+        run_enemy_turn(state)
+
+    return state
+
+
+def resolve_treasure_node(run_state: RunState) -> None:
+    console.print()
+    console.print(
+        Panel(
+            "A heavy chest sits in the corridor. It looks valuable, smug, and possibly employed.",
+            title="Treasure Chest",
+        )
+    )
+
+    if run_state.rng.random() < MIMIC_CHANCE:
+        console.print("[bold red]The chest was a Mimic![/bold red]")
+
+        state = run_treasure_mimic_combat(run_state)
+
+        console.print()
+        print_combat_state(state)
+        print_full_log(state)
+
+        if state.is_defeat():
+            run_state.current_hp = 0
+            console.print("[bold red]Defeat. The chest has filed you under snacks.[/bold red]")
+            return
+
+        finish_victorious_combat(run_state, state)
+        console.print("[bold green]The Mimic is defeated.[/bold green]")
+        grant_random_relic(run_state)
+        return
+
+    grant_random_relic(run_state)
+    complete_current_map_node(run_state)
 
 def main() -> None:
     console.print("[bold green]Bureaucrats and Broomsticks[/bold green]")

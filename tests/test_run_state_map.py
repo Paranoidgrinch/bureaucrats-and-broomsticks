@@ -108,7 +108,7 @@ def make_run_state():
         status_database={},
         rng=Random(1),
         max_fights=3,
-        map_steps_before_boss=4,
+        map_steps_before_boss=6,
         map_width=2,
     )
 

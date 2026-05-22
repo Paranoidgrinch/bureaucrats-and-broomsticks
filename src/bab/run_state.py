@@ -29,6 +29,7 @@ class RunState:
     current_hp: int
     run_map: RunMap
     event_database: dict[str, EventDefinition] = field(default_factory=dict)
+    relics: list[str] = field(default_factory=list)
     current_node_id: str | None = None
     completed_node_ids: list[str] = field(default_factory=list)
     act: int = 1
@@ -74,8 +75,8 @@ def create_new_run(
     rng: Random | None = None,
     act: int = 1,
     max_fights: int = 99,
-    map_steps_before_boss: int = 6,
-    map_width: int = 3,
+    map_steps_before_boss: int = 9,
+    map_width: int = 4,
 ) -> RunState:
     if rng is None:
         rng = Random()
@@ -108,6 +109,7 @@ def create_new_run(
         act=act,
         fight_number=1,
         max_fights=max_fights,
+        relics=[],
     )
 
 

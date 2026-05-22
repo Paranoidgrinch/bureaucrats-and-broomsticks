@@ -9,17 +9,17 @@ from bab.run_map import (
 )
 
 
-def test_generate_act_map_creates_start_nodes_and_boss() -> None:
+def test_generate_act_map_creates_variable_start_nodes_and_boss() -> None:
     run_map = generate_act_map(
         Random(1),
         act=1,
-        steps_before_boss=6,
-        width=3,
+        steps_before_boss=9,
+        width=4,
     )
 
     assert isinstance(run_map, RunMap)
     assert run_map.act == 1
-    assert len(run_map.start_node_ids) == 3
+    assert 2 <= len(run_map.start_node_ids) <= 4
     assert run_map.boss_node_id == "act_1_boss"
 
     boss_node = run_map.get_node(run_map.boss_node_id)
@@ -29,9 +29,9 @@ def test_generate_act_map_creates_start_nodes_and_boss() -> None:
     assert boss_node.next_node_ids == ()
 
 
-def test_generate_act_map_uses_expected_number_of_nodes() -> None:
-    steps_before_boss = 6
-    width = 3
+def test_generated_map_does_not_need_full_grid() -> None:
+    steps_before_boss = 9
+    width = 4
 
     run_map = generate_act_map(
         Random(1),
@@ -40,17 +40,18 @@ def test_generate_act_map_uses_expected_number_of_nodes() -> None:
         width=width,
     )
 
-    expected_nodes = steps_before_boss * width + 1
+    maximum_nodes = steps_before_boss * width + 1
 
-    assert len(run_map.nodes) == expected_nodes
+    assert len(run_map.nodes) <= maximum_nodes
+    assert len(run_map.nodes) > steps_before_boss
 
 
 def test_every_non_boss_node_points_to_later_nodes() -> None:
     run_map = generate_act_map(
         Random(1),
         act=1,
-        steps_before_boss=6,
-        width=3,
+        steps_before_boss=9,
+        width=4,
     )
 
     for node in run_map.nodes.values():
@@ -69,8 +70,8 @@ def test_available_next_nodes_returns_node_objects() -> None:
     run_map = generate_act_map(
         Random(1),
         act=1,
-        steps_before_boss=6,
-        width=3,
+        steps_before_boss=9,
+        width=4,
     )
 
     start_node = run_map.get_node(run_map.start_node_ids[0])
@@ -84,8 +85,8 @@ def test_standard_act_map_contains_core_node_types() -> None:
     run_map = generate_act_map(
         Random(1),
         act=1,
-        steps_before_boss=6,
-        width=3,
+        steps_before_boss=9,
+        width=4,
     )
 
     node_types = {
@@ -98,16 +99,69 @@ def test_standard_act_map_contains_core_node_types() -> None:
         "elite",
         "event",
         "waiting_room",
+        "treasure",
         "boss",
     } <= node_types
+
+
+def test_waiting_rooms_are_not_too_common() -> None:
+    run_map = generate_act_map(
+        Random(1),
+        act=1,
+        steps_before_boss=9,
+        width=4,
+    )
+
+    non_boss_nodes = [
+        node
+        for node in run_map.nodes.values()
+        if node.node_type != "boss"
+    ]
+    waiting_rooms = [
+        node
+        for node in non_boss_nodes
+        if node.node_type == "waiting_room"
+    ]
+
+    assert len(waiting_rooms) <= max(2, len(non_boss_nodes) // 4)
+
+
+def test_map_allows_splits_and_merges() -> None:
+    run_map = generate_act_map(
+        Random(2),
+        act=1,
+        steps_before_boss=9,
+        width=4,
+    )
+
+    split_nodes = [
+        node
+        for node in run_map.nodes.values()
+        if len(node.next_node_ids) > 1
+    ]
+
+    incoming_counts: dict[str, int] = {}
+
+    for node in run_map.nodes.values():
+        for next_node_id in node.next_node_ids:
+            incoming_counts[next_node_id] = incoming_counts.get(next_node_id, 0) + 1
+
+    merged_nodes = [
+        node_id
+        for node_id, incoming_count in incoming_counts.items()
+        if incoming_count > 1
+    ]
+
+    assert split_nodes
+    assert merged_nodes
 
 
 def test_combat_and_special_nodes_have_expected_payloads() -> None:
     run_map = generate_act_map(
         Random(1),
         act=1,
-        steps_before_boss=6,
-        width=3,
+        steps_before_boss=9,
+        width=4,
     )
 
     for node in run_map.nodes.values():
@@ -127,23 +181,24 @@ def test_combat_and_special_nodes_have_expected_payloads() -> None:
             assert node.encounter_difficulty is None
             assert node.event_type in {"narrative", "risk_reward", "deck"}
 
-        if node.node_type == "waiting_room":
+        if node.node_type in {"waiting_room", "treasure"}:
             assert node.encounter_difficulty is None
             assert node.event_type is None
 
 
 def test_combat_difficulty_for_depth_starts_easy_then_becomes_normal() -> None:
-    assert combat_difficulty_for_depth(1, 6) == "easy"
-    assert combat_difficulty_for_depth(2, 6) == "normal"
-    assert combat_difficulty_for_depth(6, 6) == "normal"
+    assert combat_difficulty_for_depth(1, 9) == "easy"
+    assert combat_difficulty_for_depth(2, 9) == "easy"
+    assert combat_difficulty_for_depth(3, 9) == "normal"
+    assert combat_difficulty_for_depth(9, 9) == "normal"
 
 
 def test_generate_act_map_rejects_invalid_arguments() -> None:
     with pytest.raises(ValueError, match="Act must be at least 1"):
         generate_act_map(Random(1), act=0)
 
-    with pytest.raises(ValueError, match="at least 4 steps"):
-        generate_act_map(Random(1), steps_before_boss=3)
+    with pytest.raises(ValueError, match="at least 6 steps"):
+        generate_act_map(Random(1), steps_before_boss=5)
 
     with pytest.raises(ValueError, match="width must be at least 2"):
         generate_act_map(Random(1), width=1)

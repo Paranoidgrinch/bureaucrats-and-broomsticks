@@ -1,0 +1,97 @@
+[
+  {
+    "id": "rat_with_legal_representation",
+    "name": "Rat with Legal Representation",
+    "max_hp": 32,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "bite_with_reservation",
+        "name": "Bite with Reservation",
+        "intent_type": "attack",
+        "damage": 6
+      },
+      {
+        "id": "file_complaint",
+        "name": "File Complaint",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "legal_cover",
+        "name": "Legal Cover",
+        "intent_type": "block",
+        "block": 7
+      }
+    ],
+    "tags": ["beast", "city", "legal"]
+  },
+  {
+    "id": "overzealous_clerk",
+    "name": "Overzealous Clerk",
+    "max_hp": 28,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "paper_cut",
+        "name": "Paper Cut",
+        "intent_type": "attack",
+        "damage": 5
+      },
+      {
+        "id": "stamp_defensively",
+        "name": "Stamp Defensively",
+        "intent_type": "block",
+        "block": 6
+      },
+      {
+        "id": "procedural_outburst",
+        "name": "Procedural Outburst",
+        "intent_type": "attack",
+        "damage": 8
+      }
+    ],
+    "tags": ["human", "city", "bureaucracy"]
+  },
+  {
+    "id": "tiny_contract_demon",
+    "name": "Tiny Contract Demon",
+    "max_hp": 24,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "infernal_clause",
+        "name": "Infernal Clause",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "scratch_signature",
+        "name": "Scratch Signature",
+        "intent_type": "attack",
+        "damage": 4
+      },
+      {
+        "id": "binding_terms",
+        "name": "Binding Terms",
+        "intent_type": "attack",
+        "damage": 7
+      }
+    ],
+    "tags": ["demon", "contract", "city"]
+  }
+]

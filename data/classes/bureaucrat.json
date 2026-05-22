@@ -1,0 +1,22 @@
+{
+  "id": "bureaucrat",
+  "name": "Bureaucrat",
+  "max_hp": 70,
+  "starting_energy": 3,
+  "starting_relic": null,
+  "starting_deck": [
+    "rubber_stamp",
+    "rubber_stamp",
+    "rubber_stamp",
+    "rubber_stamp",
+    "official_delay",
+    "official_delay",
+    "official_delay",
+    "official_delay",
+    "fine_print",
+    "retroactive_fee"
+  ],
+  "starting_resources": {
+    "authority": 0
+  }
+}

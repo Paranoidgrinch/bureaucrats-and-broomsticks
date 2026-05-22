@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: bureaucrats-and-broomsticks
+Version: 0.1.0
+Summary: A satirical fantasy roguelike deckbuilding prototype.
+Requires-Python: >=3.11
+Requires-Dist: rich
+Requires-Dist: pydantic
+Requires-Dist: pytest
+Requires-Dist: pygame-ce

@@ -1,0 +1,84 @@
+[
+  {
+    "id": "rubber_stamp",
+    "name": "Rubber Stamp",
+    "class": "bureaucrat",
+    "type": "action",
+    "cost": 1,
+    "rarity": "starter",
+    "text": "Deal 6 damage. Apply 1 Paperwork.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 6
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 1
+      }
+    ],
+    "tags": ["attack", "bureaucracy", "paperwork"]
+  },
+  {
+    "id": "official_delay",
+    "name": "Official Delay",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 1,
+    "rarity": "starter",
+    "text": "Gain 8 Block. Apply 2 Paperwork.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 8
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 2
+      }
+    ],
+    "tags": ["block", "bureaucracy", "paperwork"]
+  },
+  {
+    "id": "fine_print",
+    "name": "Fine Print",
+    "class": "bureaucrat",
+    "type": "argument",
+    "cost": 1,
+    "rarity": "starter",
+    "text": "Apply 2 Doubt.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": ["argument", "doubt"]
+  },
+  {
+    "id": "retroactive_fee",
+    "name": "Retroactive Fee",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 2,
+    "rarity": "starter",
+    "text": "Deal 3 damage for each Paperwork on the target.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount_per_stack": 3
+      }
+    ],
+    "tags": ["attack", "bureaucracy", "paperwork", "payoff"]
+  }
+]

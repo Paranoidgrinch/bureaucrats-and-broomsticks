@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bureaucrats-and-broomsticks"
+version = "0.1.0"
+description = "A satirical fantasy roguelike deckbuilding prototype."
+requires-python = ">=3.11"
+dependencies = [
+    "rich",
+    "pydantic",
+    "pytest",
+    "pygame-ce"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

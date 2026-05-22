@@ -20,7 +20,7 @@ def load_json(relative_path: str) -> Any:
     if not path.exists():
         raise FileNotFoundError(f"Could not find data file: {path}")
 
-    with path.open("r", encoding="utf-8") as file:
+    with path.open("r", encoding="utf-8-sig") as file:
         return json.load(file)
 
 

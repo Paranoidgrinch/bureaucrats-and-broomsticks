@@ -1,0 +1,182 @@
+﻿[
+  {
+    "id": "administrative_notice",
+    "name": "Administrative Notice",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 3 Paperwork.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 3
+      }
+    ],
+    "tags": ["bureaucracy", "paperwork"]
+  },
+  {
+    "id": "triplicate_objection",
+    "name": "Triplicate Objection",
+    "class": "bureaucrat",
+    "type": "argument",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 3 Doubt.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 3
+      }
+    ],
+    "tags": ["argument", "doubt"]
+  },
+  {
+    "id": "emergency_stamp",
+    "name": "Emergency Stamp",
+    "class": "bureaucrat",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 9 damage.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 9
+      }
+    ],
+    "tags": ["attack", "bureaucracy"]
+  },
+  {
+    "id": "reinforced_clipboard",
+    "name": "Reinforced Clipboard",
+    "class": "bureaucrat",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 12 Block.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 12
+      }
+    ],
+    "tags": ["block", "bureaucracy"]
+  },
+  {
+    "id": "compliance_review",
+    "name": "Compliance Review",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 4 damage. Apply 2 Paperwork.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 4
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 2
+      }
+    ],
+    "tags": ["attack", "bureaucracy", "paperwork"]
+  },
+  {
+    "id": "procedural_haze",
+    "name": "Procedural Haze",
+    "class": "bureaucrat",
+    "type": "argument",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Gain 6 Block. Apply 1 Doubt.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 6
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 1
+      }
+    ],
+    "tags": ["block", "argument", "doubt"]
+  },
+  {
+    "id": "compounded_penalty",
+    "name": "Compounded Penalty",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 4 damage for each Paperwork on the target.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount_per_stack": 4
+      }
+    ],
+    "tags": ["attack", "bureaucracy", "paperwork", "payoff"]
+  },
+  {
+    "id": "paper_fortress",
+    "name": "Paper Fortress",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Gain 16 Block. Apply 2 Paperwork.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 16
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 2
+      }
+    ],
+    "tags": ["block", "bureaucracy", "paperwork"]
+  },
+  {
+    "id": "final_warning",
+    "name": "Final Warning",
+    "class": "bureaucrat",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "rare",
+    "text": "Deal 14 damage. Apply 2 Paperwork.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 14
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 2
+      }
+    ],
+    "tags": ["attack", "argument", "paperwork"]
+  }
+]

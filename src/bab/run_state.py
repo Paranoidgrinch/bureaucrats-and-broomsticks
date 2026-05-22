@@ -34,6 +34,9 @@ class RunState:
 
     def is_defeated(self) -> bool:
         return self.current_hp <= 0
+    
+    def displayed_fight_number(self) -> int:
+        return min(self.fight_number, self.max_fights)
 
 
 def create_new_run(

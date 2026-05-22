@@ -28,7 +28,7 @@ console = Console()
 def print_run_state(run_state: RunState) -> None:
     text = (
         f"Act: {run_state.act}\n"
-        f"Fight: {run_state.fight_number}/{run_state.max_fights}\n"
+        f"Fight: {run_state.displayed_fight_number()}/{run_state.max_fights}\n"
         f"HP: {run_state.current_hp}/{run_state.character_class.max_hp}\n"
         f"Deck size: {len(run_state.run_deck)}"
     )

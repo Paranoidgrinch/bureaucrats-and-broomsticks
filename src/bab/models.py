@@ -91,6 +91,14 @@ EventEffectType = Literal[
     "gain_max_hp",
 ]
 
+RelicEffectType = Literal[
+    "gain_block_at_combat_start",
+    "apply_status_to_all_enemies_at_combat_start",
+    "increase_max_energy",
+    "heal_on_pickup",
+    "increase_card_reward_count",
+]
+
 
 class Condition(BaseModel):
     model_config = ConfigDict(extra="forbid")
@@ -221,4 +229,24 @@ class EventDefinition(BaseModel):
     weight: int = Field(default=1, gt=0)
     text: str
     choices: list[EventChoice] = Field(min_length=1)
+    tags: list[str] = Field(default_factory=list)
+
+
+
+class RelicEffect(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    type: RelicEffectType
+    amount: int | None = None
+    status: str | None = None
+
+
+class RelicDefinition(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    id: str
+    name: str
+    description: str
+    rarity: Literal["common", "uncommon", "rare", "boss"] = "common"
+    effects: list[RelicEffect]
     tags: list[str] = Field(default_factory=list)

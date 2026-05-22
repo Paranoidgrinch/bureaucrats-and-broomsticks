@@ -1,0 +1,82 @@
+[
+  {
+    "id": "self_inking_stamp",
+    "name": "Self-Inking Stamp",
+    "description": "At the start of each combat, apply 2 Paperwork to all enemies.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "paperwork",
+        "amount": 2
+      }
+    ],
+    "tags": ["bureaucracy", "paperwork"]
+  },
+  {
+    "id": "pocket_sized_procedure_manual",
+    "name": "Pocket-Sized Procedure Manual",
+    "description": "Gain +1 Max Energy during combat.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "increase_max_energy",
+        "amount": 1
+      }
+    ],
+    "tags": ["energy", "bureaucracy"]
+  },
+  {
+    "id": "suspiciously_helpful_stapler",
+    "name": "Suspiciously Helpful Stapler",
+    "description": "At the start of each combat, gain 8 Block.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 8
+      }
+    ],
+    "tags": ["block", "office"]
+  },
+  {
+    "id": "certified_tea_mug",
+    "name": "Certified Tea Mug",
+    "description": "When picked up, heal 12 HP.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "heal_on_pickup",
+        "amount": 12
+      }
+    ],
+    "tags": ["healing", "tea"]
+  },
+  {
+    "id": "minor_witching_license",
+    "name": "Minor Witching License",
+    "description": "At the start of each combat, apply 1 Doubt to all enemies.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "doubt",
+        "amount": 1
+      }
+    ],
+    "tags": ["witch", "doubt", "magic"]
+  },
+  {
+    "id": "generous_requisition_form",
+    "name": "Generous Requisition Form",
+    "description": "Card rewards contain 1 additional card.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "increase_card_reward_count",
+        "amount": 1
+      }
+    ],
+    "tags": ["reward", "bureaucracy"]
+  }
+]

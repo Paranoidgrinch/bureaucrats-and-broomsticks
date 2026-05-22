@@ -9,6 +9,7 @@ from bab.models import (
     EnemyDefinition,
     EventDefinition,
     StatusDefinition,
+    RelicDefinition,
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -147,3 +148,26 @@ def load_event_database(relative_paths: list[str]) -> dict[str, EventDefinition]
             event_database[event.id] = event
 
     return event_database
+
+
+def load_relics(relative_path: str) -> list[RelicDefinition]:
+    raw_data = load_json(relative_path)
+
+    if not isinstance(raw_data, list):
+        raise ValueError(f"Expected a list of relics in {relative_path}")
+
+    return [RelicDefinition.model_validate(relic_data) for relic_data in raw_data]
+
+
+def load_relic_database(relative_paths: list[str]) -> dict[str, RelicDefinition]:
+    relic_database: dict[str, RelicDefinition] = {}
+
+    for relative_path in relative_paths:
+        relics = load_relics(relative_path)
+
+        for relic in relics:
+            if relic.id in relic_database:
+                raise ValueError(f"Duplicate relic id found: {relic.id}")
+            relic_database[relic.id] = relic
+
+    return relic_database

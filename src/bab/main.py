@@ -1,3 +1,4 @@
+from math import ceil
 from random import Random
 
 from rich.console import Console
@@ -10,29 +11,104 @@ from bab.data_loader import (
     load_character_class,
     load_encounter_database,
     load_enemy_database,
+    load_event_database,
     load_status_database,
 )
 from bab.deck import play_card_from_hand
+from bab.events import choose_random_event
+from bab.models import Card, EventChoice, EventDefinition, EventEffect
 from bab.rewards import add_card_reward_to_deck, choose_card_rewards
+from bab.run_map import MapNode
 from bab.run_state import (
     RunState,
+    complete_current_map_node,
     create_combat_state_for_next_encounter,
     create_new_run,
+    enter_map_node,
     finish_victorious_combat,
 )
-from bab.models import Card
 
 console = Console()
 
+WAITING_ROOM_HEAL_PERCENT = 25
+
+
+def format_map_node(node: MapNode) -> str:
+    node_type = node.node_type.replace("_", " ").title()
+
+    if node.encounter_difficulty is not None:
+        return f"{node_type} ({node.encounter_difficulty.title()})"
+
+    if node.event_type is not None:
+        return f"{node_type} ({node.event_type.replace('_', ' ').title()})"
+
+    return node_type
+
 
 def print_run_state(run_state: RunState) -> None:
+    current_node = run_state.current_node()
+    if current_node is None:
+        current_node_text = "No node selected."
+    else:
+        current_node_text = format_map_node(current_node)
+
     text = (
         f"Act: {run_state.act}\n"
-        f"Fight: {run_state.displayed_fight_number()}/{run_state.max_fights}\n"
+        f"Fights won: {run_state.fight_number - 1}\n"
         f"HP: {run_state.current_hp}/{run_state.character_class.max_hp}\n"
-        f"Deck size: {len(run_state.run_deck)}"
+        f"Deck size: {len(run_state.run_deck)}\n"
+        f"Current node: {current_node_text}\n"
+        f"Completed nodes: {len(run_state.completed_node_ids)}"
     )
     console.print(Panel(text, title="Run State"))
+
+
+def print_available_map_nodes(run_state: RunState) -> None:
+    available_nodes = run_state.available_map_nodes()
+
+    table = Table(title="Available Map Nodes")
+    table.add_column("#", justify="right")
+    table.add_column("Node")
+    table.add_column("Depth", justify="right")
+    table.add_column("ID")
+
+    for index, node in enumerate(available_nodes):
+        table.add_row(
+            str(index),
+            format_map_node(node),
+            str(node.depth),
+            node.id,
+        )
+
+    console.print(table)
+
+
+def choose_next_map_node(run_state: RunState) -> MapNode:
+    available_nodes = run_state.available_map_nodes()
+
+    while True:
+        print_available_map_nodes(run_state)
+
+        command = console.input(
+            "[bold yellow]Choose a map node number or 'quit': [/bold yellow]"
+        ).strip().lower()
+
+        if command == "quit":
+            raise SystemExit("Game quit.")
+
+        if not command.isdigit():
+            console.print("[red]Invalid map choice.[/red]")
+            continue
+
+        node_index = int(command)
+
+        if node_index < 0 or node_index >= len(available_nodes):
+            console.print("[red]Invalid map node number.[/red]")
+            continue
+
+        selected_node = available_nodes[node_index]
+        enter_map_node(run_state, selected_node.id)
+        return selected_node
 
 
 def print_combat_state(state: CombatState) -> None:
@@ -287,6 +363,11 @@ def create_run_state() -> RunState:
             "data/statuses/statuses.json",
         ]
     )
+    event_database = load_event_database(
+        [
+            "data/events/act_1_city_events.json",
+        ]
+    )
 
     return create_new_run(
         character_class=character_class,
@@ -294,9 +375,12 @@ def create_run_state() -> RunState:
         enemy_database=enemy_database,
         encounter_database=encounter_database,
         status_database=status_database,
+        event_database=event_database,
         rng=rng,
         act=1,
-        max_fights=3,
+        max_fights=99,
+        map_steps_before_boss=6,
+        map_width=3,
     )
 
 
@@ -363,10 +447,7 @@ def player_action_loop(state: CombatState) -> None:
 def run_single_combat(run_state: RunState) -> CombatState:
     from bab.turns import run_enemy_turn, start_player_turn
 
-    state = create_combat_state_for_next_encounter(
-        run_state,
-        difficulty="normal",
-    )
+    state = create_combat_state_for_next_encounter(run_state)
 
     while not state.is_victory() and not state.is_defeat():
         start_player_turn(state, run_state.rng)
@@ -380,9 +461,209 @@ def run_single_combat(run_state: RunState) -> CombatState:
     return state
 
 
+def print_event(event: EventDefinition) -> None:
+    console.print()
+    console.print(Panel(event.text, title=event.name))
+
+    table = Table(title="Event Choices")
+    table.add_column("#", justify="right")
+    table.add_column("Choice")
+    table.add_column("Result Preview")
+
+    for index, choice in enumerate(event.choices):
+        table.add_row(
+            str(index),
+            choice.text,
+            choice.result_text,
+        )
+
+    console.print(table)
+
+
+def choose_event_choice(event: EventDefinition) -> EventChoice:
+    while True:
+        command = console.input(
+            "[bold yellow]Choose an event option number: [/bold yellow]"
+        ).strip().lower()
+
+        if not command.isdigit():
+            console.print("[red]Invalid event choice.[/red]")
+            continue
+
+        choice_index = int(command)
+
+        if choice_index < 0 or choice_index >= len(event.choices):
+            console.print("[red]Invalid event choice number.[/red]")
+            continue
+
+        return event.choices[choice_index]
+
+
+def apply_event_effect(run_state: RunState, effect: EventEffect) -> None:
+    if effect.type == "none":
+        return
+
+    if effect.type == "gain_card_reward":
+        amount = effect.amount or 1
+        for _ in range(amount):
+            offer_card_reward(run_state)
+        return
+
+    if effect.type == "lose_percent_max_hp":
+        percent = effect.amount or 0
+        loss = ceil(run_state.character_class.max_hp * percent / 100)
+        run_state.current_hp = max(1, run_state.current_hp - loss)
+        console.print(
+            f"[red]Lost {loss} HP. Current HP: "
+            f"{run_state.current_hp}/{run_state.character_class.max_hp}.[/red]"
+        )
+        return
+
+    if effect.type == "gain_max_hp":
+        console.print("[yellow]Max HP events are not implemented yet.[/yellow]")
+        return
+
+    if effect.type == "upgrade_card":
+        console.print("[yellow]Card upgrades are not implemented yet.[/yellow]")
+        return
+
+    if effect.type == "remove_card":
+        console.print("[yellow]Card removal is not implemented yet.[/yellow]")
+        return
+
+    console.print(f"[yellow]Unhandled event effect: {effect.type}.[/yellow]")
+
+
+def resolve_event_node(run_state: RunState, node: MapNode) -> None:
+    if node.event_type is None:
+        raise ValueError("Event node is missing an event type.")
+
+    event = choose_random_event(
+        run_state.event_database,
+        run_state.rng,
+        act=run_state.act,
+        event_type=node.event_type,
+    )
+
+    print_event(event)
+    choice = choose_event_choice(event)
+
+    console.print()
+    console.print(Panel(choice.result_text, title="Event Result"))
+
+    for effect in choice.effects:
+        apply_event_effect(run_state, effect)
+
+    complete_current_map_node(run_state)
+
+
+def resolve_waiting_room_node(run_state: RunState) -> None:
+    console.print()
+    console.print(
+        Panel(
+            "The Waiting Room smells faintly of dust, old coffee, and postponed decisions.",
+            title="Waiting Room",
+        )
+    )
+
+    table = Table(title="Waiting Room Choices")
+    table.add_column("#", justify="right")
+    table.add_column("Choice")
+    table.add_column("Effect")
+
+    table.add_row(
+        "0",
+        "Do something productive.",
+        "Card upgrades are not implemented yet.",
+    )
+    table.add_row(
+        "1",
+        "Take a Nap.",
+        f"Heal {WAITING_ROOM_HEAL_PERCENT}% of max HP.",
+    )
+
+    console.print(table)
+
+    while True:
+        command = console.input(
+            "[bold yellow]Choose a Waiting Room option: [/bold yellow]"
+        ).strip().lower()
+
+        if command == "0":
+            console.print(
+                "[yellow]You organize your forms. "
+                "Card upgrades will be added later.[/yellow]"
+            )
+            break
+
+        if command == "1":
+            heal_amount = ceil(
+                run_state.character_class.max_hp
+                * WAITING_ROOM_HEAL_PERCENT
+                / 100
+            )
+            old_hp = run_state.current_hp
+            run_state.current_hp = min(
+                run_state.character_class.max_hp,
+                run_state.current_hp + heal_amount,
+            )
+            healed = run_state.current_hp - old_hp
+            console.print(
+                f"[green]You take a nap and recover {healed} HP. "
+                f"Current HP: {run_state.current_hp}/"
+                f"{run_state.character_class.max_hp}.[/green]"
+            )
+            break
+
+        console.print("[red]Invalid Waiting Room choice.[/red]")
+
+    complete_current_map_node(run_state)
+
+
+def resolve_combat_node(run_state: RunState, node: MapNode) -> None:
+    state = run_single_combat(run_state)
+
+    console.print()
+    print_combat_state(state)
+    print_full_log(state)
+
+    if state.is_defeat():
+        run_state.current_hp = 0
+        console.print("[bold red]Defeat. The bureaucracy was insufficient.[/bold red]")
+        return
+
+    finish_victorious_combat(run_state, state)
+
+    if node.node_type == "boss":
+        console.print("[bold green]Boss defeated! The act is complete.[/bold green]")
+        return
+
+    console.print("[bold green]Victory! The paperwork has prevailed.[/bold green]")
+    offer_card_reward(run_state)
+
+
+def resolve_map_node(run_state: RunState, node: MapNode) -> None:
+    console.print()
+    console.print(Panel(format_map_node(node), title="Entering Map Node"))
+
+    if node.node_type in {"combat", "elite", "boss"}:
+        resolve_combat_node(run_state, node)
+        return
+
+    if node.node_type == "event":
+        resolve_event_node(run_state, node)
+        return
+
+    if node.node_type == "waiting_room":
+        resolve_waiting_room_node(run_state)
+        return
+
+    raise ValueError(f"Unsupported map node type: {node.node_type}")
+
+
 def main() -> None:
     console.print("[bold green]Bureaucrats and Broomsticks[/bold green]")
-    console.print("Interactive run prototype started.\n")
+    console.print("Interactive map prototype started.\n")
 
     run_state = create_run_state()
 
@@ -390,26 +671,16 @@ def main() -> None:
         console.print()
         print_run_state(run_state)
 
-        state = run_single_combat(run_state)
-
-        console.print()
-        print_combat_state(state)
-        print_full_log(state)
-
-        if state.is_defeat():
-            run_state.current_hp = 0
-            console.print("[bold red]Defeat. The bureaucracy was insufficient.[/bold red]")
-            return
-
-        finish_victorious_combat(run_state, state)
-        console.print("[bold green]Victory! The paperwork has prevailed.[/bold green]")
-
-        if not run_state.is_complete():
-            offer_card_reward(run_state)
+        node = choose_next_map_node(run_state)
+        resolve_map_node(run_state, node)
 
     console.print()
     print_run_state(run_state)
-    console.print("[bold green]Run complete! The office survives another day.[/bold green]")
+
+    if run_state.is_complete():
+        console.print("[bold green]Run complete! The office survives another day.[/bold green]")
+    elif run_state.is_defeated():
+        console.print("[bold red]Run failed. The paperwork remains unfinished.[/bold red]")
 
 
 if __name__ == "__main__":

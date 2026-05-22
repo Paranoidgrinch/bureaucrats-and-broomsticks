@@ -11,6 +11,7 @@ from bab.models import (
     EncounterDefinition,
     EncounterDifficulty,
     EnemyDefinition,
+    EventDefinition,
     StatusDefinition,
 )
 from bab.run_map import MapNode, RunMap, generate_act_map
@@ -27,14 +28,18 @@ class RunState:
     run_deck: list[Card]
     current_hp: int
     run_map: RunMap
+    event_database: dict[str, EventDefinition] = field(default_factory=dict)
     current_node_id: str | None = None
     completed_node_ids: list[str] = field(default_factory=list)
     act: int = 1
     fight_number: int = 1
-    max_fights: int = 3
+    max_fights: int = 99
 
     def is_complete(self) -> bool:
-        return self.fight_number > self.max_fights
+        return (
+            self.run_map.boss_node_id in self.completed_node_ids
+            or self.fight_number > self.max_fights
+        )
 
     def is_defeated(self) -> bool:
         return self.current_hp <= 0
@@ -65,9 +70,10 @@ def create_new_run(
     enemy_database: dict[str, EnemyDefinition],
     encounter_database: dict[str, EncounterDefinition],
     status_database: dict[str, StatusDefinition],
+    event_database: dict[str, EventDefinition] | None = None,
     rng: Random | None = None,
     act: int = 1,
-    max_fights: int = 3,
+    max_fights: int = 99,
     map_steps_before_boss: int = 6,
     map_width: int = 3,
 ) -> RunState:
@@ -92,6 +98,7 @@ def create_new_run(
         enemy_database=enemy_database,
         encounter_database=encounter_database,
         status_database=status_database,
+        event_database=event_database or {},
         rng=rng,
         run_deck=run_deck,
         current_hp=character_class.max_hp,

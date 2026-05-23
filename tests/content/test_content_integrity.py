@@ -79,7 +79,7 @@ def test_all_manifest_file_references_exist_and_load() -> None:
         manifest = load_act_manifest(manifest_path)
 
         referenced_files = [
-            manifest.character_class_file,
+            *manifest.character_class_files,
             *manifest.card_files,
             *manifest.enemy_files,
             *manifest.encounter_files,
@@ -226,3 +226,26 @@ def test_relic_status_references_exist() -> None:
             }
 
             assert not missing, f"{relic.id} references missing statuses: {sorted(missing)}"
+
+
+def test_default_character_class_is_available_in_each_act() -> None:
+    for manifest_path in ACT_MANIFEST_FILES:
+        catalog = load_content_catalog_from_act_manifest(manifest_path)
+
+        assert catalog.act_manifest.default_character_class_id in catalog.character_classes
+        assert catalog.character_class is catalog.character_classes[
+            catalog.act_manifest.default_character_class_id
+        ]
+
+
+def test_character_starting_decks_reference_existing_cards() -> None:
+    for manifest_path in ACT_MANIFEST_FILES:
+        catalog = load_content_catalog_from_act_manifest(manifest_path)
+
+        for character_class in catalog.character_classes.values():
+            missing = sorted(set(character_class.starting_deck) - set(catalog.card_database))
+            assert not missing, (
+                f"{catalog.act_manifest.id}/{character_class.id} "
+                f"starting deck references missing cards: {missing}"
+            )
+

@@ -2,7 +2,10 @@
   "id": "act_1_example",
   "act": 1,
   "name": "Act I: Example Act",
-  "character_class_file": "data/classes/bureaucrat.json",
+  "character_class_files": [
+    "data/classes/bureaucrat.json"
+  ],
+  "default_character_class_id": "bureaucrat",
   "card_files": [
     "data/cards/bureaucrat_starter.json",
     "data/cards/bureaucrat_rewards.json"

@@ -3,7 +3,8 @@
 Acts are configured through manifest files under data/acts/.
 
 Each act manifest defines:
-- character class file
+- character class files
+- default character class id
 - card files
 - enemy files
 - encounter files

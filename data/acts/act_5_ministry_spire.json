@@ -2,7 +2,10 @@
   "id": "act_5_ministry_spire",
   "act": 5,
   "name": "Act V: The Ministry Spire",
-  "character_class_file": "data/classes/bureaucrat.json",
+  "character_class_files": [
+    "data/classes/bureaucrat.json"
+  ],
+  "default_character_class_id": "bureaucrat",
   "card_files": [
     "data/cards/bureaucrat_starter.json",
     "data/cards/bureaucrat_rewards.json"

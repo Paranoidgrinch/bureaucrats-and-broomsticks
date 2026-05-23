@@ -35,6 +35,7 @@ from bab.models import (
 @dataclass(frozen=True)
 class ContentCatalog:
     act_manifest: ActManifest
+    character_classes: dict[str, CharacterClass]
     character_class: CharacterClass
     card_database: dict[str, Card]
     enemy_database: dict[str, EnemyDefinition]
@@ -49,9 +50,24 @@ def load_content_catalog_from_act_manifest(relative_path: str) -> ContentCatalog
 
     act_manifest = load_act_manifest(relative_path)
 
+    character_classes = {
+        character_class.id: character_class
+        for character_class in (
+            load_character_class(path)
+            for path in act_manifest.character_class_files
+        )
+    }
+
+    if act_manifest.default_character_class_id not in character_classes:
+        raise ValueError(
+            f"Default character class {act_manifest.default_character_class_id!r} "
+            f"is not listed in {act_manifest.id}."
+        )
+
     return ContentCatalog(
         act_manifest=act_manifest,
-        character_class=load_character_class(act_manifest.character_class_file),
+        character_classes=character_classes,
+        character_class=character_classes[act_manifest.default_character_class_id],
         card_database=load_card_database(act_manifest.card_files),
         enemy_database=load_enemy_database(act_manifest.enemy_files),
         encounter_database=load_encounter_database(act_manifest.encounter_files),

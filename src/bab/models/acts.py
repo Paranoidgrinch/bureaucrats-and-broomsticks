@@ -31,7 +31,8 @@ class ActManifest(BaseModel):
     id: str
     act: int = Field(ge=1)
     name: str
-    character_class_file: str
+    character_class_files: list[str] = Field(min_length=1)
+    default_character_class_id: str
     card_files: list[str] = Field(min_length=1)
     enemy_files: list[str] = Field(min_length=1)
     encounter_files: list[str] = Field(min_length=1)

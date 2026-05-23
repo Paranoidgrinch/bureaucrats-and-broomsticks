@@ -15,6 +15,7 @@ balancing signals.
 
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import asdict, dataclass
 from math import ceil
 from random import Random
@@ -67,6 +68,7 @@ class SimConfig:
 
 
 @dataclass
+@dataclass
 class SimulatedRun:
     index: int
     seed: int
@@ -79,6 +81,13 @@ class SimulatedRun:
     relic_count: int
     error: str | None = None
     traceback: str | None = None
+    last_node_id: str | None = None
+    last_node_type: str | None = None
+    last_enemy_ids: list[str] | None = None
+    last_enemy_names: list[str] | None = None
+    last_enemy_hp: dict[str, int] | None = None
+    last_player_hp: int | None = None
+    last_combat_turns: int | None = None
 
 
 @dataclass
@@ -174,6 +183,7 @@ def simulate_one_run(
     )
 
     ensure_gold_field(run_state)
+    initialize_run_diagnostics(run_state)
 
     try:
         while not run_state.is_complete() and not run_state.is_defeated():
@@ -232,6 +242,13 @@ def make_result(
         relic_count=len(run_state.relics),
         error=error,
         traceback=traceback_text,
+        last_node_id=getattr(run_state, "sim_last_node_id", None),
+        last_node_type=getattr(run_state, "sim_last_node_type", None),
+        last_enemy_ids=list(getattr(run_state, "sim_last_enemy_ids", [])),
+        last_enemy_names=list(getattr(run_state, "sim_last_enemy_names", [])),
+        last_enemy_hp=dict(getattr(run_state, "sim_last_enemy_hp", {})),
+        last_player_hp=getattr(run_state, "sim_last_player_hp", None),
+        last_combat_turns=getattr(run_state, "sim_last_combat_turns", None),
     )
 
 
@@ -241,9 +258,14 @@ def resolve_random_map_node(
     rng: Random,
     config: SimConfig,
 ) -> None:
+    record_map_node(run_state, node)
+
     if node.node_type in {"combat", "elite", "boss"}:
         combat_state = create_combat_state_for_next_encounter(run_state)
-        simulate_combat(run_state, combat_state, rng, config)
+        record_combat_start(run_state, combat_state)
+
+        turns_played = simulate_combat(run_state, combat_state, rng, config)
+        record_combat_end(run_state, combat_state, turns_played)
 
         if combat_state.is_victory():
             finish_victorious_combat(run_state, combat_state)
@@ -281,7 +303,7 @@ def simulate_combat(
     combat_state: CombatState,
     rng: Random,
     config: SimConfig,
-) -> None:
+) -> int:
     turns_played = 0
 
     while (
@@ -300,6 +322,8 @@ def simulate_combat(
         turns_played += 1
 
     run_state.current_hp = combat_state.player.hp
+
+    return turns_played
 
 
 def simulate_player_turn(
@@ -484,7 +508,10 @@ def simulate_treasure_node(
             run_state,
             run_state.treasure_mimic_encounter_id,
         )
-        simulate_combat(run_state, combat_state, rng, config)
+        record_combat_start(run_state, combat_state)
+
+        turns_played = simulate_combat(run_state, combat_state, rng, config)
+        record_combat_end(run_state, combat_state, turns_played)
 
         if combat_state.is_victory():
             finish_victorious_combat(run_state, combat_state)
@@ -729,6 +756,35 @@ def format_summary(summary: SimulationSummary, *, show_errors: int = 5) -> str:
             f"errors={errors}, win_rate={wins / total if total else 0:.1%}"
         )
 
+    defeat_results = [
+        result
+        for result in summary.results
+        if result.outcome == "defeat"
+    ]
+
+    if defeat_results:
+        lines.extend(["", "=== Defeats by Last Enemy Group ==="])
+
+        group_counter: Counter[str] = Counter()
+
+        for result in defeat_results:
+            enemy_names = result.last_enemy_names or result.last_enemy_ids or ["unknown"]
+            group_name = " + ".join(enemy_names)
+            group_counter[group_name] += 1
+
+        for group_name, count in group_counter.most_common(15):
+            lines.append(f"{group_name}: {count}")
+
+        lines.extend(["", "=== Defeats by Last Node Type ==="])
+
+        node_type_counter: Counter[str] = Counter(
+            result.last_node_type or "unknown"
+            for result in defeat_results
+        )
+
+        for node_type, count in node_type_counter.most_common():
+            lines.append(f"{node_type}: {count}")
+
     error_results = [
         result
         for result in summary.results
@@ -745,3 +801,54 @@ def format_summary(summary: SimulationSummary, *, show_errors: int = 5) -> str:
             )
 
     return "\n".join(lines)
+
+
+def initialize_run_diagnostics(run_state: RunState) -> None:
+    run_state.sim_last_node_id = None
+    run_state.sim_last_node_type = None
+    run_state.sim_last_enemy_ids = []
+    run_state.sim_last_enemy_names = []
+    run_state.sim_last_enemy_hp = {}
+    run_state.sim_last_player_hp = run_state.current_hp
+    run_state.sim_last_combat_turns = None
+
+
+def record_map_node(
+    run_state: RunState,
+    node: MapNode,
+) -> None:
+    run_state.sim_last_node_id = node.id
+    run_state.sim_last_node_type = node.node_type
+
+
+def record_combat_start(
+    run_state: RunState,
+    combat_state: CombatState,
+) -> None:
+    run_state.sim_last_enemy_ids = [
+        enemy.id
+        for enemy in combat_state.enemies
+    ]
+    run_state.sim_last_enemy_names = [
+        enemy.name
+        for enemy in combat_state.enemies
+    ]
+    run_state.sim_last_enemy_hp = {
+        enemy.name: enemy.hp
+        for enemy in combat_state.enemies
+    }
+    run_state.sim_last_player_hp = combat_state.player.hp
+    run_state.sim_last_combat_turns = 0
+
+
+def record_combat_end(
+    run_state: RunState,
+    combat_state: CombatState,
+    turns_played: int,
+) -> None:
+    run_state.sim_last_enemy_hp = {
+        enemy.name: enemy.hp
+        for enemy in combat_state.enemies
+    }
+    run_state.sim_last_player_hp = combat_state.player.hp
+    run_state.sim_last_combat_turns = turns_played

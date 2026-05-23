@@ -2285,5 +2285,335 @@
       "chimera",
       "license"
     ]
+  },
+  {
+    "id": "queue_commissioner",
+    "name": "The Queue Commissioner",
+    "max_hp": 175,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "rearrange_the_line",
+        "name": "Rearrange the Line",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 10
+          }
+        ]
+      },
+      {
+        "id": "next_window_please",
+        "name": "Next Window, Please",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 12
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "everyone_waits",
+        "name": "Everyone Waits",
+        "intent_type": "debuff",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 3
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "queue_breaker_summons",
+        "name": "Queue-Breaker Summons",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          },
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 18
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "boss",
+      "queue",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "lord_sealkeeper",
+    "name": "The Lord Sealkeeper",
+    "max_hp": 205,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "waxen_decree",
+        "name": "Waxen Decree",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 18
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "seal_of_refusal",
+        "name": "Seal of Refusal",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 15
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "impress_the_court",
+        "name": "Impress the Court",
+        "intent_type": "buff",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 12
+          }
+        ]
+      },
+      {
+        "id": "sealed_in_red_wax",
+        "name": "Sealed in Red Wax",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 22
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "boss",
+      "seal",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "municipal_dragon",
+    "name": "The Municipal Dragon",
+    "max_hp": 215,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "ordinance_breath",
+        "name": "Ordinance Breath",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 14
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 3
+          }
+        ]
+      },
+      {
+        "id": "curl_around_city_hall",
+        "name": "Curl Around City Hall",
+        "intent_type": "block",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 24
+          }
+        ]
+      },
+      {
+        "id": "ancient_by_law",
+        "name": "Ancient By-Law",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          },
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "civic_inferno",
+        "name": "Civic Inferno",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 28
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "boss",
+      "dragon",
+      "ordinance"
+    ]
+  },
+  {
+    "id": "living_charter",
+    "name": "The Living Charter",
+    "max_hp": 185,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "article_one",
+        "name": "Article One: Compliance",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 3
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 12
+          }
+        ]
+      },
+      {
+        "id": "article_two",
+        "name": "Article Two: Interpretation",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          },
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 12
+          }
+        ]
+      },
+      {
+        "id": "article_three",
+        "name": "Article Three: Enforcement",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 20
+          }
+        ]
+      },
+      {
+        "id": "amendment_without_notice",
+        "name": "Amendment Without Notice",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 10
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "boss",
+      "charter",
+      "bureaucracy"
+    ]
   }
 ]

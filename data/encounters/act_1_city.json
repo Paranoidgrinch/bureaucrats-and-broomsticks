@@ -356,5 +356,45 @@
       "licensed_chimera"
     ],
     "weight": 1
+  },
+  {
+    "id": "city_boss_02",
+    "name": "The Queue Commissioner",
+    "act": 1,
+    "difficulty": "boss",
+    "enemies": [
+      "queue_commissioner"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_boss_03",
+    "name": "The Lord Sealkeeper",
+    "act": 1,
+    "difficulty": "boss",
+    "enemies": [
+      "lord_sealkeeper"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_boss_04",
+    "name": "The Municipal Dragon",
+    "act": 1,
+    "difficulty": "boss",
+    "enemies": [
+      "municipal_dragon"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_boss_05",
+    "name": "The Living Charter",
+    "act": 1,
+    "difficulty": "boss",
+    "enemies": [
+      "living_charter"
+    ],
+    "weight": 1
   }
 ]

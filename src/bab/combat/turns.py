@@ -124,10 +124,18 @@ def apply_enemy_turn_end_statuses(state: CombatState) -> None:
     for enemy in state.living_enemies():
         paperwork = enemy.get_status_amount("paperwork")
 
-        if paperwork <= 0:
-            continue
+        if paperwork > 0:
+            hp_lost = enemy.lose_hp(paperwork)
+            state.log.append(
+                f"{enemy.name} loses {hp_lost} HP from {state.status_name('paperwork')}."
+            )
 
-        hp_lost = enemy.lose_hp(paperwork)
-        state.log.append(
-            f"{enemy.name} loses {hp_lost} HP from {state.status_name('paperwork')}."
-        )
+        poison = enemy.get_status_amount("poison")
+
+        if poison > 0:
+            hp_lost = enemy.lose_hp(poison)
+            enemy.reduce_status("poison", 1)
+            state.log.append(
+                f"{enemy.name} loses {hp_lost} HP from {state.status_name('poison')}."
+            )
+

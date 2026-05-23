@@ -1,0 +1,98 @@
+[
+  {
+    "id": "accidental_fireball",
+    "name": "Accidental Fireball",
+    "class": "failed_wizard",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "common",
+    "text": "Deal 8 damage to all enemies.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "all_enemies",
+        "amount": 8
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "arcane_ducking",
+    "name": "Arcane Ducking",
+    "class": "failed_wizard",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 8 Block.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 8
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "shouted_syllable",
+    "name": "Shouted Syllable",
+    "class": "failed_wizard",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 7 damage. Apply 1 Panic to yourself.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 7
+      },
+      {
+        "type": "apply_status",
+        "target": "self",
+        "amount": 1,
+        "status": "panic"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "borrowed_hat",
+    "name": "Borrowed Hat",
+    "class": "failed_wizard",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Gain 1 Strength. Gain 5 Block.",
+    "effects": [
+      {
+        "type": "gain_strength",
+        "target": "self",
+        "amount": 1
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 5
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "probably_safe_rune",
+    "name": "Probably Safe Rune",
+    "class": "failed_wizard",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 16 damage.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 16
+      }
+    ],
+    "tags": []
+  }
+]

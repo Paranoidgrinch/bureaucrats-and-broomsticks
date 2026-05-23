@@ -1,0 +1,102 @@
+[
+  {
+    "id": "evil_eye_teacup",
+    "name": "Evil-Eye Teacup",
+    "class": "hedge_witch",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 2 Doubt. Gain 4 Block.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 2,
+        "status": "doubt"
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 4
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "nettle_ward",
+    "name": "Nettle Ward",
+    "class": "hedge_witch",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 8 Block.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 8
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "borrowed_omen",
+    "name": "Borrowed Omen",
+    "class": "hedge_witch",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 4 Paperwork.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 4,
+        "status": "paperwork"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "knotted_fate",
+    "name": "Knotted Fate",
+    "class": "hedge_witch",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Apply 3 Doubt and 3 Paperwork.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 3,
+        "status": "doubt"
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 3,
+        "status": "paperwork"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "crow_on_the_roof",
+    "name": "Crow on the Roof",
+    "class": "hedge_witch",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Deal 4 damage per Doubt on the target.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount_per_stack": 4
+      }
+    ],
+    "tags": []
+  }
+]

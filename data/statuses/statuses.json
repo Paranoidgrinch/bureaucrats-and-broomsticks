@@ -6,7 +6,10 @@
     "stacking": "intensity",
     "trigger": "enemy_turn_end",
     "is_negative": true,
-    "tags": ["bureaucracy", "damage_over_time"]
+    "tags": [
+      "bureaucracy",
+      "damage_over_time"
+    ]
   },
   {
     "id": "doubt",
@@ -15,7 +18,10 @@
     "stacking": "intensity",
     "trigger": "before_owner_attack",
     "is_negative": true,
-    "tags": ["argument", "attack_reduction"]
+    "tags": [
+      "argument",
+      "attack_reduction"
+    ]
   },
   {
     "id": "panic",
@@ -24,7 +30,10 @@
     "stacking": "intensity",
     "trigger": "player_turn_start",
     "is_negative": true,
-    "tags": ["mental", "draw_reduction"]
+    "tags": [
+      "mental",
+      "draw_reduction"
+    ]
   },
   {
     "id": "strength",
@@ -33,6 +42,21 @@
     "stacking": "intensity",
     "trigger": "none",
     "is_negative": false,
-    "tags": ["buff", "attack"]
+    "tags": [
+      "buff",
+      "attack"
+    ]
+  },
+  {
+    "id": "poison",
+    "name": "Poison",
+    "description": "At the end of the enemy turn, loses HP equal to Poison, then Poison is reduced by 1.",
+    "stacking": "intensity",
+    "trigger": "enemy_turn_end",
+    "is_negative": true,
+    "tags": [
+      "debuff",
+      "damage_over_time"
+    ]
   }
 ]

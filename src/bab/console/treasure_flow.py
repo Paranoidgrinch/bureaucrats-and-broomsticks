@@ -20,27 +20,21 @@ from bab.run.state import RunState, complete_current_map_node, finish_victorious
 
 
 def grant_random_relic(run_state: RunState) -> None:
-    try:
-        relic = choose_random_unowned_relic(
-            run_state.relic_database,
-            run_state.relics,
-            run_state.rng,
-        )
-    except ValueError:
-        console.print("[yellow]No unowned relics remain.[/yellow]")
-        return
+    relic = choose_random_unowned_relic(
+        run_state.relic_database,
+        run_state.relics,
+        run_state.rng,
+    )
 
     run_state.relics.append(relic)
 
-    console.print(f"[green]Found relic: {relic.name}.[/green]")
-    console.print(f"[cyan]{relic.description}[/cyan]")
+    console.print(f"[bold green]Found relic: {relic.name}.[/bold green]")
+    console.print(relic.description)
 
-    new_hp, messages = apply_relic_pickup_effects(
-        current_hp=run_state.current_hp,
-        max_hp=run_state.character_class.max_hp,
-        relic=relic,
+    messages = apply_relic_pickup_effects_to_run_state(
+        run_state,
+        relic,
     )
-    run_state.current_hp = new_hp
 
     for message in messages:
         console.print(f"[green]{message}[/green]")

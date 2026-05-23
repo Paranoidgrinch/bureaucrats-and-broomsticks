@@ -1,0 +1,106 @@
+[
+  {
+    "id": "ratify_agreement",
+    "name": "Ratify Agreement",
+    "class": "sewer_diplomat",
+    "type": "argument",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 2 Paperwork. Gain 4 Block.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 2,
+        "status": "paperwork"
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 4
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "cheese_tribute",
+    "name": "Cheese Tribute",
+    "class": "sewer_diplomat",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 8 Block.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 8
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "alley_swarm",
+    "name": "Alley Swarm",
+    "class": "sewer_diplomat",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 4 damage to all enemies.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "all_enemies",
+        "amount": 4
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "diplomatic_nibble",
+    "name": "Diplomatic Nibble",
+    "class": "sewer_diplomat",
+    "type": "action",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Deal 5 damage. Apply 2 Paperwork.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 5
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 2,
+        "status": "paperwork"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "gutter_clause",
+    "name": "Gutter Clause",
+    "class": "sewer_diplomat",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Apply 4 Paperwork and 2 Doubt.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 4,
+        "status": "paperwork"
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 2,
+        "status": "doubt"
+      }
+    ],
+    "tags": []
+  }
+]

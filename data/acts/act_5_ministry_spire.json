@@ -4,14 +4,35 @@
   "name": "Act V: The Ministry Spire",
   "character_class_files": [
     "data/classes/bureaucrat.json",
-    "data/classes/witch_clerk.json"
+    "data/classes/witch_clerk.json",
+    "data/classes/night_watch_recruit.json",
+    "data/classes/hedge_witch.json",
+    "data/classes/guild_assassin_apprentice.json",
+    "data/classes/failed_wizard.json",
+    "data/classes/sewer_diplomat.json",
+    "data/classes/mortuary_apprentice.json",
+    "data/classes/shroomancer.json"
   ],
   "default_character_class_id": "bureaucrat",
   "card_files": [
     "data/cards/bureaucrat_starter.json",
     "data/cards/bureaucrat_rewards.json",
     "data/cards/witch_clerk_starter.json",
-    "data/cards/witch_clerk_rewards.json"
+    "data/cards/witch_clerk_rewards.json",
+    "data/cards/night_watch_recruit_starter.json",
+    "data/cards/night_watch_recruit_rewards.json",
+    "data/cards/hedge_witch_starter.json",
+    "data/cards/hedge_witch_rewards.json",
+    "data/cards/guild_assassin_apprentice_starter.json",
+    "data/cards/guild_assassin_apprentice_rewards.json",
+    "data/cards/failed_wizard_starter.json",
+    "data/cards/failed_wizard_rewards.json",
+    "data/cards/sewer_diplomat_starter.json",
+    "data/cards/sewer_diplomat_rewards.json",
+    "data/cards/mortuary_apprentice_starter.json",
+    "data/cards/mortuary_apprentice_rewards.json",
+    "data/cards/shroomancer_starter.json",
+    "data/cards/shroomancer_rewards.json"
   ],
   "enemy_files": [
     "data/enemies/city_enemies.json"

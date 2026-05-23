@@ -5,6 +5,7 @@ from __future__ import annotations
 from math import ceil
 
 from rich.panel import Panel
+from rich.table import Table
 
 from bab.console.io import console
 from bab.game_config import WAITING_ROOM_HEAL_PERCENT

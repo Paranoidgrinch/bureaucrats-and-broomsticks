@@ -1,6 +1,6 @@
 from random import Random
 
-from bab.combat_state import CombatState
+from bab.combat.state import CombatState
 from bab.models import RelicDefinition
 
 

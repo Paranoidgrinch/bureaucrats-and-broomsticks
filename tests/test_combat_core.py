@@ -1,10 +1,10 @@
 from random import Random
 
-from bab.combat_state import CombatState, Combatant
-from bab.deck import draw_cards, play_card_from_hand
-from bab.effects import resolve_card
+from bab.combat.state import CombatState, Combatant
+from bab.combat.deck import draw_cards, play_card_from_hand
+from bab.combat.effects import resolve_card
 from bab.models import Card, Effect, EnemyIntent, StatusDefinition
-from bab.turns import apply_enemy_turn_end_statuses, run_enemy_turn, start_player_turn
+from bab.combat.turns import apply_enemy_turn_end_statuses, run_enemy_turn, start_player_turn
 
 
 def make_card(

@@ -2,7 +2,7 @@ from random import Random
 
 import pytest
 
-from bab.run_map import (
+from bab.run.map import (
     RunMap,
     combat_difficulty_for_depth,
     generate_act_map,

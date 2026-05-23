@@ -1,8 +1,8 @@
 from random import Random
 
-from bab.combat_state import CombatState, Combatant
-from bab.deck import discard_hand, draw_cards
-from bab.effects import resolve_effect
+from bab.combat.state import CombatState, Combatant
+from bab.combat.deck import discard_hand, draw_cards
+from bab.combat.effects import resolve_effect
 
 
 def start_player_turn(state: CombatState, rng: Random) -> None:

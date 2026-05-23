@@ -2,7 +2,7 @@ from random import Random
 
 import pytest
 
-from bab.encounters import choose_random_encounter
+from bab.systems.encounters import choose_random_encounter
 from bab.models import EncounterDefinition
 
 

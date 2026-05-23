@@ -1,10 +1,10 @@
 from dataclasses import dataclass, field
 from random import Random
 
-from bab.combat_state import CombatState, Combatant
-from bab.deck import build_deck, shuffle_draw_pile
-from bab.encounters import choose_random_encounter
-from bab.enemies import create_enemies_for_encounter
+from bab.combat.state import CombatState, Combatant
+from bab.combat.deck import build_deck, shuffle_draw_pile
+from bab.systems.encounters import choose_random_encounter
+from bab.combat.enemies import create_enemies_for_encounter
 from bab.models import (
     Card,
     CharacterClass,
@@ -15,8 +15,8 @@ from bab.models import (
     RelicDefinition,
     StatusDefinition,
 )
-from bab.relics import apply_combat_start_relics
-from bab.run_map import MapNode, RunMap, generate_act_map
+from bab.systems.relics import apply_combat_start_relics
+from bab.run.map import MapNode, RunMap, generate_act_map
 
 
 @dataclass

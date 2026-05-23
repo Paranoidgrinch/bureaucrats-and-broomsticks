@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from bab.data_loader import (
+from bab.content.data_loader import (
     load_card_database,
     load_character_class,
     load_encounter_database,

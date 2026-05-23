@@ -6,10 +6,10 @@ from rich.table import Table
 
 from bab.console.io import console
 from bab.console.views import print_card_rewards
-from bab.relics import card_reward_count_bonus
-from bab.rewards import add_card_reward_to_deck, choose_card_rewards
-from bab.run_state import RunState
-from bab.upgrades import upgrade_card_in_deck, upgradeable_card_indices
+from bab.systems.relics import card_reward_count_bonus
+from bab.systems.rewards import add_card_reward_to_deck, choose_card_rewards
+from bab.run.state import RunState
+from bab.systems.upgrades import upgrade_card_in_deck, upgradeable_card_indices
 
 
 def offer_card_reward(run_state: RunState) -> None:

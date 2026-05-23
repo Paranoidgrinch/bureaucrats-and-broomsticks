@@ -2,10 +2,10 @@ from random import Random
 
 import pytest
 
-from bab.combat_state import CombatState, Combatant
-from bab.data_loader import load_relic_database
+from bab.combat.state import CombatState, Combatant
+from bab.content.data_loader import load_relic_database
 from bab.models import RelicDefinition
-from bab.relics import (
+from bab.systems.relics import (
     apply_combat_start_relics,
     apply_relic_pickup_effects,
     card_reward_count_bonus,

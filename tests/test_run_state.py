@@ -2,9 +2,9 @@ from random import Random
 
 import pytest
 
-from bab.combat_state import CombatState, Combatant
+from bab.combat.state import CombatState, Combatant
 from bab.models import Card, CharacterClass, EncounterDefinition, EnemyDefinition
-from bab.run_state import (
+from bab.run.state import (
     create_combat_state_for_next_encounter,
     create_new_run,
     finish_victorious_combat,

@@ -5,19 +5,19 @@ from __future__ import annotations
 from rich.panel import Panel
 
 from bab.console.combat_flow import player_action_loop
-from bab.combat_state import CombatState, Combatant
+from bab.combat.state import CombatState, Combatant
 from bab.console.io import console
 from bab.console.views import print_combat_state, print_full_log
-from bab.deck import shuffle_draw_pile
-from bab.encounters import choose_random_encounter
-from bab.enemies import create_enemies_for_encounter
+from bab.combat.deck import shuffle_draw_pile
+from bab.systems.encounters import choose_random_encounter
+from bab.combat.enemies import create_enemies_for_encounter
 from bab.game_config import MIMIC_CHANCE, TREASURE_MIMIC_ENCOUNTER_ID
-from bab.relics import (
+from bab.systems.relics import (
     apply_combat_start_relics,
     apply_relic_pickup_effects,
     choose_random_unowned_relic,
 )
-from bab.run_state import RunState, complete_current_map_node, finish_victorious_combat
+from bab.run.state import RunState, complete_current_map_node, finish_victorious_combat
 
 
 def grant_random_relic(run_state: RunState) -> None:
@@ -89,7 +89,7 @@ def create_treasure_mimic_combat_state(run_state: RunState) -> CombatState:
 
 
 def run_treasure_mimic_combat(run_state: RunState) -> CombatState:
-    from bab.turns import run_enemy_turn, start_player_turn
+    from bab.combat.turns import run_enemy_turn, start_player_turn
 
     state = create_treasure_mimic_combat_state(run_state)
 

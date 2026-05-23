@@ -1,6 +1,6 @@
 from random import Random
 
-from bab.combat_state import CombatState, Combatant
+from bab.combat.state import CombatState, Combatant
 from bab.models import (
     Card,
     CharacterClass,
@@ -8,7 +8,7 @@ from bab.models import (
     EnemyDefinition,
     RelicDefinition,
 )
-from bab.run_state import (
+from bab.run.state import (
     create_combat_state_for_next_encounter,
     create_new_run,
     enter_map_node,

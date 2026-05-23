@@ -1,4 +1,4 @@
-from bab.combat_state import Combatant
+from bab.combat.state import Combatant
 from bab.models import EncounterDefinition, EnemyDefinition
 
 

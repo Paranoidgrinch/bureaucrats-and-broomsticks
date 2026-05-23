@@ -1,4 +1,4 @@
-from bab.content_catalog import load_default_content_catalog
+from bab.content.catalog import load_default_content_catalog
 
 
 def test_default_content_catalog_loads_all_content_groups() -> None:

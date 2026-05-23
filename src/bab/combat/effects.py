@@ -1,4 +1,4 @@
-from bab.combat_state import CombatState, Combatant
+from bab.combat.state import CombatState, Combatant
 from bab.models import Card, Effect
 
 

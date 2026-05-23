@@ -2,7 +2,7 @@ from random import Random
 
 import pytest
 
-from bab.events import choose_random_event
+from bab.systems.events import choose_random_event
 from bab.models import EventDefinition
 
 

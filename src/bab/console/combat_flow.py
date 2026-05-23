@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from rich.table import Table
 
-from bab.combat_state import CombatState, Combatant
+from bab.combat.state import CombatState, Combatant
 from bab.console.io import console
 from bab.console.views import (
     format_enemy_intent,
@@ -19,8 +19,8 @@ from bab.console.views import (
     print_piles,
     print_recent_log,
 )
-from bab.deck import play_card_from_hand
-from bab.run_state import RunState, create_combat_state_for_next_encounter
+from bab.combat.deck import play_card_from_hand
+from bab.run.state import RunState, create_combat_state_for_next_encounter
 
 
 def choose_target(state: CombatState) -> Combatant | None:
@@ -105,7 +105,7 @@ def player_action_loop(state: CombatState) -> None:
         ).strip().lower()
 
         if command == "end":
-            from bab.turns import end_player_turn
+            from bab.combat.turns import end_player_turn
 
             end_player_turn(state)
             return
@@ -150,7 +150,7 @@ def player_action_loop(state: CombatState) -> None:
 
 
 def run_single_combat(run_state: RunState) -> CombatState:
-    from bab.turns import run_enemy_turn, start_player_turn
+    from bab.combat.turns import run_enemy_turn, start_player_turn
 
     state = create_combat_state_for_next_encounter(run_state)
 

@@ -1,13 +1,13 @@
-from bab.combat_state import CombatState, Combatant
-from bab.data_loader import (
+from bab.combat.state import CombatState, Combatant
+from bab.content.data_loader import (
     load_card_database,
     load_character_class,
     load_enemy_database,
     load_status_database,
 )
-from bab.effects import resolve_effect
+from bab.combat.effects import resolve_effect
 from bab.models import Effect
-from bab.turns import run_basic_attack
+from bab.combat.turns import run_basic_attack
 
 
 def test_bureaucrat_starter_deck_is_rebalanced() -> None:

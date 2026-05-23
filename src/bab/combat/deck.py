@@ -1,7 +1,7 @@
 from random import Random
 
-from bab.combat_state import CombatState, Combatant
-from bab.effects import resolve_card
+from bab.combat.state import CombatState, Combatant
+from bab.combat.effects import resolve_card
 from bab.models import Card
 
 

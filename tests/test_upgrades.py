@@ -1,9 +1,9 @@
 import pytest
 
-from bab.data_loader import load_card_database
+from bab.content.data_loader import load_card_database
 from bab.models import Card
-from bab.rewards import build_card_reward_pool
-from bab.upgrades import (
+from bab.systems.rewards import build_card_reward_pool
+from bab.systems.upgrades import (
     card_can_be_upgraded,
     upgrade_card_in_deck,
     upgradeable_card_indices,

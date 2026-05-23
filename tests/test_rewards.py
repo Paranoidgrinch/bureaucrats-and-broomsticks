@@ -2,9 +2,9 @@ from random import Random
 
 import pytest
 
-from bab.data_loader import load_card_database
+from bab.content.data_loader import load_card_database
 from bab.models import Card
-from bab.rewards import (
+from bab.systems.rewards import (
     add_card_reward_to_deck,
     build_card_reward_pool,
     choose_card_rewards,

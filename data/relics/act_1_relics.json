@@ -449,5 +449,310 @@
       "status",
       "defense"
     ]
+  },
+  {
+    "id": "emergency_inkwell",
+    "name": "Emergency Inkwell",
+    "description": "At the start of each combat, gain 1 Energy.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "gain_energy_at_combat_start",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "energy",
+      "ink"
+    ]
+  },
+  {
+    "id": "borrowed_authority",
+    "name": "Borrowed Authority",
+    "description": "At the start of each combat, gain 1 Strength.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "gain_strength_at_combat_start",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "strength",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "warm_waiting_room_bench",
+    "name": "Warm Waiting-Room Bench",
+    "description": "At the start of each combat, heal 3 HP.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "heal_at_combat_start",
+        "amount": 3
+      }
+    ],
+    "tags": [
+      "city",
+      "healing",
+      "waiting_room"
+    ]
+  },
+  {
+    "id": "forbidden_rubber_stamp",
+    "name": "Forbidden Rubber Stamp",
+    "description": "At the start of each combat, gain 1 Strength and 1 Paperwork.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "gain_strength_at_combat_start",
+        "amount": 1
+      },
+      {
+        "type": "apply_status_to_player_at_combat_start",
+        "status": "paperwork",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "strength",
+      "risk_reward",
+      "stamp"
+    ]
+  },
+  {
+    "id": "counterfeit_priority_pass",
+    "name": "Counterfeit Priority Pass",
+    "description": "At the start of each combat, gain 1 Energy and 1 Doubt.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "gain_energy_at_combat_start",
+        "amount": 1
+      },
+      {
+        "type": "apply_status_to_player_at_combat_start",
+        "status": "doubt",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "energy",
+      "risk_reward",
+      "queue"
+    ]
+  },
+  {
+    "id": "official_break_room_key",
+    "name": "Official Break-Room Key",
+    "description": "At the start of each combat, heal 2 HP and gain 4 Block.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "heal_at_combat_start",
+        "amount": 2
+      },
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 4
+      }
+    ],
+    "tags": [
+      "city",
+      "healing",
+      "defense"
+    ]
+  },
+  {
+    "id": "overtime_chit",
+    "name": "Overtime Chit",
+    "description": "At the start of each combat, gain 1 Energy and 4 Block.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "gain_energy_at_combat_start",
+        "amount": 1
+      },
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 4
+      }
+    ],
+    "tags": [
+      "city",
+      "energy",
+      "defense"
+    ]
+  },
+  {
+    "id": "junior_deputy_sash",
+    "name": "Junior Deputy Sash",
+    "description": "At the start of each combat, gain 1 Strength and apply 1 Paperwork to all enemies.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "gain_strength_at_combat_start",
+        "amount": 1
+      },
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "paperwork",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "strength",
+      "status"
+    ]
+  },
+  {
+    "id": "overfilled_inbox",
+    "name": "Overfilled Inbox",
+    "description": "At the start of each combat, apply 2 Paperwork to all enemies and 1 Paperwork to yourself.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "paperwork",
+        "amount": 2
+      },
+      {
+        "type": "apply_status_to_player_at_combat_start",
+        "status": "paperwork",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "status",
+      "risk_reward"
+    ]
+  },
+  {
+    "id": "clerical_second_wind",
+    "name": "Clerical Second Wind",
+    "description": "At the start of each combat, heal 5 HP.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "heal_at_combat_start",
+        "amount": 5
+      }
+    ],
+    "tags": [
+      "city",
+      "healing"
+    ]
+  },
+  {
+    "id": "petty_cash_purse",
+    "name": "Petty Cash Purse",
+    "description": "When picked up, gain 40 Gold.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "gain_gold_on_pickup",
+        "amount": 40
+      }
+    ],
+    "tags": [
+      "city",
+      "gold"
+    ]
+  },
+  {
+    "id": "municipal_tax_stamp",
+    "name": "Municipal Tax Stamp",
+    "description": "Gain 5 additional Gold after each victorious combat.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "increase_gold_rewards",
+        "amount": 5
+      }
+    ],
+    "tags": [
+      "city",
+      "gold",
+      "tax"
+    ]
+  },
+  {
+    "id": "counterfeit_coupon",
+    "name": "Counterfeit Coupon",
+    "description": "Shop prices are reduced by 10%.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "shop_price_discount",
+        "amount": 10
+      }
+    ],
+    "tags": [
+      "city",
+      "shop",
+      "discount"
+    ]
+  },
+  {
+    "id": "toll_exemption_badge",
+    "name": "Toll Exemption Badge",
+    "description": "Gain 10 additional Gold after each victorious combat.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "increase_gold_rewards",
+        "amount": 10
+      }
+    ],
+    "tags": [
+      "city",
+      "gold",
+      "toll"
+    ]
+  },
+  {
+    "id": "vendor_license",
+    "name": "Vendor License",
+    "description": "Shop prices are reduced by 15%. When picked up, gain 25 Gold.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "shop_price_discount",
+        "amount": 15
+      },
+      {
+        "type": "gain_gold_on_pickup",
+        "amount": 25
+      }
+    ],
+    "tags": [
+      "city",
+      "shop",
+      "gold",
+      "discount"
+    ]
+  },
+  {
+    "id": "bottom_drawer_coins",
+    "name": "Bottom-Drawer Coins",
+    "description": "When picked up, gain 75 Gold.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "gain_gold_on_pickup",
+        "amount": 75
+      }
+    ],
+    "tags": [
+      "city",
+      "gold"
+    ]
   }
 ]

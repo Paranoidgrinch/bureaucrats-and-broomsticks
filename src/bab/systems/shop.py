@@ -84,6 +84,15 @@ def shop_progression_price_bonus(
     return max(0, act - 1) * 25 + max(0, fight_number - 1) * 3
 
 
+def discounted_shop_price(
+    price: int,
+    discount_percent: int,
+) -> int:
+    clamped_discount = max(0, min(discount_percent, 75))
+    discounted_price = round(price * (100 - clamped_discount) / 100)
+    return max(0, round_price(discounted_price))
+
+
 def round_price(price: int) -> int:
     return ((price + 4) // 5) * 5
 

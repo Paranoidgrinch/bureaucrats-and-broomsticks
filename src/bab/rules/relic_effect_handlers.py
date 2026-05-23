@@ -10,6 +10,9 @@ from bab.models import RelicDefinition, RelicEffect
 CombatStartRelicHandler = Callable[[RelicEffect, RelicDefinition, CombatState], None]
 PickupRelicHandler = Callable[[RelicEffect, RelicDefinition, int, int], tuple[int, list[str]]]
 RewardCountRelicHandler = Callable[[RelicEffect, RelicDefinition], int]
+GoldPickupRelicHandler = Callable[[RelicEffect, RelicDefinition], int]
+GoldRewardRelicHandler = Callable[[RelicEffect, RelicDefinition], int]
+ShopDiscountRelicHandler = Callable[[RelicEffect, RelicDefinition], int]
 
 
 def resolve_combat_start_relic_effect(
@@ -48,6 +51,42 @@ def card_reward_count_from_relic_effect(
     relic: RelicDefinition,
 ) -> int:
     handler = RELIC_REWARD_COUNT_HANDLERS.get(effect.type)
+
+    if handler is None:
+        return 0
+
+    return handler(effect, relic)
+
+
+def gold_pickup_from_relic_effect(
+    effect: RelicEffect,
+    relic: RelicDefinition,
+) -> int:
+    handler = RELIC_GOLD_PICKUP_HANDLERS.get(effect.type)
+
+    if handler is None:
+        return 0
+
+    return handler(effect, relic)
+
+
+def gold_reward_bonus_from_relic_effect(
+    effect: RelicEffect,
+    relic: RelicDefinition,
+) -> int:
+    handler = RELIC_GOLD_REWARD_HANDLERS.get(effect.type)
+
+    if handler is None:
+        return 0
+
+    return handler(effect, relic)
+
+
+def shop_discount_from_relic_effect(
+    effect: RelicEffect,
+    relic: RelicDefinition,
+) -> int:
+    handler = RELIC_SHOP_DISCOUNT_HANDLERS.get(effect.type)
 
     if handler is None:
         return 0
@@ -160,6 +199,27 @@ def handle_increase_card_reward_count(
     return require_amount(effect.amount, relic.name)
 
 
+def handle_gain_gold_on_pickup(
+    effect: RelicEffect,
+    relic: RelicDefinition,
+) -> int:
+    return require_amount(effect.amount, relic.name)
+
+
+def handle_increase_gold_rewards(
+    effect: RelicEffect,
+    relic: RelicDefinition,
+) -> int:
+    return require_amount(effect.amount, relic.name)
+
+
+def handle_shop_price_discount(
+    effect: RelicEffect,
+    relic: RelicDefinition,
+) -> int:
+    return require_amount(effect.amount, relic.name)
+
+
 RELIC_COMBAT_START_HANDLERS: Mapping[str, CombatStartRelicHandler] = {
     "increase_max_energy": handle_increase_max_energy,
     "gain_energy_at_combat_start": handle_gain_energy_at_combat_start,
@@ -178,11 +238,26 @@ RELIC_REWARD_COUNT_HANDLERS: Mapping[str, RewardCountRelicHandler] = {
     "increase_card_reward_count": handle_increase_card_reward_count,
 }
 
+RELIC_GOLD_PICKUP_HANDLERS: Mapping[str, GoldPickupRelicHandler] = {
+    "gain_gold_on_pickup": handle_gain_gold_on_pickup,
+}
+
+RELIC_GOLD_REWARD_HANDLERS: Mapping[str, GoldRewardRelicHandler] = {
+    "increase_gold_rewards": handle_increase_gold_rewards,
+}
+
+RELIC_SHOP_DISCOUNT_HANDLERS: Mapping[str, ShopDiscountRelicHandler] = {
+    "shop_price_discount": handle_shop_price_discount,
+}
+
 SUPPORTED_RELIC_EFFECT_TYPES = frozenset(
     {
         *RELIC_COMBAT_START_HANDLERS,
         *RELIC_PICKUP_HANDLERS,
         *RELIC_REWARD_COUNT_HANDLERS,
+        *RELIC_GOLD_PICKUP_HANDLERS,
+        *RELIC_GOLD_REWARD_HANDLERS,
+        *RELIC_SHOP_DISCOUNT_HANDLERS,
     }
 )
 

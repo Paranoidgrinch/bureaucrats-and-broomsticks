@@ -13,7 +13,7 @@ from bab.systems.encounters import choose_random_encounter
 from bab.combat.enemies import create_enemies_for_encounter
 from bab.systems.relics import (
     apply_combat_start_relics,
-    apply_relic_pickup_effects,
+    apply_relic_pickup_effects_to_run_state,
     choose_random_unowned_relic,
 )
 from bab.run.state import RunState, complete_current_map_node, finish_victorious_combat

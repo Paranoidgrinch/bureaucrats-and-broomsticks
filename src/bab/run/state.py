@@ -15,7 +15,8 @@ from bab.models import (
     RelicDefinition,
     StatusDefinition,
 )
-from bab.systems.relics import apply_combat_start_relics
+from bab.systems.gold import gold_reward_for_map_node
+from bab.systems.relics import apply_combat_start_relics, gold_reward_bonus
 from bab.run.map import MapNode, RunMap, generate_act_map
 
 
@@ -38,6 +39,7 @@ class RunState:
     act: int = 1
     fight_number: int = 1
     max_fights: int = 99
+    gold: int = 0
     mimic_chance: float = 0.20
     treasure_mimic_encounter_id: str = "city_elite_02"
     waiting_room_heal_percent: int = 25
@@ -87,6 +89,7 @@ def create_new_run(
     mimic_chance: float = 0.20,
     treasure_mimic_encounter_id: str = "city_elite_02",
     waiting_room_heal_percent: int = 25,
+    starting_gold: int = 0,
 ) -> RunState:
     if rng is None:
         rng = Random()
@@ -121,6 +124,7 @@ def create_new_run(
         act=act,
         fight_number=1,
         max_fights=max_fights,
+        gold=starting_gold,
         mimic_chance=mimic_chance,
         treasure_mimic_encounter_id=treasure_mimic_encounter_id,
         waiting_room_heal_percent=waiting_room_heal_percent,
@@ -226,12 +230,43 @@ def create_combat_state_for_next_encounter(
 def finish_victorious_combat(
     run_state: RunState,
     combat_state: CombatState,
-) -> None:
+) -> int:
     if not combat_state.is_victory():
         raise ValueError("Cannot finish combat as victory because enemies are still alive.")
+
+    current_map_node = None
+
+    if run_state.current_node_id is not None:
+        if hasattr(run_state, "current_node"):
+            current_map_node = run_state.current_node()
+        elif hasattr(run_state, "current_map_node"):
+            current_map_node = run_state.current_map_node()
+        else:
+            run_map_nodes = getattr(run_state.run_map, "nodes", [])
+
+            if isinstance(run_map_nodes, dict):
+                current_map_node = run_map_nodes.get(run_state.current_node_id)
+            else:
+                current_map_node = next(
+                    (
+                        node
+                        for node in run_map_nodes
+                        if getattr(node, "id", None) == run_state.current_node_id
+                    ),
+                    None,
+                )
+
+    gold_reward = (
+        gold_reward_for_map_node(current_map_node, run_state.rng)
+        + gold_reward_bonus(run_state.relics)
+    )
+    run_state.gold += gold_reward
 
     run_state.current_hp = combat_state.player.hp
     run_state.fight_number += 1
 
     if run_state.current_node_id is not None:
         complete_current_map_node(run_state)
+
+    return gold_reward
+

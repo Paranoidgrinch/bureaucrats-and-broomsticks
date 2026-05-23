@@ -9,13 +9,14 @@ from bab.console.io import console
 from bab.models import RelicDefinition
 from bab.run.state import RunState
 from bab.systems.card_removal import remove_card_from_deck, removable_card_indices
-from bab.systems.relics import apply_relic_pickup_effects
+from bab.systems.relics import apply_relic_pickup_effects_to_run_state, shop_price_discount_percent
 from bab.systems.shop import (
     DEFAULT_SHOP_CARD_OFFER_COUNT,
     DEFAULT_SHOP_RELIC_OFFER_COUNT,
     ShopCardOffer,
     ShopRelicOffer,
     card_removal_price,
+    discounted_shop_price,
     choose_shop_card_offers,
     choose_shop_relic_offers,
 )
@@ -38,6 +39,10 @@ def open_shop(run_state: RunState) -> None:
         fight_number=run_state.fight_number,
         count=DEFAULT_SHOP_RELIC_OFFER_COUNT,
     )
+
+    discount_percent = shop_price_discount_percent(run_state.relics)
+    card_offers = apply_shop_discount_to_card_offers(card_offers, discount_percent)
+    relic_offers = apply_shop_discount_to_relic_offers(relic_offers, discount_percent)
 
     purchased_card_indices: set[int] = set()
     purchased_relic_indices: set[int] = set()
@@ -171,9 +176,12 @@ def print_shop_offers(
             status,
         )
 
-    removal_price = card_removal_price(
-        act=run_state.act,
-        fight_number=run_state.fight_number,
+    removal_price = discounted_shop_price(
+        card_removal_price(
+            act=run_state.act,
+            fight_number=run_state.fight_number,
+        ),
+        shop_price_discount_percent(run_state.relics),
     )
     table.add_row(
         "remove",
@@ -221,10 +229,9 @@ def buy_shop_relic_offer(
     run_state.gold -= offer.price
     run_state.relics.append(offer.relic)
 
-    run_state.current_hp, pickup_messages = apply_relic_pickup_effects(
-        current_hp=run_state.current_hp,
-        max_hp=run_state.character_class.max_hp,
-        relic=offer.relic,
+    pickup_messages = apply_relic_pickup_effects_to_run_state(
+        run_state,
+        offer.relic,
     )
 
     console.print(
@@ -239,9 +246,12 @@ def buy_shop_relic_offer(
 
 
 def offer_shop_card_removal(run_state: RunState) -> bool:
-    price = card_removal_price(
-        act=run_state.act,
-        fight_number=run_state.fight_number,
+    price = discounted_shop_price(
+        card_removal_price(
+            act=run_state.act,
+            fight_number=run_state.fight_number,
+        ),
+        shop_price_discount_percent(run_state.relics),
     )
 
     if run_state.gold < price:
@@ -304,3 +314,29 @@ def offer_shop_card_removal(run_state: RunState) -> bool:
             f"Gold left: {run_state.gold}.[/green]"
         )
         return True
+
+
+def apply_shop_discount_to_card_offers(
+    offers: list[ShopCardOffer],
+    discount_percent: int,
+) -> list[ShopCardOffer]:
+    return [
+        ShopCardOffer(
+            card=offer.card,
+            price=discounted_shop_price(offer.price, discount_percent),
+        )
+        for offer in offers
+    ]
+
+
+def apply_shop_discount_to_relic_offers(
+    offers: list[ShopRelicOffer],
+    discount_percent: int,
+) -> list[ShopRelicOffer]:
+    return [
+        ShopRelicOffer(
+            relic=offer.relic,
+            price=discounted_shop_price(offer.price, discount_percent),
+        )
+        for offer in offers
+    ]

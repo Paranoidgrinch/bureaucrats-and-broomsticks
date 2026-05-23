@@ -56,6 +56,7 @@ EnemyIntentType = Literal[
     "buff",
     "debuff",
     "special",
+    "mixed",
 ]
 
 StatusStacking = Literal[

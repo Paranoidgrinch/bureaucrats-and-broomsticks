@@ -1,8 +1,14 @@
+"""Turn flow for combat."""
+
+from __future__ import annotations
+
 from random import Random
 
-from bab.combat.state import CombatState, Combatant
 from bab.combat.deck import discard_hand, draw_cards
 from bab.combat.effects import resolve_effect
+from bab.combat.intents import actions_for_intent
+from bab.combat.state import CombatState, Combatant
+from bab.models import Effect
 
 
 def start_player_turn(state: CombatState, rng: Random) -> None:
@@ -58,27 +64,35 @@ def run_enemy_action(state: CombatState, enemy: Combatant) -> None:
 
     state.log.append(f"{enemy.name} uses {intent.name}.")
 
-    if intent.intent_type == "attack":
-        if intent.damage is None:
-            raise ValueError(f"Attack intent {intent.id} requires damage.")
+    actions = actions_for_intent(intent)
 
-        run_basic_attack(state, enemy, base_damage=intent.damage)
+    if not actions:
+        state.log.append(f"{enemy.name} does nothing.")
         return
 
-    if intent.intent_type == "block":
-        if intent.block is None:
-            raise ValueError(f"Block intent {intent.id} requires block.")
+    for action in actions:
+        run_enemy_effect_action(state, enemy, action)
 
-        enemy.gain_block(intent.block)
-        state.log.append(f"{enemy.name} gains {intent.block} Block.")
+
+def run_enemy_effect_action(
+    state: CombatState,
+    enemy: Combatant,
+    action: Effect,
+) -> None:
+    """Execute one enemy action.
+
+    Enemy damage to the player is routed through run_basic_attack so Strength
+    and Doubt remain meaningful for multi-action moves.
+    """
+
+    if action.type == "deal_damage" and action.target == "player":
+        if action.amount is None:
+            raise ValueError("Enemy attack action requires an amount.")
+
+        run_basic_attack(state, enemy, base_damage=action.amount)
         return
 
-    if intent.intent_type in ["buff", "debuff", "special"]:
-        for effect in intent.effects:
-            resolve_effect(effect, state, target=enemy)
-        return
-
-    raise NotImplementedError(f"Enemy intent not implemented: {intent.intent_type}")
+    resolve_effect(action, state, target=enemy)
 
 
 def run_basic_attack(
@@ -90,6 +104,7 @@ def run_basic_attack(
     final_damage = base_damage + strength
 
     doubt = enemy.get_status_amount("doubt")
+
     if doubt > 0:
         final_damage = max(0, round(final_damage * 0.75))
         enemy.reduce_status("doubt", 1)

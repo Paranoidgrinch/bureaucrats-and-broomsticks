@@ -16,9 +16,16 @@ class EnemyIntent(BaseModel):
     id: str
     name: str
     intent_type: EnemyIntentType
+
+    # Legacy fields. Still supported for existing content.
     damage: int | None = None
     block: int | None = None
     effects: list[Effect] = Field(default_factory=list)
+
+    # Preferred field for new enemy content.
+    # Actions are executed in order and may combine block, damage, debuffs, buffs, etc.
+    actions: list[Effect] = Field(default_factory=list)
+
     weight: int | None = None
 
 

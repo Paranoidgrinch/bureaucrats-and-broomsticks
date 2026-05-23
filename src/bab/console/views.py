@@ -2,6 +2,7 @@ from rich.panel import Panel
 from rich.table import Table
 
 from bab.combat.state import CombatState, Combatant
+from bab.combat.intents import summarize_intent_for_display
 from bab.console.io import console
 from bab.models import Card, EventDefinition
 from bab.run.map import MapNode
@@ -26,36 +27,7 @@ def format_enemy_intent(combatant: Combatant) -> str:
     if intent is None:
         return "intends to attack for 6 damage"
 
-    if intent.intent_type == "attack":
-        if intent.damage is None:
-            return "intends to attack"
-
-        strength = combatant.get_status_amount("strength")
-        shown_damage = intent.damage + strength
-        return f"intends to attack for {shown_damage} damage"
-
-    if intent.intent_type == "buff":
-        strength_amount = next(
-            (
-                effect.amount
-                for effect in intent.effects
-                if effect.type == "gain_strength"
-            ),
-            None,
-        )
-
-        if strength_amount is not None:
-            return f"intends to buff itself (+{strength_amount} Strength)"
-
-        return "intends to buff itself"
-
-    if intent.intent_type == "debuff":
-        return "intends to apply a debuff"
-
-    if intent.intent_type == "block":
-        return "intends to defend"
-
-    return "intends to do something suspicious"
+    return summarize_intent_for_display(intent, combatant)
 
 
 def print_run_state(run_state: RunState) -> None:

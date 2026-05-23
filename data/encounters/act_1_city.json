@@ -293,5 +293,68 @@
       "queue_imp"
     ],
     "weight": 1
+  },
+  {
+    "id": "city_elite_03",
+    "name": "The Three Counters",
+    "act": 1,
+    "difficulty": "elite",
+    "enemies": [
+      "counter_of_denial",
+      "counter_of_delay",
+      "counter_of_certification"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_elite_04",
+    "name": "The Archivist's Hound",
+    "act": 1,
+    "difficulty": "elite",
+    "enemies": [
+      "archivists_hound"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_elite_05",
+    "name": "The Stampede of Stamps",
+    "act": 1,
+    "difficulty": "elite",
+    "enemies": [
+      "stampede_of_stamps"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_elite_06",
+    "name": "The Bailiff Twins",
+    "act": 1,
+    "difficulty": "elite",
+    "enemies": [
+      "bailiff_of_writs",
+      "bailiff_of_warrants"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_elite_07",
+    "name": "The Ink Witch Auditor",
+    "act": 1,
+    "difficulty": "elite",
+    "enemies": [
+      "ink_witch_auditor"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_elite_08",
+    "name": "The Licensed Chimera",
+    "act": 1,
+    "difficulty": "elite",
+    "enemies": [
+      "licensed_chimera"
+    ],
+    "weight": 1
   }
 ]

@@ -1716,5 +1716,574 @@
       "inspector",
       "bureaucracy"
     ]
+  },
+  {
+    "id": "counter_of_denial",
+    "name": "Counter of Denial",
+    "max_hp": 48,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "application_denied",
+        "name": "Application Denied",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 10
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "return_to_previous_window",
+        "name": "Return to Previous Window",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 8
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite_component",
+      "counter",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "counter_of_delay",
+    "name": "Counter of Delay",
+    "max_hp": 44,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "please_wait",
+        "name": "Please Wait",
+        "intent_type": "debuff",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "queue_reset",
+        "name": "Queue Reset",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "all_enemies",
+            "amount": 5
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite_component",
+      "counter",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "counter_of_certification",
+    "name": "Counter of Certification",
+    "max_hp": 52,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "certified_strike",
+        "name": "Certified Strike",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 12
+          }
+        ]
+      },
+      {
+        "id": "seal_the_team",
+        "name": "Seal the Team",
+        "intent_type": "buff",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "all_enemies",
+            "amount": 1
+          },
+          {
+            "type": "gain_block",
+            "target": "all_enemies",
+            "amount": 4
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite_component",
+      "counter",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "archivists_hound",
+    "name": "Archivist's Hound",
+    "max_hp": 88,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "scent_of_overdue_ink",
+        "name": "Scent of Overdue Ink",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 12
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "guard_the_stacks",
+        "name": "Guard the Stacks",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 14
+          },
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "tear_the_index",
+        "name": "Tear the Index",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 7
+          },
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 7
+          }
+        ]
+      },
+      {
+        "id": "howl_of_missing_references",
+        "name": "Howl of Missing References",
+        "intent_type": "debuff",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite",
+      "archive",
+      "beast"
+    ]
+  },
+  {
+    "id": "stampede_of_stamps",
+    "name": "Stampede of Stamps",
+    "max_hp": 78,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "stampede",
+        "name": "Stampede",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 4
+          },
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 4
+          },
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 4
+          }
+        ]
+      },
+      {
+        "id": "inked_hooves",
+        "name": "Inked Hooves",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 8
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "all_marks_approved",
+        "name": "All Marks Approved",
+        "intent_type": "buff",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite",
+      "stamp",
+      "swarm"
+    ]
+  },
+  {
+    "id": "bailiff_of_writs",
+    "name": "Bailiff of Writs",
+    "max_hp": 62,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "serve_writs",
+        "name": "Serve Writs",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 11
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "enforce_the_margin",
+        "name": "Enforce the Margin",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 15
+          }
+        ]
+      },
+      {
+        "id": "iron_procedure",
+        "name": "Iron Procedure",
+        "intent_type": "block",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 12
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite_component",
+      "bailiff"
+    ]
+  },
+  {
+    "id": "bailiff_of_warrants",
+    "name": "Bailiff of Warrants",
+    "max_hp": 58,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "produce_warrant",
+        "name": "Produce Warrant",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "all_enemies",
+            "amount": 6
+          },
+          {
+            "type": "gain_strength",
+            "target": "all_enemies",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "authorized_blow",
+        "name": "Authorized Blow",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 12
+          }
+        ]
+      },
+      {
+        "id": "legal_confusion",
+        "name": "Legal Confusion",
+        "intent_type": "debuff",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite_component",
+      "bailiff"
+    ]
+  },
+  {
+    "id": "ink_witch_auditor",
+    "name": "Ink Witch Auditor",
+    "max_hp": 84,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "audit_hex",
+        "name": "Audit Hex",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "redacted_bolt",
+        "name": "Redacted Bolt",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 14
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "black_ledger_ritual",
+        "name": "Black Ledger Ritual",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 10
+          }
+        ]
+      },
+      {
+        "id": "ink_barrier",
+        "name": "Ink Barrier",
+        "intent_type": "block",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 18
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite",
+      "witch",
+      "auditor"
+    ]
+  },
+  {
+    "id": "licensed_chimera",
+    "name": "Licensed Chimera",
+    "max_hp": 105,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "lion_seal_pounce",
+        "name": "Lion-Seal Pounce",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 15
+          }
+        ]
+      },
+      {
+        "id": "goat_clause_murmur",
+        "name": "Goat-Clause Murmur",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 10
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "serpent_signature",
+        "name": "Serpent Signature",
+        "intent_type": "debuff",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "threefold_authority",
+        "name": "Threefold Authority",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 10
+          },
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 10
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite",
+      "chimera",
+      "license"
+    ]
   }
 ]

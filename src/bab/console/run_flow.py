@@ -17,6 +17,7 @@ from __future__ import annotations
 from random import Random
 
 from rich.panel import Panel
+from rich.table import Table
 
 from bab.console.combat_flow import run_single_combat
 from bab.console.io import console
@@ -27,9 +28,10 @@ from bab.console.views import (
     print_full_log,
     print_run_state,
 )
-from bab.content.catalog import load_default_content_catalog
+from bab.content.catalog import ContentCatalog, load_default_content_catalog
 from bab.console.event_flow import resolve_event_node
 from bab.game_config import DEFAULT_MAX_FIGHTS
+from bab.models import CharacterClass
 from bab.console.reward_flow import offer_card_reward
 from bab.run.map import MapNode
 from bab.run.state import (
@@ -42,12 +44,39 @@ from bab.console.treasure_flow import resolve_treasure_node
 from bab.console.waiting_room_flow import resolve_waiting_room_node
 
 
-def create_run_state() -> RunState:
-    rng = Random()
-    catalog = load_default_content_catalog()
+def resolve_character_class(
+    catalog: ContentCatalog,
+    character_class_id: str | None,
+) -> CharacterClass:
+    if character_class_id is None:
+        return catalog.character_class
+
+    try:
+        return catalog.character_classes[character_class_id]
+    except KeyError as exc:
+        available_ids = ", ".join(sorted(catalog.character_classes))
+        raise ValueError(
+            f"Unknown character class {character_class_id!r}. "
+            f"Available character classes: {available_ids}."
+        ) from exc
+
+
+def create_run_state(
+    character_class_id: str | None = None,
+    *,
+    catalog: ContentCatalog | None = None,
+    rng: Random | None = None,
+) -> RunState:
+    if rng is None:
+        rng = Random()
+
+    if catalog is None:
+        catalog = load_default_content_catalog()
+
+    character_class = resolve_character_class(catalog, character_class_id)
 
     return create_new_run(
-        character_class=catalog.character_class,
+        character_class=character_class,
         card_database=catalog.card_database,
         enemy_database=catalog.enemy_database,
         encounter_database=catalog.encounter_database,
@@ -60,6 +89,77 @@ def create_run_state() -> RunState:
         map_steps_before_boss=catalog.act_manifest.map.steps_before_boss,
         map_width=catalog.act_manifest.map.width,
     )
+
+
+def choose_character_class(
+    catalog: ContentCatalog,
+    rng: Random,
+) -> CharacterClass | None:
+    character_classes = list(catalog.character_classes.values())
+
+    if not character_classes:
+        raise ValueError("No character classes are available.")
+
+    console.print(
+        Panel(
+            "Choose who will brave the office today. "
+            "Press Enter for the default character or type 'random'.",
+            title="Character Selection",
+        )
+    )
+
+    table = Table(title="Available Characters")
+    table.add_column("#", justify="right")
+    table.add_column("Name", style="cyan")
+    table.add_column("HP", justify="right")
+    table.add_column("Energy", justify="right")
+    table.add_column("Deck", justify="right")
+    table.add_column("ID")
+
+    for index, character_class in enumerate(character_classes):
+        default_marker = " [default]" if character_class.id == catalog.character_class.id else ""
+        table.add_row(
+            str(index),
+            f"{character_class.name}{default_marker}",
+            str(character_class.max_hp),
+            str(character_class.starting_energy),
+            str(len(character_class.starting_deck)),
+            character_class.id,
+        )
+
+    console.print(table)
+
+    while True:
+        command = console.input(
+            "[bold yellow]Choose a character number, 'random', Enter for default, or 'quit': [/bold yellow]"
+        ).strip().lower()
+
+        if command in {"quit", "q"}:
+            return None
+
+        if command == "":
+            selected_character = catalog.character_class
+            console.print(f"[green]Selected {selected_character.name}.[/green]")
+            return selected_character
+
+        if command in {"random", "r"}:
+            selected_character = rng.choice(character_classes)
+            console.print(f"[green]Randomly selected {selected_character.name}.[/green]")
+            return selected_character
+
+        if not command.isdigit():
+            console.print("[red]Invalid character choice.[/red]")
+            continue
+
+        character_index = int(command)
+
+        if character_index < 0 or character_index >= len(character_classes):
+            console.print("[red]Invalid character number.[/red]")
+            continue
+
+        selected_character = character_classes[character_index]
+        console.print(f"[green]Selected {selected_character.name}.[/green]")
+        return selected_character
 
 
 def choose_next_map_node(run_state: RunState) -> MapNode:
@@ -139,7 +239,19 @@ def run_console_app() -> None:
     console.print("[bold green]Bureaucrats and Broomsticks[/bold green]")
     console.print("Interactive map prototype started.\n")
 
-    run_state = create_run_state()
+    catalog = load_default_content_catalog()
+    rng = Random()
+    selected_character_class = choose_character_class(catalog, rng)
+
+    if selected_character_class is None:
+        console.print("[yellow]Game quit.[/yellow]")
+        return
+
+    run_state = create_run_state(
+        selected_character_class.id,
+        catalog=catalog,
+        rng=rng,
+    )
 
     while not run_state.is_complete() and not run_state.is_defeated():
         console.print()
@@ -155,3 +267,4 @@ def run_console_app() -> None:
         console.print("[bold green]Run complete! The office survives another day.[/bold green]")
     elif run_state.is_defeated():
         console.print("[bold red]Run failed. The paperwork remains unfinished.[/bold red]")
+

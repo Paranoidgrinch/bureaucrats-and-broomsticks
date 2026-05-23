@@ -18,6 +18,7 @@ def offer_card_reward(run_state: RunState) -> None:
         run_state.card_database,
         run_state.rng,
         count=reward_count,
+        card_class=run_state.character_class.id,
     )
 
     console.print()

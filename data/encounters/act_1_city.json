@@ -165,5 +165,133 @@
       "seal_bearer_toad"
     ],
     "weight": 1
+  },
+  {
+    "id": "city_easy_06",
+    "name": "Forms in the Gutter",
+    "act": 1,
+    "difficulty": "easy",
+    "enemies": [
+      "form_rat_swarm"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_easy_07",
+    "name": "A Question of Permits",
+    "act": 1,
+    "difficulty": "easy",
+    "enemies": [
+      "permit_beggar"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_easy_08",
+    "name": "Flickering Ordinance",
+    "act": 1,
+    "difficulty": "easy",
+    "enemies": [
+      "street_ordinance_wisp"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_easy_09",
+    "name": "Overdue Delivery",
+    "act": 1,
+    "difficulty": "easy",
+    "enemies": [
+      "overdue_page",
+      "pigeon_courier"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_normal_09",
+    "name": "The Tollhouse Dispute",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "tollhouse_sprite",
+      "stamp_goblin"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_10",
+    "name": "Dust in the Registry",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "registry_moth",
+      "ink_spattered_scribe"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_11",
+    "name": "A Drained Appointment",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "appointment_leech"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_12",
+    "name": "Minor Tax Assessment",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "minor_tax_familiar",
+      "permit_beggar"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_13",
+    "name": "Cobblestone Enforcement",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "cobblestone_bailiff"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_14",
+    "name": "Lamp and Ledger",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "lantern_inspector",
+      "registry_moth"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_15",
+    "name": "The Street Rules Itself",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "street_ordinance_wisp",
+      "cobblestone_bailiff"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_normal_16",
+    "name": "Paper Vermin",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "form_rat_swarm",
+      "overdue_page",
+      "queue_imp"
+    ],
+    "weight": 1
   }
 ]

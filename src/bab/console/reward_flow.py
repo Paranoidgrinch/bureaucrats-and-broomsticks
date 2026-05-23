@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from rich.table import Table
 
-from bab.console_io import console
-from bab.console_views import print_card_rewards
+from bab.console.io import console
+from bab.console.views import print_card_rewards
 from bab.relics import card_reward_count_bonus
 from bab.rewards import add_card_reward_to_deck, choose_card_rewards
 from bab.run_state import RunState

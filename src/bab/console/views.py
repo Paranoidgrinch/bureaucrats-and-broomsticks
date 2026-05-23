@@ -2,7 +2,7 @@ from rich.panel import Panel
 from rich.table import Table
 
 from bab.combat_state import CombatState, Combatant
-from bab.console_io import console
+from bab.console.io import console
 from bab.models import Card, EventDefinition
 from bab.run_map import MapNode
 from bab.run_state import RunState

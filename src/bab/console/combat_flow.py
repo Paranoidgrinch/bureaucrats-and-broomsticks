@@ -10,8 +10,8 @@ from __future__ import annotations
 from rich.table import Table
 
 from bab.combat_state import CombatState, Combatant
-from bab.console_io import console
-from bab.console_views import (
+from bab.console.io import console
+from bab.console.views import (
     format_enemy_intent,
     print_combat_state,
     print_full_log,

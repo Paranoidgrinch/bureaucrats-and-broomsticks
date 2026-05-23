@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from rich.panel import Panel
 
-from bab.combat_flow import player_action_loop
+from bab.console.combat_flow import player_action_loop
 from bab.combat_state import CombatState, Combatant
-from bab.console_io import console
-from bab.console_views import print_combat_state, print_full_log
+from bab.console.io import console
+from bab.console.views import print_combat_state, print_full_log
 from bab.deck import shuffle_draw_pile
 from bab.encounters import choose_random_encounter
 from bab.enemies import create_enemies_for_encounter

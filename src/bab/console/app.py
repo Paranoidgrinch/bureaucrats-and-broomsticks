@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from bab.run_flow import run_console_app
+from bab.console.run_flow import run_console_app
 
 __all__ = ["run_console_app"]
 

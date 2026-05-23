@@ -6,11 +6,11 @@ from math import ceil
 
 from rich.panel import Panel
 
-from bab.console_io import console
-from bab.console_views import print_event
+from bab.console.io import console
+from bab.console.views import print_event
 from bab.events import choose_random_event
 from bab.models import EventChoice, EventDefinition, EventEffect
-from bab.reward_flow import offer_card_reward, offer_card_upgrade
+from bab.console.reward_flow import offer_card_reward, offer_card_upgrade
 from bab.run_map import MapNode
 from bab.run_state import RunState, complete_current_map_node
 

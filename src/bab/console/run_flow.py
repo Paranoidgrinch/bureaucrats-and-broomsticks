@@ -18,9 +18,9 @@ from random import Random
 
 from rich.panel import Panel
 
-from bab.combat_flow import run_single_combat
-from bab.console_io import console
-from bab.console_views import (
+from bab.console.combat_flow import run_single_combat
+from bab.console.io import console
+from bab.console.views import (
     format_map_node,
     print_available_map_nodes,
     print_combat_state,
@@ -28,14 +28,14 @@ from bab.console_views import (
     print_run_state,
 )
 from bab.content_catalog import load_default_content_catalog
-from bab.event_flow import resolve_event_node
+from bab.console.event_flow import resolve_event_node
 from bab.game_config import (
     DEFAULT_ACT,
     DEFAULT_MAP_STEPS_BEFORE_BOSS,
     DEFAULT_MAP_WIDTH,
     DEFAULT_MAX_FIGHTS,
 )
-from bab.reward_flow import offer_card_reward
+from bab.console.reward_flow import offer_card_reward
 from bab.run_map import MapNode
 from bab.run_state import (
     RunState,
@@ -43,8 +43,8 @@ from bab.run_state import (
     enter_map_node,
     finish_victorious_combat,
 )
-from bab.treasure_flow import resolve_treasure_node
-from bab.waiting_room_flow import resolve_waiting_room_node
+from bab.console.treasure_flow import resolve_treasure_node
+from bab.console.waiting_room_flow import resolve_waiting_room_node
 
 
 def create_run_state() -> RunState:

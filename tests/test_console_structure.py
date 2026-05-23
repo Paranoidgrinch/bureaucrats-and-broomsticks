@@ -1,5 +1,5 @@
-from bab.console_app import run_console_app as console_entry
-from bab.run_flow import create_run_state, run_console_app as run_flow_entry
+from bab.console.app import run_console_app as console_entry
+from bab.console.run_flow import create_run_state, run_console_app as run_flow_entry
 
 
 def test_console_app_exposes_run_flow_entry_point() -> None:

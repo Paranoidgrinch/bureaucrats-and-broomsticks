@@ -1,4 +1,4 @@
-from bab.console_app import run_console_app
+﻿from bab.console.app import run_console_app
 
 
 def main() -> None:
@@ -7,3 +7,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

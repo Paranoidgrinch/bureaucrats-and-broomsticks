@@ -25,7 +25,11 @@
         "effects": []
       }
     ],
-    "tags": ["bureaucracy", "prophecy", "city"]
+    "tags": [
+      "bureaucracy",
+      "prophecy",
+      "city"
+    ]
   },
   {
     "id": "haunted_suggestion_box",
@@ -57,7 +61,11 @@
         "effects": []
       }
     ],
-    "tags": ["haunted", "risk_reward", "city"]
+    "tags": [
+      "haunted",
+      "risk_reward",
+      "city"
+    ]
   },
   {
     "id": "unionized_broom_closet",
@@ -85,7 +93,11 @@
         "effects": []
       }
     ],
-    "tags": ["broom", "deck", "city"]
+    "tags": [
+      "broom",
+      "deck",
+      "city"
+    ]
   },
   {
     "id": "lost_and_found_desk",
@@ -118,6 +130,43 @@
         ]
       }
     ],
-    "tags": ["deck", "city", "lost_and_found"]
+    "tags": [
+      "deck",
+      "city",
+      "lost_and_found"
+    ]
+  },
+  {
+    "id": "act_1_shop",
+    "name": "The Licensed Vendor",
+    "act": 1,
+    "event_type": "risk_reward",
+    "weight": 2,
+    "text": "A vendor unfolds a counter covered in seals, receipts, and suspiciously glowing merchandise.",
+    "choices": [
+      {
+        "id": "browse_wares",
+        "text": "Browse the wares.",
+        "result_text": "The prices are official, which somehow makes them worse.",
+        "effects": [
+          {
+            "type": "open_shop"
+          }
+        ]
+      },
+      {
+        "id": "leave_counter",
+        "text": "Leave.",
+        "result_text": "You leave before a handling fee can be invented.",
+        "effects": [
+          {
+            "type": "none"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "shop"
+    ]
   }
 ]

@@ -8,6 +8,7 @@ from math import ceil
 from bab.console.io import console
 from bab.console.reward_flow import offer_card_removal, offer_card_reward, offer_card_upgrade
 from bab.models import EventEffect
+from bab.console.shop_flow import open_shop
 from bab.run.state import RunState
 
 ConsoleEventEffectHandler = Callable[[RunState, EventEffect], None]
@@ -66,6 +67,12 @@ def handle_remove_card(run_state: RunState, effect: EventEffect) -> None:
         )
 
 
+
+
+def handle_open_shop(run_state: RunState, effect: EventEffect) -> None:
+    open_shop(run_state)
+
+
 CONSOLE_EVENT_EFFECT_HANDLERS: Mapping[str, ConsoleEventEffectHandler] = {
     "none": handle_none,
     "gain_card_reward": handle_gain_card_reward,
@@ -73,4 +80,5 @@ CONSOLE_EVENT_EFFECT_HANDLERS: Mapping[str, ConsoleEventEffectHandler] = {
     "lose_percent_max_hp": handle_lose_percent_max_hp,
     "gain_max_hp": handle_gain_max_hp,
     "remove_card": handle_remove_card,
+    "open_shop": handle_open_shop,
 }

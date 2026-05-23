@@ -13,5 +13,6 @@ Current event effect examples:
   - optional tag restricts removal to cards with that tag
 - lose_percent_max_hp
 - gain_max_hp
+- open_shop
 
 Python changes are required only for a new event effect type.

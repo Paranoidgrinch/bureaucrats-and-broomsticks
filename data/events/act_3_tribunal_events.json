@@ -135,5 +135,38 @@
       "city",
       "lost_and_found"
     ]
+  },
+  {
+    "id": "act_3_shop",
+    "name": "The Tribunal Quartermaster",
+    "act": 3,
+    "event_type": "risk_reward",
+    "weight": 2,
+    "text": "A vendor unfolds a counter covered in seals, receipts, and suspiciously glowing merchandise.",
+    "choices": [
+      {
+        "id": "browse_wares",
+        "text": "Browse the wares.",
+        "result_text": "The prices are official, which somehow makes them worse.",
+        "effects": [
+          {
+            "type": "open_shop"
+          }
+        ]
+      },
+      {
+        "id": "leave_counter",
+        "text": "Leave.",
+        "result_text": "You leave before a handling fee can be invented.",
+        "effects": [
+          {
+            "type": "none"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "shop"
+    ]
   }
 ]

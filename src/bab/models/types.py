@@ -91,6 +91,7 @@ EventEffectType = Literal[
     "remove_card",
     "lose_percent_max_hp",
     "gain_max_hp",
+    "open_shop",
 ]
 
 RelicEffectType = Literal[

@@ -11,6 +11,8 @@ from bab.run.state import RunState
 from bab.systems.card_removal import remove_card_from_deck, removable_card_indices
 from bab.systems.relics import apply_relic_pickup_effects
 from bab.systems.shop import (
+    DEFAULT_SHOP_CARD_OFFER_COUNT,
+    DEFAULT_SHOP_RELIC_OFFER_COUNT,
     ShopCardOffer,
     ShopRelicOffer,
     card_removal_price,
@@ -26,7 +28,7 @@ def open_shop(run_state: RunState) -> None:
         card_class=run_state.character_class.id,
         act=run_state.act,
         fight_number=run_state.fight_number,
-        count=3,
+        count=DEFAULT_SHOP_CARD_OFFER_COUNT,
     )
     relic_offers = choose_shop_relic_offers(
         run_state.relic_database,
@@ -34,7 +36,7 @@ def open_shop(run_state: RunState) -> None:
         run_state.rng,
         act=run_state.act,
         fight_number=run_state.fight_number,
-        count=2,
+        count=DEFAULT_SHOP_RELIC_OFFER_COUNT,
     )
 
     purchased_card_indices: set[int] = set()

@@ -35,6 +35,9 @@ RELIC_BASE_PRICES: dict[str, int] = {
     "boss": 400,
 }
 
+DEFAULT_SHOP_CARD_OFFER_COUNT = 5
+DEFAULT_SHOP_RELIC_OFFER_COUNT = 3
+
 CARD_RARITY_WEIGHTS_BY_TIER: tuple[dict[str, int], ...] = (
     {"common": 85, "uncommon": 15, "rare": 0},
     {"common": 55, "uncommon": 35, "rare": 10},

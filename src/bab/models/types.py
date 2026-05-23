@@ -101,4 +101,8 @@ RelicEffectType = Literal[
     "increase_max_energy",
     "heal_on_pickup",
     "increase_card_reward_count",
+    "apply_status_to_player_at_combat_start",
+    "heal_at_combat_start",
+    "gain_strength_at_combat_start",
+    "gain_energy_at_combat_start",
 ]

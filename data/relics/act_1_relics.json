@@ -11,7 +11,10 @@
         "amount": 2
       }
     ],
-    "tags": ["bureaucracy", "paperwork"]
+    "tags": [
+      "bureaucracy",
+      "paperwork"
+    ]
   },
   {
     "id": "pocket_sized_procedure_manual",
@@ -24,7 +27,10 @@
         "amount": 1
       }
     ],
-    "tags": ["energy", "bureaucracy"]
+    "tags": [
+      "energy",
+      "bureaucracy"
+    ]
   },
   {
     "id": "suspiciously_helpful_stapler",
@@ -37,20 +43,26 @@
         "amount": 8
       }
     ],
-    "tags": ["block", "office"]
+    "tags": [
+      "block",
+      "office"
+    ]
   },
   {
     "id": "certified_tea_mug",
     "name": "Certified Tea Mug",
-    "description": "When picked up, heal 12 HP.",
+    "description": "When picked up, heal 10 HP.",
     "rarity": "common",
     "effects": [
       {
         "type": "heal_on_pickup",
-        "amount": 12
+        "amount": 10
       }
     ],
-    "tags": ["healing", "tea"]
+    "tags": [
+      "city",
+      "healing"
+    ]
   },
   {
     "id": "minor_witching_license",
@@ -64,7 +76,11 @@
         "amount": 1
       }
     ],
-    "tags": ["witch", "doubt", "magic"]
+    "tags": [
+      "witch",
+      "doubt",
+      "magic"
+    ]
   },
   {
     "id": "generous_requisition_form",
@@ -77,6 +93,361 @@
         "amount": 1
       }
     ],
-    "tags": ["reward", "bureaucracy"]
+    "tags": [
+      "reward",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "stamped_lunchbox",
+    "name": "Stamped Lunchbox",
+    "description": "At the start of each combat, gain 5 Block.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 5
+      }
+    ],
+    "tags": [
+      "city",
+      "defense",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "cracked_wax_seal",
+    "name": "Cracked Wax Seal",
+    "description": "At the start of each combat, apply 1 Paperwork to all enemies.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "paperwork",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "status",
+      "seal"
+    ]
+  },
+  {
+    "id": "municipal_umbrella",
+    "name": "Municipal Umbrella",
+    "description": "At the start of each combat, gain 7 Block.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 7
+      }
+    ],
+    "tags": [
+      "city",
+      "defense"
+    ]
+  },
+  {
+    "id": "moth_eaten_index",
+    "name": "Moth-Eaten Index",
+    "description": "At the start of each combat, apply 1 Doubt to all enemies.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "doubt",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "archive",
+      "status"
+    ]
+  },
+  {
+    "id": "queue_token",
+    "name": "Queue Token",
+    "description": "At the start of each combat, gain 4 Block and apply 1 Paperwork to all enemies.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 4
+      },
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "paperwork",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "queue",
+      "status"
+    ]
+  },
+  {
+    "id": "gargoyle_chalk",
+    "name": "Gargoyle Chalk",
+    "description": "At the start of each combat, gain 9 Block.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 9
+      }
+    ],
+    "tags": [
+      "city",
+      "gargoyle",
+      "defense"
+    ]
+  },
+  {
+    "id": "minor_healing_voucher",
+    "name": "Minor Healing Voucher",
+    "description": "When picked up, heal 14 HP.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "heal_on_pickup",
+        "amount": 14
+      }
+    ],
+    "tags": [
+      "city",
+      "healing",
+      "voucher"
+    ]
+  },
+  {
+    "id": "red_ribbon_spool",
+    "name": "Red Ribbon Spool",
+    "description": "At the start of each combat, apply 2 Paperwork to all enemies.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "paperwork",
+        "amount": 2
+      }
+    ],
+    "tags": [
+      "city",
+      "status",
+      "red_tape"
+    ]
+  },
+  {
+    "id": "notary_candle",
+    "name": "Notary Candle",
+    "description": "At the start of each combat, gain 12 Block.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 12
+      }
+    ],
+    "tags": [
+      "city",
+      "notary",
+      "defense"
+    ]
+  },
+  {
+    "id": "archive_lantern",
+    "name": "Archive Lantern",
+    "description": "At the start of each combat, apply 2 Doubt to all enemies.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": [
+      "city",
+      "archive",
+      "status"
+    ]
+  },
+  {
+    "id": "sealed_healing_voucher",
+    "name": "Sealed Healing Voucher",
+    "description": "When picked up, heal 22 HP.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "heal_on_pickup",
+        "amount": 22
+      }
+    ],
+    "tags": [
+      "city",
+      "healing",
+      "voucher"
+    ]
+  },
+  {
+    "id": "extra_counter_ticket",
+    "name": "Extra Counter Ticket",
+    "description": "Card rewards contain 1 additional card.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "increase_card_reward_count",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "reward"
+    ]
+  },
+  {
+    "id": "clerk_badge",
+    "name": "Clerk Badge",
+    "description": "At the start of each combat, gain 1 Max Energy.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "increase_max_energy",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "energy",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "stone_counterweight",
+    "name": "Stone Counterweight",
+    "description": "At the start of each combat, gain 8 Block and apply 1 Doubt to all enemies.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 8
+      },
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "doubt",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "defense",
+      "status"
+    ]
+  },
+  {
+    "id": "bottomless_stamp_pad",
+    "name": "Bottomless Stamp Pad",
+    "description": "At the start of each combat, apply 3 Paperwork to all enemies.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "paperwork",
+        "amount": 3
+      }
+    ],
+    "tags": [
+      "city",
+      "stamp",
+      "status"
+    ]
+  },
+  {
+    "id": "official_timepiece",
+    "name": "Official Timepiece",
+    "description": "At the start of each combat, gain 1 Max Energy.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "increase_max_energy",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "energy",
+      "time"
+    ]
+  },
+  {
+    "id": "grand_ledger_chain",
+    "name": "Grand Ledger Chain",
+    "description": "At the start of each combat, gain 10 Block. Card rewards contain 1 additional card.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 10
+      },
+      {
+        "type": "increase_card_reward_count",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "reward",
+      "defense"
+    ]
+  },
+  {
+    "id": "charter_fragment",
+    "name": "Charter Fragment",
+    "description": "At the start of each combat, apply 2 Doubt and 1 Paperwork to all enemies.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "doubt",
+        "amount": 2
+      },
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "paperwork",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "city",
+      "charter",
+      "status"
+    ]
+  },
+  {
+    "id": "deputy_signature",
+    "name": "Deputy Signature",
+    "description": "At the start of each combat, gain 12 Block and apply 2 Paperwork to all enemies.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 12
+      },
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "paperwork",
+        "amount": 2
+      }
+    ],
+    "tags": [
+      "city",
+      "boss",
+      "status",
+      "defense"
+    ]
   }
 ]

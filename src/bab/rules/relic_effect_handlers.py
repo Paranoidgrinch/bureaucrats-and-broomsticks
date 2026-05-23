@@ -66,6 +66,16 @@ def handle_increase_max_energy(
     state.log.append(f"{relic.name} increases Max Energy by {amount}.")
 
 
+def handle_gain_energy_at_combat_start(
+    effect: RelicEffect,
+    relic: RelicDefinition,
+    state: CombatState,
+) -> None:
+    amount = require_amount(effect.amount, relic.name)
+    state.energy += amount
+    state.log.append(f"{relic.name} grants {amount} Energy.")
+
+
 def handle_gain_block_at_combat_start(
     effect: RelicEffect,
     relic: RelicDefinition,
@@ -74,6 +84,43 @@ def handle_gain_block_at_combat_start(
     amount = require_amount(effect.amount, relic.name)
     state.player.gain_block(amount)
     state.log.append(f"{relic.name} grants {amount} Block.")
+
+
+def handle_gain_strength_at_combat_start(
+    effect: RelicEffect,
+    relic: RelicDefinition,
+    state: CombatState,
+) -> None:
+    amount = require_amount(effect.amount, relic.name)
+    state.player.apply_status("strength", amount)
+    state.log.append(f"{relic.name} grants {amount} {state.status_name('strength')}.")
+
+
+def handle_heal_at_combat_start(
+    effect: RelicEffect,
+    relic: RelicDefinition,
+    state: CombatState,
+) -> None:
+    amount = require_amount(effect.amount, relic.name)
+    previous_hp = state.player.hp
+    state.player.hp = min(state.player.max_hp, state.player.hp + amount)
+    healed = state.player.hp - previous_hp
+    state.log.append(f"{relic.name} restores {healed} HP.")
+
+
+def handle_apply_status_to_player_at_combat_start(
+    effect: RelicEffect,
+    relic: RelicDefinition,
+    state: CombatState,
+) -> None:
+    amount = require_amount(effect.amount, relic.name)
+
+    if effect.status is None:
+        raise ValueError(f"{relic.name} relic effect requires a status.")
+
+    state.player.apply_status(effect.status, amount)
+    status_name = state.status_name(effect.status)
+    state.log.append(f"{relic.name} applies {amount} {status_name} to the player.")
 
 
 def handle_apply_status_to_all_enemies_at_combat_start(
@@ -115,7 +162,11 @@ def handle_increase_card_reward_count(
 
 RELIC_COMBAT_START_HANDLERS: Mapping[str, CombatStartRelicHandler] = {
     "increase_max_energy": handle_increase_max_energy,
+    "gain_energy_at_combat_start": handle_gain_energy_at_combat_start,
     "gain_block_at_combat_start": handle_gain_block_at_combat_start,
+    "gain_strength_at_combat_start": handle_gain_strength_at_combat_start,
+    "heal_at_combat_start": handle_heal_at_combat_start,
+    "apply_status_to_player_at_combat_start": handle_apply_status_to_player_at_combat_start,
     "apply_status_to_all_enemies_at_combat_start": handle_apply_status_to_all_enemies_at_combat_start,
 }
 

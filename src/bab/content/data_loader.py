@@ -1,4 +1,4 @@
-﻿import json
+import json
 from pathlib import Path
 from typing import Any
 
@@ -10,6 +10,7 @@ from bab.models import (
     EventDefinition,
     StatusDefinition,
     RelicDefinition,
+    ActManifest,
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
@@ -171,3 +172,9 @@ def load_relic_database(relative_paths: list[str]) -> dict[str, RelicDefinition]
             relic_database[relic.id] = relic
 
     return relic_database
+
+
+def load_act_manifest(relative_path: str) -> ActManifest:
+    raw_data = load_json(relative_path)
+    return ActManifest.model_validate(raw_data)
+

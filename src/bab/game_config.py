@@ -1,46 +1,28 @@
 """Central configuration for the console prototype.
 
-The game should remain content-first: adding cards, enemies, encounters,
-events, statuses, and relics should usually mean editing JSON files rather
-than changing gameplay orchestration code.
+Most gameplay content is configured through act manifests in data/acts/.
 """
 
 from __future__ import annotations
 
 
-CARD_DATA_FILES: tuple[str, ...] = (
-    "data/cards/bureaucrat_starter.json",
-    "data/cards/bureaucrat_rewards.json",
+ACT_MANIFEST_FILES: tuple[str, ...] = (
+    "data/acts/act_1_city.json",
+    "data/acts/act_2_archives.json",
+    "data/acts/act_3_tribunal.json",
+    "data/acts/act_4_licensing_labyrinth.json",
+    "data/acts/act_5_ministry_spire.json",
 )
 
-CHARACTER_CLASS_DATA_FILE = "data/classes/bureaucrat.json"
+DEFAULT_ACT_MANIFEST_FILE = ACT_MANIFEST_FILES[0]
 
-ENEMY_DATA_FILES: tuple[str, ...] = (
-    "data/enemies/city_enemies.json",
-)
-
-ENCOUNTER_DATA_FILES: tuple[str, ...] = (
-    "data/encounters/act_1_city.json",
-)
-
-STATUS_DATA_FILES: tuple[str, ...] = (
-    "data/statuses/statuses.json",
-)
-
-EVENT_DATA_FILES: tuple[str, ...] = (
-    "data/events/act_1_city_events.json",
-)
-
-RELIC_DATA_FILES: tuple[str, ...] = (
-    "data/relics/act_1_relics.json",
-)
-
-DEFAULT_ACT = 1
+# Temporary run-level default. This can later become campaign configuration.
 DEFAULT_MAX_FIGHTS = 99
-DEFAULT_MAP_STEPS_BEFORE_BOSS = 9
-DEFAULT_MAP_WIDTH = 4
 
-WAITING_ROOM_HEAL_PERCENT = 25
+# Console-flow compatibility defaults.
+# These mirror Act I settings until treasure/waiting-room runtime config
+# is stored directly on RunState.
 MIMIC_CHANCE = 0.20
-
 TREASURE_MIMIC_ENCOUNTER_ID = "city_elite_02"
+WAITING_ROOM_HEAL_PERCENT = 25
+

@@ -29,12 +29,7 @@ from bab.console.views import (
 )
 from bab.content.catalog import load_default_content_catalog
 from bab.console.event_flow import resolve_event_node
-from bab.game_config import (
-    DEFAULT_ACT,
-    DEFAULT_MAP_STEPS_BEFORE_BOSS,
-    DEFAULT_MAP_WIDTH,
-    DEFAULT_MAX_FIGHTS,
-)
+from bab.game_config import DEFAULT_MAX_FIGHTS
 from bab.console.reward_flow import offer_card_reward
 from bab.run.map import MapNode
 from bab.run.state import (
@@ -60,10 +55,10 @@ def create_run_state() -> RunState:
         event_database=catalog.event_database,
         relic_database=catalog.relic_database,
         rng=rng,
-        act=DEFAULT_ACT,
+        act=catalog.act_manifest.act,
         max_fights=DEFAULT_MAX_FIGHTS,
-        map_steps_before_boss=DEFAULT_MAP_STEPS_BEFORE_BOSS,
-        map_width=DEFAULT_MAP_WIDTH,
+        map_steps_before_boss=catalog.act_manifest.map.steps_before_boss,
+        map_width=catalog.act_manifest.map.width,
     )
 
 

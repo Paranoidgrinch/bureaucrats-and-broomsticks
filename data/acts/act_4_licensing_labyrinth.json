@@ -1,0 +1,36 @@
+{
+  "id": "act_4_licensing_labyrinth",
+  "act": 4,
+  "name": "Act IV: The Licensing Labyrinth",
+  "character_class_file": "data/classes/bureaucrat.json",
+  "card_files": [
+    "data/cards/bureaucrat_starter.json",
+    "data/cards/bureaucrat_rewards.json"
+  ],
+  "enemy_files": [
+    "data/enemies/city_enemies.json"
+  ],
+  "encounter_files": [
+    "data/encounters/act_4_licensing_labyrinth.json"
+  ],
+  "status_files": [
+    "data/statuses/statuses.json"
+  ],
+  "event_files": [
+    "data/events/act_4_licensing_labyrinth_events.json"
+  ],
+  "relic_files": [
+    "data/relics/act_1_relics.json"
+  ],
+  "map": {
+    "steps_before_boss": 11,
+    "width": 5
+  },
+  "treasure": {
+    "mimic_chance": 0.26,
+    "mimic_encounter_id": "city_elite_02"
+  },
+  "waiting_room": {
+    "heal_percent": 25
+  }
+}

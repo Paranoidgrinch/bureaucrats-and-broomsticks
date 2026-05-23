@@ -1,0 +1,106 @@
+[
+  {
+    "id": "act_5_easy_01",
+    "name": "A Legally Complicated Rat (Act V: The Ministry Spire)",
+    "act": 5,
+    "difficulty": "easy",
+    "enemies": [
+      "rat_with_legal_representation"
+    ],
+    "weight": 3
+  },
+  {
+    "id": "act_5_easy_02",
+    "name": "The Clerk Who Would Not Stop (Act V: The Ministry Spire)",
+    "act": 5,
+    "difficulty": "easy",
+    "enemies": [
+      "overzealous_clerk"
+    ],
+    "weight": 3
+  },
+  {
+    "id": "act_5_easy_03",
+    "name": "A Suspiciously Damp Permit (Act V: The Ministry Spire)",
+    "act": 5,
+    "difficulty": "easy",
+    "enemies": [
+      "ink_well_imp"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "act_5_normal_01",
+    "name": "Minor Administrative Incident (Act V: The Ministry Spire)",
+    "act": 5,
+    "difficulty": "normal",
+    "enemies": [
+      "rat_with_legal_representation",
+      "overzealous_clerk"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "act_5_normal_02",
+    "name": "Contractual Pest Control (Act V: The Ministry Spire)",
+    "act": 5,
+    "difficulty": "normal",
+    "enemies": [
+      "tiny_contract_demon",
+      "rat_with_legal_representation"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "act_5_normal_03",
+    "name": "Permit Trouble (Act V: The Ministry Spire)",
+    "act": 5,
+    "difficulty": "normal",
+    "enemies": [
+      "permit_goblin",
+      "ink_well_imp"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "act_5_normal_04",
+    "name": "Unpaid Spiritual Liabilities (Act V: The Ministry Spire)",
+    "act": 5,
+    "difficulty": "normal",
+    "enemies": [
+      "tax_ghoul"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "act_5_elite_01",
+    "name": "Quarterly Performance Ambush (Act V: The Ministry Spire)",
+    "act": 5,
+    "difficulty": "elite",
+    "enemies": [
+      "middle_management_ogre"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "act_5_elite_02",
+    "name": "The Cabinet That Filed Back (Act V: The Ministry Spire)",
+    "act": 5,
+    "difficulty": "elite",
+    "enemies": [
+      "departmental_mimic",
+      "ink_well_imp"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "act_5_boss_01",
+    "name": "Emergency Session of the Subcommittee (Act V: The Ministry Spire)",
+    "act": 5,
+    "difficulty": "boss",
+    "enemies": [
+      "chairman_of_the_subcommittee"
+    ],
+    "weight": 1
+  }
+]

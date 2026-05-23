@@ -940,7 +940,7 @@
   {
     "id": "senior_clerk",
     "name": "The Senior Clerk",
-    "max_hp": 92,
+    "max_hp": 82,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -951,13 +951,13 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 12
+            "amount": 9
           },
           {
             "type": "apply_status",
             "target": "player",
             "status": "doubt",
-            "amount": 2
+            "amount": 1
           }
         ]
       },
@@ -969,13 +969,13 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 14
+            "amount": 11
           },
           {
             "type": "apply_status",
             "target": "player",
             "status": "paperwork",
-            "amount": 2
+            "amount": 1
           }
         ]
       },
@@ -987,12 +987,12 @@
           {
             "type": "gain_strength",
             "target": "owner",
-            "amount": 2
+            "amount": 1
           },
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 8
+            "amount": 6
           }
         ]
       }
@@ -1006,7 +1006,7 @@
   {
     "id": "red_tape_golem",
     "name": "Red Tape Golem",
-    "max_hp": 118,
+    "max_hp": 96,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1017,7 +1017,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 18
+            "amount": 14
           }
         ]
       },
@@ -1029,7 +1029,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 16
+            "amount": 12
           },
           {
             "type": "apply_status",
@@ -1047,12 +1047,12 @@
           {
             "type": "gain_strength",
             "target": "owner",
-            "amount": 2
+            "amount": 1
           },
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 10
+            "amount": 8
           }
         ]
       },
@@ -1064,13 +1064,13 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 10
+            "amount": 8
           },
           {
             "type": "apply_status",
             "target": "player",
             "status": "paperwork",
-            "amount": 3
+            "amount": 2
           }
         ]
       }
@@ -1720,7 +1720,7 @@
   {
     "id": "counter_of_denial",
     "name": "Counter of Denial",
-    "max_hp": 48,
+    "max_hp": 40,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1731,13 +1731,13 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 10
+            "amount": 7
           },
           {
             "type": "apply_status",
             "target": "player",
             "status": "doubt",
-            "amount": 2
+            "amount": 1
           }
         ]
       },
@@ -1749,7 +1749,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 8
+            "amount": 6
           },
           {
             "type": "apply_status",
@@ -1770,7 +1770,7 @@
   {
     "id": "counter_of_delay",
     "name": "Counter of Delay",
-    "max_hp": 44,
+    "max_hp": 38,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1782,7 +1782,7 @@
             "type": "apply_status",
             "target": "player",
             "status": "panic",
-            "amount": 2
+            "amount": 1
           }
         ]
       },
@@ -1794,7 +1794,7 @@
           {
             "type": "gain_block",
             "target": "all_enemies",
-            "amount": 5
+            "amount": 4
           },
           {
             "type": "apply_status",
@@ -1815,7 +1815,7 @@
   {
     "id": "counter_of_certification",
     "name": "Counter of Certification",
-    "max_hp": 52,
+    "max_hp": 42,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1826,7 +1826,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 12
+            "amount": 9
           }
         ]
       },
@@ -1843,7 +1843,7 @@
           {
             "type": "gain_block",
             "target": "all_enemies",
-            "amount": 4
+            "amount": 3
           }
         ]
       }
@@ -1858,7 +1858,7 @@
   {
     "id": "archivists_hound",
     "name": "Archivist's Hound",
-    "max_hp": 88,
+    "max_hp": 76,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1869,7 +1869,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 12
+            "amount": 10
           },
           {
             "type": "apply_status",
@@ -1887,7 +1887,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 14
+            "amount": 11
           },
           {
             "type": "gain_strength",
@@ -1904,12 +1904,12 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 7
+            "amount": 5
           },
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 7
+            "amount": 5
           }
         ]
       },
@@ -1922,7 +1922,7 @@
             "type": "apply_status",
             "target": "player",
             "status": "panic",
-            "amount": 2
+            "amount": 1
           },
           {
             "type": "apply_status",
@@ -1943,7 +1943,7 @@
   {
     "id": "stampede_of_stamps",
     "name": "Stampede of Stamps",
-    "max_hp": 78,
+    "max_hp": 66,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1954,17 +1954,17 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 4
+            "amount": 3
           },
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 4
+            "amount": 3
           },
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 4
+            "amount": 3
           }
         ]
       },
@@ -1976,13 +1976,13 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 8
+            "amount": 6
           },
           {
             "type": "apply_status",
             "target": "player",
             "status": "paperwork",
-            "amount": 2
+            "amount": 1
           }
         ]
       },
@@ -1994,12 +1994,12 @@
           {
             "type": "gain_strength",
             "target": "owner",
-            "amount": 2
+            "amount": 1
           },
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 8
+            "amount": 6
           }
         ]
       }
@@ -2014,7 +2014,7 @@
   {
     "id": "bailiff_of_writs",
     "name": "Bailiff of Writs",
-    "max_hp": 62,
+    "max_hp": 52,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -2025,13 +2025,13 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 11
+            "amount": 8
           },
           {
             "type": "apply_status",
             "target": "player",
             "status": "paperwork",
-            "amount": 2
+            "amount": 1
           }
         ]
       },
@@ -2043,7 +2043,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 15
+            "amount": 12
           }
         ]
       },
@@ -2055,7 +2055,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 12
+            "amount": 9
           }
         ]
       }
@@ -2069,7 +2069,7 @@
   {
     "id": "bailiff_of_warrants",
     "name": "Bailiff of Warrants",
-    "max_hp": 58,
+    "max_hp": 50,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -2080,7 +2080,7 @@
           {
             "type": "gain_block",
             "target": "all_enemies",
-            "amount": 6
+            "amount": 4
           },
           {
             "type": "gain_strength",
@@ -2097,7 +2097,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 12
+            "amount": 10
           }
         ]
       },
@@ -2110,7 +2110,7 @@
             "type": "apply_status",
             "target": "player",
             "status": "doubt",
-            "amount": 2
+            "amount": 1
           }
         ]
       }
@@ -2124,7 +2124,7 @@
   {
     "id": "ink_witch_auditor",
     "name": "Ink Witch Auditor",
-    "max_hp": 84,
+    "max_hp": 72,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -2136,7 +2136,7 @@
             "type": "apply_status",
             "target": "player",
             "status": "doubt",
-            "amount": 2
+            "amount": 1
           },
           {
             "type": "apply_status",
@@ -2154,7 +2154,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 14
+            "amount": 10
           },
           {
             "type": "apply_status",
@@ -2172,12 +2172,12 @@
           {
             "type": "gain_strength",
             "target": "owner",
-            "amount": 2
+            "amount": 1
           },
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 10
+            "amount": 8
           }
         ]
       },
@@ -2189,7 +2189,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 18
+            "amount": 14
           }
         ]
       }
@@ -2204,7 +2204,7 @@
   {
     "id": "licensed_chimera",
     "name": "Licensed Chimera",
-    "max_hp": 105,
+    "max_hp": 90,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -2215,7 +2215,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 15
+            "amount": 12
           }
         ]
       },
@@ -2227,13 +2227,13 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 10
+            "amount": 8
           },
           {
             "type": "apply_status",
             "target": "player",
             "status": "paperwork",
-            "amount": 2
+            "amount": 1
           }
         ]
       },
@@ -2246,7 +2246,7 @@
             "type": "apply_status",
             "target": "player",
             "status": "doubt",
-            "amount": 2
+            "amount": 1
           },
           {
             "type": "apply_status",
@@ -2269,12 +2269,12 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 10
+            "amount": 8
           },
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 10
+            "amount": 8
           }
         ]
       }
@@ -2614,6 +2614,67 @@
       "boss",
       "charter",
       "bureaucracy"
+    ]
+  },
+  {
+    "id": "receipt_mimic",
+    "name": "Receipt Mimic",
+    "max_hp": 52,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "lid_snap",
+        "name": "Lid Snap",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "id": "false_bottom",
+        "name": "False Bottom",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 6
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "bite_the_hand",
+        "name": "Bite the Hand",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 6
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "mimic",
+      "treasure"
     ]
   }
 ]

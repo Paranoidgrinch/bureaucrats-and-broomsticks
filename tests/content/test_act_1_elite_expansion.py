@@ -69,8 +69,10 @@ def test_all_new_elite_encounters_reference_existing_enemies() -> None:
         assert set(encounter.enemies) <= enemy_ids
 
 
-def test_mimic_elite_still_uses_city_elite_02() -> None:
+def test_mimic_uses_dedicated_city_mimic_encounter() -> None:
     catalog = load_default_content_catalog()
 
-    assert catalog.act_manifest.treasure.mimic_encounter_id == "city_elite_02"
+    assert catalog.act_manifest.treasure.mimic_encounter_id == "city_mimic_01"
+    assert "city_mimic_01" in catalog.encounter_database
     assert "city_elite_02" in catalog.encounter_database
+    assert catalog.encounter_database["city_mimic_01"].difficulty == "mimic"

@@ -13,6 +13,8 @@ MapNodeType = Literal[
     "boss",
 ]
 
+FIRST_ELITE_DEPTH = 6
+
 
 @dataclass(frozen=True)
 class MapNode:
@@ -76,6 +78,19 @@ def _choose_start_lanes(
     return sorted(rng.sample(range(width), k=start_width))
 
 
+def _weighted_node_choice(
+    *,
+    rng: Random,
+    population: list[MapNodeType],
+    weights: list[float],
+) -> MapNodeType:
+    return rng.choices(
+        population=population,
+        weights=weights,
+        k=1,
+    )[0]
+
+
 def _choose_node_type(
     *,
     rng: Random,
@@ -92,48 +107,45 @@ def _choose_node_type(
     if depth == 3 and lane_rank == 0:
         return "treasure"
 
-    if depth == 4 and lane_rank == 0:
-        return "elite"
-
     if depth == 6 and lane_rank == 0:
         return "waiting_room"
 
     if depth == steps_before_boss:
-        return rng.choices(
-            population=[
-                "combat",
-                "elite",
-                "treasure",
-                "event",
-                "waiting_room",
-            ],
-            weights=[
-                6,
-                1,
-                2,
-                1,
-                1,
-            ],
-            k=1,
-        )[0]
-
-    return rng.choices(
-        population=[
+        population: list[MapNodeType] = [
             "combat",
-            "event",
             "treasure",
-            "elite",
+            "event",
             "waiting_room",
-        ],
-        weights=[
-            7,
-            2,
-            1.5,
-            1,
-            0.7,
-        ],
-        k=1,
-    )[0]
+        ]
+        weights = [6, 2, 1, 1]
+
+        if depth >= FIRST_ELITE_DEPTH:
+            population.insert(1, "elite")
+            weights.insert(1, 1)
+
+        return _weighted_node_choice(
+            rng=rng,
+            population=population,
+            weights=weights,
+        )
+
+    population = [
+        "combat",
+        "event",
+        "treasure",
+        "waiting_room",
+    ]
+    weights = [7, 2, 1.5, 0.7]
+
+    if depth >= FIRST_ELITE_DEPTH:
+        population.insert(3, "elite")
+        weights.insert(3, 1)
+
+    return _weighted_node_choice(
+        rng=rng,
+        population=population,
+        weights=weights,
+    )
 
 
 def _make_node(
@@ -151,7 +163,6 @@ def _make_node(
         lane_rank=lane_rank,
         steps_before_boss=steps_before_boss,
     )
-
     node_id = f"act_{act}_d{depth:02d}_n{lane:02d}"
 
     if node_type == "combat":
@@ -212,9 +223,7 @@ def _choose_outgoing_lanes(
     no_split_streak: int,
 ) -> set[int]:
     split_chance = min(0.35 + 0.20 * no_split_streak, 0.85)
-
     outgoing_lanes = {lane}
-
     adjacent_lanes = _adjacent_lanes(
         lane=lane,
         width=width,
@@ -321,11 +330,6 @@ def generate_act_map(
             )
             nodes[node.id] = node
 
-        incoming_count_by_lane: dict[int, int] = {
-            lane: 0
-            for lane in current_lanes
-        }
-
         for previous_lane, outgoing_lanes in outgoing_by_previous_lane.items():
             previous_node_id = f"act_{act}_d{depth - 1:02d}_n{previous_lane:02d}"
             next_node_ids = tuple(
@@ -333,15 +337,10 @@ def generate_act_map(
                 for lane in sorted(outgoing_lanes)
                 if lane in current_lanes
             )
-
             nodes[previous_node_id] = replace(
                 nodes[previous_node_id],
                 next_node_ids=next_node_ids,
             )
-
-            for lane in outgoing_lanes:
-                if lane in incoming_count_by_lane:
-                    incoming_count_by_lane[lane] += 1
 
         new_no_split_streak_by_lane: dict[int, int] = {}
 

@@ -396,5 +396,15 @@
       "living_charter"
     ],
     "weight": 1
+  },
+  {
+    "id": "city_mimic_01",
+    "name": "Suspicious Receipt Chest",
+    "act": 1,
+    "difficulty": "mimic",
+    "enemies": [
+      "receipt_mimic"
+    ],
+    "weight": 1
   }
 ]

@@ -69,6 +69,7 @@ class SimConfig:
 
 @dataclass
 @dataclass
+@dataclass
 class SimulatedRun:
     index: int
     seed: int
@@ -83,11 +84,17 @@ class SimulatedRun:
     traceback: str | None = None
     last_node_id: str | None = None
     last_node_type: str | None = None
+    last_node_depth: int | None = None
+    last_encounter_id: str | None = None
+    last_encounter_name: str | None = None
     last_enemy_ids: list[str] | None = None
     last_enemy_names: list[str] | None = None
     last_enemy_hp: dict[str, int] | None = None
     last_player_hp: int | None = None
+    last_player_hp_before_node: int | None = None
+    last_player_hp_after_node: int | None = None
     last_combat_turns: int | None = None
+    path_history: list[dict[str, Any]] | None = None
 
 
 @dataclass
@@ -244,11 +251,17 @@ def make_result(
         traceback=traceback_text,
         last_node_id=getattr(run_state, "sim_last_node_id", None),
         last_node_type=getattr(run_state, "sim_last_node_type", None),
+        last_node_depth=getattr(run_state, "sim_last_node_depth", None),
+        last_encounter_id=getattr(run_state, "sim_last_encounter_id", None),
+        last_encounter_name=getattr(run_state, "sim_last_encounter_name", None),
         last_enemy_ids=list(getattr(run_state, "sim_last_enemy_ids", [])),
         last_enemy_names=list(getattr(run_state, "sim_last_enemy_names", [])),
         last_enemy_hp=dict(getattr(run_state, "sim_last_enemy_hp", {})),
         last_player_hp=getattr(run_state, "sim_last_player_hp", None),
+        last_player_hp_before_node=getattr(run_state, "sim_last_player_hp_before_node", None),
+        last_player_hp_after_node=getattr(run_state, "sim_last_player_hp_after_node", None),
         last_combat_turns=getattr(run_state, "sim_last_combat_turns", None),
+        path_history=list(getattr(run_state, "sim_path_history", [])),
     )
 
 
@@ -526,6 +539,7 @@ def create_combat_state_for_encounter_id(
     run_state: RunState,
     encounter_id: str,
 ) -> CombatState:
+    encounter = run_state.encounter_database[encounter_id]
     enemies = create_enemies_for_encounter(
         encounter_id,
         run_state.encounter_database,
@@ -545,6 +559,9 @@ def create_combat_state_for_encounter_id(
         draw_pile=list(run_state.run_deck),
         status_database=run_state.status_database,
     )
+    combat_state.encounter_id = encounter.id
+    combat_state.encounter_name = encounter.name
+    combat_state.log.append(f"Encounter chosen: {encounter.name}.")
     apply_combat_start_relics(combat_state, run_state.relics)
     shuffle_draw_pile(combat_state, run_state.rng)
 
@@ -763,6 +780,17 @@ def format_summary(summary: SimulationSummary, *, show_errors: int = 5) -> str:
     ]
 
     if defeat_results:
+        lines.extend(["", "=== Defeats by Last Encounter ==="])
+
+        encounter_counter: Counter[str] = Counter()
+
+        for result in defeat_results:
+            encounter_name = result.last_encounter_name or result.last_encounter_id or "unknown"
+            encounter_counter[encounter_name] += 1
+
+        for encounter_name, count in encounter_counter.most_common(15):
+            lines.append(f"{encounter_name}: {count}")
+
         lines.extend(["", "=== Defeats by Last Enemy Group ==="])
 
         group_counter: Counter[str] = Counter()
@@ -785,6 +813,26 @@ def format_summary(summary: SimulationSummary, *, show_errors: int = 5) -> str:
         for node_type, count in node_type_counter.most_common():
             lines.append(f"{node_type}: {count}")
 
+        lines.extend(["", "=== Average HP Before Defeating Node Type ==="])
+
+        for node_type, count in node_type_counter.most_common():
+            node_results = [
+                result
+                for result in defeat_results
+                if (result.last_node_type or "unknown") == node_type
+                and result.last_player_hp_before_node is not None
+            ]
+
+            if not node_results:
+                continue
+
+            average_hp_before = sum(
+                result.last_player_hp_before_node or 0
+                for result in node_results
+            ) / len(node_results)
+
+            lines.append(f"{node_type}: {average_hp_before:.1f} HP before node")
+
     error_results = [
         result
         for result in summary.results
@@ -806,11 +854,17 @@ def format_summary(summary: SimulationSummary, *, show_errors: int = 5) -> str:
 def initialize_run_diagnostics(run_state: RunState) -> None:
     run_state.sim_last_node_id = None
     run_state.sim_last_node_type = None
+    run_state.sim_last_node_depth = None
+    run_state.sim_last_encounter_id = None
+    run_state.sim_last_encounter_name = None
     run_state.sim_last_enemy_ids = []
     run_state.sim_last_enemy_names = []
     run_state.sim_last_enemy_hp = {}
     run_state.sim_last_player_hp = run_state.current_hp
+    run_state.sim_last_player_hp_before_node = run_state.current_hp
+    run_state.sim_last_player_hp_after_node = run_state.current_hp
     run_state.sim_last_combat_turns = None
+    run_state.sim_path_history = []
 
 
 def record_map_node(
@@ -819,12 +873,29 @@ def record_map_node(
 ) -> None:
     run_state.sim_last_node_id = node.id
     run_state.sim_last_node_type = node.node_type
+    run_state.sim_last_node_depth = node.depth
+    run_state.sim_last_player_hp_before_node = run_state.current_hp
+    run_state.sim_last_player_hp_after_node = run_state.current_hp
+
+    run_state.sim_path_history.append(
+        {
+            "node_id": node.id,
+            "node_type": node.node_type,
+            "depth": node.depth,
+            "hp_before": run_state.current_hp,
+            "gold_before": getattr(run_state, "gold", 0),
+            "deck_size_before": len(run_state.run_deck),
+            "relic_count_before": len(run_state.relics),
+        }
+    )
 
 
 def record_combat_start(
     run_state: RunState,
     combat_state: CombatState,
 ) -> None:
+    run_state.sim_last_encounter_id = getattr(combat_state, "encounter_id", None)
+    run_state.sim_last_encounter_name = getattr(combat_state, "encounter_name", None)
     run_state.sim_last_enemy_ids = [
         enemy.id
         for enemy in combat_state.enemies
@@ -838,7 +909,13 @@ def record_combat_start(
         for enemy in combat_state.enemies
     }
     run_state.sim_last_player_hp = combat_state.player.hp
+    run_state.sim_last_player_hp_before_node = combat_state.player.hp
     run_state.sim_last_combat_turns = 0
+
+    if run_state.sim_path_history:
+        run_state.sim_path_history[-1]["encounter_id"] = run_state.sim_last_encounter_id
+        run_state.sim_path_history[-1]["encounter_name"] = run_state.sim_last_encounter_name
+        run_state.sim_path_history[-1]["enemy_names"] = list(run_state.sim_last_enemy_names)
 
 
 def record_combat_end(
@@ -851,4 +928,11 @@ def record_combat_end(
         for enemy in combat_state.enemies
     }
     run_state.sim_last_player_hp = combat_state.player.hp
+    run_state.sim_last_player_hp_after_node = combat_state.player.hp
     run_state.sim_last_combat_turns = turns_played
+
+    if run_state.sim_path_history:
+        run_state.sim_path_history[-1]["hp_after"] = combat_state.player.hp
+        run_state.sim_path_history[-1]["turns"] = turns_played
+        run_state.sim_path_history[-1]["enemy_hp_after"] = dict(run_state.sim_last_enemy_hp)
+

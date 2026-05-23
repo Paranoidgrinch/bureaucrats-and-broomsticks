@@ -220,6 +220,8 @@ def create_combat_state_for_next_encounter(
         draw_pile=list(run_state.run_deck),
         status_database=run_state.status_database,
     )
+    state.encounter_id = encounter.id
+    state.encounter_name = encounter.name
     state.log.append(f"Encounter chosen: {encounter.name}.")
     apply_combat_start_relics(state, run_state.relics)
     shuffle_draw_pile(state, run_state.rng)

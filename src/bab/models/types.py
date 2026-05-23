@@ -87,6 +87,7 @@ EncounterDifficulty = Literal[
     "normal",
     "elite",
     "boss",
+    "mimic",
 ]
 
 EventType = Literal[

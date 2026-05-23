@@ -96,12 +96,32 @@ def test_standard_act_map_contains_core_node_types() -> None:
 
     assert {
         "combat",
-        "elite",
         "event",
         "waiting_room",
         "treasure",
         "boss",
     } <= node_types
+
+
+def test_standard_act_maps_can_contain_elites_after_early_run() -> None:
+    elite_depths = []
+
+    for seed in range(100):
+        run_map = generate_act_map(
+            Random(seed),
+            act=1,
+            steps_before_boss=9,
+            width=4,
+        )
+
+        elite_depths.extend(
+            node.depth
+            for node in run_map.nodes.values()
+            if node.node_type == "elite"
+        )
+
+    assert elite_depths
+    assert min(elite_depths) >= 6
 
 
 def test_waiting_rooms_are_not_too_common() -> None:

@@ -49,7 +49,8 @@ def test_act_1_has_varied_easy_normal_elite_and_boss_encounters() -> None:
     }
 
     for encounter in catalog.encounter_database.values():
-        encounters_by_difficulty[encounter.difficulty].append(encounter)
+        if encounter.difficulty in encounters_by_difficulty:
+            encounters_by_difficulty[encounter.difficulty].append(encounter)
 
     assert len(encounters_by_difficulty["easy"]) >= 5
     assert len(encounters_by_difficulty["normal"]) >= 8
@@ -57,8 +58,10 @@ def test_act_1_has_varied_easy_normal_elite_and_boss_encounters() -> None:
     assert len(encounters_by_difficulty["boss"]) >= 1
 
 
-def test_act_1_mimic_elite_encounter_still_exists() -> None:
+def test_act_1_mimic_uses_dedicated_mimic_encounter_and_elite_still_exists() -> None:
     catalog = load_default_content_catalog()
 
     assert "city_elite_02" in catalog.encounter_database
-    assert catalog.act_manifest.treasure.mimic_encounter_id == "city_elite_02"
+    assert "city_mimic_01" in catalog.encounter_database
+    assert catalog.act_manifest.treasure.mimic_encounter_id == "city_mimic_01"
+    assert catalog.encounter_database["city_mimic_01"].difficulty == "mimic"

@@ -54,8 +54,8 @@
     "width": 4
   },
   "treasure": {
-    "mimic_chance": 0.2,
-    "mimic_encounter_id": "city_elite_02"
+    "mimic_chance": 0.05,
+    "mimic_encounter_id": "city_mimic_01"
   },
   "waiting_room": {
     "heal_percent": 25

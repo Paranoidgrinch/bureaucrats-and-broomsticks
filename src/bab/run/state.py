@@ -38,6 +38,9 @@ class RunState:
     act: int = 1
     fight_number: int = 1
     max_fights: int = 99
+    mimic_chance: float = 0.20
+    treasure_mimic_encounter_id: str = "city_elite_02"
+    waiting_room_heal_percent: int = 25
 
     def is_complete(self) -> bool:
         return (
@@ -81,6 +84,9 @@ def create_new_run(
     max_fights: int = 99,
     map_steps_before_boss: int = 9,
     map_width: int = 4,
+    mimic_chance: float = 0.20,
+    treasure_mimic_encounter_id: str = "city_elite_02",
+    waiting_room_heal_percent: int = 25,
 ) -> RunState:
     if rng is None:
         rng = Random()
@@ -115,6 +121,9 @@ def create_new_run(
         act=act,
         fight_number=1,
         max_fights=max_fights,
+        mimic_chance=mimic_chance,
+        treasure_mimic_encounter_id=treasure_mimic_encounter_id,
+        waiting_room_heal_percent=waiting_room_heal_percent,
     )
 
 

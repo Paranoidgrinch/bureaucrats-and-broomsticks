@@ -11,7 +11,6 @@ from bab.console.views import print_combat_state, print_full_log
 from bab.combat.deck import shuffle_draw_pile
 from bab.systems.encounters import choose_random_encounter
 from bab.combat.enemies import create_enemies_for_encounter
-from bab.game_config import MIMIC_CHANCE, TREASURE_MIMIC_ENCOUNTER_ID
 from bab.systems.relics import (
     apply_combat_start_relics,
     apply_relic_pickup_effects,
@@ -48,7 +47,7 @@ def grant_random_relic(run_state: RunState) -> None:
 
 
 def create_treasure_mimic_combat_state(run_state: RunState) -> CombatState:
-    mimic_encounter_id = TREASURE_MIMIC_ENCOUNTER_ID
+    mimic_encounter_id = run_state.treasure_mimic_encounter_id
 
     if mimic_encounter_id in run_state.encounter_database:
         encounter = run_state.encounter_database[mimic_encounter_id]
@@ -114,7 +113,7 @@ def resolve_treasure_node(run_state: RunState) -> None:
         )
     )
 
-    if run_state.rng.random() < MIMIC_CHANCE:
+    if run_state.rng.random() < run_state.mimic_chance:
         console.print("[bold red]The chest was a Mimic![/bold red]")
 
         state = run_treasure_mimic_combat(run_state)

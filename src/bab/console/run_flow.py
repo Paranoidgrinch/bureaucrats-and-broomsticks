@@ -88,6 +88,9 @@ def create_run_state(
         max_fights=DEFAULT_MAX_FIGHTS,
         map_steps_before_boss=catalog.act_manifest.map.steps_before_boss,
         map_width=catalog.act_manifest.map.width,
+        mimic_chance=catalog.act_manifest.treasure.mimic_chance,
+        treasure_mimic_encounter_id=catalog.act_manifest.treasure.mimic_encounter_id,
+        waiting_room_heal_percent=catalog.act_manifest.waiting_room.heal_percent,
     )
 
 

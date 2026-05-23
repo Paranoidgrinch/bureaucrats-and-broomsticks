@@ -1,4 +1,4 @@
-"""Console waiting-room flow."""
+﻿"""Console waiting-room flow."""
 
 from __future__ import annotations
 
@@ -8,7 +8,6 @@ from rich.panel import Panel
 from rich.table import Table
 
 from bab.console.io import console
-from bab.game_config import WAITING_ROOM_HEAL_PERCENT
 from bab.console.reward_flow import offer_card_upgrade
 from bab.run.map import MapNode
 from bab.run.state import RunState, complete_current_map_node
@@ -36,7 +35,7 @@ def resolve_waiting_room_node(run_state: RunState) -> None:
     table.add_row(
         "1",
         "Take a Nap.",
-        f"Heal {WAITING_ROOM_HEAL_PERCENT}% of max HP.",
+        f"Heal {run_state.waiting_room_heal_percent}% of max HP.",
     )
 
     console.print(table)
@@ -53,7 +52,7 @@ def resolve_waiting_room_node(run_state: RunState) -> None:
         if command == "1":
             heal_amount = ceil(
                 run_state.character_class.max_hp
-                * WAITING_ROOM_HEAL_PERCENT
+                * run_state.waiting_room_heal_percent
                 / 100
             )
             old_hp = run_state.current_hp
@@ -72,3 +71,4 @@ def resolve_waiting_room_node(run_state: RunState) -> None:
         console.print("[red]Invalid Waiting Room choice.[/red]")
 
     complete_current_map_node(run_state)
+

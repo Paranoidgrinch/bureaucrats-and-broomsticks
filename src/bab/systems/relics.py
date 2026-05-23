@@ -1,7 +1,17 @@
+"""Relic system helpers."""
+
+from __future__ import annotations
+
 from random import Random
 
 from bab.combat.state import CombatState
 from bab.models import RelicDefinition
+from bab.rules.relic_effect_handlers import (
+    apply_pickup_relic_effect,
+    card_reward_count_from_relic_effect,
+    require_amount,
+    resolve_combat_start_relic_effect,
+)
 
 
 def choose_random_unowned_relic(
@@ -10,7 +20,6 @@ def choose_random_unowned_relic(
     rng: Random,
 ) -> RelicDefinition:
     owned_ids = {relic.id for relic in owned_relics}
-
     available_relics = [
         relic
         for relic in relic_database.values()
@@ -29,49 +38,7 @@ def apply_combat_start_relics(
 ) -> None:
     for relic in relics:
         for effect in relic.effects:
-            if effect.type == "increase_max_energy":
-                amount = require_amount(effect.amount, relic.name)
-                state.max_energy += amount
-                state.energy += amount
-                state.log.append(
-                    f"{relic.name} increases Max Energy by {amount}."
-                )
-                continue
-
-            if effect.type == "gain_block_at_combat_start":
-                amount = require_amount(effect.amount, relic.name)
-                state.player.gain_block(amount)
-                state.log.append(
-                    f"{relic.name} grants {amount} Block."
-                )
-                continue
-
-            if effect.type == "apply_status_to_all_enemies_at_combat_start":
-                amount = require_amount(effect.amount, relic.name)
-
-                if effect.status is None:
-                    raise ValueError(
-                        f"{relic.name} relic effect requires a status."
-                    )
-
-                for enemy in state.living_enemies():
-                    enemy.apply_status(effect.status, amount)
-
-                status_name = state.status_name(effect.status)
-                state.log.append(
-                    f"{relic.name} applies {amount} {status_name} to all enemies."
-                )
-                continue
-
-            if effect.type in {
-                "heal_on_pickup",
-                "increase_card_reward_count",
-            }:
-                continue
-
-            raise NotImplementedError(
-                f"Relic effect not implemented: {effect.type}"
-            )
+            resolve_combat_start_relic_effect(effect, relic, state)
 
 
 def apply_relic_pickup_effects(
@@ -84,14 +51,13 @@ def apply_relic_pickup_effects(
     messages: list[str] = []
 
     for effect in relic.effects:
-        if effect.type != "heal_on_pickup":
-            continue
-
-        amount = require_amount(effect.amount, relic.name)
-        old_hp = new_hp
-        new_hp = min(max_hp, new_hp + amount)
-        healed = new_hp - old_hp
-        messages.append(f"{relic.name} restores {healed} HP.")
+        new_hp, new_messages = apply_pickup_relic_effect(
+            effect,
+            relic,
+            current_hp=new_hp,
+            max_hp=max_hp,
+        )
+        messages.extend(new_messages)
 
     return new_hp, messages
 
@@ -101,14 +67,15 @@ def card_reward_count_bonus(relics: list[RelicDefinition]) -> int:
 
     for relic in relics:
         for effect in relic.effects:
-            if effect.type == "increase_card_reward_count":
-                bonus += require_amount(effect.amount, relic.name)
+            bonus += card_reward_count_from_relic_effect(effect, relic)
 
     return bonus
 
 
-def require_amount(amount: int | None, relic_name: str) -> int:
-    if amount is None:
-        raise ValueError(f"{relic_name} relic effect requires an amount.")
-
-    return amount
+__all__ = [
+    "apply_combat_start_relics",
+    "apply_relic_pickup_effects",
+    "card_reward_count_bonus",
+    "choose_random_unowned_relic",
+    "require_amount",
+]

@@ -2,15 +2,13 @@
 
 from __future__ import annotations
 
-from math import ceil
-
+from bab.console.event_effect_handlers import apply_event_effect
 from rich.panel import Panel
 
 from bab.console.io import console
 from bab.console.views import print_event
 from bab.systems.events import choose_random_event
-from bab.models import EventChoice, EventDefinition, EventEffect
-from bab.console.reward_flow import offer_card_reward, offer_card_upgrade
+from bab.models import EventChoice, EventDefinition
 from bab.run.map import MapNode
 from bab.run.state import RunState, complete_current_map_node
 
@@ -32,43 +30,6 @@ def choose_event_choice(event: EventDefinition) -> EventChoice:
             continue
 
         return event.choices[choice_index]
-
-
-def apply_event_effect(run_state: RunState, effect: EventEffect) -> None:
-    if effect.type == "none":
-        return
-
-    if effect.type == "gain_card_reward":
-        amount = effect.amount or 1
-        for _ in range(amount):
-            offer_card_reward(run_state)
-        return
-
-    if effect.type == "upgrade_card":
-        amount = effect.amount or 1
-        for _ in range(amount):
-            offer_card_upgrade(run_state)
-        return
-
-    if effect.type == "lose_percent_max_hp":
-        percent = effect.amount or 0
-        loss = ceil(run_state.character_class.max_hp * percent / 100)
-        run_state.current_hp = max(1, run_state.current_hp - loss)
-        console.print(
-            f"[red]Lost {loss} HP. Current HP: "
-            f"{run_state.current_hp}/{run_state.character_class.max_hp}.[/red]"
-        )
-        return
-
-    if effect.type == "gain_max_hp":
-        console.print("[yellow]Max HP events are not implemented yet.[/yellow]")
-        return
-
-    if effect.type == "remove_card":
-        console.print("[yellow]Card removal is not implemented yet.[/yellow]")
-        return
-
-    console.print(f"[yellow]Unhandled event effect: {effect.type}.[/yellow]")
 
 
 def resolve_event_node(run_state: RunState, node: MapNode) -> None:

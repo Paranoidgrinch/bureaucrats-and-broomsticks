@@ -51,8 +51,22 @@ from bab.relics import (
     choose_random_unowned_relic,
 )
 
-WAITING_ROOM_HEAL_PERCENT = 25
-MIMIC_CHANCE = 0.20
+from bab.game_config import (
+    CARD_DATA_FILES,
+    CHARACTER_CLASS_DATA_FILE,
+    DEFAULT_ACT,
+    DEFAULT_MAP_STEPS_BEFORE_BOSS,
+    DEFAULT_MAP_WIDTH,
+    DEFAULT_MAX_FIGHTS,
+    ENCOUNTER_DATA_FILES,
+    ENEMY_DATA_FILES,
+    EVENT_DATA_FILES,
+    MIMIC_CHANCE,
+    RELIC_DATA_FILES,
+    STATUS_DATA_FILES,
+    TREASURE_MIMIC_ENCOUNTER_ID,
+    WAITING_ROOM_HEAL_PERCENT,
+)
 
 
 def choose_next_map_node(run_state: RunState) -> MapNode:
@@ -259,38 +273,13 @@ def offer_card_upgrade(run_state: RunState) -> None:
 def create_run_state() -> RunState:
     rng = Random()
 
-    card_database = load_card_database(
-        [
-            "data/cards/bureaucrat_starter.json",
-            "data/cards/bureaucrat_rewards.json",
-        ]
-    )
-    character_class = load_character_class("data/classes/bureaucrat.json")
-    enemy_database = load_enemy_database(
-        [
-            "data/enemies/city_enemies.json",
-        ]
-    )
-    encounter_database = load_encounter_database(
-        [
-            "data/encounters/act_1_city.json",
-        ]
-    )
-    status_database = load_status_database(
-        [
-            "data/statuses/statuses.json",
-        ]
-    )
-    event_database = load_event_database(
-        [
-            "data/events/act_1_city_events.json",
-        ]
-    )
-    relic_database = load_relic_database(
-        [
-            "data/relics/act_1_relics.json",
-        ]
-    )
+    card_database = load_card_database(CARD_DATA_FILES)
+    character_class = load_character_class(CHARACTER_CLASS_DATA_FILE)
+    enemy_database = load_enemy_database(ENEMY_DATA_FILES)
+    encounter_database = load_encounter_database(ENCOUNTER_DATA_FILES)
+    status_database = load_status_database(STATUS_DATA_FILES)
+    event_database = load_event_database(EVENT_DATA_FILES)
+    relic_database = load_relic_database(RELIC_DATA_FILES)
 
     return create_new_run(
         character_class=character_class,
@@ -301,10 +290,10 @@ def create_run_state() -> RunState:
         event_database=event_database,
         relic_database=relic_database,
         rng=rng,
-        act=1,
-        max_fights=99,
-        map_steps_before_boss=9,
-        map_width=4,
+        act=DEFAULT_ACT,
+        max_fights=DEFAULT_MAX_FIGHTS,
+        map_steps_before_boss=DEFAULT_MAP_STEPS_BEFORE_BOSS,
+        map_width=DEFAULT_MAP_WIDTH,
     )
 
 
@@ -595,7 +584,7 @@ def grant_random_relic(run_state: RunState) -> None:
         console.print(f"[green]{message}[/green]")
 
 def create_treasure_mimic_combat_state(run_state: RunState) -> CombatState:
-    mimic_encounter_id = "city_elite_02"
+    mimic_encounter_id = TREASURE_MIMIC_ENCOUNTER_ID
 
     if mimic_encounter_id in run_state.encounter_database:
         encounter = run_state.encounter_database[mimic_encounter_id]

@@ -1,4 +1,4 @@
-from math import ceil
+﻿from math import ceil
 from random import Random
 
 from rich.console import Console
@@ -478,7 +478,7 @@ def create_run_state() -> RunState:
     )
     relic_database = load_relic_database(
         [
-            "data/relics/relics.json",
+            "data/relics/act_1_relics.json",
         ]
     )
 

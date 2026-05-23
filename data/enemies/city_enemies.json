@@ -377,7 +377,7 @@
   {
     "id": "queue_imp",
     "name": "Queue Imp",
-    "max_hp": 22,
+    "max_hp": 18,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -401,7 +401,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 5
+            "amount": 4
           },
           {
             "type": "apply_status",
@@ -415,13 +415,14 @@
     "tags": [
       "city",
       "bureaucracy",
-      "small"
+      "small",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "stamp_goblin",
     "name": "Stamp Goblin",
-    "max_hp": 32,
+    "max_hp": 22,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -432,7 +433,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 7
+            "amount": 5
           }
         ]
       },
@@ -444,12 +445,12 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 5
+            "amount": 4
           },
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 5
+            "amount": 4
           },
           {
             "type": "apply_status",
@@ -472,7 +473,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 4
+            "amount": 3
           }
         ]
       }
@@ -480,7 +481,8 @@
     "tags": [
       "city",
       "bureaucracy",
-      "goblin"
+      "goblin",
+      "normal_balance_patch_v1"
     ]
   },
   {
@@ -542,7 +544,7 @@
   {
     "id": "pigeon_courier",
     "name": "Pigeon Courier",
-    "max_hp": 24,
+    "max_hp": 22,
     "intent_pattern": "weighted_random",
     "intents": [
       {
@@ -554,7 +556,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 5
+            "amount": 3
           },
           {
             "type": "apply_status",
@@ -573,7 +575,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 8
+            "amount": 5
           }
         ]
       },
@@ -587,7 +589,7 @@
             "type": "apply_status",
             "target": "player",
             "status": "paperwork",
-            "amount": 2
+            "amount": 1
           }
         ]
       }
@@ -595,13 +597,14 @@
     "tags": [
       "city",
       "courier",
-      "beast"
+      "beast",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "ink_spattered_scribe",
     "name": "Ink-Spattered Scribe",
-    "max_hp": 36,
+    "max_hp": 30,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -612,7 +615,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 8
+            "amount": 6
           },
           {
             "type": "apply_status",
@@ -630,7 +633,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 7
+            "amount": 4
           },
           {
             "type": "apply_status",
@@ -644,13 +647,14 @@
     "tags": [
       "city",
       "bureaucracy",
-      "scribe"
+      "scribe",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "seal_bearer_toad",
     "name": "Seal-Bearer Toad",
-    "max_hp": 34,
+    "max_hp": 28,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -661,7 +665,7 @@
           {
             "type": "gain_block",
             "target": "all_enemies",
-            "amount": 6
+            "amount": 4
           }
         ]
       },
@@ -678,7 +682,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 4
+            "amount": 3
           }
         ]
       },
@@ -690,7 +694,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 5
+            "amount": 3
           },
           {
             "type": "apply_status",
@@ -704,7 +708,8 @@
     "tags": [
       "city",
       "beast",
-      "support"
+      "support",
+      "normal_balance_patch_v1"
     ]
   },
   {
@@ -826,7 +831,7 @@
   {
     "id": "civic_bell_ringer",
     "name": "Civic Bell-Ringer",
-    "max_hp": 38,
+    "max_hp": 34,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -837,7 +842,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 6
+            "amount": 4
           },
           {
             "type": "apply_status",
@@ -855,12 +860,12 @@
           {
             "type": "gain_strength",
             "target": "owner",
-            "amount": 2
+            "amount": 1
           },
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 5
+            "amount": 4
           }
         ]
       },
@@ -872,20 +877,21 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 15
+            "amount": 10
           }
         ]
       }
     ],
     "tags": [
       "city",
-      "deadline"
+      "deadline",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "filing_beetle",
     "name": "Filing Beetle",
-    "max_hp": 40,
+    "max_hp": 32,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -896,7 +902,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 12
+            "amount": 9
           }
         ]
       },
@@ -908,7 +914,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 9
+            "amount": 6
           }
         ]
       },
@@ -920,7 +926,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 6
+            "amount": 4
           },
           {
             "type": "apply_status",
@@ -934,7 +940,8 @@
     "tags": [
       "city",
       "beast",
-      "tank"
+      "tank",
+      "normal_balance_patch_v1"
     ]
   },
   {
@@ -1168,7 +1175,7 @@
   {
     "id": "form_rat_swarm",
     "name": "Form Rat Swarm",
-    "max_hp": 26,
+    "max_hp": 22,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1179,12 +1186,12 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 4
+            "amount": 3
           },
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 4
+            "amount": 3
           }
         ]
       },
@@ -1196,7 +1203,7 @@
           {
             "type": "gain_block",
             "target": "all_enemies",
-            "amount": 4
+            "amount": 3
           },
           {
             "type": "apply_status",
@@ -1211,13 +1218,14 @@
       "city",
       "beast",
       "swarm",
-      "bureaucracy"
+      "bureaucracy",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "permit_beggar",
     "name": "Permit Beggar",
-    "max_hp": 30,
+    "max_hp": 27,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1241,7 +1249,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 7
+            "amount": 6
           },
           {
             "type": "apply_status",
@@ -1259,7 +1267,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 7
+            "amount": 5
           }
         ]
       }
@@ -1267,13 +1275,14 @@
     "tags": [
       "city",
       "bureaucracy",
-      "petitioner"
+      "petitioner",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "tollhouse_sprite",
     "name": "Tollhouse Sprite",
-    "max_hp": 27,
+    "max_hp": 24,
     "intent_pattern": "weighted_random",
     "intents": [
       {
@@ -1285,7 +1294,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 7
+            "amount": 5
           }
         ]
       },
@@ -1298,7 +1307,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 4
+            "amount": 3
           },
           {
             "type": "apply_status",
@@ -1326,13 +1335,14 @@
     "tags": [
       "city",
       "sprite",
-      "gold"
+      "gold",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "street_ordinance_wisp",
     "name": "Street Ordinance Wisp",
-    "max_hp": 25,
+    "max_hp": 22,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1375,7 +1385,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 8
+            "amount": 6
           }
         ]
       }
@@ -1383,13 +1393,14 @@
     "tags": [
       "city",
       "spirit",
-      "bureaucracy"
+      "bureaucracy",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "registry_moth",
     "name": "Registry Moth",
-    "max_hp": 24,
+    "max_hp": 21,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1413,7 +1424,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 6
+            "amount": 5
           },
           {
             "type": "apply_status",
@@ -1431,7 +1442,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 7
+            "amount": 5
           }
         ]
       }
@@ -1439,13 +1450,14 @@
     "tags": [
       "city",
       "archive",
-      "beast"
+      "beast",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "overdue_page",
     "name": "Overdue Page",
-    "max_hp": 18,
+    "max_hp": 15,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1456,7 +1468,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 5
+            "amount": 4
           }
         ]
       },
@@ -1468,7 +1480,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 4
+            "amount": 3
           },
           {
             "type": "apply_status",
@@ -1482,13 +1494,14 @@
     "tags": [
       "city",
       "archive",
-      "paper"
+      "paper",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "appointment_leech",
     "name": "Appointment Leech",
-    "max_hp": 35,
+    "max_hp": 31,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1512,7 +1525,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 8
+            "amount": 6
           },
           {
             "type": "apply_status",
@@ -1530,7 +1543,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 9
+            "amount": 8
           }
         ]
       }
@@ -1538,13 +1551,14 @@
     "tags": [
       "city",
       "beast",
-      "time"
+      "time",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "minor_tax_familiar",
     "name": "Minor Tax Familiar",
-    "max_hp": 33,
+    "max_hp": 29,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1573,7 +1587,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 6
+            "amount": 5
           }
         ]
       },
@@ -1585,7 +1599,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 8
+            "amount": 6
           }
         ]
       }
@@ -1593,13 +1607,14 @@
     "tags": [
       "city",
       "familiar",
-      "tax"
+      "tax",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "cobblestone_bailiff",
     "name": "Cobblestone Bailiff",
-    "max_hp": 46,
+    "max_hp": 38,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1610,7 +1625,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 9
+            "amount": 6
           },
           {
             "type": "apply_status",
@@ -1628,7 +1643,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 10
+            "amount": 8
           },
           {
             "type": "gain_strength",
@@ -1645,7 +1660,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 12
+            "amount": 8
           }
         ]
       }
@@ -1653,13 +1668,14 @@
     "tags": [
       "city",
       "construct",
-      "bailiff"
+      "bailiff",
+      "normal_balance_patch_v1"
     ]
   },
   {
     "id": "lantern_inspector",
     "name": "Lantern Inspector",
-    "max_hp": 37,
+    "max_hp": 33,
     "intent_pattern": "cycle",
     "intents": [
       {
@@ -1683,7 +1699,7 @@
           {
             "type": "deal_damage",
             "target": "player",
-            "amount": 8
+            "amount": 6
           },
           {
             "type": "apply_status",
@@ -1706,7 +1722,7 @@
           {
             "type": "gain_block",
             "target": "owner",
-            "amount": 5
+            "amount": 4
           }
         ]
       }
@@ -1714,7 +1730,8 @@
     "tags": [
       "city",
       "inspector",
-      "bureaucracy"
+      "bureaucracy",
+      "normal_balance_patch_v1"
     ]
   },
   {

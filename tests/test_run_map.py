@@ -209,7 +209,7 @@ def test_combat_and_special_nodes_have_expected_payloads() -> None:
 def test_combat_difficulty_for_depth_starts_easy_then_becomes_normal() -> None:
     assert combat_difficulty_for_depth(1, 9) == "easy"
     assert combat_difficulty_for_depth(2, 9) == "easy"
-    assert combat_difficulty_for_depth(3, 9) == "normal"
+    assert combat_difficulty_for_depth(3, 9) == "easy"
     assert combat_difficulty_for_depth(9, 9) == "normal"
 
 

@@ -52,7 +52,7 @@ def combat_difficulty_for_depth(
     depth: int,
     steps_before_boss: int,
 ) -> EncounterDifficulty:
-    if depth <= 2:
+    if depth <= 3:
         return "easy"
 
     return "normal"

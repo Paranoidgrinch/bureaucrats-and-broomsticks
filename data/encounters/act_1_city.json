@@ -49,7 +49,7 @@
       "ink_spattered_scribe",
       "seal_bearer_toad"
     ],
-    "weight": 3
+    "weight": 1
   },
   {
     "id": "city_normal_03",
@@ -60,7 +60,7 @@
       "pigeon_courier",
       "filing_beetle"
     ],
-    "weight": 2
+    "weight": 1
   },
   {
     "id": "city_normal_04",
@@ -141,7 +141,7 @@
       "civic_bell_ringer",
       "seal_bearer_toad"
     ],
-    "weight": 2
+    "weight": 1
   },
   {
     "id": "city_normal_07",
@@ -216,7 +216,7 @@
       "tollhouse_sprite",
       "stamp_goblin"
     ],
-    "weight": 2
+    "weight": 1
   },
   {
     "id": "city_normal_10",
@@ -248,7 +248,7 @@
       "minor_tax_familiar",
       "permit_beggar"
     ],
-    "weight": 2
+    "weight": 1
   },
   {
     "id": "city_normal_13",

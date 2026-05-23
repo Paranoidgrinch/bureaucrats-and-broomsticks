@@ -37,7 +37,11 @@
         ]
       }
     ],
-    "tags": ["beast", "city", "legal"]
+    "tags": [
+      "beast",
+      "city",
+      "legal"
+    ]
   },
   {
     "id": "overzealous_clerk",
@@ -70,7 +74,11 @@
         "damage": 10
       }
     ],
-    "tags": ["human", "city", "bureaucracy"]
+    "tags": [
+      "human",
+      "city",
+      "bureaucracy"
+    ]
   },
   {
     "id": "tiny_contract_demon",
@@ -104,7 +112,11 @@
         "damage": 10
       }
     ],
-    "tags": ["demon", "contract", "city"]
+    "tags": [
+      "demon",
+      "contract",
+      "city"
+    ]
   },
   {
     "id": "permit_goblin",
@@ -138,7 +150,11 @@
         "damage": 11
       }
     ],
-    "tags": ["goblin", "city", "bureaucracy"]
+    "tags": [
+      "goblin",
+      "city",
+      "bureaucracy"
+    ]
   },
   {
     "id": "ink_well_imp",
@@ -178,7 +194,11 @@
         ]
       }
     ],
-    "tags": ["imp", "city", "paperwork"]
+    "tags": [
+      "imp",
+      "city",
+      "paperwork"
+    ]
   },
   {
     "id": "tax_ghoul",
@@ -211,7 +231,11 @@
         ]
       }
     ],
-    "tags": ["undead", "tax", "city"]
+    "tags": [
+      "undead",
+      "tax",
+      "city"
+    ]
   },
   {
     "id": "middle_management_ogre",
@@ -257,7 +281,11 @@
         "damage": 16
       }
     ],
-    "tags": ["ogre", "elite", "bureaucracy"]
+    "tags": [
+      "ogre",
+      "elite",
+      "bureaucracy"
+    ]
   },
   {
     "id": "departmental_mimic",
@@ -290,7 +318,11 @@
         ]
       }
     ],
-    "tags": ["mimic", "elite", "city"]
+    "tags": [
+      "mimic",
+      "elite",
+      "city"
+    ]
   },
   {
     "id": "chairman_of_the_subcommittee",
@@ -336,6 +368,801 @@
         "damage": 20
       }
     ],
-    "tags": ["boss", "bureaucracy", "city"]
+    "tags": [
+      "boss",
+      "bureaucracy",
+      "city"
+    ]
+  },
+  {
+    "id": "queue_imp",
+    "name": "Queue Imp",
+    "max_hp": 22,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "extend_the_line",
+        "name": "Extend the Line",
+        "intent_type": "debuff",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "tiny_shove",
+        "name": "Tiny Shove",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 5
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "bureaucracy",
+      "small"
+    ]
+  },
+  {
+    "id": "stamp_goblin",
+    "name": "Stamp Goblin",
+    "max_hp": 32,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "rubber_stamp_rush",
+        "name": "Rubber Stamp Rush",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 7
+          }
+        ]
+      },
+      {
+        "id": "stamped_in_triplicate",
+        "name": "Stamped in Triplicate",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 5
+          },
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 5
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "official_emboldening",
+        "name": "Official Emboldening",
+        "intent_type": "buff",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 4
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "bureaucracy",
+      "goblin"
+    ]
+  },
+  {
+    "id": "clerkling_apprentice",
+    "name": "Clerkling Apprentice",
+    "max_hp": 28,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "misfiled_request",
+        "name": "Misfiled Request",
+        "intent_type": "debuff",
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "eager_correction",
+        "name": "Eager Correction",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 6
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "freshly_learned_protocol",
+        "name": "Freshly Learned Protocol",
+        "intent_type": "buff",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 6
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "bureaucracy",
+      "clerk"
+    ]
+  },
+  {
+    "id": "pigeon_courier",
+    "name": "Pigeon Courier",
+    "max_hp": 24,
+    "intent_pattern": "weighted_random",
+    "intents": [
+      {
+        "id": "urgent_notice",
+        "name": "Urgent Notice",
+        "intent_type": "mixed",
+        "weight": 3,
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 5
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "express_delivery",
+        "name": "Express Delivery",
+        "intent_type": "attack",
+        "weight": 2,
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "id": "drop_the_summons",
+        "name": "Drop the Summons",
+        "intent_type": "debuff",
+        "weight": 2,
+        "actions": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "courier",
+      "beast"
+    ]
+  },
+  {
+    "id": "ink_spattered_scribe",
+    "name": "Ink-Spattered Scribe",
+    "max_hp": 36,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "correct_the_record",
+        "name": "Correct the Record",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 8
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "ink_flick",
+        "name": "Ink Flick",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 7
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "bureaucracy",
+      "scribe"
+    ]
+  },
+  {
+    "id": "seal_bearer_toad",
+    "name": "Seal-Bearer Toad",
+    "max_hp": 34,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "waxen_protection",
+        "name": "Waxen Protection",
+        "intent_type": "block",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "all_enemies",
+            "amount": 6
+          }
+        ]
+      },
+      {
+        "id": "croak_of_approval",
+        "name": "Croak of Approval",
+        "intent_type": "buff",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 4
+          }
+        ]
+      },
+      {
+        "id": "sticky_stamp",
+        "name": "Sticky Stamp",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 5
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "beast",
+      "support"
+    ]
+  },
+  {
+    "id": "municipal_gargoyle",
+    "name": "Municipal Gargoyle",
+    "max_hp": 48,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "stonewall_ordinance",
+        "name": "Stonewall Ordinance",
+        "intent_type": "block",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 14
+          }
+        ]
+      },
+      {
+        "id": "falling_masonry",
+        "name": "Falling Masonry",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 13
+          }
+        ]
+      },
+      {
+        "id": "unmoving_precedent",
+        "name": "Unmoving Precedent",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 8
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "construct",
+      "tank"
+    ]
+  },
+  {
+    "id": "red_tape_serpent",
+    "name": "Red Tape Serpent",
+    "max_hp": 42,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "binding_clause",
+        "name": "Binding Clause",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 8
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "coil_of_procedure",
+        "name": "Coil of Procedure",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 9
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "tighten_the_clause",
+        "name": "Tighten the Clause",
+        "intent_type": "buff",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "beast",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "civic_bell_ringer",
+    "name": "Civic Bell-Ringer",
+    "max_hp": 38,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "first_toll",
+        "name": "First Toll",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 6
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "gather_momentum",
+        "name": "Gather Momentum",
+        "intent_type": "buff",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 5
+          }
+        ]
+      },
+      {
+        "id": "deadline_toll",
+        "name": "Deadline Toll",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 15
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "deadline"
+    ]
+  },
+  {
+    "id": "filing_beetle",
+    "name": "Filing Beetle",
+    "max_hp": 40,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "cabinet_shell",
+        "name": "Cabinet Shell",
+        "intent_type": "block",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 12
+          }
+        ]
+      },
+      {
+        "id": "indexed_bite",
+        "name": "Indexed Bite",
+        "intent_type": "attack",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 9
+          }
+        ]
+      },
+      {
+        "id": "file_under_pain",
+        "name": "File Under Pain",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 6
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "beast",
+      "tank"
+    ]
+  },
+  {
+    "id": "senior_clerk",
+    "name": "The Senior Clerk",
+    "max_hp": 92,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "rectify_records",
+        "name": "Rectify Records",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 12
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "expedited_rejection",
+        "name": "Expedited Rejection",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 14
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "staff_meeting",
+        "name": "Staff Meeting",
+        "intent_type": "buff",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "red_tape_golem",
+    "name": "Red Tape Golem",
+    "max_hp": 118,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "procedural_mass",
+        "name": "Procedural Mass",
+        "intent_type": "block",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 18
+          }
+        ]
+      },
+      {
+        "id": "binding_slam",
+        "name": "Binding Slam",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 16
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "regulation_tightens",
+        "name": "Regulation Tightens",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 10
+          }
+        ]
+      },
+      {
+        "id": "red_tape_snare",
+        "name": "Red Tape Snare",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 10
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 3
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "elite",
+      "construct"
+    ]
+  },
+  {
+    "id": "deputy_undersecretary",
+    "name": "The Deputy Undersecretary",
+    "max_hp": 190,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "call_to_order",
+        "name": "Call to Order",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 14
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "departmental_pressure",
+        "name": "Departmental Pressure",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 13
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "emergency_subcommittee",
+        "name": "Emergency Subcommittee",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          },
+          {
+            "type": "gain_block",
+            "target": "owner",
+            "amount": 10
+          }
+        ]
+      },
+      {
+        "id": "signed_and_sealed",
+        "name": "Signed and Sealed",
+        "intent_type": "mixed",
+        "actions": [
+          {
+            "type": "deal_damage",
+            "target": "player",
+            "amount": 20
+          },
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "city",
+      "boss",
+      "bureaucracy"
+    ]
   }
 ]

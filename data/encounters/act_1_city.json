@@ -1,105 +1,168 @@
 [
   {
     "id": "city_easy_01",
-    "name": "A Legally Complicated Rat",
+    "name": "A Very Official Line",
     "act": 1,
     "difficulty": "easy",
     "enemies": [
-      "rat_with_legal_representation"
+      "queue_imp"
     ],
     "weight": 3
   },
   {
     "id": "city_easy_02",
-    "name": "The Clerk Who Would Not Stop",
+    "name": "Stamping Errand",
     "act": 1,
     "difficulty": "easy",
     "enemies": [
-      "overzealous_clerk"
+      "stamp_goblin"
     ],
     "weight": 3
   },
   {
     "id": "city_easy_03",
-    "name": "A Suspiciously Damp Permit",
+    "name": "First Day at the Counter",
     "act": 1,
     "difficulty": "easy",
     "enemies": [
-      "ink_well_imp"
+      "clerkling_apprentice"
     ],
-    "weight": 2
+    "weight": 3
   },
   {
     "id": "city_normal_01",
-    "name": "Minor Administrative Incident",
+    "name": "The Wrong Counter",
     "act": 1,
     "difficulty": "normal",
     "enemies": [
-      "rat_with_legal_representation",
-      "overzealous_clerk"
+      "queue_imp",
+      "stamp_goblin"
     ],
-    "weight": 2
+    "weight": 3
   },
   {
     "id": "city_normal_02",
-    "name": "Contractual Pest Control",
+    "name": "Ink and Wax",
     "act": 1,
     "difficulty": "normal",
     "enemies": [
-      "tiny_contract_demon",
-      "rat_with_legal_representation"
+      "ink_spattered_scribe",
+      "seal_bearer_toad"
     ],
-    "weight": 2
+    "weight": 3
   },
   {
     "id": "city_normal_03",
-    "name": "Permit Trouble",
+    "name": "Courier at the Filing Cabinet",
     "act": 1,
     "difficulty": "normal",
     "enemies": [
-      "permit_goblin",
-      "ink_well_imp"
+      "pigeon_courier",
+      "filing_beetle"
     ],
     "weight": 2
   },
   {
     "id": "city_normal_04",
-    "name": "Unpaid Spiritual Liabilities",
+    "name": "Stone Ordinance",
     "act": 1,
     "difficulty": "normal",
     "enemies": [
-      "tax_ghoul"
+      "municipal_gargoyle"
     ],
-    "weight": 1
+    "weight": 2
   },
   {
     "id": "city_elite_01",
-    "name": "Quarterly Performance Ambush",
+    "name": "The Senior Clerk",
     "act": 1,
     "difficulty": "elite",
     "enemies": [
-      "middle_management_ogre"
+      "senior_clerk"
     ],
     "weight": 1
   },
   {
     "id": "city_elite_02",
-    "name": "The Cabinet That Filed Back",
+    "name": "The Red Tape Golem",
     "act": 1,
     "difficulty": "elite",
     "enemies": [
-      "departmental_mimic",
-      "ink_well_imp"
+      "red_tape_golem"
     ],
     "weight": 1
   },
   {
     "id": "city_boss_01",
-    "name": "Emergency Session of the Subcommittee",
+    "name": "The Deputy Undersecretary",
     "act": 1,
     "difficulty": "boss",
     "enemies": [
-      "chairman_of_the_subcommittee"
+      "deputy_undersecretary"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "city_easy_04",
+    "name": "Urgent Delivery",
+    "act": 1,
+    "difficulty": "easy",
+    "enemies": [
+      "pigeon_courier"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_easy_05",
+    "name": "Misplaced Files",
+    "act": 1,
+    "difficulty": "easy",
+    "enemies": [
+      "filing_beetle"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_05",
+    "name": "Red Tape Crossing",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "red_tape_serpent"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_06",
+    "name": "The Bell and the Seal",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "civic_bell_ringer",
+      "seal_bearer_toad"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "city_normal_07",
+    "name": "Apprentice Review",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "clerkling_apprentice",
+      "ink_spattered_scribe"
+    ],
+    "weight": 3
+  },
+  {
+    "id": "city_normal_08",
+    "name": "Municipal Menagerie",
+    "act": 1,
+    "difficulty": "normal",
+    "enemies": [
+      "queue_imp",
+      "pigeon_courier",
+      "seal_bearer_toad"
     ],
     "weight": 1
   }

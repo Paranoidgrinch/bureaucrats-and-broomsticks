@@ -6,7 +6,7 @@ from collections.abc import Callable, Mapping
 from math import ceil
 
 from bab.console.io import console
-from bab.console.reward_flow import offer_card_reward, offer_card_upgrade
+from bab.console.reward_flow import offer_card_removal, offer_card_reward, offer_card_upgrade
 from bab.models import EventEffect
 from bab.run.state import RunState
 
@@ -56,7 +56,14 @@ def handle_gain_max_hp(run_state: RunState, effect: EventEffect) -> None:
 
 
 def handle_remove_card(run_state: RunState, effect: EventEffect) -> None:
-    console.print("[yellow]Card removal is not implemented yet.[/yellow]")
+    amount = effect.amount or 1
+
+    for _ in range(amount):
+        offer_card_removal(
+            run_state,
+            card_id=effect.card_id,
+            tag=effect.tag,
+        )
 
 
 CONSOLE_EVENT_EFFECT_HANDLERS: Mapping[str, ConsoleEventEffectHandler] = {

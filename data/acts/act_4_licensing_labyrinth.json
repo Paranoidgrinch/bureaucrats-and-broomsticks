@@ -28,7 +28,7 @@
   },
   "treasure": {
     "mimic_chance": 0.26,
-    "mimic_encounter_id": "city_elite_02"
+    "mimic_encounter_id": "act_4_elite_02"
   },
   "waiting_room": {
     "heal_percent": 25

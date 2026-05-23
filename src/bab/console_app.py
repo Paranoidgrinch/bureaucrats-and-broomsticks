@@ -19,15 +19,6 @@ from rich.panel import Panel
 from rich.table import Table
 
 from bab.combat_state import CombatState, Combatant
-from bab.data_loader import (
-    load_card_database,
-    load_character_class,
-    load_encounter_database,
-    load_enemy_database,
-    load_event_database,
-    load_status_database,
-    load_relic_database,
-)
 from bab.deck import play_card_from_hand, shuffle_draw_pile
 from bab.events import choose_random_event
 from bab.models import Card, EventChoice, EventDefinition, EventEffect
@@ -67,6 +58,8 @@ from bab.game_config import (
     TREASURE_MIMIC_ENCOUNTER_ID,
     WAITING_ROOM_HEAL_PERCENT,
 )
+
+from bab.content_catalog import load_default_content_catalog
 
 
 def choose_next_map_node(run_state: RunState) -> MapNode:
@@ -272,23 +265,16 @@ def offer_card_upgrade(run_state: RunState) -> None:
 
 def create_run_state() -> RunState:
     rng = Random()
-
-    card_database = load_card_database(CARD_DATA_FILES)
-    character_class = load_character_class(CHARACTER_CLASS_DATA_FILE)
-    enemy_database = load_enemy_database(ENEMY_DATA_FILES)
-    encounter_database = load_encounter_database(ENCOUNTER_DATA_FILES)
-    status_database = load_status_database(STATUS_DATA_FILES)
-    event_database = load_event_database(EVENT_DATA_FILES)
-    relic_database = load_relic_database(RELIC_DATA_FILES)
+    catalog = load_default_content_catalog()
 
     return create_new_run(
-        character_class=character_class,
-        card_database=card_database,
-        enemy_database=enemy_database,
-        encounter_database=encounter_database,
-        status_database=status_database,
-        event_database=event_database,
-        relic_database=relic_database,
+        character_class=catalog.character_class,
+        card_database=catalog.card_database,
+        enemy_database=catalog.enemy_database,
+        encounter_database=catalog.encounter_database,
+        status_database=catalog.status_database,
+        event_database=catalog.event_database,
+        relic_database=catalog.relic_database,
         rng=rng,
         act=DEFAULT_ACT,
         max_fights=DEFAULT_MAX_FIGHTS,

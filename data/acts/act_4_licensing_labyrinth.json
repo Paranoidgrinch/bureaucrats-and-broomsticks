@@ -3,12 +3,15 @@
   "act": 4,
   "name": "Act IV: The Licensing Labyrinth",
   "character_class_files": [
-    "data/classes/bureaucrat.json"
+    "data/classes/bureaucrat.json",
+    "data/classes/witch_clerk.json"
   ],
   "default_character_class_id": "bureaucrat",
   "card_files": [
     "data/cards/bureaucrat_starter.json",
-    "data/cards/bureaucrat_rewards.json"
+    "data/cards/bureaucrat_rewards.json",
+    "data/cards/witch_clerk_starter.json",
+    "data/cards/witch_clerk_rewards.json"
   ],
   "enemy_files": [
     "data/enemies/city_enemies.json"

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Literal
 
-CardClass = Literal["bureaucrat"]
+CardClass = Literal["bureaucrat", "witch_clerk"]
 
 CardType = Literal[
     "action",

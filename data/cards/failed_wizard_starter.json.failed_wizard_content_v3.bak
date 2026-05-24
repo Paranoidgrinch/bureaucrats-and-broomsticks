@@ -6,12 +6,12 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 8 damage.",
+    "text": "Deal 7 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 8
+        "amount": 7
       }
     ],
     "tags": [
@@ -28,12 +28,12 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 11 damage.",
+    "text": "Deal 10 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 11
+        "amount": 10
       }
     ],
     "tags": [
@@ -50,12 +50,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 7 Block.",
+    "text": "Gain 6 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 7
+        "amount": 6
       }
     ],
     "tags": [
@@ -72,12 +72,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 10 Block.",
+    "text": "Gain 9 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 10
+        "amount": 9
       }
     ],
     "tags": [
@@ -164,12 +164,12 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 7 damage to all enemies.",
+    "text": "Deal 6 damage to all enemies.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "all_enemies",
-        "amount": 7
+        "amount": 6
       }
     ],
     "tags": [
@@ -187,12 +187,12 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 10 damage to all enemies.",
+    "text": "Deal 9 damage to all enemies.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "all_enemies",
-        "amount": 10
+        "amount": 9
       }
     ],
     "tags": [

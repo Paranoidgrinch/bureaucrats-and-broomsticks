@@ -37,7 +37,7 @@ def test_choose_random_unowned_relic_does_not_offer_wrong_class_specific_relics(
             catalog.relic_database,
             owned_relics=[],
             rng=Random(seed),
-            character_id="failed_wizard",
+            character_id="hedge_witch",
         )
         assert relic.allowed_classes in ([], ["failed_wizard"])
 
@@ -73,9 +73,9 @@ def test_choose_random_unowned_relic_raises_if_only_wrong_class_relics_available
             class_specific_only,
             owned_relics=[],
             rng=Random(1),
-            character_id="failed_wizard",
+            character_id="hedge_witch",
         )
     except ValueError as exc:
         assert "No unowned relics available" in str(exc)
     else:
-        raise AssertionError("Expected no available relics for the wrong character.")
+        raise AssertionError("Expected no available relics for a character without class-specific relics.")

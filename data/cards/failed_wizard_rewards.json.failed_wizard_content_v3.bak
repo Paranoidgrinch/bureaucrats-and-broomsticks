@@ -6,12 +6,12 @@
     "type": "spell",
     "cost": 0,
     "rarity": "starter",
-    "text": "Deal 5 damage. Exhaust.",
+    "text": "Deal 4 damage. Exhaust.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 5
+        "amount": 4
       }
     ],
     "tags": [
@@ -29,12 +29,12 @@
     "type": "spell",
     "cost": 0,
     "rarity": "starter",
-    "text": "Deal 4 damage to all enemies. Exhaust.",
+    "text": "Deal 3 damage to all enemies. Exhaust.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "all_enemies",
-        "amount": 4
+        "amount": 3
       }
     ],
     "tags": [
@@ -382,12 +382,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 11 Block.",
+    "text": "Gain 9 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 11
+        "amount": 9
       }
     ],
     "tags": [
@@ -404,12 +404,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 15 Block.",
+    "text": "Gain 12 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 15
+        "amount": 12
       }
     ],
     "tags": [
@@ -795,18 +795,13 @@
     "type": "spell",
     "cost": 1,
     "rarity": "common",
-    "text": "Add 2 Loose Sparks to your hand. Gain 3 Block.",
+    "text": "Add 2 Loose Sparks to your hand.",
     "effects": [
       {
         "type": "create_card",
         "card_id": "loose_spark",
         "destination": "hand",
         "copies": 2
-      },
-      {
-        "type": "gain_block",
-        "target": "self",
-        "amount": 3
       }
     ],
     "tags": [
@@ -823,18 +818,13 @@
     "type": "spell",
     "cost": 1,
     "rarity": "common",
-    "text": "Add 3 Loose Sparks to your hand. Gain 4 Block.",
+    "text": "Add 3 Loose Sparks to your hand.",
     "effects": [
       {
         "type": "create_card",
         "card_id": "loose_spark",
         "destination": "hand",
         "copies": 3
-      },
-      {
-        "type": "gain_block",
-        "target": "self",
-        "amount": 4
       }
     ],
     "tags": [
@@ -851,12 +841,12 @@
     "type": "spell",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 8 Block. Add a Half-Remembered Spell to your hand.",
+    "text": "Gain 7 Block. Add a Half-Remembered Spell to your hand.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 8
+        "amount": 7
       },
       {
         "type": "create_card",
@@ -881,12 +871,12 @@
     "type": "spell",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 12 Block. Add a Half-Remembered Spell to your hand.",
+    "text": "Gain 10 Block. Add a Half-Remembered Spell to your hand.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 12
+        "amount": 10
       },
       {
         "type": "create_card",
@@ -911,7 +901,7 @@
     "type": "spell",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Draw 2. Add a Loose Spark to your hand. Gain 3 Block.",
+    "text": "Draw 2. Add a Loose Spark to your hand.",
     "effects": [
       {
         "type": "draw_cards",
@@ -922,11 +912,6 @@
         "card_id": "loose_spark",
         "destination": "hand",
         "copies": 1
-      },
-      {
-        "type": "gain_block",
-        "target": "self",
-        "amount": 3
       }
     ],
     "tags": [
@@ -944,7 +929,7 @@
     "type": "spell",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Draw 2. Add 2 Loose Sparks to your hand. Gain 4 Block.",
+    "text": "Draw 2. Add 2 Loose Sparks to your hand.",
     "effects": [
       {
         "type": "draw_cards",
@@ -955,11 +940,6 @@
         "card_id": "loose_spark",
         "destination": "hand",
         "copies": 2
-      },
-      {
-        "type": "gain_block",
-        "target": "self",
-        "amount": 4
       }
     ],
     "tags": [

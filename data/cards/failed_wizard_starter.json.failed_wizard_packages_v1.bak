@@ -6,19 +6,15 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 8 damage.",
+    "text": "Deal 6 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 8
+        "amount": 6
       }
     ],
-    "tags": [
-      "attack",
-      "spell",
-      "unstable"
-    ],
+    "tags": [],
     "upgrades_to": "sparks_probably_plus"
   },
   {
@@ -28,18 +24,15 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 11 damage.",
+    "text": "Deal 8 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 11
+        "amount": 8
       }
     ],
     "tags": [
-      "attack",
-      "spell",
-      "unstable",
       "upgraded"
     ]
   },
@@ -50,19 +43,15 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 7 Block.",
+    "text": "Gain 5 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 7
+        "amount": 5
       }
     ],
-    "tags": [
-      "block",
-      "form",
-      "panic"
-    ],
+    "tags": [],
     "upgrades_to": "robe_flap_plus"
   },
   {
@@ -72,18 +61,15 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 10 Block.",
+    "text": "Gain 8 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 10
+        "amount": 8
       }
     ],
     "tags": [
-      "block",
-      "form",
-      "panic",
       "upgraded"
     ]
   },
@@ -94,7 +80,7 @@
     "type": "spell",
     "cost": 0,
     "rarity": "starter",
-    "text": "Gain 1 Strength.\nGain 4 Block.\nApply 1 Panic to yourself.",
+    "text": "Gain 1 Strength. Apply 1 Panic to yourself.",
     "effects": [
       {
         "type": "gain_strength",
@@ -102,24 +88,13 @@
         "amount": 1
       },
       {
-        "type": "gain_block",
-        "target": "self",
-        "amount": 4
-      },
-      {
         "type": "apply_status",
         "target": "self",
-        "status": "panic",
-        "amount": 1
+        "amount": 1,
+        "status": "panic"
       }
     ],
-    "tags": [
-      "spell",
-      "strength",
-      "panic",
-      "borrowed_thaum",
-      "zero_cost"
-    ],
+    "tags": [],
     "upgrades_to": "borrowed_thaum_plus"
   },
   {
@@ -129,7 +104,7 @@
     "type": "spell",
     "cost": 0,
     "rarity": "starter",
-    "text": "Gain 2 Strength.\nGain 6 Block.\nApply 1 Panic to yourself.",
+    "text": "Gain 2 Strength. Apply 1 Panic to yourself.",
     "effects": [
       {
         "type": "gain_strength",
@@ -137,23 +112,13 @@
         "amount": 2
       },
       {
-        "type": "gain_block",
-        "target": "self",
-        "amount": 6
-      },
-      {
         "type": "apply_status",
         "target": "self",
-        "status": "panic",
-        "amount": 1
+        "amount": 1,
+        "status": "panic"
       }
     ],
     "tags": [
-      "spell",
-      "strength",
-      "panic",
-      "borrowed_thaum",
-      "zero_cost",
       "upgraded"
     ]
   },
@@ -164,20 +129,15 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 7 damage to all enemies.",
+    "text": "Deal 4 damage to all enemies.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "all_enemies",
-        "amount": 7
+        "amount": 4
       }
     ],
-    "tags": [
-      "attack",
-      "spell",
-      "aoe",
-      "misfire"
-    ],
+    "tags": [],
     "upgrades_to": "luggage_burst_plus"
   },
   {
@@ -187,19 +147,15 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 10 damage to all enemies.",
+    "text": "Deal 6 damage to all enemies.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "all_enemies",
-        "amount": 10
+        "amount": 6
       }
     ],
     "tags": [
-      "attack",
-      "spell",
-      "aoe",
-      "misfire",
       "upgraded"
     ]
   }

@@ -1,7 +1,7 @@
 {
   "id": "failed_wizard",
   "name": "Failed Wizard",
-  "max_hp": 76,
+  "max_hp": 62,
   "starting_energy": 3,
   "starting_relic": null,
   "starting_deck": [

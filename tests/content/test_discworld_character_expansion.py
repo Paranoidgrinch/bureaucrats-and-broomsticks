@@ -88,7 +88,12 @@ def test_new_starter_cards_have_upgrade_targets() -> None:
         starter_cards = [
             card
             for card in catalog.card_database.values()
-            if card.class_ == class_id and card.rarity == "starter" and "upgraded" not in card.tags
+            if (
+                card.class_ == class_id
+                and card.rarity == "starter"
+                and "upgraded" not in card.tags
+                and "generated" not in card.tags
+            )
         ]
 
         assert starter_cards

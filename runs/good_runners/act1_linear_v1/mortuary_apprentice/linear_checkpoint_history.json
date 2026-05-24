@@ -1,0 +1,1940 @@
+{
+  "character_id": "mortuary_apprentice",
+  "history": [
+    {
+      "episode": 0,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.84,
+          "average_fights_won": 6.78,
+          "average_reward": 114.6962,
+          "average_steps": 126.46,
+          "defeats": 8,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 42
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.84,
+      "linear_average_damage_dealt": 445.36,
+      "linear_average_damage_taken": 59.1,
+      "linear_average_fights_won": 6.78,
+      "linear_average_reward": 114.6962,
+      "linear_wins": 42
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_000200.json",
+      "episode": 200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.04,
+          "average_fights_won": 6.44,
+          "average_reward": 34.33300000000005,
+          "average_steps": 125.6,
+          "defeats": 42,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 8
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.04,
+      "linear_average_damage_dealt": 359.7,
+      "linear_average_damage_taken": 78.74,
+      "linear_average_fights_won": 6.44,
+      "linear_average_reward": 34.33300000000005,
+      "linear_wins": 8
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_000400.json",
+      "episode": 400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 7.14,
+          "average_reward": 74.54620000000001,
+          "average_steps": 140.12,
+          "defeats": 28,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 22
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.44,
+      "linear_average_damage_dealt": 419.32,
+      "linear_average_damage_taken": 70.44,
+      "linear_average_fights_won": 7.14,
+      "linear_average_reward": 74.54620000000001,
+      "linear_wins": 22
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_000600.json",
+      "episode": 600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.94,
+          "average_fights_won": 6.28,
+          "average_reward": 27.29220000000004,
+          "average_steps": 120.08,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 8.94,
+      "linear_average_damage_dealt": 353.52,
+      "linear_average_damage_taken": 78.72,
+      "linear_average_fights_won": 6.28,
+      "linear_average_reward": 27.29220000000004,
+      "linear_wins": 5
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_000800.json",
+      "episode": 800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.0,
+          "average_fights_won": 6.0,
+          "average_reward": 35.654800000000044,
+          "average_steps": 119.02,
+          "defeats": 40,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 10
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.0,
+      "linear_average_damage_dealt": 349.22,
+      "linear_average_damage_taken": 76.34,
+      "linear_average_fights_won": 6.0,
+      "linear_average_reward": 35.654800000000044,
+      "linear_wins": 10
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_001000.json",
+      "episode": 1000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.48,
+          "average_fights_won": 7.2,
+          "average_reward": 87.56980000000001,
+          "average_steps": 139.64,
+          "defeats": 22,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 28
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.48,
+      "linear_average_damage_dealt": 436.92,
+      "linear_average_damage_taken": 70.44,
+      "linear_average_fights_won": 7.2,
+      "linear_average_reward": 87.56980000000001,
+      "linear_wins": 28
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_001200.json",
+      "episode": 1200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.86,
+          "average_fights_won": 6.3,
+          "average_reward": 36.9642,
+          "average_steps": 140.5,
+          "defeats": 40,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 10
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 8.86,
+      "linear_average_damage_dealt": 352.84,
+      "linear_average_damage_taken": 82.68,
+      "linear_average_fights_won": 6.3,
+      "linear_average_reward": 36.9642,
+      "linear_wins": 10
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_001400.json",
+      "episode": 1400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.48,
+          "average_reward": 31.971400000000017,
+          "average_steps": 124.62,
+          "defeats": 44,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 6
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 343.82,
+      "linear_average_damage_taken": 81.58,
+      "linear_average_fights_won": 6.48,
+      "linear_average_reward": 31.971400000000017,
+      "linear_wins": 6
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_001600.json",
+      "episode": 1600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.48,
+          "average_fights_won": 6.06,
+          "average_reward": 17.33420000000003,
+          "average_steps": 108.86,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 8.48,
+      "linear_average_damage_dealt": 320.12,
+      "linear_average_damage_taken": 77.82,
+      "linear_average_fights_won": 6.06,
+      "linear_average_reward": 17.33420000000003,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_001800.json",
+      "episode": 1800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.5,
+          "average_fights_won": 7.22,
+          "average_reward": 88.31020000000002,
+          "average_steps": 151.82,
+          "defeats": 22,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 28
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.5,
+      "linear_average_damage_dealt": 442.6,
+      "linear_average_damage_taken": 68.98,
+      "linear_average_fights_won": 7.22,
+      "linear_average_reward": 88.31020000000002,
+      "linear_wins": 28
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_002000.json",
+      "episode": 2000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 7.26,
+          "average_fights_won": 5.04,
+          "average_reward": -1.9857999999999987,
+          "average_steps": 103.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 7.26,
+      "linear_average_damage_dealt": 231.26,
+      "linear_average_damage_taken": 85.42,
+      "linear_average_fights_won": 5.04,
+      "linear_average_reward": -1.9857999999999987,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_002200.json",
+      "episode": 2200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.16,
+          "average_fights_won": 6.8,
+          "average_reward": 52.90360000000006,
+          "average_steps": 121.62,
+          "defeats": 37,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 13
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.16,
+      "linear_average_damage_dealt": 399.72,
+      "linear_average_damage_taken": 74.2,
+      "linear_average_fights_won": 6.8,
+      "linear_average_reward": 52.90360000000006,
+      "linear_wins": 13
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_002400.json",
+      "episode": 2400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.4,
+          "average_fights_won": 6.98,
+          "average_reward": 69.63960000000002,
+          "average_steps": 142.46,
+          "defeats": 30,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 20
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.4,
+      "linear_average_damage_dealt": 430.96,
+      "linear_average_damage_taken": 71.26,
+      "linear_average_fights_won": 6.98,
+      "linear_average_reward": 69.63960000000002,
+      "linear_wins": 20
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_002600.json",
+      "episode": 2600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.94,
+          "average_fights_won": 6.36,
+          "average_reward": 29.658200000000043,
+          "average_steps": 125.36,
+          "defeats": 44,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 6
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 8.94,
+      "linear_average_damage_dealt": 346.24,
+      "linear_average_damage_taken": 77.68,
+      "linear_average_fights_won": 6.36,
+      "linear_average_reward": 29.658200000000043,
+      "linear_wins": 6
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_002800.json",
+      "episode": 2800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.18,
+          "average_fights_won": 6.76,
+          "average_reward": 54.47460000000003,
+          "average_steps": 124.2,
+          "defeats": 35,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 15
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.18,
+      "linear_average_damage_dealt": 388.2,
+      "linear_average_damage_taken": 77.4,
+      "linear_average_fights_won": 6.76,
+      "linear_average_reward": 54.47460000000003,
+      "linear_wins": 15
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_003000.json",
+      "episode": 3000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.0,
+          "average_fights_won": 6.56,
+          "average_reward": 34.61800000000003,
+          "average_steps": 133.68,
+          "defeats": 43,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 7
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.0,
+      "linear_average_damage_dealt": 369.12,
+      "linear_average_damage_taken": 79.4,
+      "linear_average_fights_won": 6.56,
+      "linear_average_reward": 34.61800000000003,
+      "linear_wins": 7
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_003200.json",
+      "episode": 3200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.02,
+          "average_fights_won": 6.56,
+          "average_reward": 29.59040000000004,
+          "average_steps": 121.02,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 4
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.02,
+      "linear_average_damage_dealt": 370.22,
+      "linear_average_damage_taken": 78.26,
+      "linear_average_fights_won": 6.56,
+      "linear_average_reward": 29.59040000000004,
+      "linear_wins": 4
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_003400.json",
+      "episode": 3400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.2,
+          "average_fights_won": 6.68,
+          "average_reward": 55.837200000000024,
+          "average_steps": 123.32,
+          "defeats": 34,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 16
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.2,
+      "linear_average_damage_dealt": 386.86,
+      "linear_average_damage_taken": 78.64,
+      "linear_average_fights_won": 6.68,
+      "linear_average_reward": 55.837200000000024,
+      "linear_wins": 16
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_003600.json",
+      "episode": 3600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.06,
+          "average_fights_won": 6.4,
+          "average_reward": 40.25860000000002,
+          "average_steps": 123.32,
+          "defeats": 40,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 10
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.06,
+      "linear_average_damage_dealt": 380.42,
+      "linear_average_damage_taken": 79.26,
+      "linear_average_fights_won": 6.4,
+      "linear_average_reward": 40.25860000000002,
+      "linear_wins": 10
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_003800.json",
+      "episode": 3800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.48,
+          "average_fights_won": 7.42,
+          "average_reward": 83.70660000000002,
+          "average_steps": 139.08,
+          "defeats": 25,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 25
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.48,
+      "linear_average_damage_dealt": 440.46,
+      "linear_average_damage_taken": 70.76,
+      "linear_average_fights_won": 7.42,
+      "linear_average_reward": 83.70660000000002,
+      "linear_wins": 25
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_004000.json",
+      "episode": 4000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.4,
+          "average_fights_won": 6.1,
+          "average_reward": 15.097800000000037,
+          "average_steps": 107.28,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 8.4,
+      "linear_average_damage_dealt": 307.96,
+      "linear_average_damage_taken": 82.28,
+      "linear_average_fights_won": 6.1,
+      "linear_average_reward": 15.097800000000037,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_004200.json",
+      "episode": 4200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.6,
+          "average_fights_won": 7.38,
+          "average_reward": 96.47160000000002,
+          "average_steps": 142.1,
+          "defeats": 19,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 31
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.6,
+      "linear_average_damage_dealt": 449.16,
+      "linear_average_damage_taken": 66.96,
+      "linear_average_fights_won": 7.38,
+      "linear_average_reward": 96.47160000000002,
+      "linear_wins": 31
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_004400.json",
+      "episode": 4400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.58,
+          "average_fights_won": 7.26,
+          "average_reward": 89.13520000000003,
+          "average_steps": 134.3,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.58,
+      "linear_average_damage_dealt": 441.4,
+      "linear_average_damage_taken": 70.54,
+      "linear_average_fights_won": 7.26,
+      "linear_average_reward": 89.13520000000003,
+      "linear_wins": 29
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_004600.json",
+      "episode": 4600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.48,
+          "average_fights_won": 7.18,
+          "average_reward": 85.47140000000003,
+          "average_steps": 139.38,
+          "defeats": 23,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 27
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.48,
+      "linear_average_damage_dealt": 443.6,
+      "linear_average_damage_taken": 71.5,
+      "linear_average_fights_won": 7.18,
+      "linear_average_reward": 85.47140000000003,
+      "linear_wins": 27
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_004800.json",
+      "episode": 4800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.5,
+          "average_fights_won": 7.16,
+          "average_reward": 85.97160000000004,
+          "average_steps": 141.46,
+          "defeats": 23,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 27
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.5,
+      "linear_average_damage_dealt": 435.76,
+      "linear_average_damage_taken": 68.86,
+      "linear_average_fights_won": 7.16,
+      "linear_average_reward": 85.97160000000004,
+      "linear_wins": 27
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_005000.json",
+      "episode": 5000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.66,
+          "average_fights_won": 7.0,
+          "average_reward": 96.10340000000002,
+          "average_steps": 137.1,
+          "defeats": 17,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 33
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.66,
+      "linear_average_damage_dealt": 432.18,
+      "linear_average_damage_taken": 68.32,
+      "linear_average_fights_won": 7.0,
+      "linear_average_reward": 96.10340000000002,
+      "linear_wins": 33
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_005200.json",
+      "episode": 5200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 7.66,
+          "average_fights_won": 5.38,
+          "average_reward": 5.097800000000012,
+          "average_steps": 114.7,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 7.66,
+      "linear_average_damage_dealt": 257.0,
+      "linear_average_damage_taken": 82.08,
+      "linear_average_fights_won": 5.38,
+      "linear_average_reward": 5.097800000000012,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_005400.json",
+      "episode": 5400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.82,
+          "average_fights_won": 6.52,
+          "average_reward": 27.552600000000037,
+          "average_steps": 129.6,
+          "defeats": 47,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 3
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 8.82,
+      "linear_average_damage_dealt": 365.44,
+      "linear_average_damage_taken": 77.46,
+      "linear_average_fights_won": 6.52,
+      "linear_average_reward": 27.552600000000037,
+      "linear_wins": 3
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_005600.json",
+      "episode": 5600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.62,
+          "average_fights_won": 7.22,
+          "average_reward": 94.53860000000003,
+          "average_steps": 142.82,
+          "defeats": 19,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 31
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.62,
+      "linear_average_damage_dealt": 439.66,
+      "linear_average_damage_taken": 67.4,
+      "linear_average_fights_won": 7.22,
+      "linear_average_reward": 94.53860000000003,
+      "linear_wins": 31
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_005800.json",
+      "episode": 5800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.68,
+          "average_reward": 12.14740000000001,
+          "average_steps": 117.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 7.98,
+      "linear_average_damage_dealt": 274.28,
+      "linear_average_damage_taken": 81.58,
+      "linear_average_fights_won": 5.68,
+      "linear_average_reward": 12.14740000000001,
+      "linear_wins": 2
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_006000.json",
+      "episode": 6000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.62,
+          "average_fights_won": 7.12,
+          "average_reward": 92.79260000000002,
+          "average_steps": 135.58,
+          "defeats": 19,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 31
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.62,
+      "linear_average_damage_dealt": 439.8,
+      "linear_average_damage_taken": 72.02,
+      "linear_average_fights_won": 7.12,
+      "linear_average_reward": 92.79260000000002,
+      "linear_wins": 31
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_006200.json",
+      "episode": 6200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.48,
+          "average_fights_won": 7.14,
+          "average_reward": 78.83320000000002,
+          "average_steps": 131.34,
+          "defeats": 25,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 25
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.48,
+      "linear_average_damage_dealt": 427.38,
+      "linear_average_damage_taken": 76.64,
+      "linear_average_fights_won": 7.14,
+      "linear_average_reward": 78.83320000000002,
+      "linear_wins": 25
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_006400.json",
+      "episode": 6400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.62,
+          "average_fights_won": 7.0,
+          "average_reward": 90.46300000000002,
+          "average_steps": 133.84,
+          "defeats": 19,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 31
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.62,
+      "linear_average_damage_dealt": 432.44,
+      "linear_average_damage_taken": 70.62,
+      "linear_average_fights_won": 7.0,
+      "linear_average_reward": 90.46300000000002,
+      "linear_wins": 31
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_006600.json",
+      "episode": 6600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.52,
+          "average_fights_won": 7.16,
+          "average_reward": 84.85400000000003,
+          "average_steps": 140.12,
+          "defeats": 23,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 27
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.52,
+      "linear_average_damage_dealt": 442.08,
+      "linear_average_damage_taken": 72.24,
+      "linear_average_fights_won": 7.16,
+      "linear_average_reward": 84.85400000000003,
+      "linear_wins": 27
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_006800.json",
+      "episode": 6800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.26,
+          "average_fights_won": 6.98,
+          "average_reward": 64.72020000000003,
+          "average_steps": 125.28,
+          "defeats": 32,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 18
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.26,
+      "linear_average_damage_dealt": 410.02,
+      "linear_average_damage_taken": 73.22,
+      "linear_average_fights_won": 6.98,
+      "linear_average_reward": 64.72020000000003,
+      "linear_wins": 18
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_007000.json",
+      "episode": 7000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.7,
+          "average_fights_won": 6.2,
+          "average_reward": 19.160200000000035,
+          "average_steps": 122.4,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 8.7,
+      "linear_average_damage_dealt": 321.78,
+      "linear_average_damage_taken": 80.52,
+      "linear_average_fights_won": 6.2,
+      "linear_average_reward": 19.160200000000035,
+      "linear_wins": 2
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_007200.json",
+      "episode": 7200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.64,
+          "average_fights_won": 7.28,
+          "average_reward": 96.24560000000001,
+          "average_steps": 142.5,
+          "defeats": 18,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 32
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.64,
+      "linear_average_damage_dealt": 447.82,
+      "linear_average_damage_taken": 68.2,
+      "linear_average_fights_won": 7.28,
+      "linear_average_reward": 96.24560000000001,
+      "linear_wins": 32
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_007400.json",
+      "episode": 7400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.4,
+          "average_fights_won": 7.1,
+          "average_reward": 79.12740000000002,
+          "average_steps": 141.98,
+          "defeats": 26,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 24
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.4,
+      "linear_average_damage_dealt": 438.02,
+      "linear_average_damage_taken": 70.34,
+      "linear_average_fights_won": 7.1,
+      "linear_average_reward": 79.12740000000002,
+      "linear_wins": 24
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_007600.json",
+      "episode": 7600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.16,
+          "average_fights_won": 6.72,
+          "average_reward": 49.660600000000024,
+          "average_steps": 134.62,
+          "defeats": 37,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 13
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.16,
+      "linear_average_damage_dealt": 392.5,
+      "linear_average_damage_taken": 79.5,
+      "linear_average_fights_won": 6.72,
+      "linear_average_reward": 49.660600000000024,
+      "linear_wins": 13
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_007800.json",
+      "episode": 7800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.82,
+          "average_fights_won": 6.58,
+          "average_reward": 21.296000000000046,
+          "average_steps": 133.18,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 8.82,
+      "linear_average_damage_dealt": 363.4,
+      "linear_average_damage_taken": 79.16,
+      "linear_average_fights_won": 6.58,
+      "linear_average_reward": 21.296000000000046,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_008000.json",
+      "episode": 8000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.2,
+          "average_fights_won": 6.96,
+          "average_reward": 65.02600000000002,
+          "average_steps": 123.62,
+          "defeats": 31,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 19
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.2,
+      "linear_average_damage_dealt": 407.76,
+      "linear_average_damage_taken": 77.2,
+      "linear_average_fights_won": 6.96,
+      "linear_average_reward": 65.02600000000002,
+      "linear_wins": 19
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_008200.json",
+      "episode": 8200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.14,
+          "average_fights_won": 6.66,
+          "average_reward": 38.606199999999994,
+          "average_steps": 184.2,
+          "defeats": 42,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 8
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.14,
+      "linear_average_damage_dealt": 398.44,
+      "linear_average_damage_taken": 75.26,
+      "linear_average_fights_won": 6.66,
+      "linear_average_reward": 38.606199999999994,
+      "linear_wins": 8
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\checkpoints\\checkpoint_008400.json",
+      "episode": 8400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.24,
+          "average_reward": 45.346000000000025,
+          "average_steps": 114.86,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.46,
+          "average_fights_won": 7.1,
+          "average_reward": 76.23340000000003,
+          "average_steps": 140.22,
+          "defeats": 27,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 23
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 5.06,
+          "average_reward": 2.2215999999999987,
+          "average_steps": 115.92,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        }
+      },
+      "linear_average_completed_nodes": 9.46,
+      "linear_average_damage_dealt": 434.16,
+      "linear_average_damage_taken": 71.64,
+      "linear_average_fights_won": 7.1,
+      "linear_average_reward": 76.23340000000003,
+      "linear_wins": 23
+    }
+  ],
+  "schema_version": 1
+}

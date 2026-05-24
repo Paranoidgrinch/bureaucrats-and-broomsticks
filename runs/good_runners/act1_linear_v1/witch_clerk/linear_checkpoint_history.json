@@ -1,0 +1,1490 @@
+{
+  "character_id": "witch_clerk",
+  "history": [
+    {
+      "episode": 0,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.42,
+          "average_fights_won": 6.26,
+          "average_reward": 77.28399999999993,
+          "average_steps": 133.78,
+          "defeats": 24,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 26
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.42,
+      "linear_average_damage_dealt": 392.62,
+      "linear_average_damage_taken": 61.56,
+      "linear_average_fights_won": 6.26,
+      "linear_average_reward": 77.28399999999993,
+      "linear_wins": 26
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_000200.json",
+      "episode": 200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 5.58,
+          "average_fights_won": 3.0,
+          "average_reward": -5.6598000000000255,
+          "average_steps": 252.62,
+          "defeats": 30,
+          "runs": 50,
+          "stalls": 18,
+          "truncated": 0,
+          "wins": 2
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 5.58,
+      "linear_average_damage_dealt": 167.74,
+      "linear_average_damage_taken": 49.9,
+      "linear_average_fights_won": 3.0,
+      "linear_average_reward": -5.6598000000000255,
+      "linear_wins": 2
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_000400.json",
+      "episode": 400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.12,
+          "average_fights_won": 5.04,
+          "average_reward": 6.474599999999966,
+          "average_steps": 130.38,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.12,
+      "linear_average_damage_dealt": 239.66,
+      "linear_average_damage_taken": 72.72,
+      "linear_average_fights_won": 5.04,
+      "linear_average_reward": 6.474599999999966,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_000600.json",
+      "episode": 600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.02,
+          "average_fights_won": 6.16,
+          "average_reward": 34.635599999999926,
+          "average_steps": 139.12,
+          "defeats": 44,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 6
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.02,
+      "linear_average_damage_dealt": 347.36,
+      "linear_average_damage_taken": 68.54,
+      "linear_average_fights_won": 6.16,
+      "linear_average_reward": 34.635599999999926,
+      "linear_wins": 6
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_000800.json",
+      "episode": 800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.82,
+          "average_fights_won": 5.5,
+          "average_reward": 18.235599999999916,
+          "average_steps": 186.0,
+          "defeats": 47,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 3
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.82,
+      "linear_average_damage_dealt": 303.44,
+      "linear_average_damage_taken": 68.16,
+      "linear_average_fights_won": 5.5,
+      "linear_average_reward": 18.235599999999916,
+      "linear_wins": 3
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_001000.json",
+      "episode": 1000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 5.6,
+          "average_reward": 21.112599999999933,
+          "average_steps": 182.96,
+          "defeats": 47,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 3
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 316.96,
+      "linear_average_damage_taken": 66.8,
+      "linear_average_fights_won": 5.6,
+      "linear_average_reward": 21.112599999999933,
+      "linear_wins": 3
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_001200.json",
+      "episode": 1200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.1,
+          "average_fights_won": 6.28,
+          "average_reward": 40.2071999999999,
+          "average_steps": 193.06,
+          "defeats": 41,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 9
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.1,
+      "linear_average_damage_dealt": 357.64,
+      "linear_average_damage_taken": 66.18,
+      "linear_average_fights_won": 6.28,
+      "linear_average_reward": 40.2071999999999,
+      "linear_wins": 9
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_001400.json",
+      "episode": 1400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.16,
+          "average_fights_won": 5.84,
+          "average_reward": 38.30959999999988,
+          "average_steps": 182.84,
+          "defeats": 39,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 11
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.16,
+      "linear_average_damage_dealt": 363.28,
+      "linear_average_damage_taken": 64.0,
+      "linear_average_fights_won": 5.84,
+      "linear_average_reward": 38.30959999999988,
+      "linear_wins": 11
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_001600.json",
+      "episode": 1600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.9,
+          "average_fights_won": 5.48,
+          "average_reward": 15.776199999999898,
+          "average_steps": 209.96,
+          "defeats": 47,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 3
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.9,
+      "linear_average_damage_dealt": 311.96,
+      "linear_average_damage_taken": 67.36,
+      "linear_average_fights_won": 5.48,
+      "linear_average_reward": 15.776199999999898,
+      "linear_wins": 3
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_001800.json",
+      "episode": 1800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.2,
+          "average_fights_won": 6.54,
+          "average_reward": 54.1195999999999,
+          "average_steps": 184.52,
+          "defeats": 36,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 14
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.2,
+      "linear_average_damage_dealt": 382.32,
+      "linear_average_damage_taken": 64.58,
+      "linear_average_fights_won": 6.54,
+      "linear_average_reward": 54.1195999999999,
+      "linear_wins": 14
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_002000.json",
+      "episode": 2000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.82,
+          "average_fights_won": 6.06,
+          "average_reward": 19.795399999999898,
+          "average_steps": 216.34,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.82,
+      "linear_average_damage_dealt": 324.94,
+      "linear_average_damage_taken": 69.02,
+      "linear_average_fights_won": 6.06,
+      "linear_average_reward": 19.795399999999898,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_002200.json",
+      "episode": 2200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.02,
+          "average_fights_won": 6.16,
+          "average_reward": 27.66879999999989,
+          "average_steps": 218.7,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 4
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.02,
+      "linear_average_damage_dealt": 341.9,
+      "linear_average_damage_taken": 68.42,
+      "linear_average_fights_won": 6.16,
+      "linear_average_reward": 27.66879999999989,
+      "linear_wins": 4
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_002400.json",
+      "episode": 2400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.2,
+          "average_reward": 26.789599999999865,
+          "average_steps": 222.94,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 4
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.98,
+      "linear_average_damage_dealt": 336.86,
+      "linear_average_damage_taken": 69.6,
+      "linear_average_fights_won": 6.2,
+      "linear_average_reward": 26.789599999999865,
+      "linear_wins": 4
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_002600.json",
+      "episode": 2600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.94,
+          "average_fights_won": 6.26,
+          "average_reward": 27.820799999999913,
+          "average_steps": 162.62,
+          "defeats": 47,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 3
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.94,
+      "linear_average_damage_dealt": 340.02,
+      "linear_average_damage_taken": 70.48,
+      "linear_average_fights_won": 6.26,
+      "linear_average_reward": 27.820799999999913,
+      "linear_wins": 3
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_002800.json",
+      "episode": 2800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.16,
+          "average_reward": 28.97699999999989,
+          "average_steps": 225.32,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.98,
+      "linear_average_damage_dealt": 361.08,
+      "linear_average_damage_taken": 70.1,
+      "linear_average_fights_won": 6.16,
+      "linear_average_reward": 28.97699999999989,
+      "linear_wins": 5
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_003000.json",
+      "episode": 3000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.24,
+          "average_fights_won": 5.8,
+          "average_reward": 12.522199999999884,
+          "average_steps": 274.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.24,
+      "linear_average_damage_dealt": 287.74,
+      "linear_average_damage_taken": 67.72,
+      "linear_average_fights_won": 5.8,
+      "linear_average_reward": 12.522199999999884,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_003200.json",
+      "episode": 3200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.24,
+          "average_reward": 22.469799999999864,
+          "average_steps": 235.38,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 330.72,
+      "linear_average_damage_taken": 66.66,
+      "linear_average_fights_won": 6.24,
+      "linear_average_reward": 22.469799999999864,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_003400.json",
+      "episode": 3400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.78,
+          "average_fights_won": 5.34,
+          "average_reward": 17.349399999999914,
+          "average_steps": 215.02,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 4
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.78,
+      "linear_average_damage_dealt": 301.06,
+      "linear_average_damage_taken": 68.46,
+      "linear_average_fights_won": 5.34,
+      "linear_average_reward": 17.349399999999914,
+      "linear_wins": 4
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_003600.json",
+      "episode": 3600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.02,
+          "average_fights_won": 6.28,
+          "average_reward": 30.213199999999862,
+          "average_steps": 211.94,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.02,
+      "linear_average_damage_dealt": 357.16,
+      "linear_average_damage_taken": 67.18,
+      "linear_average_fights_won": 6.28,
+      "linear_average_reward": 30.213199999999862,
+      "linear_wins": 5
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_003800.json",
+      "episode": 3800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.44,
+          "average_fights_won": 5.88,
+          "average_reward": 18.649799999999928,
+          "average_steps": 225.64,
+          "defeats": 47,
+          "runs": 50,
+          "stalls": 2,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.44,
+      "linear_average_damage_dealt": 301.56,
+      "linear_average_damage_taken": 67.84,
+      "linear_average_fights_won": 5.88,
+      "linear_average_reward": 18.649799999999928,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_004000.json",
+      "episode": 4000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.12,
+          "average_fights_won": 6.62,
+          "average_reward": 46.489599999999875,
+          "average_steps": 207.24,
+          "defeats": 40,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 10
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.12,
+      "linear_average_damage_dealt": 383.16,
+      "linear_average_damage_taken": 65.74,
+      "linear_average_fights_won": 6.62,
+      "linear_average_reward": 46.489599999999875,
+      "linear_wins": 10
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_004200.json",
+      "episode": 4200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.96,
+          "average_fights_won": 6.42,
+          "average_reward": 23.345399999999824,
+          "average_steps": 245.64,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.96,
+      "linear_average_damage_dealt": 358.06,
+      "linear_average_damage_taken": 67.18,
+      "linear_average_fights_won": 6.42,
+      "linear_average_reward": 23.345399999999824,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_004400.json",
+      "episode": 4400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.92,
+          "average_fights_won": 6.26,
+          "average_reward": 26.70879999999985,
+          "average_steps": 263.98,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 4
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.92,
+      "linear_average_damage_dealt": 331.04,
+      "linear_average_damage_taken": 66.94,
+      "linear_average_fights_won": 6.26,
+      "linear_average_reward": 26.70879999999985,
+      "linear_wins": 4
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_004600.json",
+      "episode": 4600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.5,
+          "average_fights_won": 5.78,
+          "average_reward": 20.685999999999922,
+          "average_steps": 201.32,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 2,
+          "truncated": 0,
+          "wins": 2
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.5,
+      "linear_average_damage_dealt": 303.28,
+      "linear_average_damage_taken": 68.18,
+      "linear_average_fights_won": 5.78,
+      "linear_average_reward": 20.685999999999922,
+      "linear_wins": 2
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_004800.json",
+      "episode": 4800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.56,
+          "average_fights_won": 5.84,
+          "average_reward": 21.759199999999872,
+          "average_steps": 260.1,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 4
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.56,
+      "linear_average_damage_dealt": 316.06,
+      "linear_average_damage_taken": 67.46,
+      "linear_average_fights_won": 5.84,
+      "linear_average_reward": 21.759199999999872,
+      "linear_wins": 4
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_005000.json",
+      "episode": 5000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.02,
+          "average_fights_won": 6.48,
+          "average_reward": 35.80659999999983,
+          "average_steps": 232.3,
+          "defeats": 43,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 7
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.02,
+      "linear_average_damage_dealt": 363.32,
+      "linear_average_damage_taken": 66.68,
+      "linear_average_fights_won": 6.48,
+      "linear_average_reward": 35.80659999999983,
+      "linear_wins": 7
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_005200.json",
+      "episode": 5200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.12,
+          "average_fights_won": 6.44,
+          "average_reward": 42.146599999999836,
+          "average_steps": 213.9,
+          "defeats": 40,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 10
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.12,
+      "linear_average_damage_dealt": 376.8,
+      "linear_average_damage_taken": 65.48,
+      "linear_average_fights_won": 6.44,
+      "linear_average_reward": 42.146599999999836,
+      "linear_wins": 10
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_005400.json",
+      "episode": 5400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.5,
+          "average_reward": 24.866599999999895,
+          "average_steps": 178.34,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 325.14,
+      "linear_average_damage_taken": 68.44,
+      "linear_average_fights_won": 6.5,
+      "linear_average_reward": 24.866599999999895,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_005600.json",
+      "episode": 5600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 7.8,
+          "average_fights_won": 5.44,
+          "average_reward": 21.984999999999882,
+          "average_steps": 270.56,
+          "defeats": 39,
+          "runs": 50,
+          "stalls": 8,
+          "truncated": 0,
+          "wins": 3
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 7.8,
+      "linear_average_damage_dealt": 293.74,
+      "linear_average_damage_taken": 59.34,
+      "linear_average_fights_won": 5.44,
+      "linear_average_reward": 21.984999999999882,
+      "linear_wins": 3
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_005800.json",
+      "episode": 5800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.48,
+          "average_fights_won": 5.74,
+          "average_reward": 10.93939999999988,
+          "average_steps": 227.92,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.48,
+      "linear_average_damage_dealt": 295.38,
+      "linear_average_damage_taken": 68.62,
+      "linear_average_fights_won": 5.74,
+      "linear_average_reward": 10.93939999999988,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_006000.json",
+      "episode": 6000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.96,
+          "average_fights_won": 6.06,
+          "average_reward": 24.502399999999867,
+          "average_steps": 231.6,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 4
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.96,
+      "linear_average_damage_dealt": 324.28,
+      "linear_average_damage_taken": 67.5,
+      "linear_average_fights_won": 6.06,
+      "linear_average_reward": 24.502399999999867,
+      "linear_wins": 4
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_006200.json",
+      "episode": 6200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.84,
+          "average_fights_won": 6.26,
+          "average_reward": 20.46559999999986,
+          "average_steps": 232.46,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.84,
+      "linear_average_damage_dealt": 337.82,
+      "linear_average_damage_taken": 67.3,
+      "linear_average_fights_won": 6.26,
+      "linear_average_reward": 20.46559999999986,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\checkpoints\\checkpoint_006400.json",
+      "episode": 6400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.44,
+          "average_fights_won": 6.06,
+          "average_reward": 77.64159999999994,
+          "average_steps": 150.5,
+          "defeats": 21,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 29
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.06,
+          "average_reward": 30.28639999999993,
+          "average_steps": 184.52,
+          "defeats": 44,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 6
+        },
+        "random": {
+          "average_completed_nodes": 7.78,
+          "average_fights_won": 4.5,
+          "average_reward": -2.048800000000018,
+          "average_steps": 112.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 325.28,
+      "linear_average_damage_taken": 66.96,
+      "linear_average_fights_won": 6.06,
+      "linear_average_reward": 30.28639999999993,
+      "linear_wins": 6
+    }
+  ],
+  "schema_version": 1
+}

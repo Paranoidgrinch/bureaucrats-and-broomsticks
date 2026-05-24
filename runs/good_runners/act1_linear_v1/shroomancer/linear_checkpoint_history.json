@@ -1,0 +1,1895 @@
+{
+  "character_id": "shroomancer",
+  "history": [
+    {
+      "episode": 0,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 10.0,
+          "average_fights_won": 7.04,
+          "average_reward": 138.3867999999999,
+          "average_steps": 135.34,
+          "defeats": 0,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 50
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 10.0,
+      "linear_average_damage_dealt": 450.0,
+      "linear_average_damage_taken": 44.76,
+      "linear_average_fights_won": 7.04,
+      "linear_average_reward": 138.3867999999999,
+      "linear_wins": 50
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_000200.json",
+      "episode": 200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.18,
+          "average_fights_won": 6.78,
+          "average_reward": 62.367999999999945,
+          "average_steps": 139.72,
+          "defeats": 31,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 19
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.18,
+      "linear_average_damage_dealt": 382.34,
+      "linear_average_damage_taken": 77.58,
+      "linear_average_fights_won": 6.78,
+      "linear_average_reward": 62.367999999999945,
+      "linear_wins": 19
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_000400.json",
+      "episode": 400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.5,
+          "average_fights_won": 6.42,
+          "average_reward": 80.99499999999996,
+          "average_steps": 148.26,
+          "defeats": 18,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 32
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.5,
+      "linear_average_damage_dealt": 391.94,
+      "linear_average_damage_taken": 82.2,
+      "linear_average_fights_won": 6.42,
+      "linear_average_reward": 80.99499999999996,
+      "linear_wins": 32
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_000600.json",
+      "episode": 600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.98,
+          "average_fights_won": 6.88,
+          "average_reward": 136.1431999999999,
+          "average_steps": 141.02,
+          "defeats": 1,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 49
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.98,
+      "linear_average_damage_dealt": 440.78,
+      "linear_average_damage_taken": 40.76,
+      "linear_average_fights_won": 6.88,
+      "linear_average_reward": 136.1431999999999,
+      "linear_wins": 49
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_000800.json",
+      "episode": 800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.76,
+          "average_fights_won": 5.82,
+          "average_reward": 30.395999999999976,
+          "average_steps": 143.12,
+          "defeats": 40,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 10
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 8.76,
+      "linear_average_damage_dealt": 333.6,
+      "linear_average_damage_taken": 85.08,
+      "linear_average_fights_won": 5.82,
+      "linear_average_reward": 30.395999999999976,
+      "linear_wins": 10
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_001000.json",
+      "episode": 1000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.82,
+          "average_reward": 126.23299999999992,
+          "average_steps": 135.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.92,
+      "linear_average_damage_dealt": 433.08,
+      "linear_average_damage_taken": 49.46,
+      "linear_average_fights_won": 6.82,
+      "linear_average_reward": 126.23299999999992,
+      "linear_wins": 46
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_001200.json",
+      "episode": 1200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.64,
+          "average_fights_won": 5.4,
+          "average_reward": 29.50299999999997,
+          "average_steps": 130.3,
+          "defeats": 38,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 12
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 8.64,
+      "linear_average_damage_dealt": 307.1,
+      "linear_average_damage_taken": 85.04,
+      "linear_average_fights_won": 5.4,
+      "linear_average_reward": 29.50299999999997,
+      "linear_wins": 12
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_001400.json",
+      "episode": 1400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.82,
+          "average_fights_won": 6.66,
+          "average_reward": 109.17599999999986,
+          "average_steps": 230.84,
+          "defeats": 8,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 42
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.82,
+      "linear_average_damage_dealt": 426.14,
+      "linear_average_damage_taken": 58.18,
+      "linear_average_fights_won": 6.66,
+      "linear_average_reward": 109.17599999999986,
+      "linear_wins": 42
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_001600.json",
+      "episode": 1600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.94,
+          "average_fights_won": 6.7,
+          "average_reward": 133.1631999999999,
+          "average_steps": 133.92,
+          "defeats": 1,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 49
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.94,
+      "linear_average_damage_dealt": 440.72,
+      "linear_average_damage_taken": 44.5,
+      "linear_average_fights_won": 6.7,
+      "linear_average_reward": 133.1631999999999,
+      "linear_wins": 49
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_001800.json",
+      "episode": 1800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.1,
+          "average_fights_won": 6.24,
+          "average_reward": 45.98219999999996,
+          "average_steps": 133.74,
+          "defeats": 35,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 15
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.1,
+      "linear_average_damage_dealt": 362.78,
+      "linear_average_damage_taken": 83.34,
+      "linear_average_fights_won": 6.24,
+      "linear_average_reward": 45.98219999999996,
+      "linear_wins": 15
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_002000.json",
+      "episode": 2000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.9,
+          "average_fights_won": 6.56,
+          "average_reward": 117.7871999999999,
+          "average_steps": 120.48,
+          "defeats": 5,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 45
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.9,
+      "linear_average_damage_dealt": 428.56,
+      "linear_average_damage_taken": 57.32,
+      "linear_average_fights_won": 6.56,
+      "linear_average_reward": 117.7871999999999,
+      "linear_wins": 45
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_002200.json",
+      "episode": 2200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.9,
+          "average_fights_won": 6.18,
+          "average_reward": 114.29199999999992,
+          "average_steps": 119.92,
+          "defeats": 5,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 45
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.9,
+      "linear_average_damage_dealt": 415.24,
+      "linear_average_damage_taken": 51.98,
+      "linear_average_fights_won": 6.18,
+      "linear_average_reward": 114.29199999999992,
+      "linear_wins": 45
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_002400.json",
+      "episode": 2400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.06,
+          "average_fights_won": 6.06,
+          "average_reward": 46.90619999999996,
+          "average_steps": 137.14,
+          "defeats": 34,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 16
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.06,
+      "linear_average_damage_dealt": 361.82,
+      "linear_average_damage_taken": 82.8,
+      "linear_average_fights_won": 6.06,
+      "linear_average_reward": 46.90619999999996,
+      "linear_wins": 16
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_002600.json",
+      "episode": 2600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.94,
+          "average_fights_won": 6.22,
+          "average_reward": 118.40119999999992,
+          "average_steps": 118.34,
+          "defeats": 3,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 47
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.94,
+      "linear_average_damage_dealt": 417.62,
+      "linear_average_damage_taken": 53.28,
+      "linear_average_fights_won": 6.22,
+      "linear_average_reward": 118.40119999999992,
+      "linear_wins": 47
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_002800.json",
+      "episode": 2800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.94,
+          "average_fights_won": 6.72,
+          "average_reward": 123.9949999999999,
+          "average_steps": 122.28,
+          "defeats": 3,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 47
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.94,
+      "linear_average_damage_dealt": 436.02,
+      "linear_average_damage_taken": 54.7,
+      "linear_average_fights_won": 6.72,
+      "linear_average_reward": 123.9949999999999,
+      "linear_wins": 47
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_003000.json",
+      "episode": 3000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.38,
+          "average_fights_won": 5.7,
+          "average_reward": 63.189599999999956,
+          "average_steps": 113.76,
+          "defeats": 23,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 27
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.38,
+      "linear_average_damage_dealt": 360.96,
+      "linear_average_damage_taken": 80.26,
+      "linear_average_fights_won": 5.7,
+      "linear_average_reward": 63.189599999999956,
+      "linear_wins": 27
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_003200.json",
+      "episode": 3200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.78,
+          "average_fights_won": 6.46,
+          "average_reward": 103.02499999999995,
+          "average_steps": 110.74,
+          "defeats": 11,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 39
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.78,
+      "linear_average_damage_dealt": 413.28,
+      "linear_average_damage_taken": 67.18,
+      "linear_average_fights_won": 6.46,
+      "linear_average_reward": 103.02499999999995,
+      "linear_wins": 39
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_003400.json",
+      "episode": 3400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.78,
+          "average_fights_won": 6.04,
+          "average_reward": 98.15199999999996,
+          "average_steps": 108.96,
+          "defeats": 11,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 39
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.78,
+      "linear_average_damage_dealt": 397.58,
+      "linear_average_damage_taken": 65.96,
+      "linear_average_fights_won": 6.04,
+      "linear_average_reward": 98.15199999999996,
+      "linear_wins": 39
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_003600.json",
+      "episode": 3600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.94,
+          "average_fights_won": 6.46,
+          "average_reward": 119.45579999999994,
+          "average_steps": 117.52,
+          "defeats": 3,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 47
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.94,
+      "linear_average_damage_dealt": 418.46,
+      "linear_average_damage_taken": 61.7,
+      "linear_average_fights_won": 6.46,
+      "linear_average_reward": 119.45579999999994,
+      "linear_wins": 47
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_003800.json",
+      "episode": 3800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.96,
+          "average_fights_won": 6.92,
+          "average_reward": 128.7657999999999,
+          "average_steps": 136.02,
+          "defeats": 2,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 48
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.96,
+      "linear_average_damage_dealt": 438.86,
+      "linear_average_damage_taken": 55.16,
+      "linear_average_fights_won": 6.92,
+      "linear_average_reward": 128.7657999999999,
+      "linear_wins": 48
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_004000.json",
+      "episode": 4000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.9,
+          "average_fights_won": 5.86,
+          "average_reward": 108.89879999999995,
+          "average_steps": 108.0,
+          "defeats": 5,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 45
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.9,
+      "linear_average_damage_dealt": 396.98,
+      "linear_average_damage_taken": 61.26,
+      "linear_average_fights_won": 5.86,
+      "linear_average_reward": 108.89879999999995,
+      "linear_wins": 45
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_004200.json",
+      "episode": 4200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.48,
+          "average_fights_won": 5.36,
+          "average_reward": 15.944399999999975,
+          "average_steps": 111.04,
+          "defeats": 44,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 6
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 8.48,
+      "linear_average_damage_dealt": 279.64,
+      "linear_average_damage_taken": 84.46,
+      "linear_average_fights_won": 5.36,
+      "linear_average_reward": 15.944399999999975,
+      "linear_wins": 6
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_004400.json",
+      "episode": 4400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.86,
+          "average_fights_won": 5.92,
+          "average_reward": 107.13199999999993,
+          "average_steps": 127.82,
+          "defeats": 7,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 43
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.86,
+      "linear_average_damage_dealt": 398.5,
+      "linear_average_damage_taken": 55.4,
+      "linear_average_fights_won": 5.92,
+      "linear_average_reward": 107.13199999999993,
+      "linear_wins": 43
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_004600.json",
+      "episode": 4600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.94,
+          "average_fights_won": 6.84,
+          "average_reward": 124.86279999999992,
+          "average_steps": 136.66,
+          "defeats": 3,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 47
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.94,
+      "linear_average_damage_dealt": 434.04,
+      "linear_average_damage_taken": 56.42,
+      "linear_average_fights_won": 6.84,
+      "linear_average_reward": 124.86279999999992,
+      "linear_wins": 47
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_004800.json",
+      "episode": 4800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.74,
+          "average_fights_won": 6.3,
+          "average_reward": 38.13799999999996,
+          "average_steps": 139.62,
+          "defeats": 39,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 11
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 8.74,
+      "linear_average_damage_dealt": 348.96,
+      "linear_average_damage_taken": 84.78,
+      "linear_average_fights_won": 6.3,
+      "linear_average_reward": 38.13799999999996,
+      "linear_wins": 11
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_005000.json",
+      "episode": 5000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.96,
+          "average_fights_won": 5.38,
+          "average_reward": 32.016799999999975,
+          "average_steps": 123.02,
+          "defeats": 37,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 13
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 8.96,
+      "linear_average_damage_dealt": 309.8,
+      "linear_average_damage_taken": 84.38,
+      "linear_average_fights_won": 5.38,
+      "linear_average_reward": 32.016799999999975,
+      "linear_wins": 13
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_005200.json",
+      "episode": 5200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.86,
+          "average_fights_won": 6.92,
+          "average_reward": 118.3911999999999,
+          "average_steps": 142.34,
+          "defeats": 7,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 43
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.86,
+      "linear_average_damage_dealt": 445.92,
+      "linear_average_damage_taken": 55.52,
+      "linear_average_fights_won": 6.92,
+      "linear_average_reward": 118.3911999999999,
+      "linear_wins": 43
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_005400.json",
+      "episode": 5400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.68,
+          "average_fights_won": 5.32,
+          "average_reward": 13.282799999999984,
+          "average_steps": 128.56,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 4
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 8.68,
+      "linear_average_damage_dealt": 295.8,
+      "linear_average_damage_taken": 86.26,
+      "linear_average_fights_won": 5.32,
+      "linear_average_reward": 13.282799999999984,
+      "linear_wins": 4
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_005600.json",
+      "episode": 5600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.82,
+          "average_fights_won": 5.94,
+          "average_reward": 100.47639999999993,
+          "average_steps": 116.02,
+          "defeats": 9,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 41
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.82,
+      "linear_average_damage_dealt": 397.08,
+      "linear_average_damage_taken": 60.78,
+      "linear_average_fights_won": 5.94,
+      "linear_average_reward": 100.47639999999993,
+      "linear_wins": 41
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_005800.json",
+      "episode": 5800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.86,
+          "average_fights_won": 6.58,
+          "average_reward": 114.38699999999993,
+          "average_steps": 121.2,
+          "defeats": 7,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 43
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.86,
+      "linear_average_damage_dealt": 420.76,
+      "linear_average_damage_taken": 58.64,
+      "linear_average_fights_won": 6.58,
+      "linear_average_reward": 114.38699999999993,
+      "linear_wins": 43
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_006000.json",
+      "episode": 6000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.84,
+          "average_fights_won": 6.18,
+          "average_reward": 112.27899999999991,
+          "average_steps": 139.54,
+          "defeats": 7,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 43
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.84,
+      "linear_average_damage_dealt": 407.06,
+      "linear_average_damage_taken": 50.24,
+      "linear_average_fights_won": 6.18,
+      "linear_average_reward": 112.27899999999991,
+      "linear_wins": 43
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_006200.json",
+      "episode": 6200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.86,
+          "average_fights_won": 5.94,
+          "average_reward": 105.25719999999993,
+          "average_steps": 111.8,
+          "defeats": 7,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 43
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.86,
+      "linear_average_damage_dealt": 401.38,
+      "linear_average_damage_taken": 58.1,
+      "linear_average_fights_won": 5.94,
+      "linear_average_reward": 105.25719999999993,
+      "linear_wins": 43
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_006400.json",
+      "episode": 6400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.94,
+          "average_fights_won": 6.0,
+          "average_reward": 117.47839999999992,
+          "average_steps": 123.26,
+          "defeats": 3,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 47
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.94,
+      "linear_average_damage_dealt": 407.76,
+      "linear_average_damage_taken": 53.72,
+      "linear_average_fights_won": 6.0,
+      "linear_average_reward": 117.47839999999992,
+      "linear_wins": 47
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_006600.json",
+      "episode": 6600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 124.13079999999991,
+          "average_steps": 138.24,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.92,
+      "linear_average_damage_dealt": 430.16,
+      "linear_average_damage_taken": 54.8,
+      "linear_average_fights_won": 6.86,
+      "linear_average_reward": 124.13079999999991,
+      "linear_wins": 46
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_006800.json",
+      "episode": 6800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.96,
+          "average_fights_won": 5.74,
+          "average_reward": 31.572999999999976,
+          "average_steps": 139.06,
+          "defeats": 39,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 11
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 8.96,
+      "linear_average_damage_dealt": 330.4,
+      "linear_average_damage_taken": 85.3,
+      "linear_average_fights_won": 5.74,
+      "linear_average_reward": 31.572999999999976,
+      "linear_wins": 11
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_007000.json",
+      "episode": 7000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.02,
+          "average_fights_won": 5.98,
+          "average_reward": 33.956599999999966,
+          "average_steps": 134.3,
+          "defeats": 39,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 11
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.02,
+      "linear_average_damage_dealt": 331.22,
+      "linear_average_damage_taken": 86.02,
+      "linear_average_fights_won": 5.98,
+      "linear_average_reward": 33.956599999999966,
+      "linear_wins": 11
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_007200.json",
+      "episode": 7200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.0,
+          "average_fights_won": 5.92,
+          "average_reward": 35.46419999999997,
+          "average_steps": 122.8,
+          "defeats": 37,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 13
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.0,
+      "linear_average_damage_dealt": 335.4,
+      "linear_average_damage_taken": 87.28,
+      "linear_average_fights_won": 5.92,
+      "linear_average_reward": 35.46419999999997,
+      "linear_wins": 13
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_007400.json",
+      "episode": 7400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.72,
+          "average_fights_won": 6.62,
+          "average_reward": 100.34899999999995,
+          "average_steps": 108.5,
+          "defeats": 13,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 37
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.72,
+      "linear_average_damage_dealt": 412.64,
+      "linear_average_damage_taken": 68.32,
+      "linear_average_fights_won": 6.62,
+      "linear_average_reward": 100.34899999999995,
+      "linear_wins": 37
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_007600.json",
+      "episode": 7600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.88,
+          "average_fights_won": 6.06,
+          "average_reward": 110.97479999999992,
+          "average_steps": 122.26,
+          "defeats": 6,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 44
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.88,
+      "linear_average_damage_dealt": 408.44,
+      "linear_average_damage_taken": 55.82,
+      "linear_average_fights_won": 6.06,
+      "linear_average_reward": 110.97479999999992,
+      "linear_wins": 44
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_007800.json",
+      "episode": 7800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.88,
+          "average_fights_won": 6.04,
+          "average_reward": 109.16779999999991,
+          "average_steps": 118.68,
+          "defeats": 6,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 44
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.88,
+      "linear_average_damage_dealt": 409.14,
+      "linear_average_damage_taken": 57.78,
+      "linear_average_fights_won": 6.04,
+      "linear_average_reward": 109.16779999999991,
+      "linear_wins": 44
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_008000.json",
+      "episode": 8000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.76,
+          "average_fights_won": 5.94,
+          "average_reward": 100.24199999999993,
+          "average_steps": 111.8,
+          "defeats": 10,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 40
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.76,
+      "linear_average_damage_dealt": 394.04,
+      "linear_average_damage_taken": 60.94,
+      "linear_average_fights_won": 5.94,
+      "linear_average_reward": 100.24199999999993,
+      "linear_wins": 40
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\checkpoints\\checkpoint_008200.json",
+      "episode": 8200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 9.92,
+          "average_fights_won": 6.86,
+          "average_reward": 129.54659999999993,
+          "average_steps": 131.92,
+          "defeats": 4,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 46
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.16,
+          "average_fights_won": 5.84,
+          "average_reward": 39.77779999999997,
+          "average_steps": 130.46,
+          "defeats": 36,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 14
+        },
+        "random": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.94,
+          "average_reward": 8.532599999999963,
+          "average_steps": 117.76,
+          "defeats": 45,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 5
+        }
+      },
+      "linear_average_completed_nodes": 9.16,
+      "linear_average_damage_dealt": 335.84,
+      "linear_average_damage_taken": 82.76,
+      "linear_average_fights_won": 5.84,
+      "linear_average_reward": 39.77779999999997,
+      "linear_wins": 14
+    }
+  ],
+  "schema_version": 1
+}

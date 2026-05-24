@@ -1,0 +1,590 @@
+{
+  "agent_type": "linear_q",
+  "benchmark_reference": {
+    "holdout_report": "runs\\rl_linear_benchmark_20min_holdout_100\\linear_q_20min_holdout_100_balance_report.json",
+    "notes": [
+      "Use this manifest for future Act 1 balance benchmarks.",
+      "Retrain or continue training when core action flows, card effects, or major encounter logic changes.",
+      "For new acts, start from this runner only as a baseline; then train act-aware runners."
+    ]
+  },
+  "characters": [
+    {
+      "best_checkpoint": {
+        "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\bureaucrat\\checkpoints\\checkpoint_006600.json",
+        "episode": 6600,
+        "evaluation_summary": {
+          "heuristic": {
+            "average_completed_nodes": 9.32,
+            "average_fights_won": 6.28,
+            "average_reward": 57.077800000000025,
+            "average_steps": 116.94,
+            "defeats": 33,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 17
+          },
+          "linear_q": {
+            "average_completed_nodes": 9.42,
+            "average_fights_won": 7.0,
+            "average_reward": 72.04800000000002,
+            "average_steps": 133.32,
+            "defeats": 29,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 21
+          },
+          "random": {
+            "average_completed_nodes": 8.08,
+            "average_fights_won": 4.9,
+            "average_reward": 3.2721999999999873,
+            "average_steps": 119.38,
+            "defeats": 49,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 1
+          }
+        },
+        "linear_average_completed_nodes": 9.42,
+        "linear_average_damage_dealt": 418.98,
+        "linear_average_damage_taken": 70.6,
+        "linear_average_fights_won": 7.0,
+        "linear_average_reward": 72.04800000000002,
+        "linear_wins": 21
+      },
+      "best_model_path": "runs\\good_runners\\act1_linear_v1\\bureaucrat\\best_linear_q_agent.json",
+      "character_id": "bureaucrat",
+      "checkpoint_interval": 200,
+      "elapsed_seconds": 1219.9610130999936,
+      "eval_runs": 50,
+      "exported_from_model_path": "runs\\rl_linear_class_runners_20min\\bureaucrat\\best_linear_q_agent.json",
+      "history_path": "runs\\rl_linear_class_runners_20min\\bureaucrat\\linear_checkpoint_history.json",
+      "imitation_episodes": 300,
+      "last_model_path": "runs\\rl_linear_class_runners_20min\\bureaucrat\\last_linear_q_agent.json",
+      "manifest_path": "runs\\rl_linear_class_runners_20min\\bureaucrat\\linear_checkpoint_training_manifest.json",
+      "max_steps": 800,
+      "minutes": 20.0,
+      "requested_episodes": 100000,
+      "schema_version": 1,
+      "seed": 100001,
+      "trained_episodes": 9000,
+      "weight_count": 87
+    },
+    {
+      "best_checkpoint": {
+        "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_001400.json",
+        "episode": 1400,
+        "evaluation_summary": {
+          "heuristic": {
+            "average_completed_nodes": 8.8,
+            "average_fights_won": 5.8,
+            "average_reward": 19.791000000000007,
+            "average_steps": 123.56,
+            "defeats": 50,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 0
+          },
+          "linear_q": {
+            "average_completed_nodes": 8.92,
+            "average_fights_won": 6.56,
+            "average_reward": 29.030000000000033,
+            "average_steps": 97.48,
+            "defeats": 50,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 0
+          },
+          "random": {
+            "average_completed_nodes": 6.24,
+            "average_fights_won": 3.78,
+            "average_reward": -12.681200000000015,
+            "average_steps": 101.38,
+            "defeats": 50,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 0
+          }
+        },
+        "linear_average_completed_nodes": 8.92,
+        "linear_average_damage_dealt": 345.02,
+        "linear_average_damage_taken": 68.72,
+        "linear_average_fights_won": 6.56,
+        "linear_average_reward": 29.030000000000033,
+        "linear_wins": 0
+      },
+      "best_model_path": "runs\\good_runners\\act1_linear_v1\\failed_wizard\\best_linear_q_agent.json",
+      "character_id": "failed_wizard",
+      "checkpoint_interval": 200,
+      "elapsed_seconds": 1220.436895400053,
+      "eval_runs": 50,
+      "exported_from_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\best_linear_q_agent.json",
+      "history_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\linear_checkpoint_history.json",
+      "imitation_episodes": 300,
+      "last_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\last_linear_q_agent.json",
+      "manifest_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\linear_checkpoint_training_manifest.json",
+      "max_steps": 800,
+      "minutes": 20.0,
+      "requested_episodes": 100000,
+      "schema_version": 1,
+      "seed": 200001,
+      "trained_episodes": 8800,
+      "weight_count": 89
+    },
+    {
+      "best_checkpoint": {
+        "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_006000.json",
+        "episode": 6000,
+        "evaluation_summary": {
+          "heuristic": {
+            "average_completed_nodes": 8.72,
+            "average_fights_won": 5.62,
+            "average_reward": 21.010600000000032,
+            "average_steps": 111.42,
+            "defeats": 48,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 2
+          },
+          "linear_q": {
+            "average_completed_nodes": 8.68,
+            "average_fights_won": 5.96,
+            "average_reward": 24.21460000000002,
+            "average_steps": 124.26,
+            "defeats": 48,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 2
+          },
+          "random": {
+            "average_completed_nodes": 6.24,
+            "average_fights_won": 3.82,
+            "average_reward": -11.640800000000013,
+            "average_steps": 108.66,
+            "defeats": 50,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 0
+          }
+        },
+        "linear_average_completed_nodes": 8.68,
+        "linear_average_damage_dealt": 309.52,
+        "linear_average_damage_taken": 65.06,
+        "linear_average_fights_won": 5.96,
+        "linear_average_reward": 24.21460000000002,
+        "linear_wins": 2
+      },
+      "best_model_path": "runs\\good_runners\\act1_linear_v1\\guild_assassin_apprentice\\best_linear_q_agent.json",
+      "character_id": "guild_assassin_apprentice",
+      "checkpoint_interval": 200,
+      "elapsed_seconds": 1206.7851088999305,
+      "eval_runs": 50,
+      "exported_from_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\best_linear_q_agent.json",
+      "history_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\linear_checkpoint_history.json",
+      "imitation_episodes": 300,
+      "last_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\last_linear_q_agent.json",
+      "manifest_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\linear_checkpoint_training_manifest.json",
+      "max_steps": 800,
+      "minutes": 20.0,
+      "requested_episodes": 100000,
+      "schema_version": 1,
+      "seed": 300001,
+      "trained_episodes": 8800,
+      "weight_count": 92
+    },
+    {
+      "best_checkpoint": {
+        "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\hedge_witch\\checkpoints\\checkpoint_000400.json",
+        "episode": 400,
+        "evaluation_summary": {
+          "heuristic": {
+            "average_completed_nodes": 9.76,
+            "average_fights_won": 6.66,
+            "average_reward": 111.07819999999994,
+            "average_steps": 138.0,
+            "defeats": 10,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 40
+          },
+          "linear_q": {
+            "average_completed_nodes": 9.78,
+            "average_fights_won": 7.46,
+            "average_reward": 118.72639999999987,
+            "average_steps": 195.38,
+            "defeats": 11,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 39
+          },
+          "random": {
+            "average_completed_nodes": 8.18,
+            "average_fights_won": 5.36,
+            "average_reward": 10.13459999999996,
+            "average_steps": 149.24,
+            "defeats": 49,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 1
+          }
+        },
+        "linear_average_completed_nodes": 9.78,
+        "linear_average_damage_dealt": 457.68,
+        "linear_average_damage_taken": 49.8,
+        "linear_average_fights_won": 7.46,
+        "linear_average_reward": 118.72639999999987,
+        "linear_wins": 39
+      },
+      "best_model_path": "runs\\good_runners\\act1_linear_v1\\hedge_witch\\best_linear_q_agent.json",
+      "character_id": "hedge_witch",
+      "checkpoint_interval": 200,
+      "elapsed_seconds": 1219.944424699992,
+      "eval_runs": 50,
+      "exported_from_model_path": "runs\\rl_linear_class_runners_20min\\hedge_witch\\best_linear_q_agent.json",
+      "history_path": "runs\\rl_linear_class_runners_20min\\hedge_witch\\linear_checkpoint_history.json",
+      "imitation_episodes": 300,
+      "last_model_path": "runs\\rl_linear_class_runners_20min\\hedge_witch\\last_linear_q_agent.json",
+      "manifest_path": "runs\\rl_linear_class_runners_20min\\hedge_witch\\linear_checkpoint_training_manifest.json",
+      "max_steps": 800,
+      "minutes": 20.0,
+      "requested_episodes": 100000,
+      "schema_version": 1,
+      "seed": 400001,
+      "trained_episodes": 7200,
+      "weight_count": 83
+    },
+    {
+      "best_checkpoint": {
+        "episode": 0,
+        "evaluation_summary": {
+          "heuristic": {
+            "average_completed_nodes": 8.98,
+            "average_fights_won": 6.24,
+            "average_reward": 45.346000000000025,
+            "average_steps": 114.86,
+            "defeats": 38,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 12
+          },
+          "linear_q": {
+            "average_completed_nodes": 9.84,
+            "average_fights_won": 6.78,
+            "average_reward": 114.6962,
+            "average_steps": 126.46,
+            "defeats": 8,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 42
+          },
+          "random": {
+            "average_completed_nodes": 7.98,
+            "average_fights_won": 5.06,
+            "average_reward": 2.2215999999999987,
+            "average_steps": 115.92,
+            "defeats": 49,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 1
+          }
+        },
+        "linear_average_completed_nodes": 9.84,
+        "linear_average_damage_dealt": 445.36,
+        "linear_average_damage_taken": 59.1,
+        "linear_average_fights_won": 6.78,
+        "linear_average_reward": 114.6962,
+        "linear_wins": 42
+      },
+      "best_model_path": "runs\\good_runners\\act1_linear_v1\\mortuary_apprentice\\best_linear_q_agent.json",
+      "character_id": "mortuary_apprentice",
+      "checkpoint_interval": 200,
+      "elapsed_seconds": 1209.9403312000213,
+      "eval_runs": 50,
+      "exported_from_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\best_linear_q_agent.json",
+      "history_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\linear_checkpoint_history.json",
+      "imitation_episodes": 300,
+      "last_model_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\last_linear_q_agent.json",
+      "manifest_path": "runs\\rl_linear_class_runners_20min\\mortuary_apprentice\\linear_checkpoint_training_manifest.json",
+      "max_steps": 800,
+      "minutes": 20.0,
+      "requested_episodes": 100000,
+      "schema_version": 1,
+      "seed": 500001,
+      "trained_episodes": 8400,
+      "weight_count": 91
+    },
+    {
+      "best_checkpoint": {
+        "episode": 0,
+        "evaluation_summary": {
+          "heuristic": {
+            "average_completed_nodes": 8.38,
+            "average_fights_won": 5.46,
+            "average_reward": 6.29219999999975,
+            "average_steps": 400.34,
+            "defeats": 46,
+            "runs": 50,
+            "stalls": 3,
+            "truncated": 0,
+            "wins": 1
+          },
+          "linear_q": {
+            "average_completed_nodes": 9.0,
+            "average_fights_won": 6.46,
+            "average_reward": 24.083399999999923,
+            "average_steps": 255.18,
+            "defeats": 47,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 3
+          },
+          "random": {
+            "average_completed_nodes": 7.56,
+            "average_fights_won": 4.48,
+            "average_reward": -9.726000000000026,
+            "average_steps": 151.78,
+            "defeats": 50,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 0
+          }
+        },
+        "linear_average_completed_nodes": 9.0,
+        "linear_average_damage_dealt": 370.28,
+        "linear_average_damage_taken": 79.6,
+        "linear_average_fights_won": 6.46,
+        "linear_average_reward": 24.083399999999923,
+        "linear_wins": 3
+      },
+      "best_model_path": "runs\\good_runners\\act1_linear_v1\\night_watch_recruit\\best_linear_q_agent.json",
+      "character_id": "night_watch_recruit",
+      "checkpoint_interval": 200,
+      "elapsed_seconds": 1209.0283664000453,
+      "eval_runs": 50,
+      "exported_from_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\best_linear_q_agent.json",
+      "history_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\linear_checkpoint_history.json",
+      "imitation_episodes": 300,
+      "last_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\last_linear_q_agent.json",
+      "manifest_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\linear_checkpoint_training_manifest.json",
+      "max_steps": 800,
+      "minutes": 20.0,
+      "requested_episodes": 100000,
+      "schema_version": 1,
+      "seed": 600001,
+      "trained_episodes": 5400,
+      "weight_count": 91
+    },
+    {
+      "best_checkpoint": {
+        "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\sewer_diplomat\\checkpoints\\checkpoint_004200.json",
+        "episode": 4200,
+        "evaluation_summary": {
+          "heuristic": {
+            "average_completed_nodes": 9.54,
+            "average_fights_won": 6.18,
+            "average_reward": 85.15599999999993,
+            "average_steps": 131.54,
+            "defeats": 17,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 33
+          },
+          "linear_q": {
+            "average_completed_nodes": 9.88,
+            "average_fights_won": 6.6,
+            "average_reward": 117.17779999999986,
+            "average_steps": 225.26,
+            "defeats": 6,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 44
+          },
+          "random": {
+            "average_completed_nodes": 7.92,
+            "average_fights_won": 4.52,
+            "average_reward": -2.7280000000000206,
+            "average_steps": 113.32,
+            "defeats": 50,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 0
+          }
+        },
+        "linear_average_completed_nodes": 9.88,
+        "linear_average_damage_dealt": 422.6,
+        "linear_average_damage_taken": 49.28,
+        "linear_average_fights_won": 6.6,
+        "linear_average_reward": 117.17779999999986,
+        "linear_wins": 44
+      },
+      "best_model_path": "runs\\good_runners\\act1_linear_v1\\sewer_diplomat\\best_linear_q_agent.json",
+      "character_id": "sewer_diplomat",
+      "checkpoint_interval": 200,
+      "elapsed_seconds": 1223.6136029000627,
+      "eval_runs": 50,
+      "exported_from_model_path": "runs\\rl_linear_class_runners_20min\\sewer_diplomat\\best_linear_q_agent.json",
+      "history_path": "runs\\rl_linear_class_runners_20min\\sewer_diplomat\\linear_checkpoint_history.json",
+      "imitation_episodes": 300,
+      "last_model_path": "runs\\rl_linear_class_runners_20min\\sewer_diplomat\\last_linear_q_agent.json",
+      "manifest_path": "runs\\rl_linear_class_runners_20min\\sewer_diplomat\\linear_checkpoint_training_manifest.json",
+      "max_steps": 800,
+      "minutes": 20.0,
+      "requested_episodes": 100000,
+      "schema_version": 1,
+      "seed": 700001,
+      "trained_episodes": 7600,
+      "weight_count": 87
+    },
+    {
+      "best_checkpoint": {
+        "episode": 0,
+        "evaluation_summary": {
+          "heuristic": {
+            "average_completed_nodes": 9.92,
+            "average_fights_won": 6.86,
+            "average_reward": 129.54659999999993,
+            "average_steps": 131.92,
+            "defeats": 4,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 46
+          },
+          "linear_q": {
+            "average_completed_nodes": 10.0,
+            "average_fights_won": 7.04,
+            "average_reward": 138.3867999999999,
+            "average_steps": 135.34,
+            "defeats": 0,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 50
+          },
+          "random": {
+            "average_completed_nodes": 7.98,
+            "average_fights_won": 4.94,
+            "average_reward": 8.532599999999963,
+            "average_steps": 117.76,
+            "defeats": 45,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 5
+          }
+        },
+        "linear_average_completed_nodes": 10.0,
+        "linear_average_damage_dealt": 450.0,
+        "linear_average_damage_taken": 44.76,
+        "linear_average_fights_won": 7.04,
+        "linear_average_reward": 138.3867999999999,
+        "linear_wins": 50
+      },
+      "best_model_path": "runs\\good_runners\\act1_linear_v1\\shroomancer\\best_linear_q_agent.json",
+      "character_id": "shroomancer",
+      "checkpoint_interval": 200,
+      "elapsed_seconds": 1208.1359672000399,
+      "eval_runs": 50,
+      "exported_from_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\best_linear_q_agent.json",
+      "history_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\linear_checkpoint_history.json",
+      "imitation_episodes": 300,
+      "last_model_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\last_linear_q_agent.json",
+      "manifest_path": "runs\\rl_linear_class_runners_20min\\shroomancer\\linear_checkpoint_training_manifest.json",
+      "max_steps": 800,
+      "minutes": 20.0,
+      "requested_episodes": 100000,
+      "schema_version": 1,
+      "seed": 800001,
+      "trained_episodes": 8200,
+      "weight_count": 83
+    },
+    {
+      "best_checkpoint": {
+        "episode": 0,
+        "evaluation_summary": {
+          "heuristic": {
+            "average_completed_nodes": 9.44,
+            "average_fights_won": 6.06,
+            "average_reward": 77.64159999999994,
+            "average_steps": 150.5,
+            "defeats": 21,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 29
+          },
+          "linear_q": {
+            "average_completed_nodes": 9.42,
+            "average_fights_won": 6.26,
+            "average_reward": 77.28399999999993,
+            "average_steps": 133.78,
+            "defeats": 24,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 26
+          },
+          "random": {
+            "average_completed_nodes": 7.78,
+            "average_fights_won": 4.5,
+            "average_reward": -2.048800000000018,
+            "average_steps": 112.54,
+            "defeats": 50,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 0
+          }
+        },
+        "linear_average_completed_nodes": 9.42,
+        "linear_average_damage_dealt": 392.62,
+        "linear_average_damage_taken": 61.56,
+        "linear_average_fights_won": 6.26,
+        "linear_average_reward": 77.28399999999993,
+        "linear_wins": 26
+      },
+      "best_model_path": "runs\\good_runners\\act1_linear_v1\\witch_clerk\\best_linear_q_agent.json",
+      "character_id": "witch_clerk",
+      "checkpoint_interval": 200,
+      "elapsed_seconds": 1211.609903600067,
+      "eval_runs": 50,
+      "exported_from_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\best_linear_q_agent.json",
+      "history_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\linear_checkpoint_history.json",
+      "imitation_episodes": 300,
+      "last_model_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\last_linear_q_agent.json",
+      "manifest_path": "runs\\rl_linear_class_runners_20min\\witch_clerk\\linear_checkpoint_training_manifest.json",
+      "max_steps": 800,
+      "minutes": 20.0,
+      "requested_episodes": 100000,
+      "schema_version": 1,
+      "seed": 900001,
+      "trained_episodes": 6400,
+      "weight_count": 91
+    }
+  ],
+  "created_at": "2026-05-24T09:53:32",
+  "purpose": "Stable Act 1 good-runner reference for class-specific balance diagnostics.",
+  "runner_version": "act1_linear_v1",
+  "schema_version": 1,
+  "source_manifest_path": "runs\\rl_linear_class_runners_20min\\linear_checkpoint_training_manifest.json"
+}

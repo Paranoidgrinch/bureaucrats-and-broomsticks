@@ -1,0 +1,2030 @@
+{
+  "character_id": "guild_assassin_apprentice",
+  "history": [
+    {
+      "episode": 0,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.48,
+          "average_fights_won": 5.64,
+          "average_reward": 19.54020000000004,
+          "average_steps": 112.78,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.48,
+      "linear_average_damage_dealt": 300.7,
+      "linear_average_damage_taken": 66.5,
+      "linear_average_fights_won": 5.64,
+      "linear_average_reward": 19.54020000000004,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_000200.json",
+      "episode": 200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.58,
+          "average_fights_won": 6.1,
+          "average_reward": 22.570800000000016,
+          "average_steps": 133.62,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.58,
+      "linear_average_damage_dealt": 295.52,
+      "linear_average_damage_taken": 64.96,
+      "linear_average_fights_won": 6.1,
+      "linear_average_reward": 22.570800000000016,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_000400.json",
+      "episode": 400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 6.1,
+          "average_reward": 23.785600000000045,
+          "average_steps": 111.3,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.72,
+      "linear_average_damage_dealt": 310.46,
+      "linear_average_damage_taken": 66.18,
+      "linear_average_fights_won": 6.1,
+      "linear_average_reward": 23.785600000000045,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_000600.json",
+      "episode": 600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.56,
+          "average_fights_won": 5.3,
+          "average_reward": 9.052600000000021,
+          "average_steps": 113.36,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.56,
+      "linear_average_damage_dealt": 264.22,
+      "linear_average_damage_taken": 72.38,
+      "linear_average_fights_won": 5.3,
+      "linear_average_reward": 9.052600000000021,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_000800.json",
+      "episode": 800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 6.18,
+          "average_reward": 22.911400000000018,
+          "average_steps": 143.72,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.72,
+      "linear_average_damage_dealt": 320.06,
+      "linear_average_damage_taken": 63.68,
+      "linear_average_fights_won": 6.18,
+      "linear_average_reward": 22.911400000000018,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_001000.json",
+      "episode": 1000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 7.98,
+          "average_fights_won": 4.96,
+          "average_reward": 7.135200000000013,
+          "average_steps": 101.3,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 7.98,
+      "linear_average_damage_dealt": 239.48,
+      "linear_average_damage_taken": 65.8,
+      "linear_average_fights_won": 4.96,
+      "linear_average_reward": 7.135200000000013,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_001200.json",
+      "episode": 1200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.06,
+          "average_fights_won": 5.44,
+          "average_reward": 11.378600000000016,
+          "average_steps": 106.02,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.06,
+      "linear_average_damage_dealt": 261.18,
+      "linear_average_damage_taken": 68.48,
+      "linear_average_fights_won": 5.44,
+      "linear_average_reward": 11.378600000000016,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_001400.json",
+      "episode": 1400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.48,
+          "average_fights_won": 5.5,
+          "average_reward": 14.585600000000023,
+          "average_steps": 107.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.48,
+      "linear_average_damage_dealt": 273.32,
+      "linear_average_damage_taken": 66.46,
+      "linear_average_fights_won": 5.5,
+      "linear_average_reward": 14.585600000000023,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_001600.json",
+      "episode": 1600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.6,
+          "average_fights_won": 5.88,
+          "average_reward": 17.516600000000018,
+          "average_steps": 119.74,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.6,
+      "linear_average_damage_dealt": 283.72,
+      "linear_average_damage_taken": 65.92,
+      "linear_average_fights_won": 5.88,
+      "linear_average_reward": 17.516600000000018,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_001800.json",
+      "episode": 1800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.16,
+          "average_fights_won": 5.58,
+          "average_reward": 13.646000000000022,
+          "average_steps": 115.06,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.16,
+      "linear_average_damage_dealt": 267.74,
+      "linear_average_damage_taken": 68.64,
+      "linear_average_fights_won": 5.58,
+      "linear_average_reward": 13.646000000000022,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_002000.json",
+      "episode": 2000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.62,
+          "average_fights_won": 6.08,
+          "average_reward": 22.519000000000027,
+          "average_steps": 123.78,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.62,
+      "linear_average_damage_dealt": 300.46,
+      "linear_average_damage_taken": 64.32,
+      "linear_average_fights_won": 6.08,
+      "linear_average_reward": 22.519000000000027,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_002200.json",
+      "episode": 2200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.46,
+          "average_fights_won": 5.88,
+          "average_reward": 17.072600000000023,
+          "average_steps": 115.22,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.46,
+      "linear_average_damage_dealt": 285.2,
+      "linear_average_damage_taken": 65.54,
+      "linear_average_fights_won": 5.88,
+      "linear_average_reward": 17.072600000000023,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_002400.json",
+      "episode": 2400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.86,
+          "average_fights_won": 6.44,
+          "average_reward": 24.753600000000027,
+          "average_steps": 125.4,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.86,
+      "linear_average_damage_dealt": 327.12,
+      "linear_average_damage_taken": 65.64,
+      "linear_average_fights_won": 6.44,
+      "linear_average_reward": 24.753600000000027,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_002600.json",
+      "episode": 2600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.5,
+          "average_fights_won": 5.88,
+          "average_reward": 16.52100000000003,
+          "average_steps": 114.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.5,
+      "linear_average_damage_dealt": 280.5,
+      "linear_average_damage_taken": 66.66,
+      "linear_average_fights_won": 5.88,
+      "linear_average_reward": 16.52100000000003,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_002800.json",
+      "episode": 2800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 5.74,
+          "average_reward": 21.407400000000006,
+          "average_steps": 142.0,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.98,
+      "linear_average_damage_dealt": 303.06,
+      "linear_average_damage_taken": 63.8,
+      "linear_average_fights_won": 5.74,
+      "linear_average_reward": 21.407400000000006,
+      "linear_wins": 2
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_003000.json",
+      "episode": 3000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.78,
+          "average_fights_won": 6.0,
+          "average_reward": 19.61540000000003,
+          "average_steps": 125.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.78,
+      "linear_average_damage_dealt": 306.92,
+      "linear_average_damage_taken": 65.58,
+      "linear_average_fights_won": 6.0,
+      "linear_average_reward": 19.61540000000003,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_003200.json",
+      "episode": 3200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.24,
+          "average_fights_won": 5.84,
+          "average_reward": 16.144600000000032,
+          "average_steps": 112.4,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.24,
+      "linear_average_damage_dealt": 282.52,
+      "linear_average_damage_taken": 66.22,
+      "linear_average_fights_won": 5.84,
+      "linear_average_reward": 16.144600000000032,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_003400.json",
+      "episode": 3400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.64,
+          "average_fights_won": 6.18,
+          "average_reward": 20.762200000000036,
+          "average_steps": 128.52,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.64,
+      "linear_average_damage_dealt": 314.0,
+      "linear_average_damage_taken": 66.62,
+      "linear_average_fights_won": 6.18,
+      "linear_average_reward": 20.762200000000036,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_003600.json",
+      "episode": 3600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.58,
+          "average_fights_won": 5.98,
+          "average_reward": 19.23520000000002,
+          "average_steps": 118.84,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.58,
+      "linear_average_damage_dealt": 295.56,
+      "linear_average_damage_taken": 68.36,
+      "linear_average_fights_won": 5.98,
+      "linear_average_reward": 19.23520000000002,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_003800.json",
+      "episode": 3800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.5,
+          "average_fights_won": 6.06,
+          "average_reward": 19.462400000000027,
+          "average_steps": 127.2,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.5,
+      "linear_average_damage_dealt": 306.36,
+      "linear_average_damage_taken": 66.16,
+      "linear_average_fights_won": 6.06,
+      "linear_average_reward": 19.462400000000027,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_004000.json",
+      "episode": 4000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.74,
+          "average_fights_won": 6.02,
+          "average_reward": 19.914200000000037,
+          "average_steps": 123.86,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.74,
+      "linear_average_damage_dealt": 296.6,
+      "linear_average_damage_taken": 64.98,
+      "linear_average_fights_won": 6.02,
+      "linear_average_reward": 19.914200000000037,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_004200.json",
+      "episode": 4200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.92,
+          "average_reward": 19.351000000000035,
+          "average_steps": 110.08,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.38,
+      "linear_average_damage_dealt": 289.22,
+      "linear_average_damage_taken": 66.34,
+      "linear_average_fights_won": 5.92,
+      "linear_average_reward": 19.351000000000035,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_004400.json",
+      "episode": 4400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.7,
+          "average_fights_won": 6.06,
+          "average_reward": 20.543800000000033,
+          "average_steps": 124.78,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.7,
+      "linear_average_damage_dealt": 295.34,
+      "linear_average_damage_taken": 66.58,
+      "linear_average_fights_won": 6.06,
+      "linear_average_reward": 20.543800000000033,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_004600.json",
+      "episode": 4600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.74,
+          "average_fights_won": 6.12,
+          "average_reward": 21.668600000000012,
+          "average_steps": 139.32,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.74,
+      "linear_average_damage_dealt": 313.48,
+      "linear_average_damage_taken": 66.26,
+      "linear_average_fights_won": 6.12,
+      "linear_average_reward": 21.668600000000012,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_004800.json",
+      "episode": 4800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.76,
+          "average_fights_won": 5.9,
+          "average_reward": 17.845400000000026,
+          "average_steps": 124.86,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.76,
+      "linear_average_damage_dealt": 300.38,
+      "linear_average_damage_taken": 67.68,
+      "linear_average_fights_won": 5.9,
+      "linear_average_reward": 17.845400000000026,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_005000.json",
+      "episode": 5000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.78,
+          "average_fights_won": 6.4,
+          "average_reward": 26.684600000000014,
+          "average_steps": 140.42,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.78,
+      "linear_average_damage_dealt": 323.26,
+      "linear_average_damage_taken": 63.02,
+      "linear_average_fights_won": 6.4,
+      "linear_average_reward": 26.684600000000014,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_005200.json",
+      "episode": 5200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.54,
+          "average_fights_won": 6.12,
+          "average_reward": 21.83300000000002,
+          "average_steps": 131.26,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.54,
+      "linear_average_damage_dealt": 309.44,
+      "linear_average_damage_taken": 65.42,
+      "linear_average_fights_won": 6.12,
+      "linear_average_reward": 21.83300000000002,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_005400.json",
+      "episode": 5400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.76,
+          "average_fights_won": 6.16,
+          "average_reward": 22.055000000000028,
+          "average_steps": 130.44,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.76,
+      "linear_average_damage_dealt": 308.46,
+      "linear_average_damage_taken": 67.04,
+      "linear_average_fights_won": 6.16,
+      "linear_average_reward": 22.055000000000028,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_005600.json",
+      "episode": 5600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.34,
+          "average_fights_won": 5.84,
+          "average_reward": 18.36080000000003,
+          "average_steps": 110.84,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.34,
+      "linear_average_damage_dealt": 286.64,
+      "linear_average_damage_taken": 66.5,
+      "linear_average_fights_won": 5.84,
+      "linear_average_reward": 18.36080000000003,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_005800.json",
+      "episode": 5800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 6.02,
+          "average_reward": 22.744000000000018,
+          "average_steps": 141.02,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.72,
+      "linear_average_damage_dealt": 316.64,
+      "linear_average_damage_taken": 66.46,
+      "linear_average_fights_won": 6.02,
+      "linear_average_reward": 22.744000000000018,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_006000.json",
+      "episode": 6000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.68,
+          "average_fights_won": 5.96,
+          "average_reward": 24.21460000000002,
+          "average_steps": 124.26,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.68,
+      "linear_average_damage_dealt": 309.52,
+      "linear_average_damage_taken": 65.06,
+      "linear_average_fights_won": 5.96,
+      "linear_average_reward": 24.21460000000002,
+      "linear_wins": 2
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_006200.json",
+      "episode": 6200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.86,
+          "average_fights_won": 6.34,
+          "average_reward": 25.611800000000017,
+          "average_steps": 142.72,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.86,
+      "linear_average_damage_dealt": 328.36,
+      "linear_average_damage_taken": 65.36,
+      "linear_average_fights_won": 6.34,
+      "linear_average_reward": 25.611800000000017,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_006400.json",
+      "episode": 6400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.6,
+          "average_fights_won": 6.14,
+          "average_reward": 20.384000000000025,
+          "average_steps": 128.46,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.6,
+      "linear_average_damage_dealt": 299.34,
+      "linear_average_damage_taken": 66.52,
+      "linear_average_fights_won": 6.14,
+      "linear_average_reward": 20.384000000000025,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_006600.json",
+      "episode": 6600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 6.8,
+          "average_fights_won": 4.32,
+          "average_reward": 4.040599999999961,
+          "average_steps": 203.78,
+          "defeats": 36,
+          "runs": 50,
+          "stalls": 14,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 6.8,
+      "linear_average_damage_dealt": 199.2,
+      "linear_average_damage_taken": 58.82,
+      "linear_average_fights_won": 4.32,
+      "linear_average_reward": 4.040599999999961,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_006800.json",
+      "episode": 6800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.56,
+          "average_fights_won": 5.78,
+          "average_reward": 18.09980000000003,
+          "average_steps": 114.34,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.56,
+      "linear_average_damage_dealt": 287.56,
+      "linear_average_damage_taken": 64.28,
+      "linear_average_fights_won": 5.78,
+      "linear_average_reward": 18.09980000000003,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_007000.json",
+      "episode": 7000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.62,
+          "average_fights_won": 5.32,
+          "average_reward": 13.40460000000003,
+          "average_steps": 115.48,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.62,
+      "linear_average_damage_dealt": 285.12,
+      "linear_average_damage_taken": 65.14,
+      "linear_average_fights_won": 5.32,
+      "linear_average_reward": 13.40460000000003,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_007200.json",
+      "episode": 7200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.84,
+          "average_fights_won": 5.7,
+          "average_reward": 17.631400000000017,
+          "average_steps": 131.84,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.84,
+      "linear_average_damage_dealt": 308.94,
+      "linear_average_damage_taken": 64.98,
+      "linear_average_fights_won": 5.7,
+      "linear_average_reward": 17.631400000000017,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_007400.json",
+      "episode": 7400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.82,
+          "average_fights_won": 6.52,
+          "average_reward": 25.87840000000001,
+          "average_steps": 143.26,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.82,
+      "linear_average_damage_dealt": 324.56,
+      "linear_average_damage_taken": 66.18,
+      "linear_average_fights_won": 6.52,
+      "linear_average_reward": 25.87840000000001,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_007600.json",
+      "episode": 7600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.52,
+          "average_fights_won": 6.02,
+          "average_reward": 18.962000000000028,
+          "average_steps": 126.28,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.52,
+      "linear_average_damage_dealt": 292.84,
+      "linear_average_damage_taken": 64.72,
+      "linear_average_fights_won": 6.02,
+      "linear_average_reward": 18.962000000000028,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_007800.json",
+      "episode": 7800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.6,
+          "average_fights_won": 6.06,
+          "average_reward": 20.040000000000013,
+          "average_steps": 144.88,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.6,
+      "linear_average_damage_dealt": 304.44,
+      "linear_average_damage_taken": 65.44,
+      "linear_average_fights_won": 6.06,
+      "linear_average_reward": 20.040000000000013,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_008000.json",
+      "episode": 8000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.54,
+          "average_fights_won": 6.22,
+          "average_reward": 22.462400000000017,
+          "average_steps": 130.26,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.54,
+      "linear_average_damage_dealt": 303.58,
+      "linear_average_damage_taken": 66.98,
+      "linear_average_fights_won": 6.22,
+      "linear_average_reward": 22.462400000000017,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_008200.json",
+      "episode": 8200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.0,
+          "average_fights_won": 5.42,
+          "average_reward": 11.771600000000019,
+          "average_steps": 100.68,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.0,
+      "linear_average_damage_dealt": 258.84,
+      "linear_average_damage_taken": 67.64,
+      "linear_average_fights_won": 5.42,
+      "linear_average_reward": 11.771600000000019,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_008400.json",
+      "episode": 8400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.64,
+          "average_fights_won": 5.96,
+          "average_reward": 19.01360000000002,
+          "average_steps": 120.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.64,
+      "linear_average_damage_dealt": 292.9,
+      "linear_average_damage_taken": 68.68,
+      "linear_average_fights_won": 5.96,
+      "linear_average_reward": 19.01360000000002,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_008600.json",
+      "episode": 8600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.48,
+          "average_fights_won": 5.92,
+          "average_reward": 16.54380000000003,
+          "average_steps": 123.88,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.48,
+      "linear_average_damage_dealt": 295.8,
+      "linear_average_damage_taken": 66.94,
+      "linear_average_fights_won": 5.92,
+      "linear_average_reward": 16.54380000000003,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\guild_assassin_apprentice\\checkpoints\\checkpoint_008800.json",
+      "episode": 8800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.72,
+          "average_fights_won": 5.62,
+          "average_reward": 21.010600000000032,
+          "average_steps": 111.42,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.7,
+          "average_fights_won": 6.14,
+          "average_reward": 22.100800000000003,
+          "average_steps": 143.76,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.82,
+          "average_reward": -11.640800000000013,
+          "average_steps": 108.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.7,
+      "linear_average_damage_dealt": 309.98,
+      "linear_average_damage_taken": 64.96,
+      "linear_average_fights_won": 6.14,
+      "linear_average_reward": 22.100800000000003,
+      "linear_wins": 1
+    }
+  ],
+  "schema_version": 1
+}

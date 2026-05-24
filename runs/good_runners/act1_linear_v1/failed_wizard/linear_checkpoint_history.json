@@ -1,0 +1,2030 @@
+{
+  "character_id": "failed_wizard",
+  "history": [
+    {
+      "episode": 0,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.0,
+          "average_fights_won": 6.34,
+          "average_reward": 25.857600000000026,
+          "average_steps": 107.62,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.0,
+      "linear_average_damage_dealt": 348.5,
+      "linear_average_damage_taken": 71.22,
+      "linear_average_fights_won": 6.34,
+      "linear_average_reward": 25.857600000000026,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_000200.json",
+      "episode": 200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.18,
+          "average_reward": 22.209200000000028,
+          "average_steps": 100.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 322.36,
+      "linear_average_damage_taken": 70.66,
+      "linear_average_fights_won": 6.18,
+      "linear_average_reward": 22.209200000000028,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_000400.json",
+      "episode": 400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.82,
+          "average_fights_won": 6.46,
+          "average_reward": 25.02020000000003,
+          "average_steps": 99.6,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.82,
+      "linear_average_damage_dealt": 320.84,
+      "linear_average_damage_taken": 70.22,
+      "linear_average_fights_won": 6.46,
+      "linear_average_reward": 25.02020000000003,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_000600.json",
+      "episode": 600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.84,
+          "average_fights_won": 6.14,
+          "average_reward": 18.7612,
+          "average_steps": 144.92,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.84,
+      "linear_average_damage_dealt": 300.56,
+      "linear_average_damage_taken": 68.96,
+      "linear_average_fights_won": 6.14,
+      "linear_average_reward": 18.7612,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_000800.json",
+      "episode": 800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.94,
+          "average_fights_won": 6.14,
+          "average_reward": 22.75420000000003,
+          "average_steps": 97.12,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.94,
+      "linear_average_damage_dealt": 327.46,
+      "linear_average_damage_taken": 68.9,
+      "linear_average_fights_won": 6.14,
+      "linear_average_reward": 22.75420000000003,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_001000.json",
+      "episode": 1000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.82,
+          "average_fights_won": 6.12,
+          "average_reward": 22.355000000000018,
+          "average_steps": 95.6,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.82,
+      "linear_average_damage_dealt": 316.76,
+      "linear_average_damage_taken": 68.92,
+      "linear_average_fights_won": 6.12,
+      "linear_average_reward": 22.355000000000018,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_001200.json",
+      "episode": 1200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.96,
+          "average_fights_won": 6.28,
+          "average_reward": 21.712,
+          "average_steps": 154.22,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.96,
+      "linear_average_damage_dealt": 316.48,
+      "linear_average_damage_taken": 67.9,
+      "linear_average_fights_won": 6.28,
+      "linear_average_reward": 21.712,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_001400.json",
+      "episode": 1400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.92,
+          "average_fights_won": 6.56,
+          "average_reward": 29.030000000000033,
+          "average_steps": 97.48,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.92,
+      "linear_average_damage_dealt": 345.02,
+      "linear_average_damage_taken": 68.72,
+      "linear_average_fights_won": 6.56,
+      "linear_average_reward": 29.030000000000033,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_001600.json",
+      "episode": 1600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.76,
+          "average_fights_won": 6.3,
+          "average_reward": 23.18139999999999,
+          "average_steps": 158.44,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.76,
+      "linear_average_damage_dealt": 308.3,
+      "linear_average_damage_taken": 66.76,
+      "linear_average_fights_won": 6.3,
+      "linear_average_reward": 23.18139999999999,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_001800.json",
+      "episode": 1800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.0,
+          "average_fights_won": 6.36,
+          "average_reward": 25.55400000000002,
+          "average_steps": 103.76,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.0,
+      "linear_average_damage_dealt": 326.16,
+      "linear_average_damage_taken": 69.54,
+      "linear_average_fights_won": 6.36,
+      "linear_average_reward": 25.55400000000002,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_002000.json",
+      "episode": 2000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.9,
+          "average_fights_won": 6.26,
+          "average_reward": 20.9702,
+          "average_steps": 141.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.9,
+      "linear_average_damage_dealt": 305.46,
+      "linear_average_damage_taken": 68.52,
+      "linear_average_fights_won": 6.26,
+      "linear_average_reward": 20.9702,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_002200.json",
+      "episode": 2200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.86,
+          "average_fights_won": 6.48,
+          "average_reward": 22.827999999999996,
+          "average_steps": 153.08,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.86,
+      "linear_average_damage_dealt": 308.52,
+      "linear_average_damage_taken": 67.6,
+      "linear_average_fights_won": 6.48,
+      "linear_average_reward": 22.827999999999996,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_002400.json",
+      "episode": 2400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.92,
+          "average_fights_won": 6.54,
+          "average_reward": 26.004799999999992,
+          "average_steps": 168.1,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.92,
+      "linear_average_damage_dealt": 321.62,
+      "linear_average_damage_taken": 68.2,
+      "linear_average_fights_won": 6.54,
+      "linear_average_reward": 26.004799999999992,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_002600.json",
+      "episode": 2600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.7,
+          "average_fights_won": 6.42,
+          "average_reward": 24.278599999999972,
+          "average_steps": 187.4,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.7,
+      "linear_average_damage_dealt": 313.64,
+      "linear_average_damage_taken": 65.94,
+      "linear_average_fights_won": 6.42,
+      "linear_average_reward": 24.278599999999972,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_002800.json",
+      "episode": 2800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.84,
+          "average_fights_won": 6.2,
+          "average_reward": 20.459200000000003,
+          "average_steps": 136.7,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.84,
+      "linear_average_damage_dealt": 309.44,
+      "linear_average_damage_taken": 69.12,
+      "linear_average_fights_won": 6.2,
+      "linear_average_reward": 20.459200000000003,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_003000.json",
+      "episode": 3000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.74,
+          "average_fights_won": 6.42,
+          "average_reward": 22.878800000000005,
+          "average_steps": 137.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.74,
+      "linear_average_damage_dealt": 313.84,
+      "linear_average_damage_taken": 67.3,
+      "linear_average_fights_won": 6.42,
+      "linear_average_reward": 22.878800000000005,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_003200.json",
+      "episode": 3200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.62,
+          "average_fights_won": 6.12,
+          "average_reward": 17.7948,
+          "average_steps": 147.28,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.62,
+      "linear_average_damage_dealt": 290.54,
+      "linear_average_damage_taken": 68.92,
+      "linear_average_fights_won": 6.12,
+      "linear_average_reward": 17.7948,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_003400.json",
+      "episode": 3400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.96,
+          "average_fights_won": 6.46,
+          "average_reward": 25.622399999999992,
+          "average_steps": 156.72,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.96,
+      "linear_average_damage_dealt": 311.68,
+      "linear_average_damage_taken": 67.12,
+      "linear_average_fights_won": 6.46,
+      "linear_average_reward": 25.622399999999992,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_003600.json",
+      "episode": 3600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.54,
+          "average_reward": 26.023999999999987,
+          "average_steps": 157.08,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 305.92,
+      "linear_average_damage_taken": 67.66,
+      "linear_average_fights_won": 6.54,
+      "linear_average_reward": 26.023999999999987,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_003800.json",
+      "episode": 3800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.64,
+          "average_fights_won": 6.42,
+          "average_reward": 22.006199999999925,
+          "average_steps": 236.12,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.64,
+      "linear_average_damage_dealt": 304.0,
+      "linear_average_damage_taken": 66.48,
+      "linear_average_fights_won": 6.42,
+      "linear_average_reward": 22.006199999999925,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_004000.json",
+      "episode": 4000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 6.26,
+          "average_reward": 21.191999999999986,
+          "average_steps": 169.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.8,
+      "linear_average_damage_dealt": 300.58,
+      "linear_average_damage_taken": 67.7,
+      "linear_average_fights_won": 6.26,
+      "linear_average_reward": 21.191999999999986,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_004200.json",
+      "episode": 4200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.9,
+          "average_fights_won": 6.18,
+          "average_reward": 20.14320000000001,
+          "average_steps": 138.02,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.9,
+      "linear_average_damage_dealt": 307.9,
+      "linear_average_damage_taken": 68.3,
+      "linear_average_fights_won": 6.18,
+      "linear_average_reward": 20.14320000000001,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_004400.json",
+      "episode": 4400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.92,
+          "average_fights_won": 6.2,
+          "average_reward": 20.11120000000001,
+          "average_steps": 139.54,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.92,
+      "linear_average_damage_dealt": 310.76,
+      "linear_average_damage_taken": 69.5,
+      "linear_average_fights_won": 6.2,
+      "linear_average_reward": 20.11120000000001,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_004600.json",
+      "episode": 4600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.62,
+          "average_fights_won": 5.9,
+          "average_reward": 17.26299999999999,
+          "average_steps": 141.46,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.62,
+      "linear_average_damage_dealt": 278.6,
+      "linear_average_damage_taken": 70.26,
+      "linear_average_fights_won": 5.9,
+      "linear_average_reward": 17.26299999999999,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_004800.json",
+      "episode": 4800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.5,
+          "average_fights_won": 6.18,
+          "average_reward": 18.557400000000015,
+          "average_steps": 119.4,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.5,
+      "linear_average_damage_dealt": 287.34,
+      "linear_average_damage_taken": 70.96,
+      "linear_average_fights_won": 6.18,
+      "linear_average_reward": 18.557400000000015,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_005000.json",
+      "episode": 5000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.46,
+          "average_fights_won": 5.82,
+          "average_reward": 17.899800000000006,
+          "average_steps": 103.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.46,
+      "linear_average_damage_dealt": 273.6,
+      "linear_average_damage_taken": 69.0,
+      "linear_average_fights_won": 5.82,
+      "linear_average_reward": 17.899800000000006,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_005200.json",
+      "episode": 5200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.9,
+          "average_fights_won": 6.48,
+          "average_reward": 23.06280000000001,
+          "average_steps": 143.58,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.9,
+      "linear_average_damage_dealt": 307.6,
+      "linear_average_damage_taken": 69.8,
+      "linear_average_fights_won": 6.48,
+      "linear_average_reward": 23.06280000000001,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_005400.json",
+      "episode": 5400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.94,
+          "average_fights_won": 6.38,
+          "average_reward": 22.838200000000015,
+          "average_steps": 143.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.94,
+      "linear_average_damage_dealt": 315.3,
+      "linear_average_damage_taken": 68.56,
+      "linear_average_fights_won": 6.38,
+      "linear_average_reward": 22.838200000000015,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_005600.json",
+      "episode": 5600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.76,
+          "average_fights_won": 6.32,
+          "average_reward": 21.82860000000001,
+          "average_steps": 141.7,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.76,
+      "linear_average_damage_dealt": 316.76,
+      "linear_average_damage_taken": 68.6,
+      "linear_average_fights_won": 6.32,
+      "linear_average_reward": 21.82860000000001,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_005800.json",
+      "episode": 5800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 6.58,
+          "average_reward": 25.389600000000016,
+          "average_steps": 138.82,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.8,
+      "linear_average_damage_dealt": 323.14,
+      "linear_average_damage_taken": 67.52,
+      "linear_average_fights_won": 6.58,
+      "linear_average_reward": 25.389600000000016,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_006000.json",
+      "episode": 6000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.96,
+          "average_fights_won": 6.48,
+          "average_reward": 23.71560000000001,
+          "average_steps": 158.92,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.96,
+      "linear_average_damage_dealt": 315.8,
+      "linear_average_damage_taken": 67.66,
+      "linear_average_fights_won": 6.48,
+      "linear_average_reward": 23.71560000000001,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_006200.json",
+      "episode": 6200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.76,
+          "average_fights_won": 6.22,
+          "average_reward": 21.79259999999999,
+          "average_steps": 155.64,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.76,
+      "linear_average_damage_dealt": 293.46,
+      "linear_average_damage_taken": 67.06,
+      "linear_average_fights_won": 6.22,
+      "linear_average_reward": 21.79259999999999,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_006400.json",
+      "episode": 6400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.46,
+          "average_fights_won": 5.36,
+          "average_reward": 10.267200000000008,
+          "average_steps": 115.32,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.46,
+      "linear_average_damage_dealt": 263.66,
+      "linear_average_damage_taken": 69.26,
+      "linear_average_fights_won": 5.36,
+      "linear_average_reward": 10.267200000000008,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_006600.json",
+      "episode": 6600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 6.44,
+          "average_reward": 23.222600000000003,
+          "average_steps": 159.86,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.8,
+      "linear_average_damage_dealt": 314.1,
+      "linear_average_damage_taken": 68.68,
+      "linear_average_fights_won": 6.44,
+      "linear_average_reward": 23.222600000000003,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_006800.json",
+      "episode": 6800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.48,
+          "average_fights_won": 6.1,
+          "average_reward": 19.52860000000001,
+          "average_steps": 129.24,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.48,
+      "linear_average_damage_dealt": 287.3,
+      "linear_average_damage_taken": 67.96,
+      "linear_average_fights_won": 6.1,
+      "linear_average_reward": 19.52860000000001,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_007000.json",
+      "episode": 7000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.84,
+          "average_fights_won": 6.42,
+          "average_reward": 22.818200000000015,
+          "average_steps": 145.22,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.84,
+      "linear_average_damage_dealt": 317.52,
+      "linear_average_damage_taken": 68.7,
+      "linear_average_fights_won": 6.42,
+      "linear_average_reward": 22.818200000000015,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_007200.json",
+      "episode": 7200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.54,
+          "average_reward": 24.773400000000002,
+          "average_steps": 165.66,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 323.88,
+      "linear_average_damage_taken": 66.82,
+      "linear_average_fights_won": 6.54,
+      "linear_average_reward": 24.773400000000002,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_007400.json",
+      "episode": 7400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 6.48,
+          "average_reward": 23.875000000000014,
+          "average_steps": 147.3,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.8,
+      "linear_average_damage_dealt": 323.88,
+      "linear_average_damage_taken": 68.06,
+      "linear_average_fights_won": 6.48,
+      "linear_average_reward": 23.875000000000014,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_007600.json",
+      "episode": 7600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 6.5,
+          "average_reward": 23.96540000000001,
+          "average_steps": 138.04,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.8,
+      "linear_average_damage_dealt": 314.14,
+      "linear_average_damage_taken": 67.52,
+      "linear_average_fights_won": 6.5,
+      "linear_average_reward": 23.96540000000001,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_007800.json",
+      "episode": 7800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.9,
+          "average_fights_won": 6.48,
+          "average_reward": 25.245999999999995,
+          "average_steps": 158.28,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.9,
+      "linear_average_damage_dealt": 308.18,
+      "linear_average_damage_taken": 67.02,
+      "linear_average_fights_won": 6.48,
+      "linear_average_reward": 25.245999999999995,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_008000.json",
+      "episode": 8000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.68,
+          "average_fights_won": 6.02,
+          "average_reward": 19.97879999999999,
+          "average_steps": 152.0,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.68,
+      "linear_average_damage_dealt": 285.18,
+      "linear_average_damage_taken": 66.94,
+      "linear_average_fights_won": 6.02,
+      "linear_average_reward": 19.97879999999999,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_008200.json",
+      "episode": 8200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.92,
+          "average_fights_won": 6.44,
+          "average_reward": 23.554800000000014,
+          "average_steps": 154.04,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.92,
+      "linear_average_damage_dealt": 321.3,
+      "linear_average_damage_taken": 67.56,
+      "linear_average_fights_won": 6.44,
+      "linear_average_reward": 23.554800000000014,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_008400.json",
+      "episode": 8400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.78,
+          "average_fights_won": 6.26,
+          "average_reward": 22.518599999999996,
+          "average_steps": 142.28,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.78,
+      "linear_average_damage_dealt": 299.58,
+      "linear_average_damage_taken": 69.54,
+      "linear_average_fights_won": 6.26,
+      "linear_average_reward": 22.518599999999996,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_008600.json",
+      "episode": 8600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.68,
+          "average_fights_won": 6.24,
+          "average_reward": 21.00000000000001,
+          "average_steps": 132.0,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.68,
+      "linear_average_damage_dealt": 306.02,
+      "linear_average_damage_taken": 68.92,
+      "linear_average_fights_won": 6.24,
+      "linear_average_reward": 21.00000000000001,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\failed_wizard\\checkpoints\\checkpoint_008800.json",
+      "episode": 8800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.8,
+          "average_fights_won": 5.8,
+          "average_reward": 19.791000000000007,
+          "average_steps": 123.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.78,
+          "average_fights_won": 6.66,
+          "average_reward": 25.42860000000001,
+          "average_steps": 139.5,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 6.24,
+          "average_fights_won": 3.78,
+          "average_reward": -12.681200000000015,
+          "average_steps": 101.38,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.78,
+      "linear_average_damage_dealt": 320.24,
+      "linear_average_damage_taken": 69.02,
+      "linear_average_fights_won": 6.66,
+      "linear_average_reward": 25.42860000000001,
+      "linear_wins": 0
+    }
+  ],
+  "schema_version": 1
+}

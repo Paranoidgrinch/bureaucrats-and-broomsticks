@@ -1,0 +1,1265 @@
+{
+  "character_id": "night_watch_recruit",
+  "history": [
+    {
+      "episode": 0,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.0,
+          "average_fights_won": 6.46,
+          "average_reward": 24.083399999999923,
+          "average_steps": 255.18,
+          "defeats": 47,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 3
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.0,
+      "linear_average_damage_dealt": 370.28,
+      "linear_average_damage_taken": 79.6,
+      "linear_average_fights_won": 6.46,
+      "linear_average_reward": 24.083399999999923,
+      "linear_wins": 3
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_000200.json",
+      "episode": 200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 2.92,
+          "average_fights_won": 1.98,
+          "average_reward": -22.359600000000157,
+          "average_steps": 261.4,
+          "defeats": 18,
+          "runs": 50,
+          "stalls": 32,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 2.92,
+      "linear_average_damage_dealt": 89.02,
+      "linear_average_damage_taken": 58.82,
+      "linear_average_fights_won": 1.98,
+      "linear_average_reward": -22.359600000000157,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_000400.json",
+      "episode": 400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 5.4,
+          "average_reward": 5.345799999999963,
+          "average_steps": 185.62,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.98,
+      "linear_average_damage_dealt": 295.04,
+      "linear_average_damage_taken": 83.04,
+      "linear_average_fights_won": 5.4,
+      "linear_average_reward": 5.345799999999963,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_000600.json",
+      "episode": 600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.92,
+          "average_fights_won": 6.32,
+          "average_reward": 18.348999999999915,
+          "average_steps": 238.16,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.92,
+      "linear_average_damage_dealt": 326.4,
+      "linear_average_damage_taken": 81.4,
+      "linear_average_fights_won": 6.32,
+      "linear_average_reward": 18.348999999999915,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_000800.json",
+      "episode": 800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.12,
+          "average_reward": 13.4159999999999,
+          "average_steps": 276.64,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 322.9,
+      "linear_average_damage_taken": 81.34,
+      "linear_average_fights_won": 6.12,
+      "linear_average_reward": 13.4159999999999,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_001000.json",
+      "episode": 1000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.82,
+          "average_fights_won": 6.4,
+          "average_reward": 18.845199999999984,
+          "average_steps": 130.68,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.82,
+      "linear_average_damage_dealt": 333.38,
+      "linear_average_damage_taken": 83.96,
+      "linear_average_fights_won": 6.4,
+      "linear_average_reward": 18.845199999999984,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_001200.json",
+      "episode": 1200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.94,
+          "average_fights_won": 6.44,
+          "average_reward": 16.502799999999972,
+          "average_steps": 196.74,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.94,
+      "linear_average_damage_dealt": 324.94,
+      "linear_average_damage_taken": 82.72,
+      "linear_average_fights_won": 6.44,
+      "linear_average_reward": 16.502799999999972,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_001400.json",
+      "episode": 1400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.22,
+          "average_reward": 10.47539999999985,
+          "average_steps": 346.32,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 313.8,
+      "linear_average_damage_taken": 83.62,
+      "linear_average_fights_won": 6.22,
+      "linear_average_reward": 10.47539999999985,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_001600.json",
+      "episode": 1600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.9,
+          "average_fights_won": 6.12,
+          "average_reward": 12.135799999999854,
+          "average_steps": 300.98,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.9,
+      "linear_average_damage_dealt": 334.16,
+      "linear_average_damage_taken": 81.52,
+      "linear_average_fights_won": 6.12,
+      "linear_average_reward": 12.135799999999854,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_001800.json",
+      "episode": 1800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.94,
+          "average_fights_won": 6.6,
+          "average_reward": 20.91659999999992,
+          "average_steps": 212.5,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.94,
+      "linear_average_damage_dealt": 337.26,
+      "linear_average_damage_taken": 80.3,
+      "linear_average_fights_won": 6.6,
+      "linear_average_reward": 20.91659999999992,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_002000.json",
+      "episode": 2000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.04,
+          "average_fights_won": 6.7,
+          "average_reward": 27.73419999999991,
+          "average_steps": 203.7,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.04,
+      "linear_average_damage_dealt": 390.06,
+      "linear_average_damage_taken": 80.24,
+      "linear_average_fights_won": 6.7,
+      "linear_average_reward": 27.73419999999991,
+      "linear_wins": 2
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_002200.json",
+      "episode": 2200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.94,
+          "average_fights_won": 6.16,
+          "average_reward": 17.42659999999996,
+          "average_steps": 178.1,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.94,
+      "linear_average_damage_dealt": 334.68,
+      "linear_average_damage_taken": 83.04,
+      "linear_average_fights_won": 6.16,
+      "linear_average_reward": 17.42659999999996,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_002400.json",
+      "episode": 2400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.82,
+          "average_fights_won": 6.3,
+          "average_reward": 7.351799999999682,
+          "average_steps": 460.32,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.82,
+      "linear_average_damage_dealt": 320.24,
+      "linear_average_damage_taken": 80.46,
+      "linear_average_fights_won": 6.3,
+      "linear_average_reward": 7.351799999999682,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_002600.json",
+      "episode": 2600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.42,
+          "average_fights_won": 6.0,
+          "average_reward": 16.390799999999963,
+          "average_steps": 185.62,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 4,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.42,
+      "linear_average_damage_dealt": 311.12,
+      "linear_average_damage_taken": 77.68,
+      "linear_average_fights_won": 6.0,
+      "linear_average_reward": 16.390799999999963,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_002800.json",
+      "episode": 2800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.96,
+          "average_fights_won": 6.38,
+          "average_reward": 16.808999999999937,
+          "average_steps": 218.1,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.96,
+      "linear_average_damage_dealt": 322.04,
+      "linear_average_damage_taken": 82.22,
+      "linear_average_fights_won": 6.38,
+      "linear_average_reward": 16.808999999999937,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_003000.json",
+      "episode": 3000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.26,
+          "average_reward": 14.727599999999887,
+          "average_steps": 283.44,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 1,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 317.96,
+      "linear_average_damage_taken": 80.48,
+      "linear_average_fights_won": 6.26,
+      "linear_average_reward": 14.727599999999887,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_003200.json",
+      "episode": 3200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.94,
+          "average_fights_won": 6.52,
+          "average_reward": 19.05279999999992,
+          "average_steps": 225.0,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 1,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.94,
+      "linear_average_damage_dealt": 312.08,
+      "linear_average_damage_taken": 81.18,
+      "linear_average_fights_won": 6.52,
+      "linear_average_reward": 19.05279999999992,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_003400.json",
+      "episode": 3400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.94,
+          "average_fights_won": 6.16,
+          "average_reward": 14.466599999999916,
+          "average_steps": 217.46,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.94,
+      "linear_average_damage_dealt": 347.16,
+      "linear_average_damage_taken": 82.68,
+      "linear_average_fights_won": 6.16,
+      "linear_average_reward": 14.466599999999916,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_003600.json",
+      "episode": 3600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.58,
+          "average_fights_won": 5.96,
+          "average_reward": 7.733599999999885,
+          "average_steps": 260.64,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.58,
+      "linear_average_damage_dealt": 280.66,
+      "linear_average_damage_taken": 86.72,
+      "linear_average_fights_won": 5.96,
+      "linear_average_reward": 7.733599999999885,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_003800.json",
+      "episode": 3800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.4,
+          "average_reward": 16.21299999999996,
+          "average_steps": 182.3,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.98,
+      "linear_average_damage_dealt": 328.28,
+      "linear_average_damage_taken": 82.36,
+      "linear_average_fights_won": 6.4,
+      "linear_average_reward": 16.21299999999996,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_004000.json",
+      "episode": 4000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.82,
+          "average_fights_won": 6.32,
+          "average_reward": 15.866399999999919,
+          "average_steps": 218.9,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 1,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.82,
+      "linear_average_damage_dealt": 294.26,
+      "linear_average_damage_taken": 84.08,
+      "linear_average_fights_won": 6.32,
+      "linear_average_reward": 15.866399999999919,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_004200.json",
+      "episode": 4200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.02,
+          "average_fights_won": 6.36,
+          "average_reward": 24.71139999999996,
+          "average_steps": 151.36,
+          "defeats": 48,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 2
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.02,
+      "linear_average_damage_dealt": 361.18,
+      "linear_average_damage_taken": 81.02,
+      "linear_average_fights_won": 6.36,
+      "linear_average_reward": 24.71139999999996,
+      "linear_wins": 2
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_004400.json",
+      "episode": 4400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.88,
+          "average_fights_won": 6.38,
+          "average_reward": 14.727399999999953,
+          "average_steps": 211.56,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.88,
+      "linear_average_damage_dealt": 307.18,
+      "linear_average_damage_taken": 82.32,
+      "linear_average_fights_won": 6.38,
+      "linear_average_reward": 14.727399999999953,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_004600.json",
+      "episode": 4600,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.02,
+          "average_fights_won": 6.42,
+          "average_reward": 22.100199999999962,
+          "average_steps": 155.78,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.02,
+      "linear_average_damage_dealt": 362.44,
+      "linear_average_damage_taken": 82.08,
+      "linear_average_fights_won": 6.42,
+      "linear_average_reward": 22.100199999999962,
+      "linear_wins": 1
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_004800.json",
+      "episode": 4800,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.0,
+          "average_fights_won": 6.6,
+          "average_reward": 20.638399999999933,
+          "average_steps": 200.14,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.0,
+      "linear_average_damage_dealt": 331.38,
+      "linear_average_damage_taken": 81.76,
+      "linear_average_fights_won": 6.6,
+      "linear_average_reward": 20.638399999999933,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_005000.json",
+      "episode": 5000,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 9.0,
+          "average_fights_won": 6.46,
+          "average_reward": 16.644799999999982,
+          "average_steps": 186.68,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 9.0,
+      "linear_average_damage_dealt": 325.46,
+      "linear_average_damage_taken": 82.34,
+      "linear_average_fights_won": 6.46,
+      "linear_average_reward": 16.644799999999982,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_005200.json",
+      "episode": 5200,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.98,
+          "average_fights_won": 6.44,
+          "average_reward": 18.947199999999953,
+          "average_steps": 186.82,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.98,
+      "linear_average_damage_dealt": 330.92,
+      "linear_average_damage_taken": 82.94,
+      "linear_average_fights_won": 6.44,
+      "linear_average_reward": 18.947199999999953,
+      "linear_wins": 0
+    },
+    {
+      "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\night_watch_recruit\\checkpoints\\checkpoint_005400.json",
+      "episode": 5400,
+      "evaluation_summary": {
+        "heuristic": {
+          "average_completed_nodes": 8.38,
+          "average_fights_won": 5.46,
+          "average_reward": 6.29219999999975,
+          "average_steps": 400.34,
+          "defeats": 46,
+          "runs": 50,
+          "stalls": 3,
+          "truncated": 0,
+          "wins": 1
+        },
+        "linear_q": {
+          "average_completed_nodes": 8.92,
+          "average_fights_won": 6.62,
+          "average_reward": 22.593999999999955,
+          "average_steps": 198.82,
+          "defeats": 49,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 1
+        },
+        "random": {
+          "average_completed_nodes": 7.56,
+          "average_fights_won": 4.48,
+          "average_reward": -9.726000000000026,
+          "average_steps": 151.78,
+          "defeats": 50,
+          "runs": 50,
+          "stalls": 0,
+          "truncated": 0,
+          "wins": 0
+        }
+      },
+      "linear_average_completed_nodes": 8.92,
+      "linear_average_damage_dealt": 339.0,
+      "linear_average_damage_taken": 83.0,
+      "linear_average_fights_won": 6.62,
+      "linear_average_reward": 22.593999999999955,
+      "linear_wins": 1
+    }
+  ],
+  "schema_version": 1
+}

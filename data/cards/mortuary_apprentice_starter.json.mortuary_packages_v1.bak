@@ -14,11 +14,7 @@
         "amount": 6
       }
     ],
-    "tags": [
-      "attack",
-      "bone",
-      "mortuary"
-    ],
+    "tags": [],
     "upgrades_to": "bone_tap_plus"
   },
   {
@@ -37,9 +33,6 @@
       }
     ],
     "tags": [
-      "attack",
-      "bone",
-      "mortuary",
       "upgraded"
     ]
   },
@@ -58,11 +51,7 @@
         "amount": 5
       }
     ],
-    "tags": [
-      "block",
-      "veil",
-      "grave_calm"
-    ],
+    "tags": [],
     "upgrades_to": "mourning_veil_plus"
   },
   {
@@ -81,9 +70,6 @@
       }
     ],
     "tags": [
-      "block",
-      "veil",
-      "grave_calm",
       "upgraded"
     ]
   },
@@ -103,11 +89,7 @@
         "status": "paperwork"
       }
     ],
-    "tags": [
-      "paperwork",
-      "certificate",
-      "setup"
-    ],
+    "tags": [],
     "upgrades_to": "final_notice_plus"
   },
   {
@@ -127,9 +109,6 @@
       }
     ],
     "tags": [
-      "paperwork",
-      "certificate",
-      "setup",
       "upgraded"
     ]
   },
@@ -149,12 +128,7 @@
         "amount_per_stack": 3
       }
     ],
-    "tags": [
-      "attack",
-      "paperwork",
-      "payoff",
-      "bell"
-    ],
+    "tags": [],
     "upgrades_to": "toll_the_small_bell_plus"
   },
   {
@@ -174,10 +148,6 @@
       }
     ],
     "tags": [
-      "attack",
-      "paperwork",
-      "payoff",
-      "bell",
       "upgraded"
     ]
   }

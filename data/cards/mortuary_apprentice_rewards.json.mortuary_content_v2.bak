@@ -54,13 +54,13 @@
     "type": "spell",
     "cost": 0,
     "rarity": "starter",
-    "text": "Deal 1 damage per Paperwork on the target. Exhaust.",
+    "text": "Deal 2 damage per Paperwork on the target. Exhaust.",
     "effects": [
       {
         "type": "damage_per_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount_per_stack": 1
+        "amount_per_stack": 2
       }
     ],
     "tags": [
@@ -118,13 +118,13 @@
     "type": "spell",
     "cost": 1,
     "rarity": "common",
-    "text": "Apply 2 Paperwork.",
+    "text": "Apply 3 Paperwork.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount": 2
+        "amount": 3
       }
     ],
     "tags": [
@@ -142,13 +142,13 @@
     "type": "spell",
     "cost": 1,
     "rarity": "common",
-    "text": "Apply 4 Paperwork.",
+    "text": "Apply 5 Paperwork.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount": 4
+        "amount": 5
       }
     ],
     "tags": [
@@ -162,36 +162,6 @@
   {
     "id": "death_in_triplicate",
     "name": "Death in Triplicate",
-    "class": "mortuary_apprentice",
-    "type": "argument",
-    "cost": 1,
-    "rarity": "common",
-    "text": "Apply 1 Paperwork. Add a Death Certificate to your hand.",
-    "effects": [
-      {
-        "type": "apply_status",
-        "target": "enemy",
-        "status": "paperwork",
-        "amount": 1
-      },
-      {
-        "type": "create_card",
-        "card_id": "death_certificate",
-        "destination": "hand",
-        "copies": 1
-      }
-    ],
-    "tags": [
-      "paperwork",
-      "certificate",
-      "zero_cost",
-      "setup"
-    ],
-    "upgrades_to": "death_in_triplicate_plus"
-  },
-  {
-    "id": "death_in_triplicate_plus",
-    "name": "Death in Triplicate+",
     "class": "mortuary_apprentice",
     "type": "argument",
     "cost": 1,
@@ -215,6 +185,36 @@
       "paperwork",
       "certificate",
       "zero_cost",
+      "setup"
+    ],
+    "upgrades_to": "death_in_triplicate_plus"
+  },
+  {
+    "id": "death_in_triplicate_plus",
+    "name": "Death in Triplicate+",
+    "class": "mortuary_apprentice",
+    "type": "argument",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 3 Paperwork. Add a Death Certificate to your hand.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 3
+      },
+      {
+        "type": "create_card",
+        "card_id": "death_certificate",
+        "destination": "hand",
+        "copies": 1
+      }
+    ],
+    "tags": [
+      "paperwork",
+      "certificate",
+      "zero_cost",
       "setup",
       "upgraded"
     ]
@@ -226,13 +226,13 @@
     "type": "argument",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Apply 3 Paperwork. Apply 1 Doubt.",
+    "text": "Apply 4 Paperwork. Apply 1 Doubt.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount": 3
+        "amount": 4
       },
       {
         "type": "apply_status",
@@ -256,13 +256,13 @@
     "type": "argument",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Apply 4 Paperwork. Apply 2 Doubt.",
+    "text": "Apply 5 Paperwork. Apply 2 Doubt.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount": 4
+        "amount": 5
       },
       {
         "type": "apply_status",
@@ -286,13 +286,13 @@
     "type": "argument",
     "cost": 2,
     "rarity": "rare",
-    "text": "Apply 3 Paperwork to all enemies.",
+    "text": "Apply 4 Paperwork to all enemies.",
     "effects": [
       {
         "type": "apply_status",
         "target": "all_enemies",
         "status": "paperwork",
-        "amount": 3
+        "amount": 4
       }
     ],
     "tags": [
@@ -310,13 +310,13 @@
     "type": "argument",
     "cost": 2,
     "rarity": "rare",
-    "text": "Apply 5 Paperwork to all enemies.",
+    "text": "Apply 6 Paperwork to all enemies.",
     "effects": [
       {
         "type": "apply_status",
         "target": "all_enemies",
         "status": "paperwork",
-        "amount": 5
+        "amount": 6
       }
     ],
     "tags": [
@@ -450,13 +450,13 @@
     "type": "spell",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Apply 2 Paperwork. Add a Small Bell Echo to your hand.",
+    "text": "Apply 3 Paperwork. Add a Small Bell Echo to your hand.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount": 2
+        "amount": 3
       },
       {
         "type": "create_card",
@@ -481,13 +481,13 @@
     "type": "spell",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Apply 3 Paperwork. Add a Small Bell Echo to your hand.",
+    "text": "Apply 4 Paperwork. Add a Small Bell Echo to your hand.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount": 3
+        "amount": 4
       },
       {
         "type": "create_card",
@@ -512,19 +512,19 @@
     "type": "spell",
     "cost": 2,
     "rarity": "rare",
-    "text": "Apply 4 Paperwork. Apply 2 Doubt.",
+    "text": "Apply 5 Paperwork. Apply 3 Doubt.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount": 4
+        "amount": 5
       },
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "doubt",
-        "amount": 2
+        "amount": 3
       }
     ],
     "tags": [
@@ -542,19 +542,19 @@
     "type": "spell",
     "cost": 2,
     "rarity": "rare",
-    "text": "Apply 5 Paperwork. Apply 3 Doubt.",
+    "text": "Apply 7 Paperwork. Apply 4 Doubt.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount": 5
+        "amount": 7
       },
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "doubt",
-        "amount": 3
+        "amount": 4
       }
     ],
     "tags": [
@@ -616,7 +616,7 @@
     "type": "form",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Gain 6 Block. Apply 1 Paperwork.",
+    "text": "Gain 6 Block. Apply 2 Paperwork.",
     "effects": [
       {
         "type": "gain_block",
@@ -627,7 +627,7 @@
         "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount": 1
+        "amount": 2
       }
     ],
     "tags": [
@@ -645,7 +645,7 @@
     "type": "form",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Gain 9 Block. Apply 2 Paperwork.",
+    "text": "Gain 9 Block. Apply 3 Paperwork.",
     "effects": [
       {
         "type": "gain_block",
@@ -656,7 +656,7 @@
         "type": "apply_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount": 2
+        "amount": 3
       }
     ],
     "tags": [
@@ -784,13 +784,13 @@
     "type": "spell",
     "cost": 2,
     "rarity": "uncommon",
-    "text": "Deal 3 damage per Paperwork on the target.",
+    "text": "Deal 4 damage per Paperwork on the target.",
     "effects": [
       {
         "type": "damage_per_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount_per_stack": 3
+        "amount_per_stack": 4
       }
     ],
     "tags": [
@@ -808,13 +808,13 @@
     "type": "spell",
     "cost": 2,
     "rarity": "uncommon",
-    "text": "Deal 4 damage per Paperwork on the target.",
+    "text": "Deal 5 damage per Paperwork on the target.",
     "effects": [
       {
         "type": "damage_per_status",
         "target": "enemy",
         "status": "paperwork",
-        "amount_per_stack": 4
+        "amount_per_stack": 5
       }
     ],
     "tags": [
@@ -930,12 +930,12 @@
     "type": "spell",
     "cost": 2,
     "rarity": "rare",
-    "text": "Deal 10 damage. Deal 2 damage per Paperwork on the target.",
+    "text": "Deal 12 damage. Deal 2 damage per Paperwork on the target.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 10
+        "amount": 12
       },
       {
         "type": "damage_per_status",
@@ -960,12 +960,12 @@
     "type": "spell",
     "cost": 2,
     "rarity": "rare",
-    "text": "Deal 15 damage. Deal 3 damage per Paperwork on the target.",
+    "text": "Deal 18 damage. Deal 3 damage per Paperwork on the target.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 15
+        "amount": 18
       },
       {
         "type": "damage_per_status",

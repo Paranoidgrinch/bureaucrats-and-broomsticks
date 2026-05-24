@@ -25,3 +25,5 @@ runs/_latest_checkpoint_eval_tmp/
 venv/
 env/
 v/
+*.bak
+runs/_worker_smoke_test/

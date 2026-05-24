@@ -31,6 +31,7 @@ CardRarity = Literal[
     "common",
     "uncommon",
     "rare",
+    "epic",
     "boss",
 ]
 

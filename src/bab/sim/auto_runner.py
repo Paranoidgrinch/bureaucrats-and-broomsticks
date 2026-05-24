@@ -38,6 +38,7 @@ from bab.run.state import (
     enter_map_node,
     finish_victorious_combat,
 )
+from bab.systems.act_progression import advance_to_next_act, has_next_act
 from bab.systems.card_removal import remove_card_from_deck, removable_card_indices
 from bab.systems.relics import (
     apply_combat_start_relics,
@@ -45,7 +46,7 @@ from bab.systems.relics import (
     card_reward_count_bonus,
     shop_price_discount_percent,
 )
-from bab.systems.rewards import choose_card_rewards
+from bab.systems.rewards import choose_card_rewards, choose_epic_card_rewards
 from bab.systems.shop import (
     DEFAULT_SHOP_CARD_OFFER_COUNT,
     DEFAULT_SHOP_RELIC_OFFER_COUNT,
@@ -276,14 +277,19 @@ def resolve_random_map_node(
     if node.node_type in {"combat", "elite", "boss"}:
         combat_state = create_combat_state_for_next_encounter(run_state)
         record_combat_start(run_state, combat_state)
-
         turns_played = simulate_combat(run_state, combat_state, rng, config)
         record_combat_end(run_state, combat_state, turns_played)
 
         if combat_state.is_victory():
             finish_victorious_combat(run_state, combat_state)
-            simulate_card_reward(run_state, rng, config)
 
+            if node.node_type == "boss":
+                if has_next_act(run_state):
+                    simulate_epic_card_reward(run_state, rng)
+                    advance_to_next_act(run_state)
+                return
+
+            simulate_card_reward(run_state, rng, config)
         return
 
     if node.node_type == "event":
@@ -299,7 +305,9 @@ def resolve_random_map_node(
 
     if node.node_type == "waiting_room":
         heal_amount = ceil(
-            run_state.character_class.max_hp * run_state.waiting_room_heal_percent / 100
+            run_state.character_class.max_hp
+            * run_state.waiting_room_heal_percent
+            / 100
         )
         run_state.current_hp = min(
             run_state.character_class.max_hp,
@@ -387,6 +395,25 @@ def choose_random_card_target(
         return rng.choice(living_enemies)
 
     return None
+
+
+
+def simulate_epic_card_reward(
+    run_state: RunState,
+    rng: Random,
+) -> None:
+    try:
+        rewards = choose_epic_card_rewards(
+            run_state.card_database,
+            rng,
+            count=3,
+            card_class=run_state.character_class.id,
+        )
+    except ValueError:
+        return
+
+    if rewards:
+        run_state.run_deck.append(rng.choice(rewards))
 
 
 def simulate_card_reward(
@@ -936,4 +963,3 @@ def record_combat_end(
         run_state.sim_path_history[-1]["hp_after"] = combat_state.player.hp
         run_state.sim_path_history[-1]["turns"] = turns_played
         run_state.sim_path_history[-1]["enemy_hp_after"] = dict(run_state.sim_last_enemy_hp)
-

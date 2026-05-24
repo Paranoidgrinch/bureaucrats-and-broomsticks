@@ -2,11 +2,14 @@ from random import Random
 
 from bab.models import Card, CardClass, CardRarity
 
+
 DEFAULT_REWARD_RARITIES: tuple[CardRarity, ...] = (
     "common",
     "uncommon",
     "rare",
 )
+
+EPIC_REWARD_RARITIES: tuple[CardRarity, ...] = ("epic",)
 
 
 def build_card_reward_pool(
@@ -48,6 +51,22 @@ def choose_card_rewards(
         )
 
     return rng.sample(reward_pool, k=count)
+
+
+def choose_epic_card_rewards(
+    card_database: dict[str, Card],
+    rng: Random,
+    *,
+    count: int = 3,
+    card_class: CardClass = "bureaucrat",
+) -> list[Card]:
+    return choose_card_rewards(
+        card_database,
+        rng,
+        count=count,
+        card_class=card_class,
+        rarities=EPIC_REWARD_RARITIES,
+    )
 
 
 def add_card_reward_to_deck(deck: list[Card], card: Card) -> None:

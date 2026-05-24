@@ -32,7 +32,8 @@
     "data/cards/mortuary_apprentice_starter.json",
     "data/cards/mortuary_apprentice_rewards.json",
     "data/cards/shroomancer_starter.json",
-    "data/cards/shroomancer_rewards.json"
+    "data/cards/shroomancer_rewards.json",
+    "data/cards/epic_transition_rewards.json"
   ],
   "enemy_files": [
     "data/enemies/city_enemies.json"

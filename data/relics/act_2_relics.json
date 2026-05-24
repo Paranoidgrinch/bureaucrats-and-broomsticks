@@ -1,0 +1,287 @@
+[
+  {
+    "id": "brass_page_weight",
+    "name": "Brass Page Weight",
+    "description": "At the start of each combat, gain 11 Block.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 11
+      }
+    ],
+    "tags": [
+      "archive",
+      "block"
+    ]
+  },
+  {
+    "id": "borrowers_stamp",
+    "name": "Borrower's Stamp",
+    "description": "Gain 8 additional Gold after each victorious combat.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "increase_gold_rewards",
+        "amount": 8
+      }
+    ],
+    "tags": [
+      "archive",
+      "gold"
+    ]
+  },
+  {
+    "id": "shelf_key_no_13",
+    "name": "Shelf Key No. 13",
+    "description": "At the start of each combat, gain 1 Energy.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "gain_energy_at_combat_start",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "archive",
+      "energy"
+    ]
+  },
+  {
+    "id": "torn_index_tab",
+    "name": "Torn Index Tab",
+    "description": "At the start of each combat, apply 2 Doubt to all enemies.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": [
+      "archive",
+      "doubt"
+    ]
+  },
+  {
+    "id": "bookmark_of_mild_omens",
+    "name": "Bookmark of Mild Omens",
+    "description": "Card rewards contain 1 additional card.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "increase_card_reward_count",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "archive",
+      "reward"
+    ]
+  },
+  {
+    "id": "archive_candle_stand",
+    "name": "Archive Candle Stand",
+    "description": "At the start of each combat, gain 14 Block.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 14
+      }
+    ],
+    "tags": [
+      "act_2",
+      "archive",
+      "block"
+    ]
+  },
+  {
+    "id": "night_reading_lens",
+    "name": "Night Reading Lens",
+    "description": "At the start of each combat, gain 6 Block and apply 2 Doubt to all enemies.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 6
+      },
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": [
+      "act_2",
+      "archive",
+      "block",
+      "doubt"
+    ]
+  },
+  {
+    "id": "iron_bookmark",
+    "name": "Iron Bookmark",
+    "description": "At the start of each combat, gain 1 Strength and 8 Block.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "gain_strength_at_combat_start",
+        "amount": 1
+      },
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 8
+      }
+    ],
+    "tags": [
+      "act_2",
+      "archive",
+      "strength",
+      "block"
+    ]
+  },
+  {
+    "id": "restricted_shelf_key",
+    "name": "Restricted Shelf Key",
+    "description": "At the start of each combat, gain 1 Energy and 1 Doubt.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "gain_energy_at_combat_start",
+        "amount": 1
+      },
+      {
+        "type": "apply_status_to_player_at_combat_start",
+        "status": "doubt",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_2",
+      "archive",
+      "energy",
+      "risk_reward"
+    ]
+  },
+  {
+    "id": "deep_indexing_tabs",
+    "name": "Deep Indexing Tabs",
+    "description": "Card rewards contain 1 additional card.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "increase_card_reward_count",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_2",
+      "archive",
+      "reward"
+    ]
+  },
+  {
+    "id": "overdue_coin_purse",
+    "name": "Overdue Coin Purse",
+    "description": "Gain 12 additional Gold after each victorious combat.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "increase_gold_rewards",
+        "amount": 12
+      }
+    ],
+    "tags": [
+      "act_2",
+      "archive",
+      "gold"
+    ]
+  },
+  {
+    "id": "patron_of_the_stacks",
+    "name": "Patron of the Stacks",
+    "description": "Shop prices are reduced by 20%. When picked up, gain 25 Gold.",
+    "rarity": "rare",
+    "effects": [
+      {
+        "type": "shop_price_discount",
+        "amount": 20
+      },
+      {
+        "type": "gain_gold_on_pickup",
+        "amount": 25
+      }
+    ],
+    "tags": [
+      "act_2",
+      "archive",
+      "shop",
+      "gold"
+    ]
+  },
+  {
+    "id": "binding_twine",
+    "name": "Binding Twine",
+    "description": "At the start of each combat, apply 2 Paperwork and 1 Doubt to all enemies.",
+    "rarity": "uncommon",
+    "effects": [
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "paperwork",
+        "amount": 2
+      },
+      {
+        "type": "apply_status_to_all_enemies_at_combat_start",
+        "status": "doubt",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_2",
+      "archive",
+      "paperwork",
+      "doubt"
+    ]
+  },
+  {
+    "id": "warm_catalogue_drawer",
+    "name": "Warm Catalogue Drawer",
+    "description": "When picked up, heal 26 HP.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "heal_on_pickup",
+        "amount": 26
+      }
+    ],
+    "tags": [
+      "act_2",
+      "archive",
+      "healing"
+    ]
+  },
+  {
+    "id": "library_step_ladder",
+    "name": "Library Step Ladder",
+    "description": "At the start of each combat, gain 9 Block. When picked up, gain 18 Gold.",
+    "rarity": "common",
+    "effects": [
+      {
+        "type": "gain_block_at_combat_start",
+        "amount": 9
+      },
+      {
+        "type": "gain_gold_on_pickup",
+        "amount": 18
+      }
+    ],
+    "tags": [
+      "act_2",
+      "archive",
+      "block",
+      "gold"
+    ]
+  }
+]

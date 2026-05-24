@@ -1,0 +1,956 @@
+[
+  {
+    "id": "dust_indexer",
+    "name": "Dust Indexer",
+    "max_hp": 48,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "papery_swipe",
+        "name": "Papery Swipe",
+        "intent_type": "attack",
+        "damage": 8
+      },
+      {
+        "id": "misplace_the_page",
+        "name": "Misplace the Page",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "sort_itself",
+        "name": "Sort Itself",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "archive",
+      "paper",
+      "normal"
+    ]
+  },
+  {
+    "id": "footnote_familiar",
+    "name": "Footnote Familiar",
+    "max_hp": 36,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "tiny_claws",
+        "name": "Tiny Claws",
+        "intent_type": "attack",
+        "damage": 6
+      },
+      {
+        "id": "qualify_the_obvious",
+        "name": "Qualify the Obvious",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "margin_bite",
+        "name": "Margin Bite",
+        "intent_type": "attack",
+        "damage": 9
+      }
+    ],
+    "tags": [
+      "archive",
+      "familiar",
+      "normal"
+    ]
+  },
+  {
+    "id": "misfiled_ghoul",
+    "name": "Misfiled Ghoul",
+    "max_hp": 56,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "cold_signature",
+        "name": "Cold Signature",
+        "intent_type": "attack",
+        "damage": 10
+      },
+      {
+        "id": "wrong_drawer",
+        "name": "Wrong Drawer",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "late_fee_bite",
+        "name": "Late-Fee Bite",
+        "intent_type": "attack",
+        "damage": 13
+      }
+    ],
+    "tags": [
+      "archive",
+      "undead",
+      "normal"
+    ]
+  },
+  {
+    "id": "ledger_rat_swarm",
+    "name": "Ledger Rat Swarm",
+    "max_hp": 44,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "many_small_teeth",
+        "name": "Many Small Teeth",
+        "intent_type": "attack",
+        "damage": 7
+      },
+      {
+        "id": "chew_the_totals",
+        "name": "Chew the Totals",
+        "intent_type": "attack",
+        "damage": 9
+      },
+      {
+        "id": "multiply_in_the_margins",
+        "name": "Multiply in the Margins",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "archive",
+      "beast",
+      "normal"
+    ]
+  },
+  {
+    "id": "sealed_cabinet_mimic",
+    "name": "Sealed Cabinet Mimic",
+    "max_hp": 94,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "brass_handle_snap",
+        "name": "Brass-Handle Snap",
+        "intent_type": "attack",
+        "damage": 12
+      },
+      {
+        "id": "drawer_crush",
+        "name": "Drawer Crush",
+        "intent_type": "attack",
+        "damage": 16
+      },
+      {
+        "id": "grow_more_locks",
+        "name": "Grow More Locks",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "archive",
+      "mimic",
+      "elite"
+    ]
+  },
+  {
+    "id": "archivist_lich",
+    "name": "Archivist Lich",
+    "max_hp": 108,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "bone_dry_order",
+        "name": "Bone-Dry Order",
+        "intent_type": "attack",
+        "damage": 14
+      },
+      {
+        "id": "summon_old_deadlines",
+        "name": "Summon Old Deadlines",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "index_the_soul",
+        "name": "Index the Soul",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      },
+      {
+        "id": "binding_citation",
+        "name": "Binding Citation",
+        "intent_type": "attack",
+        "damage": 19
+      }
+    ],
+    "tags": [
+      "archive",
+      "undead",
+      "elite"
+    ]
+  },
+  {
+    "id": "grand_cross_reference",
+    "name": "The Grand Cross-Reference",
+    "max_hp": 178,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "see_also",
+        "name": "See Also",
+        "intent_type": "attack",
+        "damage": 15
+      },
+      {
+        "id": "recursive_indexing",
+        "name": "Recursive Indexing",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "alphabetical_dominion",
+        "name": "Alphabetical Dominion",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 4
+          }
+        ]
+      },
+      {
+        "id": "unavoidable_appendix",
+        "name": "Unavoidable Appendix",
+        "intent_type": "attack",
+        "damage": 22
+      }
+    ],
+    "tags": [
+      "archive",
+      "boss",
+      "index"
+    ]
+  },
+  {
+    "id": "whispering_catalogue",
+    "name": "Whispering Catalogue",
+    "max_hp": 52,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "paper_cut_chorus",
+        "name": "Paper-Cut Chorus",
+        "intent_type": "attack",
+        "damage": 7
+      },
+      {
+        "id": "cite_your_fears",
+        "name": "Cite Your Fears",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "louder_whispers",
+        "name": "Louder Whispers",
+        "intent_type": "attack",
+        "damage": 11
+      }
+    ],
+    "tags": [
+      "archive",
+      "book",
+      "normal"
+    ]
+  },
+  {
+    "id": "ink_moth",
+    "name": "Ink Moth",
+    "max_hp": 34,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "drink_the_caption",
+        "name": "Drink the Caption",
+        "intent_type": "attack",
+        "damage": 5
+      },
+      {
+        "id": "flutter_in_the_margins",
+        "name": "Flutter in the Margins",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "black_wing_graze",
+        "name": "Black-Wing Graze",
+        "intent_type": "attack",
+        "damage": 10
+      }
+    ],
+    "tags": [
+      "archive",
+      "beast",
+      "normal"
+    ]
+  },
+  {
+    "id": "returned_notice",
+    "name": "Returned Notice",
+    "max_hp": 46,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "creased_corner",
+        "name": "Creased Corner",
+        "intent_type": "attack",
+        "damage": 9
+      },
+      {
+        "id": "no_such_recipient",
+        "name": "No Such Recipient",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "stampede_of_stamps",
+        "name": "Stampede of Stamps",
+        "intent_type": "attack",
+        "damage": 12
+      }
+    ],
+    "tags": [
+      "archive",
+      "paper",
+      "normal"
+    ]
+  },
+  {
+    "id": "shelf_wight",
+    "name": "Shelf Wight",
+    "max_hp": 60,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "cold_shelving",
+        "name": "Cold Shelving",
+        "intent_type": "attack",
+        "damage": 12
+      },
+      {
+        "id": "remember_everything",
+        "name": "Remember Everything",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "dead_hand_index",
+        "name": "Dead-Hand Index",
+        "intent_type": "attack",
+        "damage": 14
+      }
+    ],
+    "tags": [
+      "archive",
+      "undead",
+      "normal"
+    ]
+  },
+  {
+    "id": "redaction_beetle",
+    "name": "Redaction Beetle",
+    "max_hp": 42,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "black_bar_bite",
+        "name": "Black-Bar Bite",
+        "intent_type": "attack",
+        "damage": 8
+      },
+      {
+        "id": "remove_context",
+        "name": "Remove Context",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "scuttle_under_the_clause",
+        "name": "Scuttle Under the Clause",
+        "intent_type": "attack",
+        "damage": 8
+      }
+    ],
+    "tags": [
+      "archive",
+      "beast",
+      "normal"
+    ]
+  },
+  {
+    "id": "loose_receipt_elemental",
+    "name": "Loose Receipt Elemental",
+    "max_hp": 50,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "papery_slap",
+        "name": "Papery Slap",
+        "intent_type": "attack",
+        "damage": 9
+      },
+      {
+        "id": "prove_purchase",
+        "name": "Prove Purchase",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "crumpled_total",
+        "name": "Crumpled Total",
+        "intent_type": "attack",
+        "damage": 12
+      }
+    ],
+    "tags": [
+      "archive",
+      "paper",
+      "normal"
+    ]
+  },
+  {
+    "id": "overdue_apology",
+    "name": "Overdue Apology",
+    "max_hp": 40,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "mumbled_regret",
+        "name": "Mumbled Regret",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "awkward_pause",
+        "name": "Awkward Pause",
+        "intent_type": "attack",
+        "damage": 7
+      },
+      {
+        "id": "sincere_but_late",
+        "name": "Sincere but Late",
+        "intent_type": "attack",
+        "damage": 12
+      }
+    ],
+    "tags": [
+      "archive",
+      "spirit",
+      "normal"
+    ]
+  },
+  {
+    "id": "vellum_snail",
+    "name": "Vellum Snail",
+    "max_hp": 58,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "slow_scrape",
+        "name": "Slow Scrape",
+        "intent_type": "attack",
+        "damage": 6
+      },
+      {
+        "id": "leave_a_trail",
+        "name": "Leave a Trail",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      },
+      {
+        "id": "heavy_shell_clause",
+        "name": "Heavy-Shell Clause",
+        "intent_type": "attack",
+        "damage": 15
+      }
+    ],
+    "tags": [
+      "archive",
+      "beast",
+      "normal"
+    ]
+  },
+  {
+    "id": "index_imp",
+    "name": "Index Imp",
+    "max_hp": 38,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "alphabetical_prick",
+        "name": "Alphabetical Prick",
+        "intent_type": "attack",
+        "damage": 7
+      },
+      {
+        "id": "swap_the_tabs",
+        "name": "Swap the Tabs",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "find_a_better_letter",
+        "name": "Find a Better Letter",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "archive",
+      "imp",
+      "normal"
+    ]
+  },
+  {
+    "id": "catalogue_lamprey",
+    "name": "Catalogue Lamprey",
+    "max_hp": 54,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "attach_to_subject",
+        "name": "Attach to Subject",
+        "intent_type": "attack",
+        "damage": 11
+      },
+      {
+        "id": "cross_reference_wound",
+        "name": "Cross-Reference Wound",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "suck_the_index",
+        "name": "Suck the Index",
+        "intent_type": "attack",
+        "damage": 13
+      }
+    ],
+    "tags": [
+      "archive",
+      "beast",
+      "normal"
+    ]
+  },
+  {
+    "id": "shelf_golem",
+    "name": "Shelf Golem",
+    "max_hp": 118,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "falling_oak_shelves",
+        "name": "Falling Oak Shelves",
+        "intent_type": "attack",
+        "damage": 15
+      },
+      {
+        "id": "settle_the_catalogue",
+        "name": "Settle the Catalogue",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "crushing_section_marker",
+        "name": "Crushing Section Marker",
+        "intent_type": "attack",
+        "damage": 20
+      },
+      {
+        "id": "dust_cloud_revision",
+        "name": "Dust-Cloud Revision",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "archive",
+      "construct",
+      "elite"
+    ]
+  },
+  {
+    "id": "chain_catalogue_serpent",
+    "name": "Chain-Catalogue Serpent",
+    "max_hp": 104,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "linked_bite",
+        "name": "Linked Bite",
+        "intent_type": "attack",
+        "damage": 13
+      },
+      {
+        "id": "coil_the_references",
+        "name": "Coil the References",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "double_entry_strike",
+        "name": "Double-Entry Strike",
+        "intent_type": "attack",
+        "damage": 18
+      },
+      {
+        "id": "hiss_of_errata",
+        "name": "Hiss of Errata",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "archive",
+      "beast",
+      "elite"
+    ]
+  },
+  {
+    "id": "overdue_oathkeeper",
+    "name": "Overdue Oathkeeper",
+    "max_hp": 112,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "oathbound_strike",
+        "name": "Oathbound Strike",
+        "intent_type": "attack",
+        "damage": 16
+      },
+      {
+        "id": "remember_the_due_date",
+        "name": "Remember the Due Date",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "penalty_clause",
+        "name": "Penalty Clause",
+        "intent_type": "attack",
+        "damage": 21
+      },
+      {
+        "id": "ancient_grievance",
+        "name": "Ancient Grievance",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "archive",
+      "spirit",
+      "elite"
+    ]
+  },
+  {
+    "id": "chief_under_archivist",
+    "name": "Chief Under-Archivist",
+    "max_hp": 192,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "stamp_of_seniority",
+        "name": "Stamp of Seniority",
+        "intent_type": "attack",
+        "damage": 16
+      },
+      {
+        "id": "three_copies_required",
+        "name": "Three Copies Required",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "promote_the_backlog",
+        "name": "Promote the Backlog",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      },
+      {
+        "id": "binding_counter_signature",
+        "name": "Binding Counter-Signature",
+        "intent_type": "attack",
+        "damage": 24
+      },
+      {
+        "id": "archive_supremacy",
+        "name": "Archive Supremacy",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 4
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "archive",
+      "boss",
+      "undead",
+      "bureaucracy"
+    ]
+  },
+  {
+    "id": "living_index",
+    "name": "The Living Index",
+    "max_hp": 184,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "alphabetical_lash",
+        "name": "Alphabetical Lash",
+        "intent_type": "attack",
+        "damage": 14
+      },
+      {
+        "id": "cross_reference_every_wound",
+        "name": "Cross-Reference Every Wound",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "update_all_entries",
+        "name": "Update All Entries",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "from_abacus_to_zombie",
+        "name": "From Abacus to Zombie",
+        "intent_type": "attack",
+        "damage": 21
+      },
+      {
+        "id": "inescapable_see_also",
+        "name": "Inescapable See Also",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "archive",
+      "boss",
+      "index",
+      "book"
+    ]
+  }
+]

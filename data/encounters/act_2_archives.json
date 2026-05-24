@@ -1,105 +1,269 @@
 [
   {
-    "id": "act_2_easy_01",
-    "name": "A Legally Complicated Rat (Act II: The Endless Archives)",
+    "id": "archive_easy_01",
+    "name": "A Footnote That Followed You",
     "act": 2,
     "difficulty": "easy",
     "enemies": [
-      "rat_with_legal_representation"
+      "footnote_familiar"
     ],
-    "weight": 3
+    "weight": 2
   },
   {
-    "id": "act_2_easy_02",
-    "name": "The Clerk Who Would Not Stop (Act II: The Endless Archives)",
+    "id": "archive_easy_02",
+    "name": "A Dusty Matter",
     "act": 2,
     "difficulty": "easy",
     "enemies": [
-      "overzealous_clerk"
-    ],
-    "weight": 3
-  },
-  {
-    "id": "act_2_easy_03",
-    "name": "A Suspiciously Damp Permit (Act II: The Endless Archives)",
-    "act": 2,
-    "difficulty": "easy",
-    "enemies": [
-      "ink_well_imp"
+      "dust_indexer"
     ],
     "weight": 2
   },
   {
-    "id": "act_2_normal_01",
-    "name": "Minor Administrative Incident (Act II: The Endless Archives)",
+    "id": "archive_normal_01",
+    "name": "Misfiled and Slightly Hungry",
     "act": 2,
     "difficulty": "normal",
     "enemies": [
-      "rat_with_legal_representation",
-      "overzealous_clerk"
+      "misfiled_ghoul"
     ],
     "weight": 2
   },
   {
-    "id": "act_2_normal_02",
-    "name": "Contractual Pest Control (Act II: The Endless Archives)",
+    "id": "archive_normal_02",
+    "name": "Margins Full of Teeth",
     "act": 2,
     "difficulty": "normal",
     "enemies": [
-      "tiny_contract_demon",
-      "rat_with_legal_representation"
+      "ledger_rat_swarm",
+      "footnote_familiar"
     ],
     "weight": 2
   },
   {
-    "id": "act_2_normal_03",
-    "name": "Permit Trouble (Act II: The Endless Archives)",
+    "id": "archive_normal_03",
+    "name": "Indexing Incident",
     "act": 2,
     "difficulty": "normal",
     "enemies": [
-      "permit_goblin",
-      "ink_well_imp"
+      "dust_indexer",
+      "footnote_familiar"
     ],
     "weight": 2
   },
   {
-    "id": "act_2_normal_04",
-    "name": "Unpaid Spiritual Liabilities (Act II: The Endless Archives)",
-    "act": 2,
-    "difficulty": "normal",
-    "enemies": [
-      "tax_ghoul"
-    ],
-    "weight": 1
-  },
-  {
-    "id": "act_2_elite_01",
-    "name": "Quarterly Performance Ambush (Act II: The Endless Archives)",
+    "id": "archive_elite_01",
+    "name": "The Lich Who Kept Receipts",
     "act": 2,
     "difficulty": "elite",
     "enemies": [
-      "middle_management_ogre"
+      "archivist_lich"
     ],
     "weight": 1
   },
   {
-    "id": "act_2_elite_02",
-    "name": "The Cabinet That Filed Back (Act II: The Endless Archives)",
+    "id": "archive_mimic_01",
+    "name": "The Cabinet That Was Too Quiet",
     "act": 2,
     "difficulty": "elite",
     "enemies": [
-      "departmental_mimic",
-      "ink_well_imp"
+      "sealed_cabinet_mimic"
     ],
     "weight": 1
   },
   {
-    "id": "act_2_boss_01",
-    "name": "Emergency Session of the Subcommittee (Act II: The Endless Archives)",
+    "id": "archive_boss_01",
+    "name": "The Grand Cross-Reference",
     "act": 2,
     "difficulty": "boss",
     "enemies": [
-      "chairman_of_the_subcommittee"
+      "grand_cross_reference"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "archive_easy_03",
+    "name": "The Ink Has Wings",
+    "act": 2,
+    "difficulty": "easy",
+    "enemies": [
+      "ink_moth"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "archive_easy_04",
+    "name": "A Notice Comes Back",
+    "act": 2,
+    "difficulty": "easy",
+    "enemies": [
+      "returned_notice"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "archive_easy_05",
+    "name": "A Small Index Problem",
+    "act": 2,
+    "difficulty": "easy",
+    "enemies": [
+      "index_imp"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "archive_normal_04",
+    "name": "Whispers Between Shelves",
+    "act": 2,
+    "difficulty": "normal",
+    "enemies": [
+      "whispering_catalogue"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "archive_normal_05",
+    "name": "A Matter of Redaction",
+    "act": 2,
+    "difficulty": "normal",
+    "enemies": [
+      "redaction_beetle",
+      "footnote_familiar"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "archive_normal_06",
+    "name": "The Shelf Remembers",
+    "act": 2,
+    "difficulty": "normal",
+    "enemies": [
+      "shelf_wight"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "archive_normal_07",
+    "name": "Receipts on the Loose",
+    "act": 2,
+    "difficulty": "normal",
+    "enemies": [
+      "loose_receipt_elemental"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "archive_normal_08",
+    "name": "Late and Sorry",
+    "act": 2,
+    "difficulty": "normal",
+    "enemies": [
+      "overdue_apology",
+      "returned_notice"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "archive_normal_09",
+    "name": "Slow Paperwork",
+    "act": 2,
+    "difficulty": "normal",
+    "enemies": [
+      "vellum_snail"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "archive_normal_10",
+    "name": "Cross-Reference Bite",
+    "act": 2,
+    "difficulty": "normal",
+    "enemies": [
+      "catalogue_lamprey",
+      "index_imp"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "archive_normal_11",
+    "name": "Black Ink and Bad Memory",
+    "act": 2,
+    "difficulty": "normal",
+    "enemies": [
+      "ink_moth",
+      "shelf_wight"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "archive_normal_12",
+    "name": "The Catalogue Refuses Silence",
+    "act": 2,
+    "difficulty": "normal",
+    "enemies": [
+      "whispering_catalogue",
+      "redaction_beetle"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "archive_elite_02",
+    "name": "The Shelves Walk",
+    "act": 2,
+    "difficulty": "elite",
+    "enemies": [
+      "shelf_golem"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "archive_elite_03",
+    "name": "A Catalogue with Scales",
+    "act": 2,
+    "difficulty": "elite",
+    "enemies": [
+      "chain_catalogue_serpent"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "archive_elite_04",
+    "name": "The Debt of a Borrowed Book",
+    "act": 2,
+    "difficulty": "elite",
+    "enemies": [
+      "overdue_oathkeeper"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "archive_elite_05",
+    "name": "A Lich and Its Footnote",
+    "act": 2,
+    "difficulty": "elite",
+    "enemies": [
+      "archivist_lich",
+      "footnote_familiar"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "archive_boss_02",
+    "name": "Chief Under-Archivist",
+    "act": 2,
+    "difficulty": "boss",
+    "enemies": [
+      "chief_under_archivist"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "archive_boss_03",
+    "name": "The Living Index",
+    "act": 2,
+    "difficulty": "boss",
+    "enemies": [
+      "living_index"
     ],
     "weight": 1
   }

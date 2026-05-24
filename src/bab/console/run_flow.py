@@ -31,8 +31,9 @@ from bab.console.views import (
 from bab.content.catalog import ContentCatalog, load_default_content_catalog
 from bab.console.event_flow import resolve_event_node
 from bab.game_config import DEFAULT_MAX_FIGHTS
+from bab.systems.act_progression import advance_to_next_act, has_next_act
 from bab.models import CharacterClass
-from bab.console.reward_flow import offer_card_reward
+from bab.console.reward_flow import offer_card_reward, offer_epic_card_reward
 from bab.run.map import MapNode
 from bab.run.state import (
     RunState,
@@ -209,6 +210,12 @@ def resolve_combat_node(run_state: RunState, node: MapNode) -> None:
 
     if node.node_type == "boss":
         console.print("[bold green]Boss defeated! The act is complete.[/bold green]")
+        if has_next_act(run_state):
+            offer_epic_card_reward(run_state)
+            if advance_to_next_act(run_state):
+                console.print(
+                    f"[bold green]You are fully healed. Act {run_state.act} begins.[/bold green]"
+                )
         return
 
     console.print("[bold green]Victory! The paperwork has prevailed.[/bold green]")
@@ -270,4 +277,3 @@ def run_console_app() -> None:
         console.print("[bold green]Run complete! The office survives another day.[/bold green]")
     elif run_state.is_defeated():
         console.print("[bold red]Run failed. The paperwork remains unfinished.[/bold red]")
-

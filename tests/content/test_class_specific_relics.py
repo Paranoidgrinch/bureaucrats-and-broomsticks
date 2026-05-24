@@ -31,15 +31,17 @@ def test_class_specific_relic_filter_accepts_matching_character():
 
 def test_choose_random_unowned_relic_does_not_offer_wrong_class_specific_relics():
     catalog = load_default_content_catalog()
+    character_id = "hedge_witch"
 
     for seed in range(50):
         relic = choose_random_unowned_relic(
             catalog.relic_database,
             owned_relics=[],
             rng=Random(seed),
-            character_id="hedge_witch",
+            character_id=character_id,
         )
-        assert relic.allowed_classes in ([], ["failed_wizard"])
+
+        assert relic.allowed_classes == [] or character_id in relic.allowed_classes
 
 
 def test_choose_random_unowned_relic_can_offer_matching_class_specific_relics_when_general_pool_removed():
@@ -73,9 +75,9 @@ def test_choose_random_unowned_relic_raises_if_only_wrong_class_relics_available
             class_specific_only,
             owned_relics=[],
             rng=Random(1),
-            character_id="hedge_witch",
+            character_id="definitely_not_a_real_class",
         )
     except ValueError as exc:
         assert "No unowned relics available" in str(exc)
     else:
-        raise AssertionError("Expected no available relics for a character without class-specific relics.")
+        raise AssertionError("Expected no available relics for an unmatched character id.")

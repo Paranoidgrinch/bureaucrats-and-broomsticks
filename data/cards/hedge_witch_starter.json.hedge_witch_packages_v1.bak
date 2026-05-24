@@ -20,12 +20,7 @@
         "status": "doubt"
       }
     ],
-    "tags": [
-      "attack",
-      "doubt",
-      "curse",
-      "spite"
-    ],
+    "tags": [],
     "upgrades_to": "prickly_hex_plus"
   },
   {
@@ -50,10 +45,6 @@
       }
     ],
     "tags": [
-      "attack",
-      "doubt",
-      "curse",
-      "spite",
       "upgraded"
     ]
   },
@@ -72,11 +63,7 @@
         "amount": 5
       }
     ],
-    "tags": [
-      "block",
-      "poultice",
-      "ward"
-    ],
+    "tags": [],
     "upgrades_to": "borrowed_shawl_plus"
   },
   {
@@ -95,9 +82,6 @@
       }
     ],
     "tags": [
-      "block",
-      "poultice",
-      "ward",
       "upgraded"
     ]
   },
@@ -117,12 +101,7 @@
         "status": "paperwork"
       }
     ],
-    "tags": [
-      "paperwork",
-      "curse",
-      "knot",
-      "setup"
-    ],
+    "tags": [],
     "upgrades_to": "bad_luck_knot_plus"
   },
   {
@@ -142,10 +121,6 @@
       }
     ],
     "tags": [
-      "paperwork",
-      "curse",
-      "knot",
-      "setup",
       "upgraded"
     ]
   },
@@ -170,12 +145,7 @@
         "status": "doubt"
       }
     ],
-    "tags": [
-      "block",
-      "doubt",
-      "tea",
-      "spite"
-    ],
+    "tags": [],
     "upgrades_to": "tea_and_threats_plus"
   },
   {
@@ -200,10 +170,6 @@
       }
     ],
     "tags": [
-      "block",
-      "doubt",
-      "tea",
-      "spite",
       "upgraded"
     ]
   },
@@ -223,12 +189,7 @@
         "amount_per_stack": 3
       }
     ],
-    "tags": [
-      "attack",
-      "doubt",
-      "payoff",
-      "pin"
-    ],
+    "tags": [],
     "upgrades_to": "crooked_pin_plus"
   },
   {
@@ -248,10 +209,6 @@
       }
     ],
     "tags": [
-      "attack",
-      "doubt",
-      "payoff",
-      "pin",
       "upgraded"
     ]
   }

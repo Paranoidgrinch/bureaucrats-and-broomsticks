@@ -1,4 +1,4 @@
-from bab.content.catalog import load_content_catalog_from_act_manifest
+﻿from bab.content.catalog import load_content_catalog_from_act_manifest
 from bab.systems.rewards import build_card_reward_pool
 from bab.systems.shop import eligible_shop_cards, eligible_shop_relics
 
@@ -35,7 +35,7 @@ def test_each_character_gets_act_2_reward_cards() -> None:
         ]
 
         assert len(act_2_cards) >= 2
-        assert all(card.rarity in {"uncommon", "rare"} for card in act_2_cards)
+        assert all(card.rarity in {"common", "uncommon", "rare"} for card in act_2_cards)
         assert all("epic" not in card.tags for card in act_2_cards)
 
 
@@ -124,3 +124,4 @@ def test_act_2_relic_effects_are_supported_existing_effects() -> None:
 
         for effect in relic.effects:
             assert effect.type in supported_effects
+

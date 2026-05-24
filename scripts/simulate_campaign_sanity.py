@@ -2,8 +2,10 @@
 
 import argparse
 import json
+from collections import Counter
 from dataclasses import replace
 from pathlib import Path
+from statistics import mean
 
 from bab.content.catalog import ContentCatalog, load_content_catalog_from_act_manifest
 from bab.sim.auto_runner import SimConfig, format_summary, simulate_runs
@@ -51,12 +53,110 @@ def result_to_dict(result: object) -> dict:
     return {"repr": repr(result)}
 
 
-def safe_get_number(data: dict, *keys: str) -> float | int | None:
-    for key in keys:
-        value = data.get(key)
+def path_history(result: dict) -> list[dict]:
+    history = result.get("path_history")
+    if isinstance(history, list):
+        return [entry for entry in history if isinstance(entry, dict)]
+    return []
+
+
+def is_act_2_entry(entry: dict) -> bool:
+    return str(entry.get("node_id", "")).startswith("act_2")
+
+
+def act_2_entries(result: dict) -> list[dict]:
+    return [entry for entry in path_history(result) if is_act_2_entry(entry)]
+
+
+def reaches_act_2(result: dict) -> bool:
+    return bool(act_2_entries(result))
+
+
+def numeric_values(entries: list[dict], key: str) -> list[float]:
+    values: list[float] = []
+    for entry in entries:
+        value = entry.get(key)
         if isinstance(value, (int, float)):
-            return value
-    return None
+            values.append(float(value))
+    return values
+
+
+def top_counter(counter: Counter, limit: int = 10) -> list[dict[str, object]]:
+    return [
+        {"key": key, "count": count}
+        for key, count in counter.most_common(limit)
+    ]
+
+
+def analyse_results(result_dicts: list[dict]) -> dict[str, object]:
+    reached_results = [result for result in result_dicts if reaches_act_2(result)]
+    act_2_deaths = [
+        result
+        for result in result_dicts
+        if result.get("outcome") == "defeat" and reaches_act_2(result)
+    ]
+    pre_act_2_deaths = [
+        result
+        for result in result_dicts
+        if result.get("outcome") == "defeat" and not reaches_act_2(result)
+    ]
+    act_2_wins = [
+        result
+        for result in result_dicts
+        if result.get("outcome") == "win"
+        and str(result.get("last_node_id", "")).startswith("act_2")
+    ]
+
+    first_act_2_entries = [
+        act_2_entries(result)[0]
+        for result in reached_results
+        if act_2_entries(result)
+    ]
+
+    act_2_entry_hps = numeric_values(first_act_2_entries, "hp_before")
+    act_2_entry_deck_sizes = numeric_values(first_act_2_entries, "deck_size_before")
+    act_2_entry_relic_counts = numeric_values(first_act_2_entries, "relic_count_before")
+
+    max_act_2_depths: list[float] = []
+    for result in reached_results:
+        depths = numeric_values(act_2_entries(result), "depth")
+        if depths:
+            max_act_2_depths.append(max(depths))
+
+    death_encounters = Counter(
+        str(result.get("last_encounter_id") or "<none>")
+        for result in act_2_deaths
+    )
+    death_nodes = Counter(
+        str(result.get("last_node_type") or "<none>")
+        for result in act_2_deaths
+    )
+
+    first_act_2_nodes = Counter(
+        str(entry.get("node_type") or "<none>")
+        for entry in first_act_2_entries
+    )
+
+    total = len(result_dicts)
+
+    return {
+        "runs": total,
+        "reached_act_2": len(reached_results),
+        "reached_act_2_rate": len(reached_results) / total if total else 0.0,
+        "pre_act_2_deaths": len(pre_act_2_deaths),
+        "act_2_deaths": len(act_2_deaths),
+        "act_2_wins": len(act_2_wins),
+        "act_2_entry_avg_hp": mean(act_2_entry_hps) if act_2_entry_hps else None,
+        "act_2_entry_min_hp": min(act_2_entry_hps) if act_2_entry_hps else None,
+        "act_2_entry_max_hp": max(act_2_entry_hps) if act_2_entry_hps else None,
+        "act_2_entry_avg_deck_size": mean(act_2_entry_deck_sizes) if act_2_entry_deck_sizes else None,
+        "act_2_entry_avg_relic_count": mean(act_2_entry_relic_counts) if act_2_entry_relic_counts else None,
+        "avg_max_act_2_depth": mean(max_act_2_depths) if max_act_2_depths else None,
+        "max_act_2_depth_seen": max(max_act_2_depths) if max_act_2_depths else None,
+        "first_act_2_node_types": top_counter(first_act_2_nodes),
+        "top_act_2_death_encounters": top_counter(death_encounters),
+        "top_act_2_death_node_types": top_counter(death_nodes),
+    }
 
 
 def main() -> None:
@@ -88,13 +188,11 @@ def main() -> None:
         "# Campaign Sanity Simulation",
         "",
         "- Start act: `data/acts/act_1_city.json`",
-        "- Expected flow: Act 1 boss → Epic reward → full heal → Act 2",
+        "- Act-2 reach is inferred from `path_history` node IDs starting with `act_2`.",
         f"- Runs per character: `{args.runs}`",
         f"- Seed base: `{args.seed}`",
         "",
     ]
-
-    result_key_rows: list[dict[str, object]] = []
 
     for offset, character_id in enumerate(CHARACTER_IDS):
         catalog = single_character_catalog(base_catalog, character_id)
@@ -106,33 +204,17 @@ def main() -> None:
             raise_errors=args.raise_errors,
         )
 
-        summary_data = summary.to_dict()
         result_dicts = [result_to_dict(result) for result in summary.results]
+        diagnostics = analyse_results(result_dicts)
+
+        summary_data = summary.to_dict()
+        summary_data["campaign_diagnostics"] = diagnostics
 
         write_json(outdir / f"{character_id}.json", summary_data)
         write_json(outdir / f"{character_id}_results.json", result_dicts)
 
         summary_text = format_summary(summary)
         (outdir / f"{character_id}.md").write_text(summary_text + "\n", encoding="utf-8")
-
-        key_union = sorted({key for result in result_dicts for key in result})
-        result_key_rows.append({"character_id": character_id, "result_keys": key_union})
-
-        # These keys are intentionally defensive because result payloads evolved during development.
-        final_acts = [
-            safe_get_number(result, "act", "final_act", "current_act")
-            for result in result_dicts
-        ]
-        reached_act_2 = sum(1 for act in final_acts if act is not None and act >= 2)
-
-        epic_cards_seen = 0
-        for result in result_dicts:
-            deck_ids = result.get("deck_ids") or result.get("run_deck_ids") or result.get("final_deck_ids")
-            deck_rarities = result.get("deck_rarities") or result.get("final_deck_rarities")
-            if isinstance(deck_ids, list) and any(str(card_id).startswith("epic_") for card_id in deck_ids):
-                epic_cards_seen += 1
-            elif isinstance(deck_rarities, list) and "epic" in deck_rarities:
-                epic_cards_seen += 1
 
         overview_row = {
             "character_id": character_id,
@@ -147,8 +229,7 @@ def main() -> None:
             "average_completed_nodes": summary.average_completed_nodes,
             "average_fights_won": summary.average_fights_won,
             "average_gold": summary.average_gold,
-            "reached_act_2_if_reported": reached_act_2,
-            "epic_cards_seen_if_reported": epic_cards_seen,
+            **diagnostics,
         }
         overview_rows.append(overview_row)
 
@@ -160,14 +241,23 @@ def main() -> None:
                 summary_text,
                 "```",
                 "",
-                f"- reached_act_2_if_reported: `{reached_act_2}`",
-                f"- epic_cards_seen_if_reported: `{epic_cards_seen}`",
+                f"- reached_act_2: `{diagnostics['reached_act_2']}` / `{args.runs}`",
+                f"- reached_act_2_rate: `{diagnostics['reached_act_2_rate']:.3f}`",
+                f"- pre_act_2_deaths: `{diagnostics['pre_act_2_deaths']}`",
+                f"- act_2_deaths: `{diagnostics['act_2_deaths']}`",
+                f"- act_2_wins: `{diagnostics['act_2_wins']}`",
+                f"- act_2_entry_avg_hp: `{diagnostics['act_2_entry_avg_hp']}`",
+                f"- avg_max_act_2_depth: `{diagnostics['avg_max_act_2_depth']}`",
+                "",
+                "Top Act-2 death encounters:",
+                "```json",
+                json.dumps(diagnostics["top_act_2_death_encounters"], indent=2),
+                "```",
                 "",
             ]
         )
 
     write_json(outdir / "overview.json", overview_rows)
-    write_json(outdir / "result_keys.json", result_key_rows)
     (outdir / "summary.md").write_text(
         "\n".join(combined_markdown) + "\n",
         encoding="utf-8",
@@ -185,11 +275,10 @@ def main() -> None:
             f"errors={row['errors']}, "
             f"stalled={row['stalled']}, "
             f"avg_nodes={row['average_completed_nodes']:.2f}, "
-            f"reached_act_2_if_reported={row['reached_act_2_if_reported']}"
+            f"reached_act_2={row['reached_act_2']}, "
+            f"act_2_deaths={row['act_2_deaths']}, "
+            f"act_2_wins={row['act_2_wins']}"
         )
-
-    print()
-    print(f"Result keys written to {outdir / 'result_keys.json'}")
 
 
 if __name__ == "__main__":

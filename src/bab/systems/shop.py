@@ -204,6 +204,20 @@ def eligible_shop_relics(
     )
 
 
+def shop_progression_weight(
+    item,
+    *,
+    act: int,
+) -> int:
+    if act <= 1:
+        return 1
+
+    if f"act_{act}" in getattr(item, "tags", []):
+        return 4
+
+    return 1
+
+
 def choose_shop_card_offers(
     card_database: dict[str, Card],
     rng: Random,
@@ -220,13 +234,13 @@ def choose_shop_card_offers(
         act=act,
         fight_number=fight_number,
     )
-
     selected_cards = choose_weighted_unique(
         cards,
         rng,
         count=count,
         weights=CARD_RARITY_WEIGHTS_BY_TIER[tier],
         rarity_getter=lambda card: card.rarity,
+        item_weight_getter=lambda card: shop_progression_weight(card, act=act),
     )
 
     return [
@@ -258,13 +272,13 @@ def choose_shop_relic_offers(
         act=act,
         fight_number=fight_number,
     )
-
     selected_relics = choose_weighted_unique(
         relics,
         rng,
         count=count,
         weights=RELIC_RARITY_WEIGHTS_BY_TIER[tier],
         rarity_getter=lambda relic: relic.rarity,
+        item_weight_getter=lambda relic: shop_progression_weight(relic, act=act),
     )
 
     return [
@@ -287,6 +301,7 @@ def choose_weighted_unique(
     count: int,
     weights: dict[str, int],
     rarity_getter,
+    item_weight_getter=None,
 ) -> list[T]:
     pool = list(items)
     selected: list[T] = []
@@ -294,6 +309,7 @@ def choose_weighted_unique(
     while pool and len(selected) < count:
         total_weight = sum(
             max(0, weights.get(rarity_getter(item), 1))
+            * max(0, item_weight_getter(item) if item_weight_getter else 1)
             for item in pool
         )
 
@@ -303,11 +319,13 @@ def choose_weighted_unique(
 
         roll = rng.uniform(0, total_weight)
         cumulative = 0.0
-
         chosen_index = 0
-        for index, item in enumerate(pool):
-            cumulative += max(0, weights.get(rarity_getter(item), 1))
 
+        for index, item in enumerate(pool):
+            cumulative += (
+                max(0, weights.get(rarity_getter(item), 1))
+                * max(0, item_weight_getter(item) if item_weight_getter else 1)
+            )
             if roll <= cumulative:
                 chosen_index = index
                 break

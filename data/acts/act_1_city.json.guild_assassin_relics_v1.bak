@@ -49,8 +49,7 @@
   "relic_files": [
     "data/relics/act_1_relics.json",
     "data/relics/bureaucrat_relics.json",
-    "data/relics/failed_wizard_relics.json",
-    "data/relics/guild_assassin_apprentice_relics.json"
+    "data/relics/failed_wizard_relics.json"
   ],
   "map": {
     "steps_before_boss": 9,

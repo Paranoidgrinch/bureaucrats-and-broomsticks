@@ -1,0 +1,95 @@
+[
+  {
+    "id": "silent_cut",
+    "name": "Silent Cut",
+    "class": "guild_assassin_apprentice",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 8 damage.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 8
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "smoke_step",
+    "name": "Smoke Step",
+    "class": "guild_assassin_apprentice",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 7 Block.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 7
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "courtesy_poison",
+    "name": "Courtesy Poison",
+    "class": "guild_assassin_apprentice",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 3 Poison.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 3,
+        "status": "poison"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "letter_opener",
+    "name": "Letter Opener",
+    "class": "guild_assassin_apprentice",
+    "type": "action",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Deal 3 damage per Doubt on the target.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount_per_stack": 3
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "black_contract",
+    "name": "Black Contract",
+    "class": "guild_assassin_apprentice",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Apply 4 Doubt. Deal 6 damage.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 4,
+        "status": "doubt"
+      },
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 6
+      }
+    ],
+    "tags": []
+  }
+]

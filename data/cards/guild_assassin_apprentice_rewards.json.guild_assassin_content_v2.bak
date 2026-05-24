@@ -30,13 +30,13 @@
     "type": "action",
     "cost": 0,
     "rarity": "starter",
-    "text": "Apply 2 Poison. Exhaust.",
+    "text": "Apply 1 Poison. Exhaust.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "poison",
-        "amount": 2
+        "amount": 1
       }
     ],
     "tags": [
@@ -54,12 +54,12 @@
     "type": "form",
     "cost": 0,
     "rarity": "starter",
-    "text": "Gain 4 Block. Exhaust.",
+    "text": "Gain 3 Block. Exhaust.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 4
+        "amount": 3
       }
     ],
     "tags": [
@@ -370,13 +370,13 @@
     "type": "action",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Deal 4 damage per Doubt on the target.",
+    "text": "Deal 3 damage per Doubt on the target.",
     "effects": [
       {
         "type": "damage_per_status",
         "target": "enemy",
         "status": "doubt",
-        "amount_per_stack": 4
+        "amount_per_stack": 3
       }
     ],
     "tags": [
@@ -394,13 +394,13 @@
     "type": "action",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Deal 5 damage per Doubt on the target.",
+    "text": "Deal 4 damage per Doubt on the target.",
     "effects": [
       {
         "type": "damage_per_status",
         "target": "enemy",
         "status": "doubt",
-        "amount_per_stack": 5
+        "amount_per_stack": 4
       }
     ],
     "tags": [
@@ -692,12 +692,12 @@
     "type": "action",
     "cost": 1,
     "rarity": "common",
-    "text": "Deal 10 damage.",
+    "text": "Deal 9 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 10
+        "amount": 9
       }
     ],
     "tags": [
@@ -714,12 +714,12 @@
     "type": "action",
     "cost": 1,
     "rarity": "common",
-    "text": "Deal 14 damage.",
+    "text": "Deal 13 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 14
+        "amount": 13
       }
     ],
     "tags": [
@@ -736,17 +736,17 @@
     "type": "action",
     "cost": 1,
     "rarity": "common",
-    "text": "Deal 7 damage. Gain 7 Block.",
+    "text": "Deal 6 damage. Gain 6 Block.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 7
+        "amount": 6
       },
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 7
+        "amount": 6
       }
     ],
     "tags": [
@@ -764,17 +764,17 @@
     "type": "action",
     "cost": 1,
     "rarity": "common",
-    "text": "Deal 10 damage. Gain 10 Block.",
+    "text": "Deal 9 damage. Gain 9 Block.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 10
+        "amount": 9
       },
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 10
+        "amount": 9
       }
     ],
     "tags": [
@@ -792,12 +792,12 @@
     "type": "action",
     "cost": 2,
     "rarity": "rare",
-    "text": "Deal 14 damage. Deal 2 damage per Doubt on the target.",
+    "text": "Deal 12 damage. Deal 2 damage per Doubt on the target.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 14
+        "amount": 12
       },
       {
         "type": "damage_per_status",
@@ -822,12 +822,12 @@
     "type": "action",
     "cost": 2,
     "rarity": "rare",
-    "text": "Deal 20 damage. Deal 3 damage per Doubt on the target.",
+    "text": "Deal 18 damage. Deal 3 damage per Doubt on the target.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 20
+        "amount": 18
       },
       {
         "type": "damage_per_status",
@@ -852,12 +852,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 10 Block.",
+    "text": "Gain 8 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 10
+        "amount": 8
       }
     ],
     "tags": [
@@ -874,12 +874,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 14 Block.",
+    "text": "Gain 12 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 14
+        "amount": 12
       }
     ],
     "tags": [

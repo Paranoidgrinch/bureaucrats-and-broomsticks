@@ -6,19 +6,15 @@
     "type": "action",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 8 damage.",
+    "text": "Deal 6 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 8
+        "amount": 6
       }
     ],
-    "tags": [
-      "attack",
-      "precision",
-      "polite"
-    ],
+    "tags": [],
     "upgrades_to": "polite_stab_plus"
   },
   {
@@ -28,18 +24,15 @@
     "type": "action",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 11 damage.",
+    "text": "Deal 9 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 11
+        "amount": 9
       }
     ],
     "tags": [
-      "attack",
-      "precision",
-      "polite",
       "upgraded"
     ]
   },
@@ -50,19 +43,15 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 6 Block.",
+    "text": "Gain 4 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 6
+        "amount": 4
       }
     ],
-    "tags": [
-      "block",
-      "cloak",
-      "escape"
-    ],
+    "tags": [],
     "upgrades_to": "black_cloak_plus"
   },
   {
@@ -72,18 +61,15 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 9 Block.",
+    "text": "Gain 7 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 9
+        "amount": 7
       }
     ],
     "tags": [
-      "block",
-      "cloak",
-      "escape",
       "upgraded"
     ]
   },
@@ -94,21 +80,16 @@
     "type": "argument",
     "cost": 1,
     "rarity": "starter",
-    "text": "Apply 4 Doubt.",
+    "text": "Apply 3 Doubt.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "doubt",
-        "amount": 4
+        "amount": 3,
+        "status": "doubt"
       }
     ],
-    "tags": [
-      "doubt",
-      "contract",
-      "setup",
-      "mark"
-    ],
+    "tags": [],
     "upgrades_to": "marked_name_plus"
   },
   {
@@ -118,26 +99,41 @@
     "type": "argument",
     "cost": 1,
     "rarity": "starter",
-    "text": "Apply 6 Doubt.",
+    "text": "Apply 4 Doubt.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "doubt",
-        "amount": 6
+        "amount": 4,
+        "status": "doubt"
       }
     ],
     "tags": [
-      "doubt",
-      "contract",
-      "setup",
-      "mark",
       "upgraded"
     ]
   },
   {
     "id": "needle_in_the_dark",
     "name": "Needle in the Dark",
+    "class": "guild_assassin_apprentice",
+    "type": "action",
+    "cost": 1,
+    "rarity": "starter",
+    "text": "Deal 4 damage per Doubt on the target.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount_per_stack": 4
+      }
+    ],
+    "tags": [],
+    "upgrades_to": "needle_in_the_dark_plus"
+  },
+  {
+    "id": "needle_in_the_dark_plus",
+    "name": "Needle in the Dark+",
     "class": "guild_assassin_apprentice",
     "type": "action",
     "cost": 1,
@@ -152,34 +148,6 @@
       }
     ],
     "tags": [
-      "attack",
-      "doubt",
-      "payoff",
-      "precision"
-    ],
-    "upgrades_to": "needle_in_the_dark_plus"
-  },
-  {
-    "id": "needle_in_the_dark_plus",
-    "name": "Needle in the Dark+",
-    "class": "guild_assassin_apprentice",
-    "type": "action",
-    "cost": 1,
-    "rarity": "starter",
-    "text": "Deal 7 damage per Doubt on the target.",
-    "effects": [
-      {
-        "type": "damage_per_status",
-        "target": "enemy",
-        "status": "doubt",
-        "amount_per_stack": 7
-      }
-    ],
-    "tags": [
-      "attack",
-      "doubt",
-      "payoff",
-      "precision",
       "upgraded"
     ]
   }

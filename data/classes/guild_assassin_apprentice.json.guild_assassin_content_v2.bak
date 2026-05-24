@@ -1,7 +1,7 @@
 {
   "id": "guild_assassin_apprentice",
   "name": "Guild Assassin Apprentice",
-  "max_hp": 64,
+  "max_hp": 58,
   "starting_energy": 3,
   "starting_relic": null,
   "starting_deck": [

@@ -27,3 +27,5 @@ env/
 v/
 *.bak
 runs/_worker_smoke_test/
+runs/act2_sanity/
+runs/campaign_sanity/

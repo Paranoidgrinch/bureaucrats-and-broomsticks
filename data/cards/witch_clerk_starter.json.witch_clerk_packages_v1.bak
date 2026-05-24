@@ -20,12 +20,7 @@
         "amount": 1
       }
     ],
-    "tags": [
-      "attack",
-      "paperwork",
-      "memo",
-      "minor_magic"
-    ],
+    "tags": [],
     "upgrades_to": "ritual_memo_plus"
   },
   {
@@ -50,10 +45,6 @@
       }
     ],
     "tags": [
-      "attack",
-      "paperwork",
-      "memo",
-      "minor_magic",
       "upgraded"
     ]
   },
@@ -72,11 +63,7 @@
         "amount": 5
       }
     ],
-    "tags": [
-      "block",
-      "broom",
-      "ward"
-    ],
+    "tags": [],
     "upgrades_to": "broom_shield_plus"
   },
   {
@@ -95,9 +82,6 @@
       }
     ],
     "tags": [
-      "block",
-      "broom",
-      "ward",
       "upgraded"
     ]
   },
@@ -117,12 +101,7 @@
         "amount": 2
       }
     ],
-    "tags": [
-      "doubt",
-      "charm",
-      "hex",
-      "setup"
-    ],
+    "tags": [],
     "upgrades_to": "suspicious_charm_plus"
   },
   {
@@ -142,10 +121,6 @@
       }
     ],
     "tags": [
-      "doubt",
-      "charm",
-      "hex",
-      "setup",
       "upgraded"
     ]
   },
@@ -165,13 +140,7 @@
         "amount_per_stack": 2
       }
     ],
-    "tags": [
-      "attack",
-      "paperwork",
-      "payoff",
-      "stamp",
-      "incantation"
-    ],
+    "tags": [],
     "upgrades_to": "stamped_incantation_plus"
   },
   {
@@ -191,11 +160,6 @@
       }
     ],
     "tags": [
-      "attack",
-      "paperwork",
-      "payoff",
-      "stamp",
-      "incantation",
       "upgraded"
     ]
   }

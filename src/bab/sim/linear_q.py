@@ -1011,3 +1011,35 @@ def benchmark_linear_checkpoint_policy(
         stem=stem,
     )
     return json_path, csv_path, summary_path, rows
+
+
+# --- worker-aware linear checkpoint benchmark wrapper v1 ---
+_original_benchmark_linear_checkpoint_policy = benchmark_linear_checkpoint_policy
+
+
+def benchmark_linear_checkpoint_policy(*args, workers: int = 1, **kwargs):
+    """Wrapper that keeps old behavior for workers <= 1 and enables the
+    worker-aware benchmark backend for larger all-character benchmark runs.
+    """
+    if "workers" in kwargs:
+        workers = kwargs.pop("workers")
+
+    if workers is None or workers <= 1:
+        return _original_benchmark_linear_checkpoint_policy(*args, **kwargs)
+
+    import bab.sim.benchmark as benchmark_module
+
+    old_local_benchmark = globals().get("benchmark_policies_across_characters")
+
+    def _benchmark_with_workers(*benchmark_args, **benchmark_kwargs):
+        benchmark_kwargs["workers"] = workers
+        return benchmark_module.benchmark_policies_across_characters(
+            *benchmark_args,
+            **benchmark_kwargs,
+        )
+
+    globals()["benchmark_policies_across_characters"] = _benchmark_with_workers
+    try:
+        return _original_benchmark_linear_checkpoint_policy(*args, **kwargs)
+    finally:
+        globals()["benchmark_policies_across_characters"] = old_local_benchmark

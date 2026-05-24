@@ -269,3 +269,80 @@ def collect_summary_fields(summaries: list[dict[str, Any]]) -> list[str]:
             if key not in fields:
                 fields.append(key)
     return fields
+
+
+# --- worker parallel benchmark wrapper v1 ---
+_original_benchmark_policies_across_characters = benchmark_policies_across_characters
+
+
+def _bab_character_benchmark_worker_v1(payload):
+    arguments = dict(payload["arguments"])
+    character_key = payload["character_key"]
+    character_id = payload["character_id"]
+    seed_key = payload.get("seed_key")
+
+    arguments[character_key] = [character_id]
+    if seed_key is not None:
+        arguments[seed_key] = payload["seed"]
+
+    return _original_benchmark_policies_across_characters(**arguments)
+
+
+def benchmark_policies_across_characters(*args, workers: int = 1, **kwargs):
+    """Run benchmark policies, optionally parallelized by character.
+
+    The serial path is kept as the default and is used for workers <= 1.
+    Parallel mode intentionally splits by character, which is coarse but safe
+    for the Act-1 all-character benchmark.
+    """
+    if workers is None or workers <= 1:
+        return _original_benchmark_policies_across_characters(*args, **kwargs)
+
+    import inspect
+    from concurrent.futures import ProcessPoolExecutor
+
+    signature = inspect.signature(_original_benchmark_policies_across_characters)
+    bound = signature.bind_partial(*args, **kwargs)
+    bound.apply_defaults()
+    arguments = dict(bound.arguments)
+
+    character_key = None
+    for candidate in ("character_ids", "characters"):
+        if candidate in arguments:
+            character_key = candidate
+            break
+
+    if character_key is None:
+        return _original_benchmark_policies_across_characters(*args, **kwargs)
+
+    character_ids = list(arguments[character_key])
+    if len(character_ids) <= 1:
+        return _original_benchmark_policies_across_characters(*args, **kwargs)
+
+    seed_key = "seed" if "seed" in arguments else None
+    base_seed = int(arguments.get(seed_key, 0)) if seed_key is not None else 0
+
+    max_workers = max(1, min(int(workers), len(character_ids)))
+    payloads = []
+    for index, character_id in enumerate(character_ids):
+        payloads.append(
+            {
+                "arguments": arguments,
+                "character_key": character_key,
+                "character_id": character_id,
+                "seed_key": seed_key,
+                # Stable per-character seed. This may differ from the old
+                # exact serial stream, but is deterministic across worker counts.
+                "seed": base_seed + index * 1_000_003,
+            }
+        )
+
+    try:
+        rows = []
+        with ProcessPoolExecutor(max_workers=max_workers) as executor:
+            for character_rows in executor.map(_bab_character_benchmark_worker_v1, payloads):
+                rows.extend(character_rows)
+        return rows
+    except Exception as exc:
+        print(f"[benchmark workers] Falling back to serial benchmark after worker failure: {exc}")
+        return _original_benchmark_policies_across_characters(*args, **kwargs)

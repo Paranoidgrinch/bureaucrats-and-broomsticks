@@ -24,8 +24,7 @@ def grant_random_relic(run_state: RunState) -> None:
         run_state.relic_database,
         run_state.relics,
         run_state.rng,
-        character_id=run_state.character_class.id,
-)
+    )
 
     run_state.relics.append(relic)
 

@@ -558,7 +558,6 @@ def create_combat_state_for_encounter_id(
         energy=run_state.character_class.starting_energy,
         draw_pile=list(run_state.run_deck),
         status_database=run_state.status_database,
-        card_database=run_state.card_database,
     )
     combat_state.encounter_id = encounter.id
     combat_state.encounter_name = encounter.name

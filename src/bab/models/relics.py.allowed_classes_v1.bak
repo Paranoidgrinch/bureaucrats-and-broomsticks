@@ -29,4 +29,3 @@ class RelicDefinition(BaseModel):
     rarity: Literal["common", "uncommon", "rare", "boss"] = "common"
     effects: list[RelicEffect]
     tags: list[str] = Field(default_factory=list)
-    allowed_classes: list[str] = Field(default_factory=list)

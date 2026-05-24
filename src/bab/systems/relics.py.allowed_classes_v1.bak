@@ -18,30 +18,16 @@ from bab.rules.relic_effect_handlers import (
 )
 
 
-def relic_is_allowed_for_character(
-    relic: RelicDefinition,
-    character_id: str | None,
-) -> bool:
-    if not relic.allowed_classes:
-        return True
-    if character_id is None:
-        return False
-    return character_id in relic.allowed_classes
-
-
 def choose_random_unowned_relic(
     relic_database: dict[str, RelicDefinition],
     owned_relics: list[RelicDefinition],
     rng: Random,
-    *,
-    character_id: str | None = None,
 ) -> RelicDefinition:
     owned_ids = {relic.id for relic in owned_relics}
     available_relics = [
         relic
         for relic in relic_database.values()
         if relic.id not in owned_ids
-        and relic_is_allowed_for_character(relic, character_id)
     ]
 
     if not available_relics:

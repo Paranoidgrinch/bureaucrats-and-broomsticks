@@ -18,9 +18,6 @@
       "form",
       "zero_cost",
       "block"
-    ],
-    "allowed_classes": [
-      "bureaucrat"
     ]
   },
   {
@@ -47,9 +44,6 @@
       "paperwork",
       "form",
       "zero_cost"
-    ],
-    "allowed_classes": [
-      "bureaucrat"
     ]
   },
   {
@@ -74,9 +68,6 @@
       "queue",
       "block",
       "doubt"
-    ],
-    "allowed_classes": [
-      "bureaucrat"
     ]
   },
   {
@@ -104,9 +95,6 @@
       "junk",
       "zero_cost",
       "draw"
-    ],
-    "allowed_classes": [
-      "bureaucrat"
     ]
   },
   {
@@ -128,9 +116,6 @@
       "junk",
       "block",
       "exhaust_payoff"
-    ],
-    "allowed_classes": [
-      "bureaucrat"
     ]
   },
   {
@@ -156,9 +141,6 @@
       "energy",
       "junk",
       "risk_reward"
-    ],
-    "allowed_classes": [
-      "bureaucrat"
     ]
   },
   {
@@ -180,9 +162,6 @@
       "paperwork",
       "form",
       "zero_cost"
-    ],
-    "allowed_classes": [
-      "bureaucrat"
     ]
   },
   {
@@ -209,9 +188,6 @@
       "paperwork",
       "junk",
       "risk_reward"
-    ],
-    "allowed_classes": [
-      "bureaucrat"
     ]
   }
 ]

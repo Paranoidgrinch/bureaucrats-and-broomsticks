@@ -6,19 +6,15 @@
     "type": "action",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 7 damage.",
+    "text": "Deal 6 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 7
+        "amount": 6
       }
     ],
-    "tags": [
-      "attack",
-      "cudgel",
-      "patrol"
-    ],
+    "tags": [],
     "upgrades_to": "cudgel_warning_plus"
   },
   {
@@ -28,18 +24,15 @@
     "type": "action",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 10 damage.",
+    "text": "Deal 8 damage.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 10
+        "amount": 8
       }
     ],
     "tags": [
-      "attack",
-      "cudgel",
-      "patrol",
       "upgraded"
     ]
   },
@@ -50,19 +43,15 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 6 Block.",
+    "text": "Gain 5 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 6
+        "amount": 5
       }
     ],
-    "tags": [
-      "block",
-      "shield",
-      "patrol"
-    ],
+    "tags": [],
     "upgrades_to": "raised_shield_plus"
   },
   {
@@ -72,18 +61,15 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 9 Block.",
+    "text": "Gain 8 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 9
+        "amount": 8
       }
     ],
     "tags": [
-      "block",
-      "shield",
-      "patrol",
       "upgraded"
     ]
   },
@@ -94,21 +80,16 @@
     "type": "argument",
     "cost": 1,
     "rarity": "starter",
-    "text": "Apply 3 Doubt.",
+    "text": "Apply 2 Doubt.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "doubt",
-        "amount": 3
+        "amount": 2,
+        "status": "doubt"
       }
     ],
-    "tags": [
-      "doubt",
-      "riot_act",
-      "authority",
-      "setup"
-    ],
+    "tags": [],
     "upgrades_to": "read_the_riot_act_plus"
   },
   {
@@ -118,20 +99,16 @@
     "type": "argument",
     "cost": 1,
     "rarity": "starter",
-    "text": "Apply 5 Doubt.",
+    "text": "Apply 3 Doubt.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "doubt",
-        "amount": 5
+        "amount": 3,
+        "status": "doubt"
       }
     ],
     "tags": [
-      "doubt",
-      "riot_act",
-      "authority",
-      "setup",
       "upgraded"
     ]
   },
@@ -142,24 +119,20 @@
     "type": "action",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 5 damage. Gain 5 Block.",
+    "text": "Deal 4 damage. Gain 4 Block.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 5
+        "amount": 4
       },
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 5
+        "amount": 4
       }
     ],
-    "tags": [
-      "attack",
-      "block",
-      "patrol"
-    ],
+    "tags": [],
     "upgrades_to": "boots_on_cobblestones_plus"
   },
   {
@@ -169,23 +142,20 @@
     "type": "action",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 8 damage. Gain 8 Block.",
+    "text": "Deal 5 damage. Gain 6 Block.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 8
+        "amount": 5
       },
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 8
+        "amount": 6
       }
     ],
     "tags": [
-      "attack",
-      "block",
-      "patrol",
       "upgraded"
     ]
   }

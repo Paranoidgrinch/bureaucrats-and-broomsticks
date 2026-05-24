@@ -20,12 +20,7 @@
         "status": "paperwork"
       }
     ],
-    "tags": [
-      "attack",
-      "paperwork",
-      "treaty",
-      "rat"
-    ],
+    "tags": [],
     "upgrades_to": "nibbled_clause_plus"
   },
   {
@@ -50,10 +45,6 @@
       }
     ],
     "tags": [
-      "attack",
-      "paperwork",
-      "treaty",
-      "rat",
       "upgraded"
     ]
   },
@@ -72,11 +63,7 @@
         "amount": 4
       }
     ],
-    "tags": [
-      "block",
-      "sewer_route",
-      "evasion"
-    ],
+    "tags": [],
     "upgrades_to": "underfloor_scurry_plus"
   },
   {
@@ -95,9 +82,6 @@
       }
     ],
     "tags": [
-      "block",
-      "sewer_route",
-      "evasion",
       "upgraded"
     ]
   },
@@ -116,12 +100,7 @@
         "amount": 3
       }
     ],
-    "tags": [
-      "attack",
-      "swarm",
-      "rat",
-      "aoe"
-    ],
+    "tags": [],
     "upgrades_to": "call_the_cousins_plus"
   },
   {
@@ -140,10 +119,6 @@
       }
     ],
     "tags": [
-      "attack",
-      "swarm",
-      "rat",
-      "aoe",
       "upgraded"
     ]
   },
@@ -168,12 +143,7 @@
         "status": "doubt"
       }
     ],
-    "tags": [
-      "block",
-      "doubt",
-      "treaty",
-      "cheese"
-    ],
+    "tags": [],
     "upgrades_to": "cheese_based_treaty_plus"
   },
   {
@@ -198,10 +168,6 @@
       }
     ],
     "tags": [
-      "block",
-      "doubt",
-      "treaty",
-      "cheese",
       "upgraded"
     ]
   }

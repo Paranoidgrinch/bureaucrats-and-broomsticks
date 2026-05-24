@@ -30,12 +30,12 @@
     "type": "form",
     "cost": 0,
     "rarity": "starter",
-    "text": "Gain 2 Block. Exhaust.",
+    "text": "Gain 3 Block. Exhaust.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 2
+        "amount": 3
       }
     ],
     "tags": [
@@ -117,13 +117,13 @@
     "type": "spell",
     "cost": 1,
     "rarity": "common",
-    "text": "Apply 3 Poison.",
+    "text": "Apply 4 Poison.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "poison",
-        "amount": 3
+        "amount": 4
       }
     ],
     "tags": [
@@ -140,13 +140,13 @@
     "type": "spell",
     "cost": 1,
     "rarity": "common",
-    "text": "Apply 5 Poison.",
+    "text": "Apply 6 Poison.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "poison",
-        "amount": 5
+        "amount": 6
       }
     ],
     "tags": [
@@ -159,30 +159,6 @@
   {
     "id": "spore_cloud",
     "name": "Spore Cloud",
-    "class": "shroomancer",
-    "type": "spell",
-    "cost": 1,
-    "rarity": "common",
-    "text": "Apply 1 Poison to all enemies.",
-    "effects": [
-      {
-        "type": "apply_status",
-        "target": "all_enemies",
-        "status": "poison",
-        "amount": 1
-      }
-    ],
-    "tags": [
-      "poison",
-      "spore",
-      "aoe",
-      "setup"
-    ],
-    "upgrades_to": "spore_cloud_plus"
-  },
-  {
-    "id": "spore_cloud_plus",
-    "name": "Spore Cloud+",
     "class": "shroomancer",
     "type": "spell",
     "cost": 1,
@@ -200,6 +176,30 @@
       "poison",
       "spore",
       "aoe",
+      "setup"
+    ],
+    "upgrades_to": "spore_cloud_plus"
+  },
+  {
+    "id": "spore_cloud_plus",
+    "name": "Spore Cloud+",
+    "class": "shroomancer",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 3 Poison to all enemies.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "all_enemies",
+        "status": "poison",
+        "amount": 3
+      }
+    ],
+    "tags": [
+      "poison",
+      "spore",
+      "aoe",
       "setup",
       "upgraded"
     ]
@@ -207,36 +207,6 @@
   {
     "id": "pinch_of_spores",
     "name": "Pinch of Spores",
-    "class": "shroomancer",
-    "type": "spell",
-    "cost": 1,
-    "rarity": "common",
-    "text": "Apply 1 Poison. Add a Loose Spore to your hand.",
-    "effects": [
-      {
-        "type": "apply_status",
-        "target": "enemy",
-        "status": "poison",
-        "amount": 1
-      },
-      {
-        "type": "create_card",
-        "card_id": "loose_spore",
-        "destination": "hand",
-        "copies": 1
-      }
-    ],
-    "tags": [
-      "poison",
-      "spore",
-      "zero_cost",
-      "setup"
-    ],
-    "upgrades_to": "pinch_of_spores_plus"
-  },
-  {
-    "id": "pinch_of_spores_plus",
-    "name": "Pinch of Spores+",
     "class": "shroomancer",
     "type": "spell",
     "cost": 1,
@@ -260,6 +230,36 @@
       "poison",
       "spore",
       "zero_cost",
+      "setup"
+    ],
+    "upgrades_to": "pinch_of_spores_plus"
+  },
+  {
+    "id": "pinch_of_spores_plus",
+    "name": "Pinch of Spores+",
+    "class": "shroomancer",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 3 Poison. Add a Loose Spore to your hand.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount": 3
+      },
+      {
+        "type": "create_card",
+        "card_id": "loose_spore",
+        "destination": "hand",
+        "copies": 1
+      }
+    ],
+    "tags": [
+      "poison",
+      "spore",
+      "zero_cost",
       "setup",
       "upgraded"
     ]
@@ -271,13 +271,13 @@
     "type": "spell",
     "cost": 2,
     "rarity": "rare",
-    "text": "Apply 4 Poison to all enemies.",
+    "text": "Apply 5 Poison to all enemies.",
     "effects": [
       {
         "type": "apply_status",
         "target": "all_enemies",
         "status": "poison",
-        "amount": 4
+        "amount": 5
       }
     ],
     "tags": [
@@ -295,13 +295,13 @@
     "type": "spell",
     "cost": 2,
     "rarity": "rare",
-    "text": "Apply 6 Poison to all enemies.",
+    "text": "Apply 7 Poison to all enemies.",
     "effects": [
       {
         "type": "apply_status",
         "target": "all_enemies",
         "status": "poison",
-        "amount": 6
+        "amount": 7
       }
     ],
     "tags": [
@@ -319,12 +319,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 8 Block.",
+    "text": "Gain 9 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 8
+        "amount": 9
       }
     ],
     "tags": [
@@ -341,12 +341,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 11 Block.",
+    "text": "Gain 12 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 11
+        "amount": 12
       }
     ],
     "tags": [
@@ -363,18 +363,18 @@
     "type": "form",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Gain 6 Block. Apply 1 Poison.",
+    "text": "Gain 7 Block. Apply 2 Poison.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 6
+        "amount": 7
       },
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "poison",
-        "amount": 1
+        "amount": 2
       }
     ],
     "tags": [
@@ -392,18 +392,18 @@
     "type": "form",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Gain 9 Block. Apply 2 Poison.",
+    "text": "Gain 10 Block. Apply 3 Poison.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 9
+        "amount": 10
       },
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "poison",
-        "amount": 2
+        "amount": 3
       }
     ],
     "tags": [
@@ -421,12 +421,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 5 Block. Draw 1.",
+    "text": "Gain 6 Block. Draw 1.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 5
+        "amount": 6
       },
       {
         "type": "draw_cards",
@@ -447,12 +447,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 8 Block. Draw 1.",
+    "text": "Gain 9 Block. Draw 1.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 8
+        "amount": 9
       },
       {
         "type": "draw_cards",
@@ -473,12 +473,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Gain 4 Block. Add a Soft Cap to your hand.",
+    "text": "Gain 5 Block. Add a Soft Cap to your hand.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 4
+        "amount": 5
       },
       {
         "type": "create_card",
@@ -502,12 +502,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Gain 7 Block. Add a Soft Cap to your hand.",
+    "text": "Gain 8 Block. Add a Soft Cap to your hand.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 7
+        "amount": 8
       },
       {
         "type": "create_card",
@@ -531,13 +531,13 @@
     "type": "spell",
     "cost": 2,
     "rarity": "uncommon",
-    "text": "Deal 2 damage per Poison on the target.",
+    "text": "Deal 3 damage per Poison on the target.",
     "effects": [
       {
         "type": "damage_per_status",
         "target": "enemy",
         "status": "poison",
-        "amount_per_stack": 2
+        "amount_per_stack": 3
       }
     ],
     "tags": [
@@ -555,13 +555,13 @@
     "type": "spell",
     "cost": 2,
     "rarity": "uncommon",
-    "text": "Deal 3 damage per Poison on the target.",
+    "text": "Deal 4 damage per Poison on the target.",
     "effects": [
       {
         "type": "damage_per_status",
         "target": "enemy",
         "status": "poison",
-        "amount_per_stack": 3
+        "amount_per_stack": 4
       }
     ],
     "tags": [
@@ -579,18 +579,18 @@
     "type": "spell",
     "cost": 1,
     "rarity": "common",
-    "text": "Deal 3 damage. Apply 1 Poison.",
+    "text": "Deal 4 damage. Apply 2 Poison.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 3
+        "amount": 4
       },
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "poison",
-        "amount": 1
+        "amount": 2
       }
     ],
     "tags": [
@@ -607,18 +607,18 @@
     "type": "spell",
     "cost": 1,
     "rarity": "common",
-    "text": "Deal 5 damage. Apply 2 Poison.",
+    "text": "Deal 6 damage. Apply 3 Poison.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 5
+        "amount": 6
       },
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "poison",
-        "amount": 2
+        "amount": 3
       }
     ],
     "tags": [
@@ -635,18 +635,18 @@
     "type": "spell",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Apply 2 Poison. Gain 4 Block.",
+    "text": "Apply 3 Poison. Gain 5 Block.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "poison",
-        "amount": 2
+        "amount": 3
       },
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 4
+        "amount": 5
       }
     ],
     "tags": [
@@ -663,18 +663,18 @@
     "type": "spell",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Apply 3 Poison. Gain 6 Block.",
+    "text": "Apply 4 Poison. Gain 7 Block.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "poison",
-        "amount": 3
+        "amount": 4
       },
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 6
+        "amount": 7
       }
     ],
     "tags": [
@@ -756,13 +756,19 @@
     "type": "argument",
     "cost": 1,
     "rarity": "common",
-    "text": "Apply 2 Doubt.",
+    "text": "Apply 2 Doubt. Apply 1 Poison.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
         "status": "doubt",
         "amount": 2
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount": 1
       }
     ],
     "tags": [
@@ -780,7 +786,7 @@
     "type": "argument",
     "cost": 1,
     "rarity": "common",
-    "text": "Apply 3 Doubt. Apply 1 Poison.",
+    "text": "Apply 3 Doubt. Apply 2 Poison.",
     "effects": [
       {
         "type": "apply_status",
@@ -792,7 +798,7 @@
         "type": "apply_status",
         "target": "enemy",
         "status": "poison",
-        "amount": 1
+        "amount": 2
       }
     ],
     "tags": [
@@ -810,12 +816,18 @@
     "type": "argument",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Apply 1 Doubt to all enemies.",
+    "text": "Apply 1 Doubt to all enemies. Apply 1 Poison to all enemies.",
     "effects": [
       {
         "type": "apply_status",
         "target": "all_enemies",
         "status": "doubt",
+        "amount": 1
+      },
+      {
+        "type": "apply_status",
+        "target": "all_enemies",
+        "status": "poison",
         "amount": 1
       }
     ],
@@ -835,13 +847,19 @@
     "type": "argument",
     "cost": 1,
     "rarity": "uncommon",
-    "text": "Apply 2 Doubt to all enemies.",
+    "text": "Apply 2 Doubt to all enemies. Apply 1 Poison to all enemies.",
     "effects": [
       {
         "type": "apply_status",
         "target": "all_enemies",
         "status": "doubt",
         "amount": 2
+      },
+      {
+        "type": "apply_status",
+        "target": "all_enemies",
+        "status": "poison",
+        "amount": 1
       }
     ],
     "tags": [
@@ -968,12 +986,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 3 Block. Add a Soft Cap to your hand.",
+    "text": "Gain 4 Block. Add a Soft Cap to your hand.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 3
+        "amount": 4
       },
       {
         "type": "create_card",
@@ -997,12 +1015,12 @@
     "type": "form",
     "cost": 1,
     "rarity": "common",
-    "text": "Gain 5 Block. Add 2 Soft Caps to your hand.",
+    "text": "Gain 6 Block. Add 2 Soft Caps to your hand.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 5
+        "amount": 6
       },
       {
         "type": "create_card",

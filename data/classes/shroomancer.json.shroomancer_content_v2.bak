@@ -1,7 +1,7 @@
 {
   "id": "shroomancer",
   "name": "Mike Cellium",
-  "max_hp": 72,
+  "max_hp": 76,
   "starting_energy": 3,
   "starting_relic": null,
   "starting_deck": [

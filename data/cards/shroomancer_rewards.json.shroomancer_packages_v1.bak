@@ -1,0 +1,96 @@
+[
+  {
+    "id": "toxic_cap",
+    "name": "Toxic Cap",
+    "class": "shroomancer",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 4 Poison.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 4,
+        "status": "poison"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "spore_cloud",
+    "name": "Spore Cloud",
+    "class": "shroomancer",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 2 Poison to all enemies.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "all_enemies",
+        "amount": 2,
+        "status": "poison"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "mushroom_carapace",
+    "name": "Mushroom Carapace",
+    "class": "shroomancer",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 9 Block.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 9
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "fertile_decay",
+    "name": "Fertile Decay",
+    "class": "shroomancer",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 3 damage per Poison on the target.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount_per_stack": 3
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": "symbiotic_guard",
+    "name": "Symbiotic Guard",
+    "class": "shroomancer",
+    "type": "form",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Gain 7 Block. Apply 2 Poison.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 7
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "amount": 2,
+        "status": "poison"
+      }
+    ],
+    "tags": []
+  }
+]

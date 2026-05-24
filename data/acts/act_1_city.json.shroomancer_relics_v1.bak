@@ -54,8 +54,7 @@
     "data/relics/night_watch_recruit_relics.json",
     "data/relics/hedge_witch_relics.json",
     "data/relics/mortuary_apprentice_relics.json",
-    "data/relics/sewer_diplomat_relics.json",
-    "data/relics/shroomancer_relics.json"
+    "data/relics/sewer_diplomat_relics.json"
   ],
   "map": {
     "steps_before_boss": 9,

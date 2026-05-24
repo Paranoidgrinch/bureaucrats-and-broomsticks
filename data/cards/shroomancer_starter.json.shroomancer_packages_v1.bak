@@ -6,25 +6,21 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 3 damage. Apply 1 Poison.",
+    "text": "Deal 4 damage. Apply 2 Poison.",
     "effects": [
       {
         "type": "deal_damage",
         "target": "enemy",
-        "amount": 3
+        "amount": 4
       },
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "poison",
-        "amount": 1
+        "amount": 2,
+        "status": "poison"
       }
     ],
-    "tags": [
-      "attack",
-      "poison",
-      "spore"
-    ],
+    "tags": [],
     "upgrades_to": "spore_puff_plus"
   },
   {
@@ -34,7 +30,7 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Deal 5 damage. Apply 2 Poison.",
+    "text": "Deal 5 damage. Apply 3 Poison.",
     "effects": [
       {
         "type": "deal_damage",
@@ -44,14 +40,11 @@
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "poison",
-        "amount": 2
+        "amount": 3,
+        "status": "poison"
       }
     ],
     "tags": [
-      "attack",
-      "poison",
-      "spore",
       "upgraded"
     ]
   },
@@ -62,18 +55,15 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 5 Block.",
+    "text": "Gain 6 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 5
+        "amount": 6
       }
     ],
-    "tags": [
-      "block",
-      "mycelium"
-    ],
+    "tags": [],
     "upgrades_to": "mycelium_wall_plus"
   },
   {
@@ -83,17 +73,15 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 8 Block.",
+    "text": "Gain 9 Block.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 8
+        "amount": 9
       }
     ],
     "tags": [
-      "block",
-      "mycelium",
       "upgraded"
     ]
   },
@@ -104,20 +92,16 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Apply 3 Poison.",
+    "text": "Apply 4 Poison.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "poison",
-        "amount": 3
+        "amount": 4,
+        "status": "poison"
       }
     ],
-    "tags": [
-      "poison",
-      "bloom",
-      "setup"
-    ],
+    "tags": [],
     "upgrades_to": "fungal_bloom_plus"
   },
   {
@@ -127,19 +111,16 @@
     "type": "spell",
     "cost": 1,
     "rarity": "starter",
-    "text": "Apply 5 Poison.",
+    "text": "Apply 6 Poison.",
     "effects": [
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "poison",
-        "amount": 5
+        "amount": 6,
+        "status": "poison"
       }
     ],
     "tags": [
-      "poison",
-      "bloom",
-      "setup",
       "upgraded"
     ]
   },
@@ -150,26 +131,21 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 6 Block. Apply 1 Poison.",
+    "text": "Gain 7 Block. Apply 1 Poison.",
     "effects": [
       {
         "type": "gain_block",
         "target": "self",
-        "amount": 6
+        "amount": 7
       },
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "poison",
-        "amount": 1
+        "amount": 1,
+        "status": "poison"
       }
     ],
-    "tags": [
-      "block",
-      "poison",
-      "cap",
-      "mycelium"
-    ],
+    "tags": [],
     "upgrades_to": "capstone_guard_plus"
   },
   {
@@ -179,7 +155,7 @@
     "type": "form",
     "cost": 1,
     "rarity": "starter",
-    "text": "Gain 9 Block. Apply 1 Poison.",
+    "text": "Gain 9 Block. Apply 2 Poison.",
     "effects": [
       {
         "type": "gain_block",
@@ -189,45 +165,17 @@
       {
         "type": "apply_status",
         "target": "enemy",
-        "status": "poison",
-        "amount": 1
+        "amount": 2,
+        "status": "poison"
       }
     ],
     "tags": [
-      "block",
-      "poison",
-      "cap",
-      "mycelium",
       "upgraded"
     ]
   },
   {
     "id": "slow_decay",
     "name": "Slow Decay",
-    "class": "shroomancer",
-    "type": "spell",
-    "cost": 1,
-    "rarity": "starter",
-    "text": "Deal 1 damage per Poison on the target.",
-    "effects": [
-      {
-        "type": "damage_per_status",
-        "target": "enemy",
-        "status": "poison",
-        "amount_per_stack": 1
-      }
-    ],
-    "tags": [
-      "attack",
-      "poison",
-      "payoff",
-      "decay"
-    ],
-    "upgrades_to": "slow_decay_plus"
-  },
-  {
-    "id": "slow_decay_plus",
-    "name": "Slow Decay+",
     "class": "shroomancer",
     "type": "spell",
     "cost": 1,
@@ -241,11 +189,26 @@
         "amount_per_stack": 2
       }
     ],
+    "tags": [],
+    "upgrades_to": "slow_decay_plus"
+  },
+  {
+    "id": "slow_decay_plus",
+    "name": "Slow Decay+",
+    "class": "shroomancer",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "starter",
+    "text": "Deal 3 damage per Poison on the target.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount_per_stack": 3
+      }
+    ],
     "tags": [
-      "attack",
-      "poison",
-      "payoff",
-      "decay",
       "upgraded"
     ]
   }

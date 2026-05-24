@@ -101,7 +101,6 @@ class CombatState:
 
     status_database: dict[str, StatusDefinition] = field(default_factory=dict)
 
-    card_database: dict[str, Card] = field(default_factory=dict)
     log: list[str] = field(default_factory=list)
 
     def living_enemies(self) -> list[Combatant]:

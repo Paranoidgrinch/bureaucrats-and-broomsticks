@@ -4,17 +4,6 @@ from bab.combat.state import CombatState, Combatant
 from bab.combat.effects import resolve_card
 from bab.models import Card
 
-PLAYED_CARD_EXHAUST_TAGS = {"exhaust", "vanish", "single_use", "temporary"}
-UNPLAYABLE_CARD_TAGS = {"unplayable"}
-
-
-def card_is_unplayable(card: Card) -> bool:
-    return bool(set(card.tags) & UNPLAYABLE_CARD_TAGS)
-
-
-def card_exhausts_when_played(card: Card) -> bool:
-    return bool(set(card.tags) & PLAYED_CARD_EXHAUST_TAGS)
-
 
 def build_deck(card_ids: list[str], card_database: dict[str, Card]) -> list[Card]:
     deck: list[Card] = []
@@ -74,9 +63,6 @@ def play_card_from_hand(
         raise IndexError(f"Invalid hand index: {hand_index}")
 
     card = state.hand[hand_index]
-    if card_is_unplayable(card):
-        state.log.append(f"{card.name} is unplayable.")
-        return
 
     if card.cost > state.energy:
         state.log.append(
@@ -90,9 +76,5 @@ def play_card_from_hand(
 
     resolve_card(card, state, target)
 
-    if card_exhausts_when_played(card):
-        state.exhaust_pile.append(card)
-        state.log.append(f"{card.name} is exhausted.")
-    else:
-        state.discard_pile.append(card)
-        state.log.append(f"{card.name} goes to discard pile.")
+    state.discard_pile.append(card)
+    state.log.append(f"{card.name} goes to discard pile.")

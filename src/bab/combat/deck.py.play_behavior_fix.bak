@@ -74,9 +74,6 @@ def play_card_from_hand(
         raise IndexError(f"Invalid hand index: {hand_index}")
 
     card = state.hand[hand_index]
-    if card_is_unplayable(card):
-        state.log.append(f"{card.name} is unplayable.")
-        return
 
     if card.cost > state.energy:
         state.log.append(
@@ -90,9 +87,5 @@ def play_card_from_hand(
 
     resolve_card(card, state, target)
 
-    if card_exhausts_when_played(card):
-        state.exhaust_pile.append(card)
-        state.log.append(f"{card.name} is exhausted.")
-    else:
-        state.discard_pile.append(card)
-        state.log.append(f"{card.name} goes to discard pile.")
+    state.discard_pile.append(card)
+    state.log.append(f"{card.name} goes to discard pile.")

@@ -31,8 +31,4 @@ class Effect(BaseModel):
     amount_per_stack: int | None = None
     status: str | None = None
     resource: str | None = None
-    card_id: str | None = None
-    destination: str | None = None
-    copies: int | None = None
-    tag: str | None = None
     condition: Condition | None = None

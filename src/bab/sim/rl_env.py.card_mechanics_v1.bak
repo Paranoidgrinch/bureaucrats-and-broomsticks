@@ -14,7 +14,6 @@ from random import Random
 from typing import Any
 
 from bab.combat.effects import resolve_card
-from bab.combat.deck import card_exhausts_when_played, card_is_unplayable
 from bab.combat.state import CombatState, Combatant
 from bab.combat.turns import end_player_turn, run_enemy_turn, start_player_turn
 from bab.console.run_flow import create_run_state
@@ -280,8 +279,6 @@ class RoguelikeEnv:
             living_enemies = self.combat_state.living_enemies()
 
             for card_index, card in enumerate(self.combat_state.hand):
-                if card_is_unplayable(card):
-                    continue
                 if card.cost > self.combat_state.energy:
                     continue
                 if self._card_needs_enemy_target(card):
@@ -391,10 +388,6 @@ class RoguelikeEnv:
             raise ValueError("play_card requires a hand index.")
 
         card = self.combat_state.hand[action.index]
-        if card_is_unplayable(card):
-            info["card_id"] = card.id
-            info["unplayable"] = True
-            return
         target: Combatant | None = None
         if action.target_index is not None:
             target = self.combat_state.living_enemies()[action.target_index]
@@ -402,11 +395,7 @@ class RoguelikeEnv:
         self.combat_state.energy -= card.cost
         self.combat_state.hand.pop(action.index)
         resolve_card(card, self.combat_state, target)
-        if card_exhausts_when_played(card):
-            self.combat_state.exhaust_pile.append(card)
-            self.combat_state.log.append(f"{card.name} is exhausted.")
-        else:
-            self.combat_state.discard_pile.append(card)
+        self.combat_state.discard_pile.append(card)
 
         info["card_id"] = card.id
         info["target_id"] = target.id if target is not None else None

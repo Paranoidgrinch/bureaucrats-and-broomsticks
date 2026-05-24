@@ -48,8 +48,6 @@ EffectType = Literal[
     "modify_card_cost",
     "skip_action",
     "gain_strength",
-    "create_card",
-    "exhaust_cards_by_tag",
 ]
 
 TargetType = Literal[

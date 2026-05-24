@@ -94,59 +94,6 @@ def shop_discount_from_relic_effect(
     return handler(effect, relic)
 
 
-
-def _normalise_card_destination(destination: str | None) -> str:
-    if destination is None:
-        return "discard_pile"
-
-    aliases = {
-        "hand": "hand",
-        "draw": "draw_pile",
-        "draw_pile": "draw_pile",
-        "discard": "discard_pile",
-        "discard_pile": "discard_pile",
-        "exhaust": "exhaust_pile",
-        "exhaust_pile": "exhaust_pile",
-    }
-
-    if destination not in aliases:
-        raise ValueError(f"Unsupported card destination: {destination!r}")
-
-    return aliases[destination]
-
-
-def handle_create_card_at_combat_start(
-    effect: RelicEffect,
-    relic: RelicDefinition,
-    state: CombatState,
-) -> None:
-    if effect.card_id is None:
-        raise ValueError(f"{relic.name} relic effect requires card_id.")
-
-    if not hasattr(state, "card_database") or not state.card_database:
-        raise ValueError(f"{relic.name} requires CombatState.card_database.")
-
-    if effect.card_id not in state.card_database:
-        raise ValueError(
-            f"{relic.name} references unknown card id: {effect.card_id!r}."
-        )
-
-    copies = effect.copies
-    if copies is None:
-        copies = effect.amount if effect.amount is not None else 1
-
-    destination = _normalise_card_destination(effect.destination)
-    pile = getattr(state, destination)
-    card = state.card_database[effect.card_id]
-
-    for _ in range(max(0, copies)):
-        pile.append(card)
-
-    state.log.append(
-        f"{relic.name} adds {copies} copy/copies of {card.name} to {destination.replace('_', ' ')}."
-    )
-
-
 def handle_increase_max_energy(
     effect: RelicEffect,
     relic: RelicDefinition,
@@ -281,7 +228,6 @@ RELIC_COMBAT_START_HANDLERS: Mapping[str, CombatStartRelicHandler] = {
     "heal_at_combat_start": handle_heal_at_combat_start,
     "apply_status_to_player_at_combat_start": handle_apply_status_to_player_at_combat_start,
     "apply_status_to_all_enemies_at_combat_start": handle_apply_status_to_all_enemies_at_combat_start,
-    "create_card_at_combat_start": handle_create_card_at_combat_start,
 }
 
 RELIC_PICKUP_HANDLERS: Mapping[str, PickupRelicHandler] = {

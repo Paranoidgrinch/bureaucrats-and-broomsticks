@@ -15,9 +15,6 @@ class RelicEffect(BaseModel):
     type: RelicEffectType
     amount: int | None = None
     status: str | None = None
-    card_id: str | None = None
-    destination: str | None = None
-    copies: int | None = None
 
 
 class RelicDefinition(BaseModel):

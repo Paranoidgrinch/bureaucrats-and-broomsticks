@@ -47,8 +47,7 @@
     "data/events/act_1_city_events.json"
   ],
   "relic_files": [
-    "data/relics/act_1_relics.json",
-    "data/relics/bureaucrat_relics.json"
+    "data/relics/act_1_relics.json"
   ],
   "map": {
     "steps_before_boss": 9,

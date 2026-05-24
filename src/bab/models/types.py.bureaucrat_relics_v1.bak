@@ -121,5 +121,4 @@ RelicEffectType = Literal[
     "heal_at_combat_start",
     "gain_strength_at_combat_start",
     "gain_energy_at_combat_start",
-    "create_card_at_combat_start",
 ]

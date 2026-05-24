@@ -6,3 +6,17 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
+
+# Local development artifacts
+dev_artifacts/
+patch_*.py
+
+# Python caches
+*.py[cod]
+
+# Local RL training / benchmark outputs
+runs/rl_*/
+runs/_latest_checkpoint_eval_tmp/
+
+# Keep stable good runners tracked intentionally:
+# runs/good_runners/act1_linear_v1/

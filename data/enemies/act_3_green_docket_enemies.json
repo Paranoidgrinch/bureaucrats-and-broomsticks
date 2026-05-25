@@ -1,0 +1,1640 @@
+[
+  {
+    "id": "permit_hare",
+    "name": "Permit Hare",
+    "max_hp": 41,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "tiny_claws",
+        "name": "Tiny Claws",
+        "intent_type": "attack",
+        "damage": 6
+      },
+      {
+        "id": "qualify_the_obvious",
+        "name": "Qualify the Obvious",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "margin_bite",
+        "name": "Margin Bite",
+        "intent_type": "attack",
+        "damage": 9
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "familiar",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "moss_covered_clerk",
+    "name": "Moss-Covered Clerk",
+    "max_hp": 57,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "papery_swipe",
+        "name": "Papery Swipe",
+        "intent_type": "attack",
+        "damage": 8
+      },
+      {
+        "id": "misplace_the_page",
+        "name": "Misplace the Page",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "sort_itself",
+        "name": "Sort Itself",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "green_docket",
+      "normal",
+      "paper",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "overzealous_signpost",
+    "name": "Overzealous Signpost",
+    "max_hp": 44,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "alphabetical_prick",
+        "name": "Alphabetical Prick",
+        "intent_type": "attack",
+        "damage": 7
+      },
+      {
+        "id": "swap_the_tabs",
+        "name": "Swap the Tabs",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "find_a_better_letter",
+        "name": "Find a Better Letter",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "green_docket",
+      "imp",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "toll_bridge_spriggan",
+    "name": "Toll Bridge Spriggan",
+    "max_hp": 54,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "creased_corner",
+        "name": "Creased Corner",
+        "intent_type": "attack",
+        "damage": 9
+      },
+      {
+        "id": "no_such_recipient",
+        "name": "No Such Recipient",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "stampede_of_stamps",
+        "name": "Stampede of Stamps",
+        "intent_type": "attack",
+        "damage": 12
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "green_docket",
+      "normal",
+      "paper",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "raven_of_unfiled_paths",
+    "name": "Raven of Unfiled Paths",
+    "max_hp": 40,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "drink_the_caption",
+        "name": "Drink the Caption",
+        "intent_type": "attack",
+        "damage": 5
+      },
+      {
+        "id": "flutter_in_the_margins",
+        "name": "Flutter in the Margins",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "black_wing_graze",
+        "name": "Black-Wing Graze",
+        "intent_type": "attack",
+        "damage": 10
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "beast",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "swarm_of_authorized_ants",
+    "name": "Swarm of Authorized Ants",
+    "max_hp": 36,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "small_many_bites",
+        "name": "Small Many Bites",
+        "intent_type": "attack",
+        "damage": 4
+      },
+      {
+        "id": "breed_in_the_binding",
+        "name": "Breed in the Binding",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "devour_the_caption",
+        "name": "Devour the Caption",
+        "intent_type": "attack",
+        "damage": 8
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "beast",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "sleeping_stump_auditor",
+    "name": "Sleeping Stump Auditor",
+    "max_hp": 56,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "rubber_thump",
+        "name": "Rubber Thump",
+        "intent_type": "attack",
+        "damage": 7
+      },
+      {
+        "id": "ink_itself_awake",
+        "name": "Ink Itself Awake",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "approved_impact",
+        "name": "Approved Impact",
+        "intent_type": "attack",
+        "damage": 10
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "bureaucracy",
+      "construct",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "moonlit_midge_swarm",
+    "name": "Moonlit Midge Swarm",
+    "max_hp": 37,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "flutter_cut",
+        "name": "Flutter Cut",
+        "intent_type": "attack",
+        "damage": 5
+      },
+      {
+        "id": "incorrect_shade",
+        "name": "Incorrect Shade",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "paper_blue_sting",
+        "name": "Paper-Blue Sting",
+        "intent_type": "attack",
+        "damage": 8
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "green_docket",
+      "normal",
+      "paper",
+      "road",
+      "spirit",
+      "woodland"
+    ]
+  },
+  {
+    "id": "wild_form_collector",
+    "name": "Wild Form Collector",
+    "max_hp": 70,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "cold_signature",
+        "name": "Cold Signature",
+        "intent_type": "attack",
+        "damage": 10
+      },
+      {
+        "id": "wrong_drawer",
+        "name": "Wrong Drawer",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "late_fee_bite",
+        "name": "Late-Fee Bite",
+        "intent_type": "attack",
+        "damage": 13
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "green_docket",
+      "normal",
+      "road",
+      "undead",
+      "woodland"
+    ]
+  },
+  {
+    "id": "spider_of_minor_clauses",
+    "name": "Spider of Minor Clauses",
+    "max_hp": 55,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "many_small_teeth",
+        "name": "Many Small Teeth",
+        "intent_type": "attack",
+        "damage": 7
+      },
+      {
+        "id": "chew_the_totals",
+        "name": "Chew the Totals",
+        "intent_type": "attack",
+        "damage": 9
+      },
+      {
+        "id": "multiply_in_the_margins",
+        "name": "Multiply in the Margins",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "beast",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "briar_bailiff",
+    "name": "Briar Bailiff",
+    "max_hp": 54,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "black_bar_bite",
+        "name": "Black-Bar Bite",
+        "intent_type": "attack",
+        "damage": 8
+      },
+      {
+        "id": "remove_context",
+        "name": "Remove Context",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "scuttle_under_the_clause",
+        "name": "Scuttle Under the Clause",
+        "intent_type": "attack",
+        "damage": 8
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "beast",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "mandated_mushroom_circle",
+    "name": "Mandated Mushroom Circle",
+    "max_hp": 65,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "paper_cut_chorus",
+        "name": "Paper-Cut Chorus",
+        "intent_type": "attack",
+        "damage": 7
+      },
+      {
+        "id": "cite_your_fears",
+        "name": "Cite Your Fears",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "louder_whispers",
+        "name": "Louder Whispers",
+        "intent_type": "attack",
+        "damage": 11
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "book",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "roadside_witchling",
+    "name": "Roadside Witchling",
+    "max_hp": 76,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "cold_shelving",
+        "name": "Cold Shelving",
+        "intent_type": "attack",
+        "damage": 12
+      },
+      {
+        "id": "remember_everything",
+        "name": "Remember Everything",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "dead_hand_index",
+        "name": "Dead-Hand Index",
+        "intent_type": "attack",
+        "damage": 14
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "green_docket",
+      "normal",
+      "road",
+      "undead",
+      "woodland"
+    ]
+  },
+  {
+    "id": "rainwater_receipt_elemental",
+    "name": "Rainwater Receipt Elemental",
+    "max_hp": 62,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "papery_slap",
+        "name": "Papery Slap",
+        "intent_type": "attack",
+        "damage": 9
+      },
+      {
+        "id": "prove_purchase",
+        "name": "Prove Purchase",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "crumpled_total",
+        "name": "Crumpled Total",
+        "intent_type": "attack",
+        "damage": 12
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "green_docket",
+      "normal",
+      "paper",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "charter_shell_snail",
+    "name": "Charter-Shell Snail",
+    "max_hp": 75,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "slow_scrape",
+        "name": "Slow Scrape",
+        "intent_type": "attack",
+        "damage": 6
+      },
+      {
+        "id": "leave_a_trail",
+        "name": "Leave a Trail",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      },
+      {
+        "id": "heavy_shell_clause",
+        "name": "Heavy-Shell Clause",
+        "intent_type": "attack",
+        "damage": 15
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "beast",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "ditch_lamprey_of_appeals",
+    "name": "Ditch Lamprey of Appeals",
+    "max_hp": 69,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "attach_to_subject",
+        "name": "Attach to Subject",
+        "intent_type": "attack",
+        "damage": 11
+      },
+      {
+        "id": "cross_reference_wound",
+        "name": "Cross-Reference Wound",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "suck_the_index",
+        "name": "Suck the Index",
+        "intent_type": "attack",
+        "damage": 13
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "beast",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "itinerant_hedge_inspector",
+    "name": "Itinerant Hedge Inspector",
+    "max_hp": 81,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "sworn_stab",
+        "name": "Sworn Stab",
+        "intent_type": "attack",
+        "damage": 11
+      },
+      {
+        "id": "index_your_intentions",
+        "name": "Index Your Intentions",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "remember_the_oath",
+        "name": "Remember the Oath",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "alphabetised_judgment",
+        "name": "Alphabetised Judgment",
+        "intent_type": "attack",
+        "damage": 14
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "bureaucracy",
+      "construct",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "lichen_scholar",
+    "name": "Lichen Scholar",
+    "max_hp": 70,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "quote_the_mold",
+        "name": "Quote the Mold",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "damp_thesis",
+        "name": "Damp Thesis",
+        "intent_type": "attack",
+        "damage": 10
+      },
+      {
+        "id": "footnote_the_lungs",
+        "name": "Footnote the Lungs",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "spore_correction",
+        "name": "Spore Correction",
+        "intent_type": "attack",
+        "damage": 13
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "book",
+      "fungus",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "turnstile_oak",
+    "name": "Turnstile Oak",
+    "max_hp": 90,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "snap_the_wrist",
+        "name": "Snap the Wrist",
+        "intent_type": "attack",
+        "damage": 12
+      },
+      {
+        "id": "late_return_notice",
+        "name": "Late Return Notice",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "deep_slot_bite",
+        "name": "Deep-Slot Bite",
+        "intent_type": "attack",
+        "damage": 15
+      },
+      {
+        "id": "polish_the_teeth",
+        "name": "Polish the Teeth",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "construct",
+      "green_docket",
+      "mimic_like",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "subpoena_willow",
+    "name": "Subpoena Willow",
+    "max_hp": 75,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "white_bark_cut",
+        "name": "White-Bark Cut",
+        "intent_type": "attack",
+        "damage": 10
+      },
+      {
+        "id": "remove_the_context",
+        "name": "Remove the Context",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "grow_blank_branches",
+        "name": "Grow Blank Branches",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "corrective_root",
+        "name": "Corrective Root",
+        "intent_type": "attack",
+        "damage": 13
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "green_docket",
+      "normal",
+      "paper",
+      "plant",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "star_map_oracle",
+    "name": "Star-Map Oracle",
+    "max_hp": 67,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "connect_unrelated_facts",
+        "name": "Connect Unrelated Facts",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "taut_thread_lash",
+        "name": "Taut-Thread Lash",
+        "intent_type": "attack",
+        "damage": 11
+      },
+      {
+        "id": "pattern_that_isnt_there",
+        "name": "Pattern That Isn't There",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "pull_the_conclusion",
+        "name": "Pull the Conclusion",
+        "intent_type": "attack",
+        "damage": 12
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "bureaucracy",
+      "green_docket",
+      "normal",
+      "road",
+      "spirit",
+      "woodland"
+    ]
+  },
+  {
+    "id": "hollow_of_minor_dooms",
+    "name": "Hollow of Minor Dooms",
+    "max_hp": 92,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "swinging_door",
+        "name": "Swinging Door",
+        "intent_type": "attack",
+        "damage": 12
+      },
+      {
+        "id": "rattle_the_skeleton_keys",
+        "name": "Rattle the Skeleton Keys",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "file_you_under_later",
+        "name": "File You Under Later",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "shelf_pincher",
+        "name": "Shelf Pincher",
+        "intent_type": "attack",
+        "damage": 15
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "construct",
+      "furniture",
+      "green_docket",
+      "normal",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "untranslated_trail_marker",
+    "name": "Untranslated Trail Marker",
+    "max_hp": 83,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "unhelpful_gloss",
+        "name": "Unhelpful Gloss",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "dead_language_snap",
+        "name": "Dead-Language Snap",
+        "intent_type": "attack",
+        "damage": 11
+      },
+      {
+        "id": "become_more_opaque",
+        "name": "Become More Opaque",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "syntax_collapse",
+        "name": "Syntax Collapse",
+        "intent_type": "attack",
+        "damage": 14
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "book",
+      "green_docket",
+      "normal",
+      "paper",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "ancient_entitlement",
+    "name": "Ancient Entitlement",
+    "max_hp": 163,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "falling_oak_shelves",
+        "name": "Falling Oak Shelves",
+        "intent_type": "attack",
+        "damage": 15
+      },
+      {
+        "id": "settle_the_catalogue",
+        "name": "Settle the Catalogue",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "crushing_section_marker",
+        "name": "Crushing Section Marker",
+        "intent_type": "attack",
+        "damage": 20
+      },
+      {
+        "id": "dust_cloud_revision",
+        "name": "Dust-Cloud Revision",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "construct",
+      "elite",
+      "green_docket",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "grandmother_web",
+    "name": "Grandmother Web",
+    "max_hp": 141,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "linked_bite",
+        "name": "Linked Bite",
+        "intent_type": "attack",
+        "damage": 13
+      },
+      {
+        "id": "coil_the_references",
+        "name": "Coil the References",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "double_entry_strike",
+        "name": "Double-Entry Strike",
+        "intent_type": "attack",
+        "damage": 18
+      },
+      {
+        "id": "hiss_of_errata",
+        "name": "Hiss of Errata",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "beast",
+      "elite",
+      "green_docket",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "ant_queen_of_the_proper_line",
+    "name": "Ant Queen of the Proper Line",
+    "max_hp": 157,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "oathbound_strike",
+        "name": "Oathbound Strike",
+        "intent_type": "attack",
+        "damage": 16
+      },
+      {
+        "id": "remember_the_due_date",
+        "name": "Remember the Due Date",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "penalty_clause",
+        "name": "Penalty Clause",
+        "intent_type": "attack",
+        "damage": 21
+      },
+      {
+        "id": "ancient_grievance",
+        "name": "Ancient Grievance",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "elite",
+      "green_docket",
+      "road",
+      "spirit",
+      "woodland"
+    ]
+  },
+  {
+    "id": "green_witch_of_provisional_mercy",
+    "name": "Green Witch of Provisional Mercy",
+    "max_hp": 155,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "weighted_hush",
+        "name": "Weighted Hush",
+        "intent_type": "attack",
+        "damage": 15
+      },
+      {
+        "id": "finger_to_lips",
+        "name": "Finger to Lips",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "tighten_the_rules",
+        "name": "Tighten the Rules",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "shattering_shush",
+        "name": "Shattering Shush",
+        "intent_type": "attack",
+        "damage": 21
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "construct",
+      "elite",
+      "green_docket",
+      "road",
+      "silence",
+      "woodland"
+    ]
+  },
+  {
+    "id": "surveyor_of_forgotten_paths",
+    "name": "Surveyor of Forgotten Paths",
+    "max_hp": 150,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "riddle_with_missing_words",
+        "name": "Riddle with Missing Words",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "black_bar_claw",
+        "name": "Black-Bar Claw",
+        "intent_type": "attack",
+        "damage": 16
+      },
+      {
+        "id": "withhold_the_answer",
+        "name": "Withhold the Answer",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      },
+      {
+        "id": "classified_maul",
+        "name": "Classified Maul",
+        "intent_type": "attack",
+        "damage": 20
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "beast",
+      "elite",
+      "green_docket",
+      "redaction",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "magistrate_of_thorns",
+    "name": "Magistrate of Thorns",
+    "max_hp": 179,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "rolling_shelf_crush",
+        "name": "Rolling-Shelf Crush",
+        "intent_type": "attack",
+        "damage": 17
+      },
+      {
+        "id": "lock_the_wheels",
+        "name": "Lock the Wheels",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "aisle_closes_in",
+        "name": "Aisle Closes In",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "whole_section_falls",
+        "name": "Whole Section Falls",
+        "intent_type": "attack",
+        "damage": 23
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "construct",
+      "elite",
+      "furniture",
+      "green_docket",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "bureaucratic_hollow_mimic",
+    "name": "Bureaucratic Hollow Mimic",
+    "max_hp": 127,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "brass_handle_snap",
+        "name": "Brass-Handle Snap",
+        "intent_type": "attack",
+        "damage": 12
+      },
+      {
+        "id": "drawer_crush",
+        "name": "Drawer Crush",
+        "intent_type": "attack",
+        "damage": 16
+      },
+      {
+        "id": "grow_more_locks",
+        "name": "Grow More Locks",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "elite",
+      "green_docket",
+      "mimic",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "forest_ombudsman",
+    "name": "The Forest Ombudsman",
+    "max_hp": 284,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "stamp_of_seniority",
+        "name": "Stamp of Seniority",
+        "intent_type": "attack",
+        "damage": 16
+      },
+      {
+        "id": "three_copies_required",
+        "name": "Three Copies Required",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "promote_the_backlog",
+        "name": "Promote the Backlog",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      },
+      {
+        "id": "binding_counter_signature",
+        "name": "Binding Counter-Signature",
+        "intent_type": "attack",
+        "damage": 24
+      },
+      {
+        "id": "archive_supremacy",
+        "name": "Archive Supremacy",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 4
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "boss",
+      "bureaucracy",
+      "green_docket",
+      "road",
+      "undead",
+      "woodland"
+    ]
+  },
+  {
+    "id": "old_growth_notary",
+    "name": "The Old Growth Notary",
+    "max_hp": 276,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "alphabetical_lash",
+        "name": "Alphabetical Lash",
+        "intent_type": "attack",
+        "damage": 14
+      },
+      {
+        "id": "cross_reference_every_wound",
+        "name": "Cross-Reference Every Wound",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "update_all_entries",
+        "name": "Update All Entries",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "from_abacus_to_zombie",
+        "name": "From Abacus to Zombie",
+        "intent_type": "attack",
+        "damage": 21
+      },
+      {
+        "id": "inescapable_see_also",
+        "name": "Inescapable See Also",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "panic",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "book",
+      "boss",
+      "green_docket",
+      "index",
+      "road",
+      "woodland"
+    ]
+  },
+  {
+    "id": "queen_under_the_hill",
+    "name": "The Queen Under the Hill",
+    "max_hp": 307,
+    "intent_pattern": "cycle",
+    "intents": [
+      {
+        "id": "initial_assessment",
+        "name": "Initial Assessment",
+        "intent_type": "attack",
+        "damage": 16
+      },
+      {
+        "id": "question_the_receipt",
+        "name": "Question the Receipt",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "paperwork",
+            "amount": 3
+          }
+        ]
+      },
+      {
+        "id": "discover_an_irregularity",
+        "name": "Discover an Irregularity",
+        "intent_type": "buff",
+        "effects": [
+          {
+            "type": "gain_strength",
+            "target": "owner",
+            "amount": 3
+          }
+        ]
+      },
+      {
+        "id": "final_adjustment",
+        "name": "Final Adjustment",
+        "intent_type": "attack",
+        "damage": 26
+      },
+      {
+        "id": "spiritual_backlog",
+        "name": "Spiritual Backlog",
+        "intent_type": "debuff",
+        "effects": [
+          {
+            "type": "apply_status",
+            "target": "player",
+            "status": "doubt",
+            "amount": 2
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "act_3",
+      "archive",
+      "boss",
+      "bureaucracy",
+      "green_docket",
+      "road",
+      "undead",
+      "woodland"
+    ]
+  }
+]

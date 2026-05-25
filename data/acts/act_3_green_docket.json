@@ -35,7 +35,8 @@
     "data/cards/shroomancer_rewards.json"
   ],
   "enemy_files": [
-    "data/enemies/city_enemies.json"
+    "data/enemies/act_2_archives_enemies.json",
+    "data/enemies/act_3_green_docket_enemies.json"
   ],
   "encounter_files": [
     "data/encounters/act_3_green_docket.json"
@@ -57,7 +58,7 @@
   },
   "treasure": {
     "mimic_chance": 0.1,
-    "mimic_encounter_id": "act_3_elite_02"
+    "mimic_encounter_id": "green_docket_mimic_01"
   },
   "waiting_room": {
     "heal_percent": 25

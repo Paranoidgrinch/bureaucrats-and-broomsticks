@@ -113,5 +113,5 @@ def test_advance_to_act_3_uses_green_docket_runtime_config() -> None:
     assert run_state.current_hp == run_state.character_class.max_hp
     assert not run_state.is_complete()
     assert epic_reward.id in [card.id for card in run_state.run_deck]
-    assert run_state.treasure_mimic_encounter_id == "act_3_elite_02"
+    assert run_state.treasure_mimic_encounter_id == "green_docket_mimic_01"
     assert run_state.mimic_chance == 0.10

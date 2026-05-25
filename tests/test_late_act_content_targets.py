@@ -25,7 +25,7 @@ def test_late_acts_have_dedicated_future_content_target_files() -> None:
             assert Path(target_path).exists()
 
 
-def test_empty_late_act_target_files_are_not_referenced_by_manifests_yet() -> None:
+def test_late_act_target_files_are_referenced_only_after_they_are_filled() -> None:
     for manifest_path, targets in LATE_ACT_TARGETS.items():
         catalog = load_content_catalog_from_act_manifest(manifest_path)
         manifest = catalog.act_manifest
@@ -37,5 +37,9 @@ def test_empty_late_act_target_files_are_not_referenced_by_manifests_yet() -> No
         }
 
         for target_path in targets.values():
-            assert Path(target_path).read_text(encoding="utf-8").strip() == "[]"
-            assert target_path not in active_references
+            is_empty_target = Path(target_path).read_text(encoding="utf-8").strip() == "[]"
+
+            if is_empty_target:
+                assert target_path not in active_references
+            else:
+                assert target_path in active_references

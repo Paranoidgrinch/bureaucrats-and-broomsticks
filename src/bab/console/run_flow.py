@@ -94,6 +94,7 @@ def create_run_state(
         mimic_chance=catalog.act_manifest.treasure.mimic_chance,
         treasure_mimic_encounter_id=catalog.act_manifest.treasure.mimic_encounter_id,
         waiting_room_heal_percent=catalog.act_manifest.waiting_room.heal_percent,
+        card_reward_choices=catalog.act_manifest.rewards.card_choices,
     )
 
 

@@ -75,4 +75,5 @@ def advance_to_next_act(run_state: RunState) -> bool:
         next_catalog.act_manifest.waiting_room.heal_percent
     )
 
+    run_state.card_reward_choices = next_catalog.act_manifest.rewards.card_choices
     return True

@@ -69,6 +69,7 @@ def test_run_can_advance_through_all_five_implemented_acts() -> None:
             manifest.map.steps_before_boss + 1
         )
         assert run_state.current_hp == run_state.character_class.max_hp
+        assert run_state.card_reward_choices == manifest.rewards.card_choices
         assert run_state.current_node_id is None
         assert not run_state.is_complete()
 
@@ -88,7 +89,11 @@ def test_late_act_catalogs_load_and_have_runtime_offer_sources() -> None:
         manifest = catalog.act_manifest
 
         assert manifest.act in {4, 5}
-        assert manifest.map.steps_before_boss >= 18
+        expected_min_steps = {
+            "act_4_licensing_labyrinth": 17,
+            "act_5_ministry_spire": 18,
+        }
+        assert manifest.map.steps_before_boss >= expected_min_steps[manifest.id]
         assert manifest.map.width >= 5
         assert manifest.map.first_elite_depth <= 3
         assert manifest.map.elite_weight_multiplier > 1

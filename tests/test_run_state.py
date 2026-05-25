@@ -74,7 +74,7 @@ def make_encounter_definition() -> EncounterDefinition:
     )
 
 
-def make_run_state():
+def make_run_state(**kwargs):
     rubber_stamp = make_card("rubber_stamp")
     official_delay = make_card("official_delay")
     card_database = {
@@ -93,6 +93,7 @@ def make_run_state():
         status_database={},
         rng=Random(1),
         max_fights=3,
+        **kwargs,
     )
 
 
@@ -197,3 +198,9 @@ def test_run_is_complete_after_boss_node_is_completed() -> None:
     run_state.completed_node_ids.append(run_state.run_map.boss_node_id)
 
     assert run_state.is_complete()
+
+def test_create_new_run_stores_card_reward_choices() -> None:
+    run_state = make_run_state(card_reward_choices=2)
+
+    assert run_state.card_reward_choices == 2
+

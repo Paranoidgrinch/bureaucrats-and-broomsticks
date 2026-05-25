@@ -27,6 +27,12 @@ class ActWaitingRoomConfig(BaseModel):
     heal_percent: int = Field(ge=0)
 
 
+class ActRewardConfig(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    card_choices: int = Field(default=3, gt=0)
+
+
 class ActManifest(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -44,3 +50,4 @@ class ActManifest(BaseModel):
     map: ActMapConfig
     treasure: ActTreasureConfig
     waiting_room: ActWaitingRoomConfig
+    rewards: ActRewardConfig = Field(default_factory=ActRewardConfig)

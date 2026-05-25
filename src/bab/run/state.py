@@ -43,6 +43,7 @@ class RunState:
     mimic_chance: float = 0.20
     treasure_mimic_encounter_id: str = "city_elite_02"
     waiting_room_heal_percent: int = 25
+    card_reward_choices: int = 3
 
     def is_complete(self) -> bool:
         return (
@@ -91,6 +92,7 @@ def create_new_run(
     mimic_chance: float = 0.20,
     treasure_mimic_encounter_id: str = "city_elite_02",
     waiting_room_heal_percent: int = 25,
+    card_reward_choices: int = 3,
     starting_gold: int = 0,
 ) -> RunState:
     if rng is None:
@@ -132,6 +134,7 @@ def create_new_run(
         mimic_chance=mimic_chance,
         treasure_mimic_encounter_id=treasure_mimic_encounter_id,
         waiting_room_heal_percent=waiting_room_heal_percent,
+        card_reward_choices=card_reward_choices,
     )
 
 

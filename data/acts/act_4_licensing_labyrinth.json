@@ -38,7 +38,7 @@
     "data/cards/act_3_green_docket_rewards.json"
   ],
   "enemy_files": [
-    "data/enemies/city_enemies.json"
+    "data/enemies/act_4_licensing_labyrinth_enemies.json"
   ],
   "encounter_files": [
     "data/encounters/act_4_licensing_labyrinth.json"
@@ -66,16 +66,19 @@
     "data/relics/act_3_green_docket_class_relics.json"
   ],
   "map": {
-    "steps_before_boss": 18,
+    "steps_before_boss": 17,
     "width": 5,
     "first_elite_depth": 3,
-    "elite_weight_multiplier": 1.45
+    "elite_weight_multiplier": 1.5
   },
   "treasure": {
-    "mimic_chance": 0.1,
+    "mimic_chance": 0.15,
     "mimic_encounter_id": "act_4_elite_02"
   },
   "waiting_room": {
-    "heal_percent": 25
+    "heal_percent": 15
+  },
+  "rewards": {
+    "card_choices": 2
   }
 }

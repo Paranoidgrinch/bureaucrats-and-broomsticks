@@ -65,7 +65,8 @@
     "data/relics/act_2_class_relics.json",
     "data/relics/act_3_green_docket_relics.json",
     "data/relics/act_3_green_docket_class_relics.json",
-    "data/relics/act_4_licensing_labyrinth_class_relics.json"
+    "data/relics/act_4_licensing_labyrinth_class_relics.json",
+    "data/relics/act_4_licensing_labyrinth_relics.json"
   ],
   "map": {
     "steps_before_boss": 17,

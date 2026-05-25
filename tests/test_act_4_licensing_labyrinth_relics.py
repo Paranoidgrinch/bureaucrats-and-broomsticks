@@ -181,3 +181,74 @@ def test_act_4_bureaucrat_threaded_reward_map_offsets_reward_restriction() -> No
     relic = catalog.relic_database["act4_bureaucrat_threaded_reward_map"]
 
     assert card_reward_count_bonus([relic]) == 1
+
+
+EXPECTED_GENERAL_RELICS = {
+    "act4_general_ariadnes_red_thread",
+    "act4_general_memory_training_tablet",
+    "act4_general_cracked_sun_lamp",
+    "act4_general_sealed_water_skin",
+    "act4_general_scarab_compass",
+    "act4_general_surveyors_chalk_line",
+    "act4_general_canopic_emergency_rations",
+    "act4_general_cartographers_lost_candle",
+}
+
+
+def test_act_4_manifest_loads_general_relic_file() -> None:
+    catalog = load_content_catalog_from_act_manifest(ACT_4_MANIFEST)
+
+    assert (
+        "data/relics/act_4_licensing_labyrinth_relics.json"
+        in catalog.act_manifest.relic_files
+    )
+
+    assert EXPECTED_GENERAL_RELICS <= set(catalog.relic_database)
+
+
+def test_act_4_general_relics_are_class_agnostic_pyramid_tools() -> None:
+    relics = json.loads(
+        Path("data/relics/act_4_licensing_labyrinth_relics.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert len(relics) == 8
+    assert Counter(relic["rarity"] for relic in relics) == {
+        "rare": 5,
+        "uncommon": 3,
+    }
+
+    for relic in relics:
+        assert relic["id"] in EXPECTED_GENERAL_RELICS
+        assert relic["allowed_classes"] == []
+        assert "act_4" in relic["tags"]
+        assert "pyramid" in relic["tags"]
+        assert "licensing_labyrinth" in relic["tags"]
+        assert "class_specific" not in relic["tags"]
+        assert relic["effects"]
+
+
+def test_act_4_general_relics_are_eligible_for_all_classes() -> None:
+    catalog = load_content_catalog_from_act_manifest(ACT_4_MANIFEST)
+
+    for class_id in EXPECTED_CLASS_RELICS_BY_CLASS:
+        eligible_ids = {
+            relic.id
+            for relic in eligible_shop_relics(
+                catalog.relic_database,
+                owned_relics=[],
+                act=4,
+                fight_number=10,
+                card_class=class_id,
+            )
+        }
+
+        assert EXPECTED_GENERAL_RELICS <= eligible_ids
+
+
+def test_act_4_ariadnes_red_thread_offsets_reward_restriction() -> None:
+    catalog = load_content_catalog_from_act_manifest(ACT_4_MANIFEST)
+    relic = catalog.relic_database["act4_general_ariadnes_red_thread"]
+
+    assert card_reward_count_bonus([relic]) == 1

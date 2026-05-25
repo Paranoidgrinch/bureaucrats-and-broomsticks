@@ -155,8 +155,7 @@ def eligible_shop_cards(
         card
         for card in card_database.values()
         if card.class_ == card_class
-        and card.rarity != "starter"
-        and card.rarity != "boss"
+        and card.rarity not in {"starter", "boss", "epic"}
         and "upgraded" not in card.tags
     ]
 
@@ -179,6 +178,7 @@ def eligible_shop_relics(
     *,
     act: int,
     fight_number: int,
+    card_class: str | None = None,
 ) -> list[RelicDefinition]:
     tier = shop_tier(act=act, fight_number=fight_number)
     allowed_rarities = set(RELIC_RARITY_WEIGHTS_BY_TIER[tier])
@@ -189,6 +189,16 @@ def eligible_shop_relics(
         for relic in relic_database.values()
         if relic.id not in owned_relic_ids
         and relic.rarity != "boss"
+        and (
+            not relic.allowed_classes
+            or card_class is None
+            or card_class in relic.allowed_classes
+        )
+        and (
+            not relic.allowed_classes
+            or card_class is None
+            or card_class in relic.allowed_classes
+        )
     ]
 
     tier_eligible_relics = [
@@ -225,7 +235,7 @@ def choose_shop_card_offers(
     card_class: str,
     act: int,
     fight_number: int,
-    count: int = 3,
+    count: int = DEFAULT_SHOP_CARD_OFFER_COUNT,
 ) -> list[ShopCardOffer]:
     tier = shop_tier(act=act, fight_number=fight_number)
     cards = eligible_shop_cards(
@@ -263,7 +273,8 @@ def choose_shop_relic_offers(
     *,
     act: int,
     fight_number: int,
-    count: int = 2,
+    card_class: str | None = None,
+    count: int = DEFAULT_SHOP_RELIC_OFFER_COUNT,
 ) -> list[ShopRelicOffer]:
     tier = shop_tier(act=act, fight_number=fight_number)
     relics = eligible_shop_relics(
@@ -271,6 +282,7 @@ def choose_shop_relic_offers(
         owned_relics,
         act=act,
         fight_number=fight_number,
+        card_class=card_class,
     )
     selected_relics = choose_weighted_unique(
         relics,

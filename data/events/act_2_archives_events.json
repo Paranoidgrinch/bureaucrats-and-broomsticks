@@ -472,5 +472,476 @@
       "archive",
       "shop"
     ]
+  },
+  {
+    "id": "act_2_misfiled_door",
+    "name": "The Misfiled Door",
+    "act": 2,
+    "event_type": "risk_reward",
+    "weight": 2,
+    "text": "A narrow door stands between two shelves, labelled 'Definitely Not Here'. The label has been corrected so many times that the wood looks embarrassed.",
+    "choices": [
+      {
+        "id": "enter_the_wrong_room",
+        "text": "Enter the wrong room.",
+        "result_text": "The door opens into a corridor that has been waiting for someone with exactly your lack of authorization.",
+        "effects": [
+          {
+            "type": "lose_percent_max_hp",
+            "amount": 8
+          },
+          {
+            "type": "gain_card_reward",
+            "amount": 1
+          },
+          {
+            "type": "upgrade_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "relabel_it_as_later",
+        "text": "Relabel it as later.",
+        "result_text": "The door accepts this as a valid administrative category and stops being your problem.",
+        "effects": []
+      },
+      {
+        "id": "file_an_objection",
+        "text": "File an objection.",
+        "result_text": "The door sulks. The archive sends you somewhere more affordable.",
+        "effects": [
+          {
+            "type": "open_shop"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "archive",
+      "deck",
+      "door",
+      "risk_reward",
+      "shop"
+    ]
+  },
+  {
+    "id": "act_2_whispering_catalogue",
+    "name": "The Whispering Catalogue",
+    "act": 2,
+    "event_type": "deck",
+    "weight": 2,
+    "text": "A catalogue whispers your name, then several names that are nearly yours, then an annotation about your likely shelf life.",
+    "choices": [
+      {
+        "id": "let_it_find_a_bad_memory",
+        "text": "Let it find a bad memory.",
+        "result_text": "The catalogue removes something that was technically yours but never entirely helpful.",
+        "effects": [
+          {
+            "type": "remove_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "ask_for_a_better_heading",
+        "text": "Ask for a better heading.",
+        "result_text": "Your current methods are filed under something more flattering.",
+        "effects": [
+          {
+            "type": "upgrade_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "slam_it_shut",
+        "text": "Slam it shut.",
+        "result_text": "The whispers continue, but at a professionally acceptable volume.",
+        "effects": []
+      }
+    ],
+    "tags": [
+      "archive",
+      "catalogue",
+      "deck",
+      "memory"
+    ]
+  },
+  {
+    "id": "act_2_librarians_empty_chair",
+    "name": "The Librarian's Empty Chair",
+    "act": 2,
+    "event_type": "risk_reward",
+    "weight": 1,
+    "text": "Behind a reading desk sits an empty chair with the authority of a large animal pretending not to be present.",
+    "choices": [
+      {
+        "id": "sit_for_one_minute",
+        "text": "Sit for one minute.",
+        "result_text": "The chair judges your posture, your handwriting, and one decision you made six rooms ago.",
+        "effects": [
+          {
+            "type": "lose_percent_max_hp",
+            "amount": 12
+          },
+          {
+            "type": "gain_card_reward",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "stand_respectfully",
+        "text": "Stand respectfully.",
+        "result_text": "The chair approves. Barely.",
+        "effects": [
+          {
+            "type": "upgrade_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "do_not_touch_the_chair",
+        "text": "Do not touch the chair.",
+        "result_text": "A wise decision. Possibly the first one today.",
+        "effects": []
+      }
+    ],
+    "tags": [
+      "archive",
+      "deck",
+      "librarian",
+      "risk_reward"
+    ]
+  },
+  {
+    "id": "act_2_shelf_that_knows_your_name",
+    "name": "The Shelf That Knows Your Name",
+    "act": 2,
+    "event_type": "deck",
+    "weight": 2,
+    "text": "A shelf creaks your name in a voice like old varnish. It offers to put one part of you somewhere tidier.",
+    "choices": [
+      {
+        "id": "be_reshelved",
+        "text": "Be reshelved.",
+        "result_text": "Something unnecessary is removed from your working procedures.",
+        "effects": [
+          {
+            "type": "remove_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "argue_with_the_shelf",
+        "text": "Argue with the shelf.",
+        "result_text": "The shelf respects stubbornness. Wood usually does.",
+        "effects": [
+          {
+            "type": "upgrade_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "walk_away_sideways",
+        "text": "Walk away sideways.",
+        "result_text": "The shelf pretends not to notice, which is almost polite.",
+        "effects": []
+      }
+    ],
+    "tags": [
+      "archive",
+      "deck",
+      "haunted",
+      "shelf"
+    ]
+  },
+  {
+    "id": "act_2_overdue_soul",
+    "name": "The Overdue Soul",
+    "act": 2,
+    "event_type": "risk_reward",
+    "weight": 2,
+    "text": "A translucent clerk floats beside a returns desk, clutching a ticket stamped with yesterday's yesterday.",
+    "choices": [
+      {
+        "id": "help_with_the_return",
+        "text": "Help with the return.",
+        "result_text": "The soul leaves behind gratitude, a receipt, and a worrying amount of paperwork.",
+        "effects": [
+          {
+            "type": "lose_percent_max_hp",
+            "amount": 6
+          },
+          {
+            "type": "gain_card_reward",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "offer_a_quiet_signature",
+        "text": "Offer a quiet signature.",
+        "result_text": "The soul settles. The ink warms under your hand.",
+        "effects": [
+          {
+            "type": "upgrade_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "refer_it_to_mortuary_records",
+        "text": "Refer it to Mortuary Records.",
+        "result_text": "The soul nods. It clearly expected this.",
+        "effects": []
+      }
+    ],
+    "tags": [
+      "archive",
+      "ghost",
+      "mortuary",
+      "risk_reward"
+    ]
+  },
+  {
+    "id": "act_2_index_of_unfinished_jobs",
+    "name": "Index of Unfinished Jobs",
+    "act": 2,
+    "event_type": "deck",
+    "weight": 2,
+    "text": "A freestanding index lists every task abandoned in the city. Several entries are following you with their little tabs.",
+    "choices": [
+      {
+        "id": "finish_one_small_thing",
+        "text": "Finish one small thing.",
+        "result_text": "The index removes a tiny burden. It feels larger than it should.",
+        "effects": [
+          {
+            "type": "remove_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "accept_more_work",
+        "text": "Accept more work.",
+        "result_text": "The index is delighted. Dangerous, but delighted.",
+        "effects": [
+          {
+            "type": "lose_percent_max_hp",
+            "amount": 8
+          },
+          {
+            "type": "gain_card_reward",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "pretend_you_are_busy",
+        "text": "Pretend you are busy.",
+        "result_text": "The index respects this ancient bureaucratic defense.",
+        "effects": []
+      }
+    ],
+    "tags": [
+      "archive",
+      "deck",
+      "index",
+      "risk_reward"
+    ]
+  },
+  {
+    "id": "act_2_restricted_reading_room",
+    "name": "The Restricted Reading Room",
+    "act": 2,
+    "event_type": "risk_reward",
+    "weight": 1,
+    "text": "A velvet rope guards a reading room where every book is chained shut and several chains are chained to other chains.",
+    "choices": [
+      {
+        "id": "read_without_permission",
+        "text": "Read without permission.",
+        "result_text": "The book reads back. It has notes.",
+        "effects": [
+          {
+            "type": "lose_percent_max_hp",
+            "amount": 15
+          },
+          {
+            "type": "gain_card_reward",
+            "amount": 2
+          },
+          {
+            "type": "upgrade_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "request_a_temporary_pass",
+        "text": "Request a temporary pass.",
+        "result_text": "The pass is temporary, the shop is not, and the prices look almost reasonable.",
+        "effects": [
+          {
+            "type": "open_shop"
+          }
+        ]
+      },
+      {
+        "id": "respect_the_rope",
+        "text": "Respect the rope.",
+        "result_text": "The rope is surprised. Nobody respects the rope.",
+        "effects": []
+      }
+    ],
+    "tags": [
+      "archive",
+      "deck",
+      "reading_room",
+      "risk_reward",
+      "shop"
+    ]
+  },
+  {
+    "id": "act_2_ink_well_at_the_bottom",
+    "name": "The Ink Well at the Bottom",
+    "act": 2,
+    "event_type": "risk_reward",
+    "weight": 2,
+    "text": "An ink well sits on the lowest shelf. The ink inside reflects the ceiling, then the stars, then a room you have not entered yet.",
+    "choices": [
+      {
+        "id": "dip_a_finger",
+        "text": "Dip a finger.",
+        "result_text": "The ink writes a better version of one of your habits and charges you in warmth.",
+        "effects": [
+          {
+            "type": "lose_percent_max_hp",
+            "amount": 10
+          },
+          {
+            "type": "upgrade_card",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "id": "drop_in_a_bad_page",
+        "text": "Drop in a bad page.",
+        "result_text": "The ink swallows one mistake without chewing.",
+        "effects": [
+          {
+            "type": "remove_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "cap_the_well",
+        "text": "Cap the well.",
+        "result_text": "The reflection smiles after the lid is closed.",
+        "effects": []
+      }
+    ],
+    "tags": [
+      "archive",
+      "deck",
+      "ink",
+      "risk_reward"
+    ]
+  },
+  {
+    "id": "act_2_helpful_footnote",
+    "name": "The Helpful Footnote",
+    "act": 2,
+    "event_type": "narrative",
+    "weight": 2,
+    "text": "A footnote detaches itself from a nearby page and scurries after you, offering context nobody asked for.",
+    "choices": [
+      {
+        "id": "listen_to_the_context",
+        "text": "Listen to the context.",
+        "result_text": "The footnote is unbearably useful.",
+        "effects": [
+          {
+            "type": "gain_card_reward",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "ask_it_to_be_brief",
+        "text": "Ask it to be brief.",
+        "result_text": "It condenses itself into a single practical correction.",
+        "effects": [
+          {
+            "type": "upgrade_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "step_over_it",
+        "text": "Step over it.",
+        "result_text": "The footnote adds a note about your manners.",
+        "effects": []
+      }
+    ],
+    "tags": [
+      "archive",
+      "deck",
+      "footnote",
+      "narrative"
+    ]
+  },
+  {
+    "id": "act_2_locked_return_slot",
+    "name": "The Locked Return Slot",
+    "act": 2,
+    "event_type": "risk_reward",
+    "weight": 2,
+    "text": "A brass return slot is locked from the inside. A small sign reads: 'Insert problem. Receive different problem.'",
+    "choices": [
+      {
+        "id": "insert_a_card",
+        "text": "Insert a card.",
+        "result_text": "The slot coughs up silence and keeps the problem.",
+        "effects": [
+          {
+            "type": "remove_card",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": "insert_a_coin_and_a_sigh",
+        "text": "Insert a coin and a sigh.",
+        "result_text": "The slot opens onto a cramped little counter full of things nobody admits selling.",
+        "effects": [
+          {
+            "type": "open_shop"
+          }
+        ]
+      },
+      {
+        "id": "do_not_feed_the_slot",
+        "text": "Do not feed the slot.",
+        "result_text": "The slot clicks its tongue in brass.",
+        "effects": []
+      }
+    ],
+    "tags": [
+      "archive",
+      "deck",
+      "return_slot",
+      "shop"
+    ]
   }
 ]

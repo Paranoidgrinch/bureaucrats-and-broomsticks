@@ -35,7 +35,8 @@
     "data/cards/shroomancer_rewards.json",
     "data/cards/epic_transition_rewards.json",
     "data/cards/act_2_archive_rewards.json",
-    "data/cards/act_3_green_docket_rewards.json"
+    "data/cards/act_3_green_docket_rewards.json",
+    "data/cards/act_4_licensing_labyrinth_rewards.json"
   ],
   "enemy_files": [
     "data/enemies/act_4_licensing_labyrinth_enemies.json"
@@ -79,6 +80,7 @@
     "heal_percent": 15
   },
   "rewards": {
-    "card_choices": 2
+    "card_choices": 2,
+    "card_reward_chance": 0.7
   }
 }

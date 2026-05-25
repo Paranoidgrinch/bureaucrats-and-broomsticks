@@ -95,6 +95,7 @@ def create_run_state(
         treasure_mimic_encounter_id=catalog.act_manifest.treasure.mimic_encounter_id,
         waiting_room_heal_percent=catalog.act_manifest.waiting_room.heal_percent,
         card_reward_choices=catalog.act_manifest.rewards.card_choices,
+        card_reward_chance=catalog.act_manifest.rewards.card_reward_chance,
     )
 
 
@@ -222,7 +223,12 @@ def resolve_combat_node(run_state: RunState, node: MapNode) -> None:
         return
 
     console.print("[bold green]Victory! The paperwork has prevailed.[/bold green]")
-    offer_card_reward(run_state)
+    if run_state.card_reward_chance >= 1.0 or (
+        run_state.rng.random() < run_state.card_reward_chance
+    ):
+        offer_card_reward(run_state)
+    else:
+        console.print("[yellow]No card reward was issued after this fight.[/yellow]")
 
 
 def resolve_map_node(run_state: RunState, node: MapNode) -> None:

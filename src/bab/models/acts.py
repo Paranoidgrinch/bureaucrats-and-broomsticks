@@ -31,6 +31,7 @@ class ActRewardConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     card_choices: int = Field(default=3, gt=0)
+    card_reward_chance: float = Field(default=1.0, ge=0.0, le=1.0)
 
 
 class ActManifest(BaseModel):

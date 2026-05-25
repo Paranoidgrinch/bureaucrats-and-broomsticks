@@ -76,4 +76,5 @@ def advance_to_next_act(run_state: RunState) -> bool:
     )
 
     run_state.card_reward_choices = next_catalog.act_manifest.rewards.card_choices
+    run_state.card_reward_chance = next_catalog.act_manifest.rewards.card_reward_chance
     return True

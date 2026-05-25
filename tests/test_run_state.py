@@ -204,3 +204,8 @@ def test_create_new_run_stores_card_reward_choices() -> None:
 
     assert run_state.card_reward_choices == 2
 
+def test_create_new_run_stores_card_reward_chance() -> None:
+    run_state = make_run_state(card_reward_chance=0.7)
+
+    assert run_state.card_reward_chance == 0.7
+

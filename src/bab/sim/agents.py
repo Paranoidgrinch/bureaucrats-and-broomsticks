@@ -364,6 +364,10 @@ def run_policy_rollout(
         relic_count=len(env.run_state.relics),
         damage_dealt=getattr(env, "damage_dealt", 0),
         damage_taken=getattr(env, "damage_taken", 0),
+        first_combat_damage_dealt=getattr(env, "first_combat_damage_dealt", 0),
+        first_combat_damage_taken=getattr(env, "first_combat_damage_taken", 0),
+        first_combat_turns=getattr(env, "first_combat_turns", 0),
+        first_combat_zero_damage=bool(getattr(env, "first_combat_zero_damage", False)),
     )
 
 

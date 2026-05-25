@@ -1,10 +1,9 @@
-"""Benchmark helpers for evaluating agents across characters.
+﻿"""Benchmark helpers for evaluating agents across characters.
 
-This is intended for balance diagnostics, not final balancing by itself.
-It evaluates multiple policies across fixed seeds and one or more character
+This is intended for balance diagnostics, not final balancing by itself. It
+evaluates multiple policies across fixed seeds and one or more character
 classes, then exports flat rows plus aggregate summaries.
 """
-
 from __future__ import annotations
 
 from collections import defaultdict
@@ -16,9 +15,7 @@ from typing import Any, Callable
 from bab.content.catalog import load_default_content_catalog
 from bab.sim.agents import Policy, run_policy_rollout
 
-
 PolicyFactory = Callable[[int], Policy]
-
 
 ROW_FIELDS = (
     "policy",
@@ -34,6 +31,10 @@ ROW_FIELDS = (
     "relic_count",
     "damage_dealt",
     "damage_taken",
+    "first_combat_damage_dealt",
+    "first_combat_damage_taken",
+    "first_combat_turns",
+    "first_combat_zero_damage",
 )
 
 
@@ -50,13 +51,10 @@ def benchmark_policies_across_characters(
         character_ids = sorted(catalog.character_classes)
 
     rows: list[dict[str, Any]] = []
-
     for character_index, character_id in enumerate(character_ids):
         character_seed_base = seed + character_index * 100_000
-
         for run_index in range(runs_per_character):
             run_seed = character_seed_base + run_index
-
             for policy_name, factory in policy_factories.items():
                 policy = factory(run_seed)
                 result = run_policy_rollout(
@@ -65,7 +63,6 @@ def benchmark_policies_across_characters(
                     max_steps=max_steps,
                     character_id=character_id,
                 )
-
                 rows.append(
                     {
                         "policy": policy_name,
@@ -81,9 +78,12 @@ def benchmark_policies_across_characters(
                         "relic_count": result.relic_count,
                         "damage_dealt": result.damage_dealt,
                         "damage_taken": result.damage_taken,
+                        "first_combat_damage_dealt": result.first_combat_damage_dealt,
+                        "first_combat_damage_taken": result.first_combat_damage_taken,
+                        "first_combat_turns": result.first_combat_turns,
+                        "first_combat_zero_damage": result.first_combat_zero_damage,
                     }
                 )
-
     return rows
 
 
@@ -91,7 +91,6 @@ def aggregate_benchmark_rows(
     rows: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
     groups: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
-
     for row in rows:
         groups[(str(row["policy"]), str(row["character_id"]))].append(row)
         groups[(str(row["policy"]), "__overall__")].append(row)
@@ -99,7 +98,6 @@ def aggregate_benchmark_rows(
     summaries: list[dict[str, Any]] = []
     for (policy, character_id), group_rows in sorted(groups.items()):
         summaries.append(summarize_group(policy, character_id, group_rows))
-
     return summaries
 
 
@@ -116,15 +114,29 @@ def summarize_group(
             "runs": 0,
         }
 
+    wins = count_outcome(rows, "win")
+    stalls = count_outcome(rows, "stalled")
+    truncated = count_outcome(rows, "truncated")
+    zero_damage_runs = sum(1 for row in rows if number(row, "damage_dealt") <= 0)
+    first_combat_zero_damage_runs = sum(
+        1 for row in rows if truthy(row.get("first_combat_zero_damage"))
+    )
+
     return {
         "policy": policy,
         "character_id": character_id,
         "runs": runs,
-        "wins": count_outcome(rows, "win"),
+        "wins": wins,
         "defeats": count_outcome(rows, "defeat"),
-        "stalls": count_outcome(rows, "stalled"),
-        "truncated": count_outcome(rows, "truncated"),
-        "win_rate": count_outcome(rows, "win") / runs,
+        "stalls": stalls,
+        "truncated": truncated,
+        "zero_damage_runs": zero_damage_runs,
+        "first_combat_zero_damage_runs": first_combat_zero_damage_runs,
+        "win_rate": wins / runs,
+        "stall_rate": stalls / runs,
+        "truncated_rate": truncated / runs,
+        "zero_damage_rate": zero_damage_runs / runs,
+        "first_combat_zero_damage_rate": first_combat_zero_damage_runs / runs,
         "average_reward": average(rows, "total_reward"),
         "average_steps": average(rows, "steps"),
         "average_completed_nodes": average(rows, "completed_nodes"),
@@ -134,6 +146,9 @@ def summarize_group(
         "average_relic_count": average(rows, "relic_count"),
         "average_damage_dealt": average(rows, "damage_dealt"),
         "average_damage_taken": average(rows, "damage_taken"),
+        "average_first_combat_damage_dealt": average(rows, "first_combat_damage_dealt"),
+        "average_first_combat_damage_taken": average(rows, "first_combat_damage_taken"),
+        "average_first_combat_turns": average(rows, "first_combat_turns"),
     }
 
 
@@ -142,7 +157,22 @@ def count_outcome(rows: list[dict[str, Any]], outcome: str) -> int:
 
 
 def average(rows: list[dict[str, Any]], key: str) -> float:
-    return sum(float(row.get(key, 0.0)) for row in rows) / len(rows)
+    return sum(number(row, key) for row in rows) / len(rows)
+
+
+def number(row: dict[str, Any], key: str) -> float:
+    try:
+        return float(row.get(key, 0.0) or 0.0)
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def truthy(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if value is None:
+        return False
+    return str(value).strip().lower() in {"1", "true", "yes", "y"}
 
 
 def benchmark_payload(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -159,7 +189,6 @@ def write_benchmark_json(
 ) -> Path:
     output_path = Path(path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-
     output_path.write_text(
         json.dumps(benchmark_payload(rows), indent=2, sort_keys=True),
         encoding="utf-8",
@@ -173,12 +202,10 @@ def write_benchmark_csv(
 ) -> Path:
     output_path = Path(path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-
     with output_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=ROW_FIELDS)
         writer.writeheader()
         writer.writerows(rows)
-
     return output_path
 
 
@@ -188,15 +215,12 @@ def write_benchmark_summary_csv(
 ) -> Path:
     output_path = Path(path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-
     summaries = aggregate_benchmark_rows(rows)
     fieldnames = collect_summary_fields(summaries)
-
     with output_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(summaries)
-
     return output_path
 
 
@@ -217,22 +241,18 @@ def write_benchmark_bundle(
 def format_benchmark_summary(rows: list[dict[str, Any]]) -> str:
     summaries = aggregate_benchmark_rows(rows)
     overall = [
-        summary for summary in summaries
-        if summary["character_id"] == "__overall__"
+        summary for summary in summaries if summary["character_id"] == "__overall__"
     ]
     per_character = [
-        summary for summary in summaries
-        if summary["character_id"] != "__overall__"
+        summary for summary in summaries if summary["character_id"] != "__overall__"
     ]
 
     lines = ["=== Agent Benchmark Summary ==="]
-
     if overall:
         lines.append("")
         lines.append("Overall:")
         for summary in sorted(overall, key=lambda item: item["policy"]):
             lines.append(format_summary_line(summary))
-
     if per_character:
         lines.append("")
         lines.append("By character:")
@@ -241,7 +261,6 @@ def format_benchmark_summary(rows: list[dict[str, Any]]) -> str:
             key=lambda item: (item["character_id"], item["policy"]),
         ):
             lines.append(format_summary_line(summary))
-
     return "\n".join(lines)
 
 
@@ -251,98 +270,24 @@ def format_summary_line(summary: dict[str, Any]) -> str:
         f"runs {summary['runs']} | "
         f"wins {summary['wins']} | "
         f"win_rate {summary['win_rate']:.1%} | "
+        f"stalls {summary.get('stalls', 0)} | "
+        f"trunc {summary.get('truncated', 0)} | "
+        f"first0d {summary.get('first_combat_zero_damage_runs', 0)} | "
         f"avg_reward {summary['average_reward']:.2f} | "
         f"avg_nodes {summary['average_completed_nodes']:.2f} | "
         f"avg_fights {summary['average_fights_won']:.2f} | "
         f"avg_dmg_dealt {summary.get('average_damage_dealt', 0.0):.1f} | "
-        f"avg_dmg_taken {summary.get('average_damage_taken', 0.0):.1f}"
+        f"avg_dmg_taken {summary.get('average_damage_taken', 0.0):.1f} | "
+        f"avg_first_turns {summary.get('average_first_combat_turns', 0.0):.1f}"
     )
 
 
 def collect_summary_fields(summaries: list[dict[str, Any]]) -> list[str]:
     if not summaries:
         return ["policy", "character_id"]
-
     fields: list[str] = []
     for summary in summaries:
         for key in summary:
             if key not in fields:
                 fields.append(key)
     return fields
-
-
-# --- worker parallel benchmark wrapper v1 ---
-_original_benchmark_policies_across_characters = benchmark_policies_across_characters
-
-
-def _bab_character_benchmark_worker_v1(payload):
-    arguments = dict(payload["arguments"])
-    character_key = payload["character_key"]
-    character_id = payload["character_id"]
-    seed_key = payload.get("seed_key")
-
-    arguments[character_key] = [character_id]
-    if seed_key is not None:
-        arguments[seed_key] = payload["seed"]
-
-    return _original_benchmark_policies_across_characters(**arguments)
-
-
-def benchmark_policies_across_characters(*args, workers: int = 1, **kwargs):
-    """Run benchmark policies, optionally parallelized by character.
-
-    The serial path is kept as the default and is used for workers <= 1.
-    Parallel mode intentionally splits by character, which is coarse but safe
-    for the Act-1 all-character benchmark.
-    """
-    if workers is None or workers <= 1:
-        return _original_benchmark_policies_across_characters(*args, **kwargs)
-
-    import inspect
-    from concurrent.futures import ProcessPoolExecutor
-
-    signature = inspect.signature(_original_benchmark_policies_across_characters)
-    bound = signature.bind_partial(*args, **kwargs)
-    bound.apply_defaults()
-    arguments = dict(bound.arguments)
-
-    character_key = None
-    for candidate in ("character_ids", "characters"):
-        if candidate in arguments:
-            character_key = candidate
-            break
-
-    if character_key is None:
-        return _original_benchmark_policies_across_characters(*args, **kwargs)
-
-    character_ids = list(arguments[character_key])
-    if len(character_ids) <= 1:
-        return _original_benchmark_policies_across_characters(*args, **kwargs)
-
-    seed_key = "seed" if "seed" in arguments else None
-    base_seed = int(arguments.get(seed_key, 0)) if seed_key is not None else 0
-
-    max_workers = max(1, min(int(workers), len(character_ids)))
-    payloads = []
-    for index, character_id in enumerate(character_ids):
-        payloads.append(
-            {
-                "arguments": arguments,
-                "character_key": character_key,
-                "character_id": character_id,
-                "seed_key": seed_key,
-                # Stable per-character seed. This may differ from the old
-                # exact serial stream, but is deterministic across worker counts.
-                "seed": base_seed + index * 1_000_003,
-            }
-        )
-
-    try:
-        rows = []
-        with ProcessPoolExecutor(max_workers=max_workers) as executor:
-            for character_rows in executor.map(_bab_character_benchmark_worker_v1, payloads):
-                rows.extend(character_rows)
-        return rows
-    except Exception as exc:
-        print(f"[benchmark workers] Falling back to serial benchmark after worker failure: {exc}")
-        return _original_benchmark_policies_across_characters(*args, **kwargs)

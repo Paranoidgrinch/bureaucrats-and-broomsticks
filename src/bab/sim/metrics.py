@@ -1,5 +1,4 @@
-"""Metric export helpers for RL/agent rollouts."""
-
+﻿"""Metric export helpers for RL/agent rollouts."""
 from __future__ import annotations
 
 import csv
@@ -9,7 +8,6 @@ from pathlib import Path
 from typing import Any
 
 from bab.sim.rl_env import RolloutResult
-
 
 RESULT_FIELDS = (
     "seed",
@@ -23,6 +21,10 @@ RESULT_FIELDS = (
     "relic_count",
     "damage_dealt",
     "damage_taken",
+    "first_combat_damage_dealt",
+    "first_combat_damage_taken",
+    "first_combat_turns",
+    "first_combat_zero_damage",
 )
 
 
@@ -59,13 +61,34 @@ def summarize_policy_rollouts(
             "average_steps": 0.0,
             "average_completed_nodes": 0.0,
             "average_fights_won": 0.0,
+            "average_damage_dealt": 0.0,
+            "average_damage_taken": 0.0,
+            "average_first_combat_damage_dealt": 0.0,
+            "average_first_combat_damage_taken": 0.0,
+            "average_first_combat_turns": 0.0,
             "wins": 0,
             "defeats": 0,
             "stalls": 0,
             "truncated": 0,
+            "zero_damage_runs": 0,
+            "first_combat_zero_damage_runs": 0,
+            "win_rate": 0.0,
+            "stall_rate": 0.0,
+            "truncated_rate": 0.0,
+            "zero_damage_rate": 0.0,
+            "first_combat_zero_damage_rate": 0.0,
         }
 
     runs = len(results)
+    wins = sum(1 for result in results if result.outcome == "win")
+    defeats = sum(1 for result in results if result.outcome == "defeat")
+    stalls = sum(1 for result in results if result.outcome == "stalled")
+    truncated = sum(1 for result in results if result.outcome == "truncated")
+    zero_damage_runs = sum(1 for result in results if result.damage_dealt <= 0)
+    first_combat_zero_damage_runs = sum(
+        1 for result in results if result.first_combat_zero_damage
+    )
+
     return {
         "runs": runs,
         "average_reward": sum(result.total_reward for result in results) / runs,
@@ -74,10 +97,28 @@ def summarize_policy_rollouts(
             sum(result.completed_nodes for result in results) / runs
         ),
         "average_fights_won": sum(result.fights_won for result in results) / runs,
-        "wins": sum(1 for result in results if result.outcome == "win"),
-        "defeats": sum(1 for result in results if result.outcome == "defeat"),
-        "stalls": sum(1 for result in results if result.outcome == "stalled"),
-        "truncated": sum(1 for result in results if result.outcome == "truncated"),
+        "average_damage_dealt": sum(result.damage_dealt for result in results) / runs,
+        "average_damage_taken": sum(result.damage_taken for result in results) / runs,
+        "average_first_combat_damage_dealt": (
+            sum(result.first_combat_damage_dealt for result in results) / runs
+        ),
+        "average_first_combat_damage_taken": (
+            sum(result.first_combat_damage_taken for result in results) / runs
+        ),
+        "average_first_combat_turns": (
+            sum(result.first_combat_turns for result in results) / runs
+        ),
+        "wins": wins,
+        "defeats": defeats,
+        "stalls": stalls,
+        "truncated": truncated,
+        "zero_damage_runs": zero_damage_runs,
+        "first_combat_zero_damage_runs": first_combat_zero_damage_runs,
+        "win_rate": wins / runs,
+        "stall_rate": stalls / runs,
+        "truncated_rate": truncated / runs,
+        "zero_damage_rate": zero_damage_runs / runs,
+        "first_combat_zero_damage_rate": first_combat_zero_damage_runs / runs,
     }
 
 
@@ -87,7 +128,6 @@ def write_results_json(
 ) -> Path:
     output_path = Path(path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-
     payload = results_to_json_payload(results_by_policy)
     output_path.write_text(
         json.dumps(payload, indent=2, sort_keys=True),
@@ -102,18 +142,15 @@ def write_results_csv(
 ) -> Path:
     output_path = Path(path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-
     fieldnames = ("policy",) + RESULT_FIELDS
     with output_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
-
         for policy_name, policy_results in results_by_policy.items():
             for result in policy_results:
                 row = rollout_result_to_dict(result)
                 row["policy"] = policy_name
                 writer.writerow(row)
-
     return output_path
 
 
@@ -126,7 +163,6 @@ def write_results_bundle(
     output_directory = Path(output_dir)
     json_path = output_directory / f"{stem}.json"
     csv_path = output_directory / f"{stem}.csv"
-
     return (
         write_results_json(results_by_policy, json_path),
         write_results_csv(results_by_policy, csv_path),

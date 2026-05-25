@@ -71,23 +71,21 @@ def _write_csv_rows(path, rows):
 
 
 def _write_summary_csv(path, rows):
-    # Rebuild a simple summary compatible with the existing human output.
     groups = {}
     for row in rows:
         key = (row["policy"], row["character_id"])
         groups.setdefault(key, []).append(row)
-
     summary_rows = []
     for (policy, character_id), group in sorted(groups.items()):
         n = len(group)
         wins = sum(1 for r in group if str(r.get("outcome", "")).lower() == "win")
+        stalls = sum(1 for r in group if str(r.get("outcome", "")).lower() == "stalled")
+        truncated = sum(1 for r in group if str(r.get("outcome", "")).lower() == "truncated")
+        zero_damage = sum(1 for r in group if _float_value(r, "damage_dealt") <= 0.0)
+        first_zero = sum(1 for r in group if _bool_value(r.get("first_combat_zero_damage")))
+
         def avg(name):
-            vals = []
-            for r in group:
-                try:
-                    vals.append(float(r.get(name, 0) or 0))
-                except ValueError:
-                    vals.append(0.0)
+            vals = [_float_value(r, name) for r in group]
             return sum(vals) / len(vals) if vals else 0.0
 
         summary_rows.append({
@@ -95,16 +93,38 @@ def _write_summary_csv(path, rows):
             "character_id": character_id,
             "runs": n,
             "wins": wins,
+            "stalls": stalls,
+            "truncated": truncated,
+            "zero_damage_runs": zero_damage,
+            "first_combat_zero_damage_runs": first_zero,
             "win_rate": wins / n if n else 0.0,
+            "stall_rate": stalls / n if n else 0.0,
+            "truncated_rate": truncated / n if n else 0.0,
+            "zero_damage_rate": zero_damage / n if n else 0.0,
+            "first_combat_zero_damage_rate": first_zero / n if n else 0.0,
             "avg_reward": avg("total_reward"),
             "avg_nodes": avg("completed_nodes"),
             "avg_fights": avg("fights_won"),
             "avg_damage_dealt": avg("damage_dealt"),
             "avg_damage_taken": avg("damage_taken"),
+            "avg_first_combat_damage_dealt": avg("first_combat_damage_dealt"),
+            "avg_first_combat_damage_taken": avg("first_combat_damage_taken"),
+            "avg_first_combat_turns": avg("first_combat_turns"),
         })
-
     _write_csv_rows(path, summary_rows)
 
+
+def _float_value(row, name):
+    try:
+        return float(row.get(name, 0) or 0)
+    except ValueError:
+        return 0.0
+
+
+def _bool_value(value):
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in {"1", "true", "yes", "y"}
 
 def _run_parallel_character_subprocesses(args):
     characters = list(args.characters or _load_manifest_character_ids(args.manifest))
@@ -186,7 +206,7 @@ def _run_parallel_character_subprocesses(args):
     for row in rows:
         typed = {}
         for key, value in row.items():
-            if key in {"seed", "steps", "completed_nodes", "fights_won", "gold", "deck_size", "relic_count"}:
+            if key in {"seed", "steps", "completed_nodes", "fights_won", "gold", "deck_size", "relic_count", "first_combat_damage_dealt", "first_combat_damage_taken", "first_combat_turns"}:
                 try:
                     typed[key] = int(float(value))
                 except ValueError:

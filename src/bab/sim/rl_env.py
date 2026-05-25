@@ -137,6 +137,10 @@ class RolloutResult:
     relic_count: int
     damage_dealt: int = 0
     damage_taken: int = 0
+    first_combat_damage_dealt: int = 0
+    first_combat_damage_taken: int = 0
+    first_combat_turns: int = 0
+    first_combat_zero_damage: bool = False
 
 
 class RoguelikeEnv:
@@ -167,6 +171,10 @@ class RoguelikeEnv:
         self.reward_cards: list[Card] = []
         self.damage_dealt = 0
         self.damage_taken = 0
+        self.first_combat_damage_dealt = 0
+        self.first_combat_damage_taken = 0
+        self.first_combat_turns = 0
+        self.first_combat_zero_damage = False
 
     def reset(
         self,
@@ -194,6 +202,10 @@ class RoguelikeEnv:
         self.reward_cards = []
         self.damage_dealt = 0
         self.damage_taken = 0
+        self.first_combat_damage_dealt = 0
+        self.first_combat_damage_taken = 0
+        self.first_combat_turns = 0
+        self.first_combat_zero_damage = False
         self.phase = "map"
         self.done = False
         self.outcome = None
@@ -349,8 +361,19 @@ class RoguelikeEnv:
 
         self._sync_terminal_state()
         after = self._snapshot()
-        self.damage_dealt += max(0, before.total_enemy_hp - after.total_enemy_hp)
-        self.damage_taken += max(0, before.hp - after.hp)
+        damage_dealt = max(0, before.total_enemy_hp - after.total_enemy_hp)
+        damage_taken = max(0, before.hp - after.hp)
+        self.damage_dealt += damage_dealt
+        self.damage_taken += damage_taken
+        if before.phase == "combat" and before.fights_won == 0:
+            self.first_combat_damage_dealt += damage_dealt
+            self.first_combat_damage_taken += damage_taken
+            if action.kind == "end_turn":
+                self.first_combat_turns = max(self.first_combat_turns, self.combat_turns_played)
+            else:
+                self.first_combat_turns = max(self.first_combat_turns, self.combat_turns_played + 1)
+            if after.fights_won > before.fights_won or self.done:
+                self.first_combat_zero_damage = self.first_combat_damage_dealt == 0
         reward = self._calculate_reward_from_snapshots(before, after)
         return StepResult(self.observation(), reward, self.done, info)
 
@@ -789,6 +812,10 @@ def rollout_random_policy(
         relic_count=len(env.run_state.relics),
         damage_dealt=getattr(env, "damage_dealt", 0),
         damage_taken=getattr(env, "damage_taken", 0),
+        first_combat_damage_dealt=getattr(env, "first_combat_damage_dealt", 0),
+        first_combat_damage_taken=getattr(env, "first_combat_damage_taken", 0),
+        first_combat_turns=getattr(env, "first_combat_turns", 0),
+        first_combat_zero_damage=bool(getattr(env, "first_combat_zero_damage", False)),
     )
 
 

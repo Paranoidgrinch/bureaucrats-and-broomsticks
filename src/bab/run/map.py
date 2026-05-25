@@ -97,6 +97,8 @@ def _choose_node_type(
     depth: int,
     lane_rank: int,
     steps_before_boss: int,
+    first_elite_depth: int,
+    elite_weight_multiplier: float,
 ) -> MapNodeType:
     if depth == 1:
         return "combat"
@@ -119,9 +121,9 @@ def _choose_node_type(
         ]
         weights = [6, 2, 1, 1]
 
-        if depth >= FIRST_ELITE_DEPTH:
+        if depth >= first_elite_depth:
             population.insert(1, "elite")
-            weights.insert(1, 1)
+            weights.insert(1, elite_weight_multiplier)
 
         return _weighted_node_choice(
             rng=rng,
@@ -137,9 +139,9 @@ def _choose_node_type(
     ]
     weights = [7, 2, 1.5, 0.7]
 
-    if depth >= FIRST_ELITE_DEPTH:
+    if depth >= first_elite_depth:
         population.insert(3, "elite")
-        weights.insert(3, 1)
+        weights.insert(3, elite_weight_multiplier)
 
     return _weighted_node_choice(
         rng=rng,
@@ -156,12 +158,16 @@ def _make_node(
     lane: int,
     lane_rank: int,
     steps_before_boss: int,
+    first_elite_depth: int,
+    elite_weight_multiplier: float,
 ) -> MapNode:
     node_type = _choose_node_type(
         rng=rng,
         depth=depth,
         lane_rank=lane_rank,
         steps_before_boss=steps_before_boss,
+        first_elite_depth=first_elite_depth,
+        elite_weight_multiplier=elite_weight_multiplier,
     )
     node_id = f"act_{act}_d{depth:02d}_n{lane:02d}"
 
@@ -262,6 +268,8 @@ def generate_act_map(
     act: int = 1,
     steps_before_boss: int = 9,
     width: int = 4,
+    first_elite_depth: int = FIRST_ELITE_DEPTH,
+    elite_weight_multiplier: float = 1.0,
 ) -> RunMap:
     if act < 1:
         raise ValueError("Act must be at least 1.")
@@ -271,6 +279,10 @@ def generate_act_map(
 
     if width < 2:
         raise ValueError("Map width must be at least 2.")
+    if first_elite_depth < 1:
+        raise ValueError("First elite depth must be at least 1.")
+    if elite_weight_multiplier <= 0:
+        raise ValueError("Elite weight multiplier must be positive.")
 
     nodes: dict[str, MapNode] = {}
     layers: list[list[int]] = []
@@ -294,6 +306,8 @@ def generate_act_map(
             lane=lane,
             lane_rank=rank,
             steps_before_boss=steps_before_boss,
+            first_elite_depth=first_elite_depth,
+            elite_weight_multiplier=elite_weight_multiplier,
         )
         nodes[node.id] = node
 
@@ -327,6 +341,8 @@ def generate_act_map(
                 lane=lane,
                 lane_rank=rank,
                 steps_before_boss=steps_before_boss,
+                first_elite_depth=first_elite_depth,
+                elite_weight_multiplier=elite_weight_multiplier,
             )
             nodes[node.id] = node
 

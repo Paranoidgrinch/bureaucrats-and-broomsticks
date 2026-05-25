@@ -86,6 +86,8 @@ def create_new_run(
     max_fights: int = 99,
     map_steps_before_boss: int = 9,
     map_width: int = 4,
+    map_first_elite_depth: int = 6,
+    map_elite_weight_multiplier: float = 1.0,
     mimic_chance: float = 0.20,
     treasure_mimic_encounter_id: str = "city_elite_02",
     waiting_room_heal_percent: int = 25,
@@ -104,6 +106,8 @@ def create_new_run(
         act=act,
         steps_before_boss=map_steps_before_boss,
         width=map_width,
+        first_elite_depth=map_first_elite_depth,
+        elite_weight_multiplier=map_elite_weight_multiplier,
     )
 
     return RunState(

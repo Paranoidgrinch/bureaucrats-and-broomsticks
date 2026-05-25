@@ -83,9 +83,35 @@ def test_advance_to_act_2_preserves_deck_and_fully_heals() -> None:
     assert run_state.mimic_chance == 0.05
 
 
-def test_act_2_has_no_automatic_act_3_transition_yet() -> None:
+def test_advance_to_act_3_uses_green_docket_runtime_config() -> None:
     run_state = make_act_1_run()
-    assert advance_to_next_act(run_state)
 
+    assert advance_to_next_act(run_state)
     assert run_state.act == 2
-    assert not has_next_act(run_state)
+    assert has_next_act(run_state)
+
+    run_state.current_hp = 1
+    epic_reward = choose_epic_card_rewards(
+        run_state.card_database,
+        run_state.rng,
+        count=3,
+        card_class=run_state.character_class.id,
+    )[0]
+    run_state.run_deck.append(epic_reward)
+    run_state.completed_node_ids.append(run_state.run_map.boss_node_id)
+
+    assert run_state.is_complete()
+
+    advanced = advance_to_next_act(run_state)
+
+    assert advanced
+    assert run_state.act == 3
+    assert run_state.run_map.act == 3
+    assert run_state.run_map.boss_node_id == "act_3_boss"
+    assert run_state.run_map.get_node("act_3_boss").depth == 18
+    assert run_state.current_node_id is None
+    assert run_state.current_hp == run_state.character_class.max_hp
+    assert not run_state.is_complete()
+    assert epic_reward.id in [card.id for card in run_state.run_deck]
+    assert run_state.treasure_mimic_encounter_id == "act_3_elite_02"
+    assert run_state.mimic_chance == 0.10

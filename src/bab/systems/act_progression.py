@@ -7,7 +7,7 @@ from bab.run.map import generate_act_map
 from bab.run.state import RunState
 
 
-MAX_IMPLEMENTED_ACT = 2
+MAX_IMPLEMENTED_ACT = 3
 
 
 def next_act_manifest_file(current_act: int) -> str | None:
@@ -62,6 +62,8 @@ def advance_to_next_act(run_state: RunState) -> bool:
         act=next_catalog.act_manifest.act,
         steps_before_boss=next_catalog.act_manifest.map.steps_before_boss,
         width=next_catalog.act_manifest.map.width,
+        first_elite_depth=next_catalog.act_manifest.map.first_elite_depth,
+        elite_weight_multiplier=next_catalog.act_manifest.map.elite_weight_multiplier,
     )
     run_state.current_node_id = None
     run_state.current_hp = run_state.character_class.max_hp

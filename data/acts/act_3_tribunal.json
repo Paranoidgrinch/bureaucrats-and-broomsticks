@@ -1,7 +1,7 @@
 {
   "id": "act_3_tribunal",
   "act": 3,
-  "name": "Act III: The Procedural Tribunal",
+  "name": "Act III: The Green Docket",
   "character_class_files": [
     "data/classes/bureaucrat.json",
     "data/classes/witch_clerk.json",
@@ -50,11 +50,13 @@
     "data/relics/act_1_relics.json"
   ],
   "map": {
-    "steps_before_boss": 10,
-    "width": 5
+    "steps_before_boss": 17,
+    "width": 5,
+    "first_elite_depth": 3,
+    "elite_weight_multiplier": 1.3
   },
   "treasure": {
-    "mimic_chance": 0.24,
+    "mimic_chance": 0.1,
     "mimic_encounter_id": "act_3_elite_02"
   },
   "waiting_room": {

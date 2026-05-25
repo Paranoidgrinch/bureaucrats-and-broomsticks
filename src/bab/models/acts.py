@@ -10,6 +10,8 @@ class ActMapConfig(BaseModel):
 
     steps_before_boss: int = Field(gt=0)
     width: int = Field(gt=0)
+    first_elite_depth: int = Field(default=6, ge=1)
+    elite_weight_multiplier: float = Field(default=1.0, gt=0)
 
 
 class ActTreasureConfig(BaseModel):

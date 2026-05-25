@@ -20,20 +20,22 @@ LATE_ACT_TARGETS = {
 
 
 def test_late_acts_have_dedicated_future_content_target_files() -> None:
-    for manifest_path, targets in LATE_ACT_TARGETS.items():
-        catalog = load_content_catalog_from_act_manifest(manifest_path)
-        manifest = catalog.act_manifest
-
-        assert targets["enemy"] in manifest.enemy_files
-        assert targets["cards"] in manifest.card_files
-        assert targets["relics"] in manifest.relic_files
-        assert targets["class_relics"] in manifest.relic_files
-
+    for targets in LATE_ACT_TARGETS.values():
         for target_path in targets.values():
             assert Path(target_path).exists()
 
 
-def test_late_act_content_target_files_are_empty_until_content_passes() -> None:
-    for targets in LATE_ACT_TARGETS.values():
+def test_empty_late_act_target_files_are_not_referenced_by_manifests_yet() -> None:
+    for manifest_path, targets in LATE_ACT_TARGETS.items():
+        catalog = load_content_catalog_from_act_manifest(manifest_path)
+        manifest = catalog.act_manifest
+
+        active_references = {
+            *manifest.enemy_files,
+            *manifest.card_files,
+            *manifest.relic_files,
+        }
+
         for target_path in targets.values():
             assert Path(target_path).read_text(encoding="utf-8").strip() == "[]"
+            assert target_path not in active_references

@@ -7,6 +7,7 @@ from random import Random
 from typing import TypeVar
 
 from bab.models import Card, RelicDefinition
+from bab.systems.progression_weights import content_progression_weight
 
 
 @dataclass(frozen=True)
@@ -215,20 +216,7 @@ def eligible_shop_relics(
 
 
 def shop_progression_weight(item, *, act: int) -> int:
-    if act <= 1:
-        return 1
-
-    tags = set(getattr(item, "tags", []))
-
-    if f"act_{act}" in tags:
-        if act >= 3:
-            return 6
-        return 4
-
-    if act >= 3 and f"act_{act - 1}" in tags:
-        return 2
-
-    return 1
+    return content_progression_weight(getattr(item, "tags", []), act=act)
 
 
 def choose_shop_card_offers(

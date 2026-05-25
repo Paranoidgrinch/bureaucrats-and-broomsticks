@@ -1,5 +1,5 @@
 {
-  "id": "act_3_tribunal",
+  "id": "act_3_green_docket",
   "act": 3,
   "name": "Act III: The Green Docket",
   "character_class_files": [
@@ -38,13 +38,13 @@
     "data/enemies/city_enemies.json"
   ],
   "encounter_files": [
-    "data/encounters/act_3_tribunal.json"
+    "data/encounters/act_3_green_docket.json"
   ],
   "status_files": [
     "data/statuses/statuses.json"
   ],
   "event_files": [
-    "data/events/act_3_tribunal_events.json"
+    "data/events/act_3_green_docket_events.json"
   ],
   "relic_files": [
     "data/relics/act_1_relics.json"

@@ -1,7 +1,7 @@
 [
   {
     "id": "act_3_misfiled_prophecy",
-    "name": "Misfiled Prophecy (Act III: The Procedural Tribunal)",
+    "name": "Misfiled Prophecy (Act III: The Green Docket)",
     "act": 3,
     "event_type": "narrative",
     "weight": 2,
@@ -33,7 +33,7 @@
   },
   {
     "id": "act_3_haunted_suggestion_box",
-    "name": "Haunted Suggestion Box (Act III: The Procedural Tribunal)",
+    "name": "Haunted Suggestion Box (Act III: The Green Docket)",
     "act": 3,
     "event_type": "risk_reward",
     "weight": 2,
@@ -69,7 +69,7 @@
   },
   {
     "id": "act_3_unionized_broom_closet",
-    "name": "Unionized Broom Closet (Act III: The Procedural Tribunal)",
+    "name": "Unionized Broom Closet (Act III: The Green Docket)",
     "act": 3,
     "event_type": "deck",
     "weight": 2,
@@ -101,7 +101,7 @@
   },
   {
     "id": "act_3_lost_and_found_desk",
-    "name": "Lost-and-Found Desk (Act III: The Procedural Tribunal)",
+    "name": "Lost-and-Found Desk (Act III: The Green Docket)",
     "act": 3,
     "event_type": "deck",
     "weight": 1,

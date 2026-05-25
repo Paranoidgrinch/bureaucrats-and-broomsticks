@@ -12,6 +12,8 @@ DEFAULT_REWARD_RARITIES: tuple[CardRarity, ...] = (
 EPIC_REWARD_RARITIES: tuple[CardRarity, ...] = ("epic",)
 
 ACT_SPECIFIC_REWARD_WEIGHT = 4
+LATE_ACT_SPECIFIC_REWARD_WEIGHT = 6
+PREVIOUS_ACT_REWARD_WEIGHT = 2
 BASE_REWARD_WEIGHT = 1
 
 
@@ -34,8 +36,15 @@ def card_progression_weight(card: Card, *, act: int | None = None) -> int:
     if act is None or act <= 1:
         return BASE_REWARD_WEIGHT
 
-    if f"act_{act}" in card.tags:
+    tags = set(card.tags)
+
+    if f"act_{act}" in tags:
+        if act >= 3:
+            return LATE_ACT_SPECIFIC_REWARD_WEIGHT
         return ACT_SPECIFIC_REWARD_WEIGHT
+
+    if act >= 3 and f"act_{act - 1}" in tags:
+        return PREVIOUS_ACT_REWARD_WEIGHT
 
     return BASE_REWARD_WEIGHT
 

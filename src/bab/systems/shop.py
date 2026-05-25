@@ -214,16 +214,19 @@ def eligible_shop_relics(
     )
 
 
-def shop_progression_weight(
-    item,
-    *,
-    act: int,
-) -> int:
+def shop_progression_weight(item, *, act: int) -> int:
     if act <= 1:
         return 1
 
-    if f"act_{act}" in getattr(item, "tags", []):
+    tags = set(getattr(item, "tags", []))
+
+    if f"act_{act}" in tags:
+        if act >= 3:
+            return 6
         return 4
+
+    if act >= 3 and f"act_{act - 1}" in tags:
+        return 2
 
     return 1
 

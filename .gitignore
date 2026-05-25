@@ -29,3 +29,6 @@ v/
 runs/_worker_smoke_test/
 runs/act2_sanity/
 runs/campaign_sanity/
+# Local/generated audit outputs
+runs/*_audit.txt
+runs/event_shop_audit.txt

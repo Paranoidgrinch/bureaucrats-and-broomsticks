@@ -36,6 +36,7 @@ class RunState:
     relics: list[RelicDefinition] = field(default_factory=list)
     current_node_id: str | None = None
     completed_node_ids: list[str] = field(default_factory=list)
+    seen_event_ids: list[str] = field(default_factory=list)
     act: int = 1
     fight_number: int = 1
     max_fights: int = 99
@@ -45,6 +46,9 @@ class RunState:
     waiting_room_heal_percent: int = 25
     card_reward_choices: int = 3
     card_reward_chance: float = 1.0
+    shop_card_offer_count: int = 5
+    shop_relic_offer_count: int = 3
+    shop_price_multiplier: float = 1.0
 
     def is_complete(self) -> bool:
         return (
@@ -95,6 +99,9 @@ def create_new_run(
     waiting_room_heal_percent: int = 25,
     card_reward_choices: int = 3,
     card_reward_chance: float = 1.0,
+    shop_card_offer_count: int = 5,
+    shop_relic_offer_count: int = 3,
+    shop_price_multiplier: float = 1.0,
     starting_gold: int = 0,
 ) -> RunState:
     if rng is None:
@@ -138,6 +145,9 @@ def create_new_run(
         waiting_room_heal_percent=waiting_room_heal_percent,
         card_reward_choices=card_reward_choices,
         card_reward_chance=card_reward_chance,
+        shop_card_offer_count=shop_card_offer_count,
+        shop_relic_offer_count=shop_relic_offer_count,
+        shop_price_multiplier=shop_price_multiplier,
     )
 
 

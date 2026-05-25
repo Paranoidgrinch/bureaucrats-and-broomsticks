@@ -34,6 +34,14 @@ class ActRewardConfig(BaseModel):
     card_reward_chance: float = Field(default=1.0, ge=0.0, le=1.0)
 
 
+class ActShopConfig(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    card_offer_count: int = Field(default=5, gt=0)
+    relic_offer_count: int = Field(default=3, gt=0)
+    price_multiplier: float = Field(default=1.0, gt=0.0)
+
+
 class ActManifest(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -52,3 +60,4 @@ class ActManifest(BaseModel):
     treasure: ActTreasureConfig
     waiting_room: ActWaitingRoomConfig
     rewards: ActRewardConfig = Field(default_factory=ActRewardConfig)
+    shop: ActShopConfig = Field(default_factory=ActShopConfig)

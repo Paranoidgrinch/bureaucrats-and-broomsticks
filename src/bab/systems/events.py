@@ -9,6 +9,7 @@ def choose_random_event(
     *,
     act: int | None = None,
     event_type: EventType | None = None,
+    excluded_event_ids: set[str] | None = None,
 ) -> EventDefinition:
     events = list(event_database.values())
 

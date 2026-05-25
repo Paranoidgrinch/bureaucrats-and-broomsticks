@@ -77,4 +77,8 @@ def advance_to_next_act(run_state: RunState) -> bool:
 
     run_state.card_reward_choices = next_catalog.act_manifest.rewards.card_choices
     run_state.card_reward_chance = next_catalog.act_manifest.rewards.card_reward_chance
+    run_state.shop_card_offer_count = next_catalog.act_manifest.shop.card_offer_count
+    run_state.shop_relic_offer_count = next_catalog.act_manifest.shop.relic_offer_count
+    run_state.shop_price_multiplier = next_catalog.act_manifest.shop.price_multiplier
+    run_state.seen_event_ids.clear()
     return True

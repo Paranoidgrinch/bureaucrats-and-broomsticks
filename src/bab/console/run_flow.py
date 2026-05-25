@@ -96,6 +96,9 @@ def create_run_state(
         waiting_room_heal_percent=catalog.act_manifest.waiting_room.heal_percent,
         card_reward_choices=catalog.act_manifest.rewards.card_choices,
         card_reward_chance=catalog.act_manifest.rewards.card_reward_chance,
+        shop_card_offer_count=catalog.act_manifest.shop.card_offer_count,
+        shop_relic_offer_count=catalog.act_manifest.shop.relic_offer_count,
+        shop_price_multiplier=catalog.act_manifest.shop.price_multiplier,
     )
 
 

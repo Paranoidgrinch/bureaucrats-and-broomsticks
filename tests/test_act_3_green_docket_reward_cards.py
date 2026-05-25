@@ -121,3 +121,26 @@ def test_act_3_shop_cards_can_offer_green_docket_cards() -> None:
         assert all(shop_progression_weight(card, act=3) == 6 for card in act_3_shop_cards)
         assert all(card.rarity != "epic" for card in shop_pool)
         assert all("upgraded" not in card.tags for card in shop_pool)
+
+def test_act_3_green_docket_reward_card_count_matches_act_2_by_character() -> None:
+    catalog = load_content_catalog_from_act_manifest(ACT_3_MANIFEST)
+
+    act_2_counts = Counter(
+        card.class_
+        for card in catalog.card_database.values()
+        if "act_2" in card.tags
+        and "upgraded" not in card.tags
+        and card.rarity != "epic"
+    )
+    act_3_counts = Counter(
+        card.class_
+        for card in catalog.card_database.values()
+        if "act_3" in card.tags
+        and "green_docket_reward" in card.tags
+        and "upgraded" not in card.tags
+        and card.rarity != "epic"
+    )
+
+    assert set(act_3_counts) == CHARACTER_IDS
+    assert act_3_counts == act_2_counts
+

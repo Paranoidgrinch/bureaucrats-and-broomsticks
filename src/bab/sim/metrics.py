@@ -14,6 +14,8 @@ RESULT_FIELDS = (
     "steps",
     "total_reward",
     "outcome",
+    "final_act",
+    "max_act_seen",
     "completed_nodes",
     "fights_won",
     "gold",
@@ -59,6 +61,8 @@ def summarize_policy_rollouts(
             "runs": 0,
             "average_reward": 0.0,
             "average_steps": 0.0,
+            "average_final_act": 0.0,
+            "average_max_act_seen": 0.0,
             "average_completed_nodes": 0.0,
             "average_fights_won": 0.0,
             "average_damage_dealt": 0.0,
@@ -93,6 +97,8 @@ def summarize_policy_rollouts(
         "runs": runs,
         "average_reward": sum(result.total_reward for result in results) / runs,
         "average_steps": sum(result.steps for result in results) / runs,
+        "average_final_act": sum(result.final_act for result in results) / runs,
+        "average_max_act_seen": sum(result.max_act_seen for result in results) / runs,
         "average_completed_nodes": (
             sum(result.completed_nodes for result in results) / runs
         ),

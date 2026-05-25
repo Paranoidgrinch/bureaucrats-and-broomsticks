@@ -357,6 +357,8 @@ def run_policy_rollout(
         steps=steps,
         total_reward=total_reward,
         outcome=observation.outcome or "unknown",
+        final_act=env.run_state.act,
+        max_act_seen=getattr(env, "max_act_seen", env.run_state.act),
         completed_nodes=len(env.run_state.completed_node_ids),
         fights_won=max(0, env.run_state.fight_number - 1),
         gold=getattr(env.run_state, "gold", 0),

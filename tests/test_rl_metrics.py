@@ -34,6 +34,8 @@ def test_results_to_json_payload_contains_policies_and_summary() -> None:
     assert set(payload["summary"]) == {"random", "heuristic"}
     assert payload["summary"]["random"]["runs"] == 1
     assert payload["summary"]["heuristic"]["runs"] == 1
+    assert "average_final_act" in payload["summary"]["random"]
+    assert "average_max_act_seen" in payload["summary"]["heuristic"]
 
 
 def test_write_results_json(tmp_path) -> None:
@@ -70,6 +72,8 @@ def test_write_results_csv(tmp_path) -> None:
     assert len(rows) == 1
     assert rows[0]["policy"] == "heuristic"
     assert rows[0]["outcome"] in {"win", "defeat", "stalled", "truncated"}
+    assert int(rows[0]["final_act"]) >= 1
+    assert int(rows[0]["max_act_seen"]) >= 1
 
 
 def test_write_results_bundle(tmp_path) -> None:

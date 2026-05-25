@@ -22,6 +22,8 @@ ROW_FIELDS = (
     "character_id",
     "seed",
     "outcome",
+    "final_act",
+    "max_act_seen",
     "total_reward",
     "steps",
     "completed_nodes",
@@ -69,6 +71,8 @@ def benchmark_policies_across_characters(
                         "character_id": character_id,
                         "seed": run_seed,
                         "outcome": result.outcome,
+                        "final_act": result.final_act,
+                        "max_act_seen": result.max_act_seen,
                         "total_reward": result.total_reward,
                         "steps": result.steps,
                         "completed_nodes": result.completed_nodes,
@@ -139,6 +143,8 @@ def summarize_group(
         "first_combat_zero_damage_rate": first_combat_zero_damage_runs / runs,
         "average_reward": average(rows, "total_reward"),
         "average_steps": average(rows, "steps"),
+        "average_final_act": average(rows, "final_act"),
+        "average_max_act_seen": average(rows, "max_act_seen"),
         "average_completed_nodes": average(rows, "completed_nodes"),
         "average_fights_won": average(rows, "fights_won"),
         "average_gold": average(rows, "gold"),
@@ -274,6 +280,7 @@ def format_summary_line(summary: dict[str, Any]) -> str:
         f"trunc {summary.get('truncated', 0)} | "
         f"first0d {summary.get('first_combat_zero_damage_runs', 0)} | "
         f"avg_reward {summary['average_reward']:.2f} | "
+        f"avg_act {summary.get('average_max_act_seen', 0.0):.2f} | "
         f"avg_nodes {summary['average_completed_nodes']:.2f} | "
         f"avg_fights {summary['average_fights_won']:.2f} | "
         f"avg_dmg_dealt {summary.get('average_damage_dealt', 0.0):.1f} | "

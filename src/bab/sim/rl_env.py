@@ -31,7 +31,9 @@ from bab.sim.auto_runner import (
     ensure_gold_field,
     initialize_run_diagnostics,
     resolve_random_map_node,
+    simulate_epic_card_reward,
 )
+from bab.systems.act_progression import advance_to_next_act, has_next_act
 from bab.systems.relics import card_reward_count_bonus
 from bab.systems.rewards import choose_card_rewards
 
@@ -135,6 +137,8 @@ class RolloutResult:
     gold: int
     deck_size: int
     relic_count: int
+    final_act: int = 1
+    max_act_seen: int = 1
     damage_dealt: int = 0
     damage_taken: int = 0
     first_combat_damage_dealt: int = 0
@@ -175,6 +179,7 @@ class RoguelikeEnv:
         self.first_combat_damage_taken = 0
         self.first_combat_turns = 0
         self.first_combat_zero_damage = False
+        self.max_act_seen = 0
 
     def reset(
         self,
@@ -206,6 +211,7 @@ class RoguelikeEnv:
         self.first_combat_damage_taken = 0
         self.first_combat_turns = 0
         self.first_combat_zero_damage = False
+        self.max_act_seen = self.run_state.act
         self.phase = "map"
         self.done = False
         self.outcome = None
@@ -217,6 +223,7 @@ class RoguelikeEnv:
         self._require_run()
         self._sync_terminal_state()
         assert self.run_state is not None
+        self.max_act_seen = max(self.max_act_seen, self.run_state.act)
 
         current_node = self.run_state.current_node()
         available_nodes = self.run_state.available_map_nodes()
@@ -461,13 +468,27 @@ class RoguelikeEnv:
             return False
 
         if self.combat_state.is_victory():
+            completed_node = self.run_state.current_node()
             finish_victorious_combat(self.run_state, self.combat_state)
             self.combat_state = None
 
             if self.run_state.is_complete():
+                if has_next_act(self.run_state):
+                    simulate_epic_card_reward(self.run_state, self.rng)
+                    advance_to_next_act(self.run_state)
+                    self.max_act_seen = max(self.max_act_seen, self.run_state.act)
+                    self.phase = "map"
+                    self.combat_turns_played = 0
+                    return True
+
                 self.done = True
                 self.outcome = "win"
                 self.phase = "terminal"
+                return True
+
+            if completed_node is not None and completed_node.node_type == "boss":
+                self.phase = "map"
+                self.combat_turns_played = 0
                 return True
 
             self._open_card_reward()
@@ -568,6 +589,13 @@ class RoguelikeEnv:
         if self.run_state is None or self.done:
             return
         if self.run_state.is_complete():
+            if has_next_act(self.run_state):
+                simulate_epic_card_reward(self.run_state, self.rng)
+                advance_to_next_act(self.run_state)
+                self.max_act_seen = max(self.max_act_seen, self.run_state.act)
+                self.phase = "map"
+                return
+
             self.done = True
             self.outcome = "win"
             self.phase = "terminal"
@@ -805,6 +833,8 @@ def rollout_random_policy(
         steps=steps,
         total_reward=total_reward,
         outcome=observation.outcome or "unknown",
+        final_act=env.run_state.act,
+        max_act_seen=getattr(env, "max_act_seen", env.run_state.act),
         completed_nodes=len(env.run_state.completed_node_ids),
         fights_won=max(0, env.run_state.fight_number - 1),
         gold=getattr(env.run_state, "gold", 0),

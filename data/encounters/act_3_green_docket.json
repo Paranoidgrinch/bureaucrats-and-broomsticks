@@ -361,5 +361,394 @@
       "queen_under_the_hill"
     ],
     "weight": 1
+  },
+  {
+    "id": "green_docket_normal_19",
+    "name": "A Badger Has Filed Concerns",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "petitioning_badger",
+      "dandelion_summons"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_20",
+    "name": "Witnesses in Bloom",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "foxglove_witness",
+      "bee_of_procedural_consent"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_21",
+    "name": "The Puddle Holds Court",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "puddle_jurist",
+      "streamside_oath_fish"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_22",
+    "name": "Retained Nuts and Certified Stings",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "squirrel_of_retained_nuts",
+      "bramble_notary_wasp"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_23",
+    "name": "Queue Discipline in the Ferns",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "fern_queue_marshal",
+      "bluebell_constable"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_24",
+    "name": "A Convenient Hollow Postbox",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "hollow_postbox"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "green_docket_normal_25",
+    "name": "Temporary Cartography",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "moth_of_temporary_maps",
+      "harebell_announcer"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_26",
+    "name": "The Turnpike Has Roots",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "rooted_turnpike_clerk"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "green_docket_normal_27",
+    "name": "Summons on the Wind",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "dandelion_summons",
+      "moth_of_temporary_maps"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_28",
+    "name": "The Wrong Meeting Is Announced",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "harebell_announcer",
+      "puddle_jurist"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_29",
+    "name": "Notarial Buzzing",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "bramble_notary_wasp",
+      "bee_of_procedural_consent"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_30",
+    "name": "A Very Small Arrest",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "bluebell_constable",
+      "squirrel_of_retained_nuts"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_31",
+    "name": "Oaths in the Stream",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "streamside_oath_fish"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "green_docket_normal_32",
+    "name": "Procedural Consent",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "bee_of_procedural_consent",
+      "foxglove_witness"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_33",
+    "name": "The Stone Has a Case Number",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "stone_with_a_case_number"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "green_docket_normal_34",
+    "name": "You Have Been Nettled",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "nettled_process_server"
+    ],
+    "weight": 2
+  },
+  {
+    "id": "green_docket_normal_35",
+    "name": "Acorns and Evidence",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "squirrel_of_retained_nuts",
+      "bramble_notary_wasp"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_36",
+    "name": "A Wet Legal Seminar",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "puddle_jurist",
+      "streamside_oath_fish",
+      "dandelion_summons"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_37",
+    "name": "Queue in the Undergrowth",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "fern_queue_marshal",
+      "dandelion_summons",
+      "bee_of_procedural_consent"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_38",
+    "name": "The Route Becomes Unclear",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "moth_of_temporary_maps",
+      "harebell_announcer",
+      "foxglove_witness"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_normal_39",
+    "name": "The Roadside Office",
+    "act": 3,
+    "difficulty": "normal",
+    "enemies": [
+      "rooted_turnpike_clerk",
+      "hollow_postbox"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_elite_07",
+    "name": "The Court of Seven Ants",
+    "act": 3,
+    "difficulty": "elite",
+    "enemies": [
+      "court_of_seven_ants"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_elite_08",
+    "name": "The Wrong Bridge Arrives in Person",
+    "act": 3,
+    "difficulty": "elite",
+    "enemies": [
+      "wrong_bridge_in_person"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_elite_09",
+    "name": "Evergreen Injunction",
+    "act": 3,
+    "difficulty": "elite",
+    "enemies": [
+      "juniper_injunction"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_elite_10",
+    "name": "Pre-Approved Violence",
+    "act": 3,
+    "difficulty": "elite",
+    "enemies": [
+      "stag_of_preapproved_violence"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_elite_11",
+    "name": "The Wicker Inspection",
+    "act": 3,
+    "difficulty": "elite",
+    "enemies": [
+      "wicker_compliance_officer"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_elite_12",
+    "name": "Final Payment at the Pond",
+    "act": 3,
+    "difficulty": "elite",
+    "enemies": [
+      "great_toll_frog"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_elite_13",
+    "name": "Moonlit Revisions",
+    "act": 3,
+    "difficulty": "elite",
+    "enemies": [
+      "elder_moth_of_revisions"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_elite_14",
+    "name": "The Moss Judge Rolls In",
+    "act": 3,
+    "difficulty": "elite",
+    "enemies": [
+      "moss_judge_on_wheels"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_elite_15",
+    "name": "Appeal Denied with Thorns",
+    "act": 3,
+    "difficulty": "elite",
+    "enemies": [
+      "thornbound_appeals_panel"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_boss_04",
+    "name": "The Green Docket Itself",
+    "act": 3,
+    "difficulty": "boss",
+    "enemies": [
+      "the_green_docket_itself"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_boss_05",
+    "name": "The Bridge That Has Never Been Built",
+    "act": 3,
+    "difficulty": "boss",
+    "enemies": [
+      "bridge_that_has_never_been_built"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_boss_06",
+    "name": "The Kindly Procession",
+    "act": 3,
+    "difficulty": "boss",
+    "enemies": [
+      "the_kindly_procession"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_boss_07",
+    "name": "Root Chancellor of All Paths",
+    "act": 3,
+    "difficulty": "boss",
+    "enemies": [
+      "root_chancellor_of_all_paths"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_boss_08",
+    "name": "The Ant Queen's Second Opinion",
+    "act": 3,
+    "difficulty": "boss",
+    "enemies": [
+      "ant_queens_second_opinion"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_boss_09",
+    "name": "Grandmother Clause",
+    "act": 3,
+    "difficulty": "boss",
+    "enemies": [
+      "grandmother_clause"
+    ],
+    "weight": 1
+  },
+  {
+    "id": "green_docket_boss_10",
+    "name": "The Hill That Files Back",
+    "act": 3,
+    "difficulty": "boss",
+    "enemies": [
+      "hill_that_files_back"
+    ],
+    "weight": 1
   }
 ]

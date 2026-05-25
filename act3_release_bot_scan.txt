@@ -1,0 +1,45 @@
+Analyzing runs\act3_release_scan\act3_release_scan.csv
+Rows: 540
+
+Outcomes
+--------------------------------------------------------------------------------
+defeat               412
+win                  128
+
+By policy and character
+--------------------------------------------------------------------------------
+heuristic    bureaucrat                       runs= 20 outcomes={'win': 8, 'defeat': 12} avg_steps=125.1 avg_nodes=9.3 avg_fights=5.9
+heuristic    failed_wizard                    runs= 20 outcomes={'win': 6, 'defeat': 14} avg_steps=119.0 avg_nodes=9.1 avg_fights=6.0
+heuristic    guild_assassin_apprentice        runs= 20 outcomes={'win': 6, 'defeat': 14} avg_steps=125.6 avg_nodes=9.2 avg_fights=6.0
+heuristic    hedge_witch                      runs= 20 outcomes={'defeat': 6, 'win': 14} avg_steps=142.9 avg_nodes=9.7 avg_fights=6.0
+heuristic    mortuary_apprentice              runs= 20 outcomes={'defeat': 14, 'win': 6} avg_steps=120.5 avg_nodes=9.2 avg_fights=6.2
+heuristic    night_watch_recruit              runs= 20 outcomes={'defeat': 17, 'win': 3} avg_steps=296.0 avg_nodes=9.0 avg_fights=6.2
+heuristic    sewer_diplomat                   runs= 20 outcomes={'defeat': 16, 'win': 4} avg_steps=149.9 avg_nodes=9.1 avg_fights=6.0
+heuristic    shroomancer                      runs= 20 outcomes={'win': 2, 'defeat': 18} avg_steps=177.2 avg_nodes=9.1 avg_fights=5.7
+heuristic    witch_clerk                      runs= 20 outcomes={'win': 3, 'defeat': 17} avg_steps=188.3 avg_nodes=9.2 avg_fights=6.0
+linear_q     bureaucrat                       runs= 20 outcomes={'win': 10, 'defeat': 10} avg_steps=155.7 avg_nodes=9.4 avg_fights=6.8
+linear_q     failed_wizard                    runs= 20 outcomes={'defeat': 16, 'win': 4} avg_steps=95.0 avg_nodes=9.2 avg_fights=6.2
+linear_q     guild_assassin_apprentice        runs= 20 outcomes={'win': 8, 'defeat': 12} avg_steps=135.6 avg_nodes=9.3 avg_fights=6.8
+linear_q     hedge_witch                      runs= 20 outcomes={'defeat': 6, 'win': 14} avg_steps=142.9 avg_nodes=9.7 avg_fights=6.0
+linear_q     mortuary_apprentice              runs= 20 outcomes={'win': 13, 'defeat': 7} avg_steps=126.6 avg_nodes=9.5 avg_fights=6.8
+linear_q     night_watch_recruit              runs= 20 outcomes={'win': 6, 'defeat': 14} avg_steps=151.8 avg_nodes=9.3 avg_fights=7.3
+linear_q     sewer_diplomat                   runs= 20 outcomes={'defeat': 11, 'win': 9} avg_steps=259.0 avg_nodes=9.3 avg_fights=6.2
+linear_q     shroomancer                      runs= 20 outcomes={'win': 7, 'defeat': 13} avg_steps=176.3 avg_nodes=9.3 avg_fights=6.0
+linear_q     witch_clerk                      runs= 20 outcomes={'defeat': 17, 'win': 3} avg_steps=131.2 avg_nodes=9.0 avg_fights=6.0
+random       bureaucrat                       runs= 20 outcomes={'defeat': 20} avg_steps=128.7 avg_nodes=8.0 avg_fights=4.8
+random       failed_wizard                    runs= 20 outcomes={'defeat': 20} avg_steps=106.0 avg_nodes=7.9 avg_fights=4.5
+random       guild_assassin_apprentice        runs= 20 outcomes={'defeat': 20} avg_steps=113.0 avg_nodes=7.8 avg_fights=4.4
+random       hedge_witch                      runs= 20 outcomes={'defeat': 19, 'win': 1} avg_steps=136.6 avg_nodes=7.7 avg_fights=4.4
+random       mortuary_apprentice              runs= 20 outcomes={'defeat': 19, 'win': 1} avg_steps=114.5 avg_nodes=7.8 avg_fights=4.7
+random       night_watch_recruit              runs= 20 outcomes={'defeat': 20} avg_steps=164.2 avg_nodes=8.1 avg_fights=5.2
+random       sewer_diplomat                   runs= 20 outcomes={'defeat': 20} avg_steps=123.2 avg_nodes=7.5 avg_fights=4.8
+random       shroomancer                      runs= 20 outcomes={'defeat': 20} avg_steps=125.3 avg_nodes=6.5 avg_fights=3.4
+random       witch_clerk                      runs= 20 outcomes={'defeat': 20} avg_steps=114.2 avg_nodes=7.5 avg_fights=4.8
+
+Stalled / suspicious
+--------------------------------------------------------------------------------
+none
+
+RESULT
+--------------------------------------------------------------------------------
+OK

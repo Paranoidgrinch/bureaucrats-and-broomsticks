@@ -1,0 +1,7 @@
+policy,character_id,runs,wins,defeats,stalls,truncated,win_rate,average_reward,average_steps,average_completed_nodes,average_fights_won,average_gold,average_deck_size,average_relic_count,average_damage_dealt,average_damage_taken
+heuristic,__overall__,20,8,12,0,0,0.4,55.91850000000003,125.1,9.35,5.9,226.65,15.65,1.55,352.05,71.5
+heuristic,bureaucrat,20,8,12,0,0,0.4,55.91850000000003,125.1,9.35,5.9,226.65,15.65,1.55,352.05,71.5
+linear_q,__overall__,20,10,10,0,0,0.5,74.574,155.7,9.4,6.75,257.1,16.35,1.1,396.75,69.95
+linear_q,bureaucrat,20,10,10,0,0,0.5,74.574,155.7,9.4,6.75,257.1,16.35,1.1,396.75,69.95
+random,__overall__,20,0,20,0,0,0.0,-0.5505000000000113,128.7,8.0,4.85,153.2,13.85,1.1,244.35,78.6
+random,bureaucrat,20,0,20,0,0,0.0,-0.5505000000000113,128.7,8.0,4.85,153.2,13.85,1.1,244.35,78.6

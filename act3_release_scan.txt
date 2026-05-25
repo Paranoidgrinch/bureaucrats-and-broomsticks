@@ -1,0 +1,76 @@
+ACT 3 RELEASE SCAN
+================================================================================
+
+Git
+--------------------------------------------------------------------------------
+branch: main
+status:
+  clean
+
+recent commits:
+130ac60 (HEAD -> main, origin/main, origin/HEAD) Complete Act 3 Green Docket content
+3c9d319 Complete Act 3 Green Docket enemies and rewards
+5ff403d Complete Act 3 Green Docket reward cards
+7f58a1c Keep empty late-act target files out of active manifests
+e4f2d1a Add Act 4 and Act 5 content target scaffolds
+
+Manifest
+--------------------------------------------------------------------------------
+id: act_3_green_docket
+name: Act III: The Green Docket
+steps_before_boss: None
+width: None
+first_elite_depth: None
+elite_weight_multiplier: None
+mimic_chance: None
+card_files: 21
+enemy_files: 2
+encounter_files: 1
+event_files: 1
+relic_files: 14
+
+Enemy targets
+--------------------------------------------------------------------------------
+normal   Act2=30 target=39 Act3=39 OK
+elite    Act2=12 target=16 Act3=16 OK
+boss     Act2= 7 target=10 Act3=10 OK
+
+Encounters
+--------------------------------------------------------------------------------
+boss     10
+easy      8
+elite    16
+normal   39
+dedicated_act3_enemies: 65
+unused_dedicated_enemies: 0
+multi_enemy_normal_encounters: 19
+
+Reward card parity
+--------------------------------------------------------------------------------
+bureaucrat                       Act2=25 Act3=25 delta=  0 OK
+failed_wizard                    Act2=19 Act3=19 delta=  0 OK
+guild_assassin_apprentice        Act2=18 Act3=18 delta=  0 OK
+hedge_witch                      Act2=21 Act3=21 delta=  0 OK
+mortuary_apprentice              Act2=20 Act3=20 delta=  0 OK
+night_watch_recruit              Act2=21 Act3=21 delta=  0 OK
+sewer_diplomat                   Act2=19 Act3=19 delta=  0 OK
+shroomancer                      Act2=18 Act3=18 delta=  0 OK
+witch_clerk                      Act2=20 Act3=20 delta=  0 OK
+
+Events
+--------------------------------------------------------------------------------
+total: 20
+duplicates: none
+without_green_docket_tag: none
+shop_events: ['green_docket_toll_bridge_without_bridge', 'green_docket_travelling_chandler', 'green_docket_foresters_notice_board']
+
+Relics
+--------------------------------------------------------------------------------
+general: 18
+class_specific: 18
+general_by_rarity: {'common': 7, 'rare': 6, 'uncommon': 5}
+class_by_rarity: {'rare': 9, 'uncommon': 9}
+
+RESULT
+--------------------------------------------------------------------------------
+OK

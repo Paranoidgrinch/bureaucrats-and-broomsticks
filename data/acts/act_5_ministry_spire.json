@@ -35,10 +35,12 @@
     "data/cards/shroomancer_rewards.json",
     "data/cards/epic_transition_rewards.json",
     "data/cards/act_2_archive_rewards.json",
-    "data/cards/act_3_green_docket_rewards.json"
+    "data/cards/act_3_green_docket_rewards.json",
+    "data/cards/act_5_ministry_spire_rewards.json"
   ],
   "enemy_files": [
-    "data/enemies/city_enemies.json"
+    "data/enemies/city_enemies.json",
+    "data/enemies/act_5_ministry_spire_enemies.json"
   ],
   "encounter_files": [
     "data/encounters/act_5_ministry_spire.json"
@@ -63,7 +65,9 @@
     "data/relics/shroomancer_relics.json",
     "data/relics/act_2_class_relics.json",
     "data/relics/act_3_green_docket_relics.json",
-    "data/relics/act_3_green_docket_class_relics.json"
+    "data/relics/act_3_green_docket_class_relics.json",
+    "data/relics/act_5_ministry_spire_relics.json",
+    "data/relics/act_5_ministry_spire_class_relics.json"
   ],
   "map": {
     "steps_before_boss": 20,

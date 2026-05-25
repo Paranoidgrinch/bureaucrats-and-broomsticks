@@ -34,7 +34,8 @@
     "data/cards/shroomancer_starter.json",
     "data/cards/shroomancer_rewards.json",
     "data/cards/epic_transition_rewards.json",
-    "data/cards/act_2_archive_rewards.json"
+    "data/cards/act_2_archive_rewards.json",
+    "data/cards/act_3_green_docket_rewards.json"
   ],
   "enemy_files": [
     "data/enemies/act_2_archives_enemies.json",

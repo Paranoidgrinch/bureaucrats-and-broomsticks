@@ -1,0 +1,1092 @@
+[
+  {
+    "id": "act3_bureaucrat_trail_permit",
+    "name": "Trail Permit",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 9 Block.\nApply 2 Paperwork.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 9
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 2
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "bureaucracy",
+      "road",
+      "block",
+      "paperwork"
+    ],
+    "upgrades_to": "act3_bureaucrat_trail_permit_plus"
+  },
+  {
+    "id": "act3_bureaucrat_trail_permit_plus",
+    "name": "Trail Permit+",
+    "class": "bureaucrat",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 13 Block.\nApply 3 Paperwork.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 13
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 3
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "bureaucracy",
+      "road",
+      "block",
+      "paperwork",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_bureaucrat_right_of_way_clause",
+    "name": "Right-of-Way Clause",
+    "class": "bureaucrat",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 6 damage for each Paperwork on the target.\nGain 8 Block.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount_per_stack": 6
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 8
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "bureaucracy",
+      "road",
+      "paperwork",
+      "payoff",
+      "block"
+    ],
+    "upgrades_to": "act3_bureaucrat_right_of_way_clause_plus"
+  },
+  {
+    "id": "act3_bureaucrat_right_of_way_clause_plus",
+    "name": "Right-of-Way Clause+",
+    "class": "bureaucrat",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 7 damage for each Paperwork on the target.\nGain 12 Block.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount_per_stack": 7
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 12
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "bureaucracy",
+      "road",
+      "paperwork",
+      "payoff",
+      "block",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_witch_clerk_bramble_hex",
+    "name": "Bramble Hex",
+    "class": "witch_clerk",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 3 Doubt.\nGain 6 Block.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 3
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 6
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "witch",
+      "bramble",
+      "doubt",
+      "block"
+    ],
+    "upgrades_to": "act3_witch_clerk_bramble_hex_plus"
+  },
+  {
+    "id": "act3_witch_clerk_bramble_hex_plus",
+    "name": "Bramble Hex+",
+    "class": "witch_clerk",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 4 Doubt.\nGain 9 Block.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 4
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 9
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "witch",
+      "bramble",
+      "doubt",
+      "block",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_witch_clerk_hedgerow_ward",
+    "name": "Hedgerow Ward",
+    "class": "witch_clerk",
+    "type": "form",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Gain 14 Block.\nDraw 1.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 14
+      },
+      {
+        "type": "draw_cards",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "witch",
+      "hedgerow",
+      "block",
+      "draw"
+    ],
+    "upgrades_to": "act3_witch_clerk_hedgerow_ward_plus"
+  },
+  {
+    "id": "act3_witch_clerk_hedgerow_ward_plus",
+    "name": "Hedgerow Ward+",
+    "class": "witch_clerk",
+    "type": "form",
+    "cost": 1,
+    "rarity": "uncommon",
+    "text": "Gain 18 Block.\nDraw 1.",
+    "effects": [
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 18
+      },
+      {
+        "type": "draw_cards",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "witch",
+      "hedgerow",
+      "block",
+      "draw",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_night_watch_recruit_lantern_on_the_road",
+    "name": "Lantern on the Road",
+    "class": "night_watch_recruit",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 11 damage.\nApply 2 Doubt.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 11
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "watch",
+      "road",
+      "attack",
+      "doubt"
+    ],
+    "upgrades_to": "act3_night_watch_recruit_lantern_on_the_road_plus"
+  },
+  {
+    "id": "act3_night_watch_recruit_lantern_on_the_road_plus",
+    "name": "Lantern on the Road+",
+    "class": "night_watch_recruit",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 15 damage.\nApply 3 Doubt.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 15
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 3
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "watch",
+      "road",
+      "attack",
+      "doubt",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_night_watch_recruit_keep_to_the_path",
+    "name": "Keep to the Path",
+    "class": "night_watch_recruit",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Gain 1 Strength.\nGain 15 Block.",
+    "effects": [
+      {
+        "type": "gain_strength",
+        "target": "self",
+        "amount": 1
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 15
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "watch",
+      "road",
+      "strength",
+      "block"
+    ],
+    "upgrades_to": "act3_night_watch_recruit_keep_to_the_path_plus"
+  },
+  {
+    "id": "act3_night_watch_recruit_keep_to_the_path_plus",
+    "name": "Keep to the Path+",
+    "class": "night_watch_recruit",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Gain 2 Strength.\nGain 17 Block.",
+    "effects": [
+      {
+        "type": "gain_strength",
+        "target": "self",
+        "amount": 2
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 17
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "watch",
+      "road",
+      "strength",
+      "block",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_hedge_witch_nettle_poultice",
+    "name": "Nettle Poultice",
+    "class": "hedge_witch",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 4 Poison.\nGain 5 Block.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount": 4
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 5
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "witch",
+      "nettle",
+      "poison",
+      "block"
+    ],
+    "upgrades_to": "act3_hedge_witch_nettle_poultice_plus"
+  },
+  {
+    "id": "act3_hedge_witch_nettle_poultice_plus",
+    "name": "Nettle Poultice+",
+    "class": "hedge_witch",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 5 Poison.\nGain 8 Block.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount": 5
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 8
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "witch",
+      "nettle",
+      "poison",
+      "block",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_hedge_witch_old_root_bargain",
+    "name": "Old Root Bargain",
+    "class": "hedge_witch",
+    "type": "curse",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Gain 2 Strength.\nApply 3 Poison.",
+    "effects": [
+      {
+        "type": "gain_strength",
+        "target": "self",
+        "amount": 2
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount": 3
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "witch",
+      "root",
+      "poison",
+      "strength"
+    ],
+    "upgrades_to": "act3_hedge_witch_old_root_bargain_plus"
+  },
+  {
+    "id": "act3_hedge_witch_old_root_bargain_plus",
+    "name": "Old Root Bargain+",
+    "class": "hedge_witch",
+    "type": "curse",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Gain 2 Strength.\nApply 5 Poison.",
+    "effects": [
+      {
+        "type": "gain_strength",
+        "target": "self",
+        "amount": 2
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount": 5
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "witch",
+      "root",
+      "poison",
+      "strength",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_guild_assassin_apprentice_shadow_under_branches",
+    "name": "Shadow Under Branches",
+    "class": "guild_assassin_apprentice",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 14 damage.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 14
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "assassin",
+      "road",
+      "attack"
+    ],
+    "upgrades_to": "act3_guild_assassin_apprentice_shadow_under_branches_plus"
+  },
+  {
+    "id": "act3_guild_assassin_apprentice_shadow_under_branches_plus",
+    "name": "Shadow Under Branches+",
+    "class": "guild_assassin_apprentice",
+    "type": "action",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 18 damage.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 18
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "assassin",
+      "road",
+      "attack",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_guild_assassin_apprentice_quiet_milestone",
+    "name": "Quiet Milestone",
+    "class": "guild_assassin_apprentice",
+    "type": "action",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Gain 2 Strength.\nDraw 1.",
+    "effects": [
+      {
+        "type": "gain_strength",
+        "target": "self",
+        "amount": 2
+      },
+      {
+        "type": "draw_cards",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "assassin",
+      "road",
+      "strength",
+      "draw"
+    ],
+    "upgrades_to": "act3_guild_assassin_apprentice_quiet_milestone_plus"
+  },
+  {
+    "id": "act3_guild_assassin_apprentice_quiet_milestone_plus",
+    "name": "Quiet Milestone+",
+    "class": "guild_assassin_apprentice",
+    "type": "action",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Gain 2 Strength.\nDraw 2.",
+    "effects": [
+      {
+        "type": "gain_strength",
+        "target": "self",
+        "amount": 2
+      },
+      {
+        "type": "draw_cards",
+        "amount": 2
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "assassin",
+      "road",
+      "strength",
+      "draw",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_failed_wizard_birdsong_miscast",
+    "name": "Birdsong Miscast",
+    "class": "failed_wizard",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 13 damage.\nApply 1 Panic to yourself.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 13
+      },
+      {
+        "type": "apply_status",
+        "target": "self",
+        "status": "panic",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "spell",
+      "birdsong",
+      "attack",
+      "panic",
+      "risky"
+    ],
+    "upgrades_to": "act3_failed_wizard_birdsong_miscast_plus"
+  },
+  {
+    "id": "act3_failed_wizard_birdsong_miscast_plus",
+    "name": "Birdsong Miscast+",
+    "class": "failed_wizard",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 17 damage.\nApply 1 Panic to yourself.",
+    "effects": [
+      {
+        "type": "deal_damage",
+        "target": "enemy",
+        "amount": 17
+      },
+      {
+        "type": "apply_status",
+        "target": "self",
+        "status": "panic",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "spell",
+      "birdsong",
+      "attack",
+      "panic",
+      "risky",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_failed_wizard_map_that_singes",
+    "name": "Map That Singes",
+    "class": "failed_wizard",
+    "type": "footnote",
+    "cost": 0,
+    "rarity": "uncommon",
+    "text": "Draw 1.\nGain 1 Energy.",
+    "effects": [
+      {
+        "type": "draw_cards",
+        "amount": 1
+      },
+      {
+        "type": "gain_resource",
+        "resource": "energy",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "spell",
+      "map",
+      "draw",
+      "energy",
+      "zero_cost"
+    ],
+    "upgrades_to": "act3_failed_wizard_map_that_singes_plus"
+  },
+  {
+    "id": "act3_failed_wizard_map_that_singes_plus",
+    "name": "Map That Singes+",
+    "class": "failed_wizard",
+    "type": "footnote",
+    "cost": 0,
+    "rarity": "uncommon",
+    "text": "Draw 2.\nGain 1 Energy.",
+    "effects": [
+      {
+        "type": "draw_cards",
+        "amount": 2
+      },
+      {
+        "type": "gain_resource",
+        "resource": "energy",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "spell",
+      "map",
+      "draw",
+      "energy",
+      "zero_cost",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_sewer_diplomat_streambed_treaty",
+    "name": "Streambed Treaty",
+    "class": "sewer_diplomat",
+    "type": "argument",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 3 Poison.\nApply 2 Doubt.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount": 3
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 2
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "sewer",
+      "stream",
+      "poison",
+      "doubt"
+    ],
+    "upgrades_to": "act3_sewer_diplomat_streambed_treaty_plus"
+  },
+  {
+    "id": "act3_sewer_diplomat_streambed_treaty_plus",
+    "name": "Streambed Treaty+",
+    "class": "sewer_diplomat",
+    "type": "argument",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 4 Poison.\nApply 3 Doubt.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount": 4
+      },
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "doubt",
+        "amount": 3
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "sewer",
+      "stream",
+      "poison",
+      "doubt",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_sewer_diplomat_bridge_parley",
+    "name": "Bridge Parley",
+    "class": "sewer_diplomat",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 6 damage for each Poison on the target.\nGain 8 Block.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount_per_stack": 6
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 8
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "sewer",
+      "bridge",
+      "poison",
+      "payoff",
+      "block"
+    ],
+    "upgrades_to": "act3_sewer_diplomat_bridge_parley_plus"
+  },
+  {
+    "id": "act3_sewer_diplomat_bridge_parley_plus",
+    "name": "Bridge Parley+",
+    "class": "sewer_diplomat",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 7 damage for each Poison on the target.\nGain 12 Block.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount_per_stack": 7
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 12
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "sewer",
+      "bridge",
+      "poison",
+      "payoff",
+      "block",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_mortuary_apprentice_gravestone_receipt",
+    "name": "Gravestone Receipt",
+    "class": "mortuary_apprentice",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 3 Paperwork.\nGain 7 Block.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 3
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 7
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "mortuary",
+      "road",
+      "paperwork",
+      "block"
+    ],
+    "upgrades_to": "act3_mortuary_apprentice_gravestone_receipt_plus"
+  },
+  {
+    "id": "act3_mortuary_apprentice_gravestone_receipt_plus",
+    "name": "Gravestone Receipt+",
+    "class": "mortuary_apprentice",
+    "type": "form",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 4 Paperwork.\nGain 10 Block.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount": 4
+      },
+      {
+        "type": "gain_block",
+        "target": "self",
+        "amount": 10
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "mortuary",
+      "road",
+      "paperwork",
+      "block",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_mortuary_apprentice_last_waystone",
+    "name": "Last Waystone",
+    "class": "mortuary_apprentice",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 6 damage for each Paperwork on the target.\nDraw 1.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount_per_stack": 6
+      },
+      {
+        "type": "draw_cards",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "mortuary",
+      "waystone",
+      "paperwork",
+      "payoff",
+      "draw"
+    ],
+    "upgrades_to": "act3_mortuary_apprentice_last_waystone_plus"
+  },
+  {
+    "id": "act3_mortuary_apprentice_last_waystone_plus",
+    "name": "Last Waystone+",
+    "class": "mortuary_apprentice",
+    "type": "argument",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 7 damage for each Paperwork on the target.\nDraw 1.",
+    "effects": [
+      {
+        "type": "damage_per_status",
+        "target": "enemy",
+        "status": "paperwork",
+        "amount_per_stack": 7
+      },
+      {
+        "type": "draw_cards",
+        "amount": 1
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "mortuary",
+      "waystone",
+      "paperwork",
+      "payoff",
+      "draw",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_shroomancer_fairy_ring_notice",
+    "name": "Fairy Ring Notice",
+    "class": "shroomancer",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 5 Poison.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount": 5
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "shroom",
+      "mushroom",
+      "poison",
+      "setup"
+    ],
+    "upgrades_to": "act3_shroomancer_fairy_ring_notice_plus"
+  },
+  {
+    "id": "act3_shroomancer_fairy_ring_notice_plus",
+    "name": "Fairy Ring Notice+",
+    "class": "shroomancer",
+    "type": "spell",
+    "cost": 1,
+    "rarity": "common",
+    "text": "Apply 7 Poison.",
+    "effects": [
+      {
+        "type": "apply_status",
+        "target": "enemy",
+        "status": "poison",
+        "amount": 7
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "shroom",
+      "mushroom",
+      "poison",
+      "setup",
+      "upgraded"
+    ]
+  },
+  {
+    "id": "act3_shroomancer_spore_path",
+    "name": "Spore Path",
+    "class": "shroomancer",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Gain 2 Strength.\nApply 3 Poison to all enemies.",
+    "effects": [
+      {
+        "type": "gain_strength",
+        "target": "self",
+        "amount": 2
+      },
+      {
+        "type": "apply_status",
+        "target": "all_enemies",
+        "status": "poison",
+        "amount": 3
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "shroom",
+      "spore",
+      "poison",
+      "aoe",
+      "strength"
+    ],
+    "upgrades_to": "act3_shroomancer_spore_path_plus"
+  },
+  {
+    "id": "act3_shroomancer_spore_path_plus",
+    "name": "Spore Path+",
+    "class": "shroomancer",
+    "type": "spell",
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Gain 2 Strength.\nApply 4 Poison to all enemies.",
+    "effects": [
+      {
+        "type": "gain_strength",
+        "target": "self",
+        "amount": 2
+      },
+      {
+        "type": "apply_status",
+        "target": "all_enemies",
+        "status": "poison",
+        "amount": 4
+      }
+    ],
+    "tags": [
+      "act_3",
+      "green_docket_reward",
+      "shroom",
+      "spore",
+      "poison",
+      "aoe",
+      "strength",
+      "upgraded"
+    ]
+  }
+]

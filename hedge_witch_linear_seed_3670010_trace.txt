@@ -1,0 +1,491 @@
+Trace for hedge_witch, seed=3670010
+================================================================================
+
+step=0
+  phase=map outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=None type=None
+  available_nodes=[('act_1_d01_n01', 'combat'), ('act_1_d01_n03', 'combat')]
+  legal_actions=(Action(kind='choose_map_node', index=0, target_index=None), Action(kind='choose_map_node', index=1, target_index=None))
+  chosen_action=Action(kind='choose_map_node', index=0, target_index=None)
+
+step=1
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=None), Action(kind='play_card', index=3, target_index=0), Action(kind='play_card', index=4, target_index=None))
+  chosen_action=Action(kind='play_card', index=0, target_index=None)
+  combat_turn=1 energy=3
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('bad_luck_knot', 1), ('borrowed_shawl', 1), ('prickly_hex', 1), ('borrowed_shawl', 1)]
+  incoming_damage=0
+
+step=2
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=None), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=None))
+  chosen_action=Action(kind='play_card', index=3, target_index=None)
+  combat_turn=1 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('bad_luck_knot', 1), ('borrowed_shawl', 1), ('prickly_hex', 1), ('borrowed_shawl', 1)]
+  incoming_damage=0
+
+step=3
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=None), Action(kind='play_card', index=2, target_index=0))
+  chosen_action=Action(kind='play_card', index=1, target_index=None)
+  combat_turn=1 energy=1
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('bad_luck_knot', 1), ('borrowed_shawl', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=4
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None),)
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=1 energy=0
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('bad_luck_knot', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=5
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=None), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0), Action(kind='play_card', index=4, target_index=0))
+  chosen_action=Action(kind='play_card', index=3, target_index=0)
+  combat_turn=2 energy=3
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('crooked_pin', 1), ('borrowed_shawl', 1), ('prickly_hex', 1), ('tea_and_threats', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=6
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=None), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0))
+  chosen_action=Action(kind='play_card', index=1, target_index=None)
+  combat_turn=2 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('crooked_pin', 1), ('borrowed_shawl', 1), ('prickly_hex', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=7
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0))
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=2 energy=1
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('crooked_pin', 1), ('prickly_hex', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=8
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0), Action(kind='play_card', index=4, target_index=None))
+  chosen_action=Action(kind='play_card', index=1, target_index=0)
+  combat_turn=3 energy=3
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('tea_and_threats', 1), ('prickly_hex', 1), ('prickly_hex', 1), ('borrowed_shawl', 1)]
+  incoming_damage=0
+
+step=9
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=None))
+  chosen_action=Action(kind='play_card', index=3, target_index=None)
+  combat_turn=3 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('prickly_hex', 1), ('prickly_hex', 1), ('borrowed_shawl', 1)]
+  incoming_damage=0
+
+step=10
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0))
+  chosen_action=Action(kind='play_card', index=0, target_index=None)
+  combat_turn=3 energy=1
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('prickly_hex', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=11
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None),)
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=3 energy=0
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('prickly_hex', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=12
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0), Action(kind='play_card', index=4, target_index=None))
+  chosen_action=Action(kind='play_card', index=4, target_index=None)
+  combat_turn=4 energy=3
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('crooked_pin', 1), ('prickly_hex', 1), ('bad_luck_knot', 1), ('borrowed_shawl', 1)]
+  incoming_damage=0
+
+step=13
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0))
+  chosen_action=Action(kind='play_card', index=0, target_index=None)
+  combat_turn=4 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('crooked_pin', 1), ('prickly_hex', 1), ('bad_luck_knot', 1)]
+  incoming_damage=0
+
+step=14
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0))
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=4 energy=1
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('crooked_pin', 1), ('prickly_hex', 1), ('bad_luck_knot', 1)]
+  incoming_damage=0
+
+step=15
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=None), Action(kind='play_card', index=2, target_index=None), Action(kind='play_card', index=3, target_index=0), Action(kind='play_card', index=4, target_index=0))
+  chosen_action=Action(kind='play_card', index=0, target_index=0)
+  combat_turn=5 energy=3
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('tea_and_threats', 1), ('borrowed_shawl', 1), ('borrowed_shawl', 1), ('prickly_hex', 1), ('crooked_pin', 1)]
+  incoming_damage=0
+
+step=16
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=None), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0))
+  chosen_action=Action(kind='play_card', index=0, target_index=None)
+  combat_turn=5 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('borrowed_shawl', 1), ('prickly_hex', 1), ('crooked_pin', 1)]
+  incoming_damage=0
+
+step=17
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0))
+  chosen_action=Action(kind='play_card', index=0, target_index=None)
+  combat_turn=5 energy=1
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('prickly_hex', 1), ('crooked_pin', 1)]
+  incoming_damage=0
+
+step=18
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None),)
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=5 energy=0
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('prickly_hex', 1), ('crooked_pin', 1)]
+  incoming_damage=0
+
+step=19
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0), Action(kind='play_card', index=4, target_index=None))
+  chosen_action=Action(kind='play_card', index=4, target_index=None)
+  combat_turn=6 energy=3
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('prickly_hex', 1), ('bad_luck_knot', 1), ('prickly_hex', 1), ('borrowed_shawl', 1)]
+  incoming_damage=0
+
+step=20
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0))
+  chosen_action=Action(kind='play_card', index=0, target_index=None)
+  combat_turn=6 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('prickly_hex', 1), ('bad_luck_knot', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=21
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0))
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=6 energy=1
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('prickly_hex', 1), ('bad_luck_knot', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=22
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=None), Action(kind='play_card', index=3, target_index=None), Action(kind='play_card', index=4, target_index=0))
+  chosen_action=Action(kind='play_card', index=4, target_index=0)
+  combat_turn=7 energy=3
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('bad_luck_knot', 1), ('prickly_hex', 1), ('borrowed_shawl', 1), ('borrowed_shawl', 1), ('tea_and_threats', 1)]
+  incoming_damage=0
+
+step=23
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=None), Action(kind='play_card', index=3, target_index=None))
+  chosen_action=Action(kind='play_card', index=3, target_index=None)
+  combat_turn=7 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('bad_luck_knot', 1), ('prickly_hex', 1), ('borrowed_shawl', 1), ('borrowed_shawl', 1)]
+  incoming_damage=0
+
+step=24
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=None))
+  chosen_action=Action(kind='play_card', index=2, target_index=None)
+  combat_turn=7 energy=1
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('bad_luck_knot', 1), ('prickly_hex', 1), ('borrowed_shawl', 1)]
+  incoming_damage=0
+
+step=40
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=None), Action(kind='play_card', index=3, target_index=0))
+  chosen_action=Action(kind='play_card', index=2, target_index=None)
+  combat_turn=12 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('crooked_pin', 1), ('borrowed_shawl', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=60
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=None), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=None), Action(kind='play_card', index=4, target_index=0))
+  chosen_action=Action(kind='play_card', index=0, target_index=None)
+  combat_turn=18 energy=3
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('borrowed_shawl', 1), ('prickly_hex', 1), ('prickly_hex', 1), ('borrowed_shawl', 1), ('bad_luck_knot', 1)]
+  incoming_damage=0
+
+step=80
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None),)
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=23 energy=0
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('prickly_hex', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=100
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0))
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=29 energy=1
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('prickly_hex', 1), ('bad_luck_knot', 1), ('crooked_pin', 1)]
+  incoming_damage=0
+
+step=120
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0))
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=35 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('crooked_pin', 1), ('prickly_hex', 1), ('prickly_hex', 1), ('bad_luck_knot', 1)]
+  incoming_damage=0
+
+step=140
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=None), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0))
+  chosen_action=Action(kind='play_card', index=1, target_index=None)
+  combat_turn=41 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('prickly_hex', 1), ('borrowed_shawl', 1), ('prickly_hex', 1), ('crooked_pin', 1)]
+  incoming_damage=0
+
+step=160
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=None), Action(kind='play_card', index=3, target_index=0), Action(kind='play_card', index=4, target_index=0))
+  chosen_action=Action(kind='play_card', index=4, target_index=0)
+  combat_turn=47 energy=3
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('prickly_hex', 1), ('prickly_hex', 1), ('borrowed_shawl', 1), ('prickly_hex', 1), ('tea_and_threats', 1)]
+  incoming_damage=0
+
+step=180
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None),)
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=52 energy=0
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('prickly_hex', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=200
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None),)
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=58 energy=0
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('bad_luck_knot', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=220
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=None), Action(kind='play_card', index=2, target_index=0))
+  chosen_action=Action(kind='play_card', index=1, target_index=None)
+  combat_turn=64 energy=1
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('crooked_pin', 1), ('borrowed_shawl', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+step=240
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0))
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=70 energy=1
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('crooked_pin', 1), ('prickly_hex', 1), ('bad_luck_knot', 1)]
+  incoming_damage=0
+
+step=260
+  phase=combat outcome=None
+  hp=66/66 gold=0
+  completed_nodes=0 fight_number=1
+  current_node=act_1_d01_n01 type=combat
+  available_nodes=[('act_1_d02_n01', 'event')]
+  legal_actions=(Action(kind='end_turn', index=None, target_index=None), Action(kind='play_card', index=0, target_index=0), Action(kind='play_card', index=1, target_index=0), Action(kind='play_card', index=2, target_index=0), Action(kind='play_card', index=3, target_index=0))
+  chosen_action=Action(kind='end_turn', index=None, target_index=None)
+  combat_turn=76 energy=2
+  enemies=[('permit_beggar', 27, 'unknown')]
+  hand=[('prickly_hex', 1), ('bad_luck_knot', 1), ('prickly_hex', 1), ('prickly_hex', 1)]
+  incoming_damage=0
+
+FINAL
+================================================================================
+done=True
+outcome=stalled
+phase=terminal
+steps_logged_until=275
+hp=66/66
+completed_nodes=0
+fight_number=1
+damage_dealt=0
+damage_taken=0

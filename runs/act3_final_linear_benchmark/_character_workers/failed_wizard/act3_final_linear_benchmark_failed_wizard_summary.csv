@@ -1,0 +1,7 @@
+policy,character_id,runs,wins,defeats,stalls,truncated,win_rate,average_reward,average_steps,average_completed_nodes,average_fights_won,average_gold,average_deck_size,average_relic_count,average_damage_dealt,average_damage_taken
+heuristic,__overall__,50,7,43,0,0,0.14,31.15299999999991,136.32,8.96,5.92,203.68,15.8,1.42,368.98,75.54
+heuristic,failed_wizard,50,7,43,0,0,0.14,31.15299999999991,136.32,8.96,5.92,203.68,15.8,1.42,368.98,75.54
+linear_q,__overall__,50,12,38,0,0,0.24,47.95879999999994,105.72,9.24,6.58,226.64,15.74,0.7,411.4,75.18
+linear_q,failed_wizard,50,12,38,0,0,0.24,47.95879999999994,105.72,9.24,6.58,226.64,15.74,0.7,411.4,75.18
+random,__overall__,50,0,50,0,0,0.0,-2.1828000000000296,112.94,8.44,4.86,150.92,14.14,1.2,246.9,85.6
+random,failed_wizard,50,0,50,0,0,0.0,-2.1828000000000296,112.94,8.44,4.86,150.92,14.14,1.2,246.9,85.6

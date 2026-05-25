@@ -1,0 +1,78 @@
+Analyzing runs\act3_final_linear_benchmark\act3_final_linear_benchmark.csv
+Rows: 1350
+
+Outcome by policy and character
+================================================================================
+heuristic    bureaucrat                       runs= 50 outcomes={'defeat': 36, 'win': 14} avg_steps=127.7 avg_nodes=9.3 avg_fights=5.7
+heuristic    failed_wizard                    runs= 50 outcomes={'defeat': 43, 'win': 7} avg_steps=136.3 avg_nodes=9.0 avg_fights=5.9
+heuristic    guild_assassin_apprentice        runs= 50 outcomes={'defeat': 25, 'win': 25} avg_steps=114.5 avg_nodes=9.5 avg_fights=6.1
+heuristic    hedge_witch                      runs= 50 outcomes={'win': 31, 'defeat': 19} avg_steps=144.8 avg_nodes=9.5 avg_fights=6.3
+heuristic    mortuary_apprentice              runs= 50 outcomes={'defeat': 33, 'win': 17} avg_steps=113.6 avg_nodes=9.2 avg_fights=6.1
+heuristic    night_watch_recruit              runs= 50 outcomes={'defeat': 47, 'win': 3} avg_steps=281.6 avg_nodes=9.1 avg_fights=5.7
+heuristic    sewer_diplomat                   runs= 50 outcomes={'defeat': 28, 'win': 22} avg_steps=156.2 avg_nodes=9.4 avg_fights=5.8
+heuristic    shroomancer                      runs= 50 outcomes={'defeat': 45, 'win': 5} avg_steps=172.6 avg_nodes=9.0 avg_fights=5.7
+heuristic    witch_clerk                      runs= 50 outcomes={'defeat': 47, 'win': 3} avg_steps=179.9 avg_nodes=9.0 avg_fights=5.8
+linear_q     bureaucrat                       runs= 50 outcomes={'defeat': 31, 'win': 19} avg_steps=156.0 avg_nodes=9.4 avg_fights=6.5
+linear_q     failed_wizard                    runs= 50 outcomes={'defeat': 38, 'win': 12} avg_steps=105.7 avg_nodes=9.2 avg_fights=6.6
+linear_q     guild_assassin_apprentice        runs= 50 outcomes={'defeat': 27, 'win': 23} avg_steps=129.8 avg_nodes=9.4 avg_fights=6.5
+linear_q     hedge_witch                      runs= 50 outcomes={'stalled': 43, 'defeat': 7} avg_steps=253.0 avg_nodes=0.0 avg_fights=0.0
+linear_q     mortuary_apprentice              runs= 50 outcomes={'win': 40, 'defeat': 10} avg_steps=118.4 avg_nodes=9.8 avg_fights=6.3
+linear_q     night_watch_recruit              runs= 50 outcomes={'defeat': 28, 'win': 22} avg_steps=148.0 avg_nodes=9.4 avg_fights=6.7
+linear_q     sewer_diplomat                   runs= 50 outcomes={'defeat': 22, 'win': 28} avg_steps=249.1 avg_nodes=9.6 avg_fights=6.0
+linear_q     shroomancer                      runs= 50 outcomes={'defeat': 32, 'win': 18} avg_steps=159.7 avg_nodes=9.3 avg_fights=5.9
+linear_q     witch_clerk                      runs= 50 outcomes={'win': 14, 'defeat': 36} avg_steps=130.8 avg_nodes=9.1 avg_fights=5.9
+random       bureaucrat                       runs= 50 outcomes={'defeat': 48, 'win': 2} avg_steps=122.4 avg_nodes=8.2 avg_fights=4.9
+random       failed_wizard                    runs= 50 outcomes={'defeat': 50} avg_steps=112.9 avg_nodes=8.4 avg_fights=4.9
+random       guild_assassin_apprentice        runs= 50 outcomes={'defeat': 49, 'win': 1} avg_steps=117.6 avg_nodes=8.0 avg_fights=4.8
+random       hedge_witch                      runs= 50 outcomes={'defeat': 50} avg_steps=135.0 avg_nodes=7.8 avg_fights=4.6
+random       mortuary_apprentice              runs= 50 outcomes={'defeat': 50} avg_steps=117.5 avg_nodes=8.1 avg_fights=4.9
+random       night_watch_recruit              runs= 50 outcomes={'defeat': 50} avg_steps=153.4 avg_nodes=8.4 avg_fights=4.7
+random       sewer_diplomat                   runs= 50 outcomes={'defeat': 50} avg_steps=127.3 avg_nodes=8.2 avg_fights=4.8
+random       shroomancer                      runs= 50 outcomes={'defeat': 50} avg_steps=128.2 avg_nodes=6.4 avg_fights=3.8
+random       witch_clerk                      runs= 50 outcomes={'defeat': 50} avg_steps=110.8 avg_nodes=7.5 avg_fights=4.2
+
+Stalled runs
+================================================================================
+policy=linear_q class=hedge_witch seed=3670010 steps=275 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670011 steps=262 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670012 steps=260 nodes=0 fights=0 damage_dealt=0.0 damage_taken=4.0
+policy=linear_q class=hedge_witch seed=3670013 steps=240 nodes=0 fights=0 damage_dealt=0.0 damage_taken=3.0
+policy=linear_q class=hedge_witch seed=3670014 steps=269 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670015 steps=258 nodes=0 fights=0 damage_dealt=0.0 damage_taken=33.0
+policy=linear_q class=hedge_witch seed=3670016 steps=276 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670017 steps=272 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670018 steps=237 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670019 steps=270 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670021 steps=262 nodes=0 fights=0 damage_dealt=0.0 damage_taken=2.0
+policy=linear_q class=hedge_witch seed=3670023 steps=259 nodes=0 fights=0 damage_dealt=0.0 damage_taken=4.0
+policy=linear_q class=hedge_witch seed=3670024 steps=233 nodes=0 fights=0 damage_dealt=0.0 damage_taken=3.0
+policy=linear_q class=hedge_witch seed=3670025 steps=243 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670026 steps=270 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670028 steps=271 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670029 steps=238 nodes=0 fights=0 damage_dealt=0.0 damage_taken=3.0
+policy=linear_q class=hedge_witch seed=3670030 steps=262 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670032 steps=273 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670033 steps=272 nodes=0 fights=0 damage_dealt=0.0 damage_taken=4.0
+policy=linear_q class=hedge_witch seed=3670034 steps=241 nodes=0 fights=0 damage_dealt=0.0 damage_taken=3.0
+policy=linear_q class=hedge_witch seed=3670035 steps=270 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670036 steps=271 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670037 steps=260 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670038 steps=266 nodes=0 fights=0 damage_dealt=0.0 damage_taken=4.0
+policy=linear_q class=hedge_witch seed=3670039 steps=273 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670040 steps=235 nodes=0 fights=0 damage_dealt=0.0 damage_taken=3.0
+policy=linear_q class=hedge_witch seed=3670041 steps=269 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670042 steps=262 nodes=0 fights=0 damage_dealt=0.0 damage_taken=8.0
+policy=linear_q class=hedge_witch seed=3670043 steps=270 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670044 steps=263 nodes=0 fights=0 damage_dealt=0.0 damage_taken=4.0
+policy=linear_q class=hedge_witch seed=3670045 steps=265 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670046 steps=270 nodes=0 fights=0 damage_dealt=0.0 damage_taken=1.0
+policy=linear_q class=hedge_witch seed=3670047 steps=275 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670049 steps=270 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670050 steps=271 nodes=0 fights=0 damage_dealt=0.0 damage_taken=1.0
+policy=linear_q class=hedge_witch seed=3670051 steps=240 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670053 steps=276 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670054 steps=268 nodes=0 fights=0 damage_dealt=0.0 damage_taken=4.0
+policy=linear_q class=hedge_witch seed=3670056 steps=275 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670057 steps=260 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670058 steps=273 nodes=0 fights=0 damage_dealt=0.0 damage_taken=0.0
+policy=linear_q class=hedge_witch seed=3670059 steps=262 nodes=0 fights=0 damage_dealt=0.0 damage_taken=21.0

@@ -1,0 +1,7 @@
+policy,character_id,runs,wins,defeats,stalls,truncated,win_rate,average_reward,average_steps,average_completed_nodes,average_fights_won,average_gold,average_deck_size,average_relic_count,average_damage_dealt,average_damage_taken
+heuristic,__overall__,20,7,13,0,0,0.35,47.97449999999993,142.4,9.2,5.5,216.2,15.35,2.05,357.55,70.9
+heuristic,sewer_diplomat,20,7,13,0,0,0.35,47.97449999999993,142.4,9.2,5.5,216.2,15.35,2.05,357.55,70.9
+linear_q,__overall__,20,14,6,0,0,0.7,89.42299999999982,269.95,9.7,6.1,261.65,13.25,2.0,408.55,60.15
+linear_q,sewer_diplomat,20,14,6,0,0,0.7,89.42299999999982,269.95,9.7,6.1,261.65,13.25,2.0,408.55,60.15
+random,__overall__,20,0,20,0,0,0.0,-8.653000000000025,116.55,8.1,4.05,129.55,13.4,1.5,214.55,77.5
+random,sewer_diplomat,20,0,20,0,0,0.0,-8.653000000000025,116.55,8.1,4.05,129.55,13.4,1.5,214.55,77.5

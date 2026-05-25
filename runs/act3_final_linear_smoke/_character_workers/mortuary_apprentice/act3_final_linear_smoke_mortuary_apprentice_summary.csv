@@ -1,0 +1,7 @@
+policy,character_id,runs,wins,defeats,stalls,truncated,win_rate,average_reward,average_steps,average_completed_nodes,average_fights_won,average_gold,average_deck_size,average_relic_count,average_damage_dealt,average_damage_taken
+heuristic,__overall__,10,6,4,0,0,0.6,68.24300000000001,108.6,9.5,5.3,218.5,15.0,1.9,358.2,71.9
+heuristic,mortuary_apprentice,10,6,4,0,0,0.6,68.24300000000001,108.6,9.5,5.3,218.5,15.0,1.9,358.2,71.9
+linear_q,__overall__,10,8,2,0,0,0.8,86.228,96.6,9.8,4.8,219.9,14.3,2.2,355.2,60.4
+linear_q,mortuary_apprentice,10,8,2,0,0,0.8,86.228,96.6,9.8,4.8,219.9,14.3,2.2,355.2,60.4
+random,__overall__,10,2,8,0,0,0.2,13.180999999999992,120.0,8.2,4.5,165.6,13.5,1.2,244.1,81.9
+random,mortuary_apprentice,10,2,8,0,0,0.2,13.180999999999992,120.0,8.2,4.5,165.6,13.5,1.2,244.1,81.9

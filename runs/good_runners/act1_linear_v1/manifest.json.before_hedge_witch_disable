@@ -203,6 +203,70 @@
     },
     {
       "best_checkpoint": {
+        "checkpoint_model_path": "runs\\rl_linear_class_runners_20min\\hedge_witch\\checkpoints\\checkpoint_000400.json",
+        "episode": 400,
+        "evaluation_summary": {
+          "heuristic": {
+            "average_completed_nodes": 9.76,
+            "average_fights_won": 6.66,
+            "average_reward": 111.07819999999994,
+            "average_steps": 138.0,
+            "defeats": 10,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 40
+          },
+          "linear_q": {
+            "average_completed_nodes": 9.78,
+            "average_fights_won": 7.46,
+            "average_reward": 118.72639999999987,
+            "average_steps": 195.38,
+            "defeats": 11,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 39
+          },
+          "random": {
+            "average_completed_nodes": 8.18,
+            "average_fights_won": 5.36,
+            "average_reward": 10.13459999999996,
+            "average_steps": 149.24,
+            "defeats": 49,
+            "runs": 50,
+            "stalls": 0,
+            "truncated": 0,
+            "wins": 1
+          }
+        },
+        "linear_average_completed_nodes": 9.78,
+        "linear_average_damage_dealt": 457.68,
+        "linear_average_damage_taken": 49.8,
+        "linear_average_fights_won": 7.46,
+        "linear_average_reward": 118.72639999999987,
+        "linear_wins": 39
+      },
+      "best_model_path": "runs\\good_runners\\act1_linear_v1\\hedge_witch\\best_linear_q_agent.json",
+      "character_id": "hedge_witch",
+      "checkpoint_interval": 200,
+      "elapsed_seconds": 1219.944424699992,
+      "eval_runs": 50,
+      "exported_from_model_path": "runs\\rl_linear_class_runners_20min\\hedge_witch\\best_linear_q_agent.json",
+      "history_path": "runs\\rl_linear_class_runners_20min\\hedge_witch\\linear_checkpoint_history.json",
+      "imitation_episodes": 300,
+      "last_model_path": "runs\\rl_linear_class_runners_20min\\hedge_witch\\last_linear_q_agent.json",
+      "manifest_path": "runs\\rl_linear_class_runners_20min\\hedge_witch\\linear_checkpoint_training_manifest.json",
+      "max_steps": 800,
+      "minutes": 20.0,
+      "requested_episodes": 100000,
+      "schema_version": 1,
+      "seed": 400001,
+      "trained_episodes": 7200,
+      "weight_count": 83
+    },
+    {
+      "best_checkpoint": {
         "episode": 0,
         "evaluation_summary": {
           "heuristic": {

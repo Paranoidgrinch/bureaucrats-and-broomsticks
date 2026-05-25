@@ -1,0 +1,212 @@
+Act 3 shop/content inventory
+================================================================================
+
+Manifest card files:
+  - data/cards/bureaucrat_starter.json
+  - data/cards/bureaucrat_rewards.json
+  - data/cards/witch_clerk_starter.json
+  - data/cards/witch_clerk_rewards.json
+  - data/cards/night_watch_recruit_starter.json
+  - data/cards/night_watch_recruit_rewards.json
+  - data/cards/hedge_witch_starter.json
+  - data/cards/hedge_witch_rewards.json
+  - data/cards/guild_assassin_apprentice_starter.json
+  - data/cards/guild_assassin_apprentice_rewards.json
+  - data/cards/failed_wizard_starter.json
+  - data/cards/failed_wizard_rewards.json
+  - data/cards/sewer_diplomat_starter.json
+  - data/cards/sewer_diplomat_rewards.json
+  - data/cards/mortuary_apprentice_starter.json
+  - data/cards/mortuary_apprentice_rewards.json
+  - data/cards/shroomancer_starter.json
+  - data/cards/shroomancer_rewards.json
+  - data/cards/epic_transition_rewards.json
+  - data/cards/act_2_archive_rewards.json
+  - data/cards/act_3_green_docket_rewards.json
+
+Manifest relic files:
+  - data/relics/act_1_relics.json
+  - data/relics/act_2_relics.json
+  - data/relics/bureaucrat_relics.json
+  - data/relics/witch_clerk_relics.json
+  - data/relics/night_watch_recruit_relics.json
+  - data/relics/hedge_witch_relics.json
+  - data/relics/guild_assassin_apprentice_relics.json
+  - data/relics/failed_wizard_relics.json
+  - data/relics/sewer_diplomat_relics.json
+  - data/relics/mortuary_apprentice_relics.json
+  - data/relics/shroomancer_relics.json
+  - data/relics/act_2_class_relics.json
+  - data/relics/act_3_green_docket_relics.json
+  - data/relics/act_3_green_docket_class_relics.json
+
+Base reward cards by act tag and class:
+
+act_2:
+  bureaucrat                       25
+  failed_wizard                    19
+  guild_assassin_apprentice        18
+  hedge_witch                      21
+  mortuary_apprentice              20
+  night_watch_recruit              21
+  sewer_diplomat                   19
+  shroomancer                      18
+  witch_clerk                      20
+
+act_3:
+  bureaucrat                       25
+  failed_wizard                    19
+  guild_assassin_apprentice        18
+  hedge_witch                      21
+  mortuary_apprentice              20
+  night_watch_recruit              21
+  sewer_diplomat                   19
+  shroomancer                      18
+  witch_clerk                      20
+
+unknown:
+  bureaucrat                       33
+  failed_wizard                    28
+  guild_assassin_apprentice        26
+  hedge_witch                      31
+  mortuary_apprentice              29
+  night_watch_recruit              30
+  sewer_diplomat                   28
+  shroomancer                      28
+  witch_clerk                      29
+
+Act 3 Green Docket base reward cards by rarity:
+  common     78
+  rare       25
+  uncommon   78
+
+Potentially shop-eligible Act 3 cards:
+  total: 181
+  bureaucrat                       25
+  failed_wizard                    19
+  guild_assassin_apprentice        18
+  hedge_witch                      21
+  mortuary_apprentice              20
+  night_watch_recruit              21
+  sewer_diplomat                   19
+  shroomancer                      18
+  witch_clerk                      20
+
+Act 3 relics by file and rarity:
+
+data/relics/act_1_relics.json: 41
+  common     13
+  rare       13
+  uncommon   15
+
+data/relics/act_2_class_relics.json: 99
+  common     35
+  rare       30
+  uncommon   34
+
+data/relics/act_2_relics.json: 41
+  common     13
+  rare       13
+  uncommon   15
+
+data/relics/act_3_green_docket_class_relics.json: 18
+  rare       9
+  uncommon   9
+
+data/relics/act_3_green_docket_relics.json: 18
+  common     7
+  rare       6
+  uncommon   5
+
+data/relics/bureaucrat_relics.json: 8
+  common     3
+  rare       2
+  uncommon   3
+
+data/relics/failed_wizard_relics.json: 10
+  common     4
+  rare       3
+  uncommon   3
+
+data/relics/guild_assassin_apprentice_relics.json: 11
+  common     4
+  rare       3
+  uncommon   4
+
+data/relics/hedge_witch_relics.json: 11
+  common     4
+  rare       3
+  uncommon   4
+
+data/relics/mortuary_apprentice_relics.json: 12
+  common     4
+  rare       4
+  uncommon   4
+
+data/relics/night_watch_recruit_relics.json: 12
+  common     4
+  rare       4
+  uncommon   4
+
+data/relics/sewer_diplomat_relics.json: 12
+  common     4
+  rare       4
+  uncommon   4
+
+data/relics/shroomancer_relics.json: 11
+  common     4
+  rare       3
+  uncommon   4
+
+data/relics/witch_clerk_relics.json: 12
+  common     4
+  rare       4
+  uncommon   4
+
+Relics with shop/green_docket-ish tags:
+  - counterfeit_coupon :: Counterfeit Coupon [uncommon] tags=['city', 'discount', 'shop']
+  - vendor_license :: Vendor License [rare] tags=['city', 'discount', 'gold', 'shop']
+  - patron_of_the_stacks :: Patron of the Stacks [rare] tags=['act_2', 'archive', 'gold', 'shop']
+  - locked_drawer_key :: Locked Drawer Key [uncommon] tags=['act_2', 'archive', 'shop']
+  - founders_reading_card :: Founder's Reading Card [rare] tags=['act_2', 'archive', 'shop']
+  - act2_bureaucrat_appeals_office_key :: Appeals Office Key [rare] tags=['act_2', 'archive', 'block', 'bureaucracy', 'class_specific', 'shop']
+  - act2_assassin_alibi_card_case :: Alibi Card Case [uncommon] tags=['act_2', 'archive', 'assassin', 'class_specific', 'gold', 'shop']
+  - act2_sewer_diplomat_mudproof_papers :: Mudproof Papers [uncommon] tags=['act_2', 'archive', 'class_specific', 'gold', 'sewer', 'shop']
+  - act2_sewer_diplomat_gilded_grate_key :: Gilded Grate Key [rare] tags=['act_2', 'archive', 'class_specific', 'poison', 'sewer', 'shop']
+  - act2_witch_clerk_very_polite_grimoire :: Very Polite Grimoire [rare] tags=['act_2', 'archive', 'block', 'class_specific', 'clerk', 'shop', 'witch']
+  - sun_warmed_stone :: Sun-Warmed Stone [common] tags=['act_3', 'green_docket', 'healing', 'nature']
+  - mossy_waymarker :: Mossy Waymarker [common] tags=['act_3', 'block', 'green_docket', 'road']
+  - travellers_tea_tin :: Traveller's Tea Tin [common] tags=['act_3', 'gold', 'green_docket', 'healing', 'road']
+  - bark_receipt_clip :: Bark Receipt Clip [common] tags=['act_3', 'bureaucracy', 'gold', 'green_docket']
+  - ant_line_token :: Ant-Line Token [common] tags=['act_3', 'ants', 'block', 'doubt', 'green_docket']
+  - clear_stream_flask :: Clear Stream Flask [common] tags=['act_3', 'green_docket', 'healing', 'nature', 'stream']
+  - hedgerow_notice_pin :: Hedgerow Notice Pin [common] tags=['act_3', 'bureaucracy', 'green_docket', 'paperwork']
+  - campfire_ember :: Campfire Ember [uncommon] tags=['act_3', 'camp', 'green_docket', 'strength']
+  - stargazers_lens :: Stargazer's Lens [uncommon] tags=['act_3', 'green_docket', 'reward', 'stars']
+  - conceptual_toll_receipt :: Conceptual Toll Receipt [uncommon] tags=['act_3', 'bureaucracy', 'green_docket', 'shop']
+  - rootbound_walking_stick :: Rootbound Walking Stick [uncommon] tags=['act_3', 'block', 'green_docket', 'paperwork', 'road']
+  - moonlit_mushroom_cap :: Moonlit Mushroom Cap [uncommon] tags=['act_3', 'green_docket', 'mushroom', 'poison']
+  - foresters_counterseal :: Forester's Counterseal [rare] tags=['act_3', 'block', 'energy', 'green_docket', 'road']
+  - old_growth_signature :: Old Growth Signature [rare] tags=['act_3', 'doubt', 'green_docket', 'strength', 'tree']
+  - ombudsmans_leaf :: Ombudsman's Leaf [rare] tags=['act_3', 'doubt', 'forest_ombudsman', 'green_docket', 'paperwork']
+  - queen_under_the_hill_coin :: Queen-Under-the-Hill Coin [rare] tags=['act_3', 'ants', 'gold', 'green_docket']
+  - travellers_right_of_way :: Traveller's Right-of-Way [rare] tags=['act_3', 'energy', 'green_docket', 'risk_reward', 'road']
+  - star_map_of_somewhere_official :: Star Map of Somewhere Official [rare] tags=['act_3', 'green_docket', 'reward', 'shop', 'stars']
+  - act3_bureaucrat_portable_queue_rope :: Portable Queue Rope [uncommon] tags=['act_3', 'block', 'bureaucracy', 'class_specific', 'green_docket', 'paperwork']
+  - act3_bureaucrat_wayleave_stamp :: Wayleave Stamp [rare] tags=['act_3', 'bureaucracy', 'class_specific', 'green_docket', 'reward']
+  - act3_witch_clerk_hawthorn_ledger :: Hawthorn Ledger [uncommon] tags=['act_3', 'block', 'class_specific', 'doubt', 'green_docket', 'witch']
+  - act3_witch_clerk_knot_of_permission :: Knot of Permission [rare] tags=['act_3', 'class_specific', 'doubt', 'green_docket', 'strength', 'witch']
+  - act3_failed_wizard_singed_trail_map :: Singed Trail Map [uncommon] tags=['act_3', 'class_specific', 'energy', 'green_docket', 'risk_reward', 'wizard']
+  - act3_failed_wizard_argumentative_weather_vane :: Argumentative Weather Vane [rare] tags=['act_3', 'block', 'class_specific', 'green_docket', 'strength', 'wizard']
+  - act3_night_watch_recruit_patrol_lantern :: Patrol Lantern [uncommon] tags=['act_3', 'class_specific', 'doubt', 'green_docket', 'watch']
+  - act3_night_watch_recruit_sensible_boots :: Sensible Boots [rare] tags=['act_3', 'block', 'class_specific', 'green_docket', 'strength', 'watch']
+  - act3_hedge_witch_nettle_basket :: Nettle Basket [uncommon] tags=['act_3', 'class_specific', 'green_docket', 'healing', 'poison', 'witch']
+  - act3_hedge_witch_old_root_charm :: Old Root Charm [rare] tags=['act_3', 'class_specific', 'green_docket', 'poison', 'strength', 'witch']
+  - act3_guild_assassin_apprentice_milestone_shadow :: Milestone Shadow [uncommon] tags=['act_3', 'assassin', 'class_specific', 'green_docket', 'strength']
+  - act3_guild_assassin_apprentice_silent_footpath :: Silent Footpath [rare] tags=['act_3', 'assassin', 'block', 'class_specific', 'energy', 'green_docket']
+  - act3_sewer_diplomat_stream_charter :: Stream Charter [uncommon] tags=['act_3', 'class_specific', 'doubt', 'green_docket', 'poison', 'sewer']
+  - act3_sewer_diplomat_bridge_immunity_badge :: Bridge Immunity Badge [rare] tags=['act_3', 'class_specific', 'gold', 'green_docket', 'sewer', 'shop']
+  - act3_mortuary_apprentice_wayside_marker :: Wayside Marker [uncommon] tags=['act_3', 'class_specific', 'green_docket', 'mortuary', 'paperwork']
+  - act3_mortuary_apprentice_quiet_shovel :: Quiet Shovel [rare] tags=['act_3', 'class_specific', 'green_docket', 'healing', 'mortuary', 'strength']
+  - act3_shroomancer_moonlit_spore_jar :: Moonlit Spore Jar [uncommon] tags=['act_3', 'class_specific', 'green_docket', 'poison', 'shroom']
+  - act3_shroomancer_fairy_ring_key :: Fairy Ring Key [rare] tags=['act_3', 'class_specific', 'green_docket', 'poison', 'reward', 'shroom']

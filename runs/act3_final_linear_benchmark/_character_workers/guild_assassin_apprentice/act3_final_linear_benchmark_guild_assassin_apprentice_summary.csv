@@ -1,0 +1,7 @@
+policy,character_id,runs,wins,defeats,stalls,truncated,win_rate,average_reward,average_steps,average_completed_nodes,average_fights_won,average_gold,average_deck_size,average_relic_count,average_damage_dealt,average_damage_taken
+heuristic,__overall__,50,25,25,0,0,0.5,73.21379999999995,114.46,9.5,6.08,244.4,15.72,1.82,400.96,62.44
+heuristic,guild_assassin_apprentice,50,25,25,0,0,0.5,73.21379999999995,114.46,9.5,6.08,244.4,15.72,1.82,400.96,62.44
+linear_q,__overall__,50,23,27,0,0,0.46,72.99179999999994,129.76,9.44,6.46,251.12,16.22,1.0,414.54,63.84
+linear_q,guild_assassin_apprentice,50,23,27,0,0,0.46,72.99179999999994,129.76,9.44,6.46,251.12,16.22,1.0,414.54,63.84
+random,__overall__,50,1,49,0,0,0.02,3.193399999999976,117.62,7.98,4.82,153.84,13.66,0.98,242.8,71.1
+random,guild_assassin_apprentice,50,1,49,0,0,0.02,3.193399999999976,117.62,7.98,4.82,153.84,13.66,0.98,242.8,71.1

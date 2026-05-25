@@ -1,0 +1,7 @@
+policy,character_id,runs,wins,defeats,stalls,truncated,win_rate,average_reward,average_steps,average_completed_nodes,average_fights_won,average_gold,average_deck_size,average_relic_count,average_damage_dealt,average_damage_taken
+heuristic,__overall__,10,3,7,0,0,0.3,42.23999999999997,163.0,9.1,6.1,219.0,16.1,1.3,331.0,81.0
+heuristic,shroomancer,10,3,7,0,0,0.3,42.23999999999997,163.0,9.1,6.1,219.0,16.1,1.3,331.0,81.0
+linear_q,__overall__,10,3,7,0,0,0.3,50.168999999999954,168.3,9.0,6.3,218.7,16.4,1.4,361.6,70.8
+linear_q,shroomancer,10,3,7,0,0,0.3,50.168999999999954,168.3,9.0,6.3,218.7,16.4,1.4,361.6,70.8
+random,__overall__,10,0,10,0,0,0.0,-17.341000000000033,145.7,6.4,4.2,128.9,13.4,0.5,171.5,82.2
+random,shroomancer,10,0,10,0,0,0.0,-17.341000000000033,145.7,6.4,4.2,128.9,13.4,0.5,171.5,82.2

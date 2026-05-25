@@ -1,0 +1,7 @@
+policy,character_id,runs,wins,defeats,stalls,truncated,win_rate,average_reward,average_steps,average_completed_nodes,average_fights_won,average_gold,average_deck_size,average_relic_count,average_damage_dealt,average_damage_taken
+heuristic,__overall__,20,3,17,0,0,0.15,28.269499999999805,284.0,8.95,5.9,209.7,15.7,1.9,370.75,77.25
+heuristic,night_watch_recruit,20,3,17,0,0,0.15,28.269499999999805,284.0,8.95,5.9,209.7,15.7,1.9,370.75,77.25
+linear_q,__overall__,20,7,13,0,0,0.35,60.887499999999896,148.75,9.35,6.65,246.05,16.45,1.05,429.0,74.15
+linear_q,night_watch_recruit,20,7,13,0,0,0.35,60.887499999999896,148.75,9.35,6.65,246.05,16.45,1.05,429.0,74.15
+random,__overall__,20,0,20,0,0,0.0,-9.105000000000045,141.45,7.95,4.45,145.4,13.5,1.2,223.0,85.85
+random,night_watch_recruit,20,0,20,0,0,0.0,-9.105000000000045,141.45,7.95,4.45,145.4,13.5,1.2,223.0,85.85

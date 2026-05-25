@@ -1,0 +1,66 @@
+FINAL ACT 3 SCAN
+================================================================================
+Manifest: act_3_green_docket :: Act III: The Green Docket
+Card files: 21
+Enemy files: 2
+Encounter files: 1
+Event files: 1
+Relic files: 14
+
+Enemy count target: Act 3 >= ceil(Act 2 * 1.3)
+  normal   Act2=30 target=39 Act3=39 OK
+  elite    Act2=12 target=16 Act3=16 OK
+  boss     Act2= 7 target=10 Act3=10 OK
+
+Encounter counts:
+  boss     10
+  easy      8
+  elite    16
+  normal   39
+
+Dedicated Act 3 enemies: 65
+Unused dedicated enemies:  0
+Multi-enemy normal encounters: 19
+
+Act 2 / Act 3 base reward parity:
+  bureaucrat                       Act2=25 Act3=25 delta=  0 OK
+  failed_wizard                    Act2=19 Act3=19 delta=  0 OK
+  guild_assassin_apprentice        Act2=18 Act3=18 delta=  0 OK
+  hedge_witch                      Act2=21 Act3=21 delta=  0 OK
+  mortuary_apprentice              Act2=20 Act3=20 delta=  0 OK
+  night_watch_recruit              Act2=21 Act3=21 delta=  0 OK
+  sewer_diplomat                   Act2=19 Act3=19 delta=  0 OK
+  shroomancer                      Act2=18 Act3=18 delta=  0 OK
+  witch_clerk                      Act2=20 Act3=20 delta=  0 OK
+
+Events:
+  total: 20
+  duplicate_ids: none
+  without_green_docket_tag: none
+  top_tags:
+    green_docket             20
+    deck                     9
+    road                     8
+    rest                     7
+    healing                  7
+    nature                   6
+    risk_reward              6
+    bureaucracy              6
+    shop                     3
+    tree                     2
+    sunlight                 1
+    stars                    1
+    stream                   1
+    meadow                   1
+    mushrooms                1
+    hedge                    1
+    ranger                   1
+    camp                     1
+    traveller                1
+    witch                    1
+
+Relics:
+  general: 18
+  class_specific: 18
+  general_by_rarity: {'common': 7, 'rare': 6, 'uncommon': 5}
+  class_by_rarity:   {'rare': 9, 'uncommon': 9}

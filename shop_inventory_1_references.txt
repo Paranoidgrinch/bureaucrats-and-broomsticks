@@ -1,0 +1,932 @@
+Shop-related references
+================================================================================
+
+src\bab\console\event_effect_handlers.py
+     9: from bab.console.reward_flow import offer_card_removal, offer_card_reward, offer_card_upgrade
+    11: from bab.console.shop_flow import open_shop
+    35: offer_card_reward(run_state)
+    42: offer_card_upgrade(run_state)
+    63: offer_card_removal(
+    72: def handle_open_shop(run_state: RunState, effect: EventEffect) -> None:
+    73: open_shop(run_state)
+    83: "open_shop": handle_open_shop,
+
+src\bab\console\reward_flow.py
+    20: def offer_card_reward(run_state: RunState) -> None:
+    60: def offer_epic_card_reward(run_state: RunState) -> None:
+    94: def offer_card_upgrade(run_state: RunState) -> None:
+   155: def offer_card_removal(
+
+src\bab\console\run_flow.py
+    36: from bab.console.reward_flow import offer_card_reward, offer_epic_card_reward
+   216: offer_epic_card_reward(run_state)
+   224: offer_card_reward(run_state)
+
+src\bab\console\shop_flow.py
+     1: """Console shop flow."""
+    12: from bab.systems.relics import apply_relic_pickup_effects_to_run_state, shop_price_discount_percent
+    13: from bab.systems.shop import (
+    16: ShopCardOffer,
+    17: ShopRelicOffer,
+    18: card_removal_price,
+    19: discounted_shop_price,
+    20: choose_shop_card_offers,
+    21: choose_shop_relic_offers,
+    25: def open_shop(run_state: RunState) -> None:
+    26: card_offers = choose_shop_card_offers(
+    34: relic_offers = choose_shop_relic_offers(
+    43: discount_percent = shop_price_discount_percent(run_state.relics)
+    44: card_offers = apply_shop_discount_to_card_offers(card_offers, discount_percent)
+    45: relic_offers = apply_shop_discount_to_relic_offers(relic_offers, discount_percent)
+    53: "A vendor displays stamped wares, each price backed by excessive paperwork. "
+    55: title="Shop",
+    60: print_shop_offers(
+    62: card_offers=card_offers,
+    63: relic_offers=relic_offers,
+    74: console.print("[yellow]You leave the shop.[/yellow]")
+    82: removed = offer_shop_card_removal(run_state)
+    90: console.print("[red]Invalid shop command.[/red]")
+    93: offer_type = command[0]
+    94: offer_index_text = command[1:]
+    96: if not offer_index_text.isdigit():
+    97: console.print("[red]Invalid shop offer number.[/red]")
+   100: offer_index = int(offer_index_text)
+   102: if offer_type == "c":
+   103: if offer_index in purchased_card_indices:
+   107: if offer_index < 0 or offer_index >= len(card_offers):
+   108: console.print("[red]Invalid card offer.[/red]")
+   111: bought = buy_shop_card_offer(run_state, card_offers[offer_index])
+   114: purchased_card_indices.add(offer_index)
+   118: if offer_type == "r":
+   119: if offer_index in purchased_relic_indices:
+   123: if offer_index < 0 or offer_index >= len(relic_offers):
+   124: console.print("[red]Invalid relic offer.[/red]")
+   127: bought = buy_shop_relic_offer(run_state, relic_offers[offer_index])
+   130: purchased_relic_indices.add(offer_index)
+   134: console.print("[red]Invalid shop command.[/red]")
+   137: def print_shop_offers(
+   140: card_offers: list[ShopCardOffer],
+   141: relic_offers: list[ShopRelicOffer],
+   146: table = Table(title=f"Shop ? Gold: {run_state.gold}")
+   155: for index, offer in enumerate(card_offers):
+   160: offer.card.name,
+   161: offer.card.rarity,
+   162: str(offer.price),
+   163: offer.card.text,
+   167: for index, offer in enumerate(relic_offers):
+   172: offer.relic.name,
+   173: offer.relic.rarity,
+   174: str(offer.price),
+   175: offer.relic.description,
+   179: removal_price = discounted_shop_price(
+   180: card_removal_price(
+   184: shop_price_discount_percent(run_state.relics),
+   191: str(removal_price),
+   199: def buy_shop_card_offer(
+   201: offer: ShopCardOffer,
+   203: if run_state.gold < offer.price:
+   207: run_state.gold -= offer.price
+   208: run_state.run_deck.append(offer.card)
+   211: f"[green]Bought {offer.card.name} for {offer.price} Gold. "
+   212: f"Gold left: {run_state.gold}.[/green]"
+   217: def buy_shop_relic_offer(
+   219: offer: ShopRelicOffer,
+   221: if run_state.gold < offer.price:
+   225: if any(relic.id == offer.relic.id for relic in run_state.relics):
+   229: run_state.gold -= offer.price
+   230: run_state.relics.append(offer.relic)
+   234: offer.relic,
+   238: f"[green]Bought {offer.relic.name} for {offer.price} Gold. "
+   239: f"Gold left: {run_state.gold}.[/green]"
+   248: def offer_shop_card_removal(run_state: RunState) -> bool:
+   249: price = discounted_shop_price(
+   250: card_removal_price(
+   254: shop_price_discount_percent(run_state.relics),
+   257: if run_state.gold < price:
+   267: table = Table(title=f"Card Removal ? Cost: {price} Gold")
+   310: run_state.gold -= price
+   313: f"[green]Removed {removed_card.name} for {price} Gold. "
+   314: f"Gold left: {run_state.gold}.[/green]"
+   319: def apply_shop_discount_to_card_offers(
+   320: offers: list[ShopCardOffer],
+   322: ) -> list[ShopCardOffer]:
+   324: ShopCardOffer(
+   325: card=offer.card,
+   326: price=discounted_shop_price(offer.price, discount_percent),
+   328: for offer in offers
+   332: def apply_shop_discount_to_relic_offers(
+   333: offers: list[ShopRelicOffer],
+   335: ) -> list[ShopRelicOffer]:
+   337: ShopRelicOffer(
+   338: relic=offer.relic,
+   339: price=discounted_shop_price(offer.price, discount_percent),
+   341: for offer in offers
+
+src\bab\console\waiting_room_flow.py
+    11: from bab.console.reward_flow import offer_card_upgrade
+    49: offer_card_upgrade(run_state)
+
+src\bab\models\types.py
+   109: "open_shop",
+   118: "shop_price_discount",
+   119: "increase_gold_rewards",
+   120: "gain_gold_on_pickup",
+
+src\bab\rules\relic_effect_handlers.py
+    15: ShopDiscountRelicHandler = Callable[[RelicEffect, RelicDefinition], int]
+    61: def gold_pickup_from_relic_effect(
+    73: def gold_reward_bonus_from_relic_effect(
+    85: def shop_discount_from_relic_effect(
+   255: def handle_gain_gold_on_pickup(
+   262: def handle_increase_gold_rewards(
+   269: def handle_shop_price_discount(
+   296: "gain_gold_on_pickup": handle_gain_gold_on_pickup,
+   300: "increase_gold_rewards": handle_increase_gold_rewards,
+   303: RELIC_SHOP_DISCOUNT_HANDLERS: Mapping[str, ShopDiscountRelicHandler] = {
+   304: "shop_price_discount": handle_shop_price_discount,
+
+src\bab\run\state.py
+    18: from bab.systems.gold import gold_reward_for_map_node
+    19: from bab.systems.relics import apply_combat_start_relics, gold_reward_bonus
+    42: gold: int = 0
+    94: starting_gold: int = 0,
+   131: gold=starting_gold,
+   266: gold_reward = (
+   267: gold_reward_for_map_node(current_map_node, run_state.rng)
+   268: + gold_reward_bonus(run_state.relics)
+   270: run_state.gold += gold_reward
+   278: return gold_reward
+
+src\bab\sim\agents.py
+   201: "shop": 12.0,
+   221: if node_type == "shop":
+   222: if observation.gold >= 100:
+   224: elif observation.gold >= 60:
+   362: gold=getattr(env.run_state, "gold", 0),
+
+src\bab\sim\auto_runner.py
+    10: - random shop purchases
+    47: shop_price_discount_percent,
+    50: from bab.systems.shop import (
+    53: card_removal_price,
+    54: choose_shop_card_offers,
+    55: choose_shop_relic_offers,
+    56: discounted_shop_price,
+    67: shop_leave_chance: float = 0.25
+    68: shop_buy_attempt_limit: int = 20
+    81: gold: int
+   113: average_gold: float
+   171: average_gold=sum(result.gold for result in results) / total_runs if total_runs else 0.0,
+   193: ensure_gold_field(run_state)
+   248: gold=getattr(run_state, "gold", 0),
+   508: if effect.type == "open_shop":
+   509: simulate_shop(run_state, rng, config)
+   649: price: int = 0,
+   651: if not free and getattr(run_state, "gold", 0) < price:
+   667: run_state.gold -= price
+   672: def simulate_shop(
+   677: discount_percent = shop_price_discount_percent(run_state.relics)
+   679: card_offers = choose_shop_card_offers(
+   687: relic_offers = choose_shop_relic_offers(
+   696: card_prices = [
+   697: discounted_shop_price(offer.price, discount_percent)
+   698: for offer in card_offers
+   700: relic_prices = [
+   701: discounted_shop_price(offer.price, discount_percent)
+   702: for offer in relic_offers
+   709: for _ in range(config.shop_buy_attempt_limit):
+   710: if rng.random() < config.shop_leave_chance:
+   715: for index, price in enumerate(card_prices):
+   716: if index not in bought_cards and run_state.gold >= price:
+   719: for index, price in enumerate(relic_prices):
+   720: if index not in bought_relics and run_state.gold >= price:
+   723: removal_price = discounted_shop_price(
+   724: card_removal_price(
+   731: if not removal_bought and run_state.gold >= removal_price:
+   740: offer = card_offers[option_index]
+   741: price = card_prices[option_index]
+   742: run_state.gold -= price
+   743: run_state.run_deck.append(offer.card)
+   748: offer = relic_offers[option_index]
+   749: price = relic_prices[option_index]
+   750: run_state.gold -= price
+   751: run_state.relics.append(offer.relic)
+   752: apply_relic_pickup_effects_to_run_state(run_state, offer.relic)
+   761: price=removal_price,
+   766: def ensure_gold_field(run_state: RunState) -> None:
+   767: if not hasattr(run_state, "gold"):
+   768: run_state.gold = 0
+   781: f"Average final gold: {summary.average_gold:.2f}",
+   914: "gold_before": getattr(run_state, "gold", 0),
+
+src\bab\sim\benchmark.py
+    32: "gold",
+    79: "gold": result.gold,
+   132: "average_gold": average(rows, "gold"),
+
+src\bab\sim\checkpoint_training.py
+   225: gold=getattr(env.run_state, "gold", 0),
+
+src\bab\sim\class_runner_improvement.py
+   161: gold=getattr(env.run_state, "gold", 0),
+
+src\bab\sim\class_runners.py
+   253: "gold": result.gold,
+
+src\bab\sim\diagnostics.py
+    28: "gold",
+   269: row[f"{policy_name}_gold"] = result.gold
+
+src\bab\sim\linear_q.py
+   314: add("gold_norm", min(observation.gold, 300) / 300.0)
+   543: gold=getattr(env.run_state, "gold", 0),
+
+src\bab\sim\metrics.py
+    21: "gold",
+
+src\bab\sim\q_learning.py
+   371: gold=getattr(env.run_state, "gold", 0),
+   440: gold=getattr(env.run_state, "gold", 0),
+   488: gold_bucket = bucket_value(observation.gold, (0, 50, 100, 200, 350))
+   522: gold_bucket,
+   540: gold_bucket,
+   623: gold_bucket = bucket_value(observation.gold, (0, 50, 100, 200, 350))
+   668: gold_bucket,
+   697: gold_bucket,
+
+src\bab\sim\rl_env.py
+     5: - existing simulator code is reused for events, shops, treasure, and waiting rooms
+    31: ensure_gold_field,
+    57: gold: int
+   105: gold_reward: float = 0.03
+   118: gold: int
+   135: gold: int
+   190: ensure_gold_field(self.run_state)
+   241: gold=getattr(self.run_state, "gold", 0),
+   372: # simulator. Later patches can split event/shop/treasure into phases.
+   498: gold=getattr(self.run_state, "gold", 0),
+   530: reward += max(0, after.gold - before.gold) * cfg.gold_reward
+   787: gold=getattr(env.run_state, "gold", 0),
+
+src\bab\sim\trace_analysis.py
+   167: "gold": snapshot.get("gold"),
+   342: f"gold {context.get('gold')}",
+
+src\bab\sim\tracing.py
+    73: "gold": getattr(env.run_state, "gold", 0),
+   116: "gold": observation.gold,
+   236: "before_gold": before["gold"],
+   257: "after_gold": after["gold"],
+   298: lines.append(f"Gold: {summary['gold']}")
+
+src\bab\systems\gold.py
+    17: def gold_reward_for_difficulty(
+    30: def gold_reward_for_map_node(
+    35: return gold_reward_for_difficulty("normal", rng)
+    41: return gold_reward_for_difficulty("boss", rng)
+    43: return gold_reward_for_difficulty(difficulty, rng)
+
+src\bab\systems\progression_weights.py
+     1: """Shared act-progression weighting for card and relic offers."""
+    19: """Return offer weight for content tagged by act progression.
+
+src\bab\systems\relics.py
+    13: gold_pickup_from_relic_effect,
+    14: gold_reward_bonus_from_relic_effect,
+    17: shop_discount_from_relic_effect,
+    96: gold = gold_pickup_from_relic_effect(effect, relic)
+    98: if gold <= 0:
+   101: run_state.gold += gold
+   102: messages.append(f"{relic.name} grants {gold} Gold.")
+   117: def gold_reward_bonus(relics: list[RelicDefinition]) -> int:
+   122: bonus += gold_reward_bonus_from_relic_effect(effect, relic)
+   127: def shop_price_discount_percent(relics: list[RelicDefinition]) -> int:
+   132: discount += shop_discount_from_relic_effect(effect, relic)
+   143: "gold_reward_bonus",
+   145: "shop_price_discount_percent",
+
+src\bab\systems\rewards.py
+    32: def card_progression_weight(card: Card, *, act: int | None = None) -> int:
+    48: max(0, card_progression_weight(card, act=act))
+    61: cumulative += max(0, card_progression_weight(card, act=act))
+
+src\bab\systems\shop.py
+     1: """Shop offer and pricing helpers."""
+    14: class ShopCardOffer:
+    16: price: int
+    20: class ShopRelicOffer:
+    22: price: int
+    59: def shop_tier(
+    64: """Return a coarse shop tier based on campaign progress."""
+    80: def shop_progression_price_bonus(
+    88: def discounted_shop_price(
+    89: price: int,
+    93: discounted_price = round(price * (100 - clamped_discount) / 100)
+    94: return max(0, round_price(discounted_price))
+    97: def round_price(price: int) -> int:
+    98: return ((price + 4) // 5) * 5
+   101: def card_shop_price(
+   107: base_price = CARD_BASE_PRICES.get(card.rarity, 85)
+   108: price = base_price + shop_progression_price_bonus(
+   113: return round_price(price)
+   116: def relic_shop_price(
+   122: base_price = RELIC_BASE_PRICES.get(relic.rarity, 180)
+   123: price = base_price + shop_progression_price_bonus(
+   128: return round_price(price)
+   131: def card_removal_price(
+   137: price = 75 + shop_progression_price_bonus(
+   142: return round_price(price)
+   145: def eligible_shop_cards(
+   152: tier = shop_tier(act=act, fight_number=fight_number)
+   176: def eligible_shop_relics(
+   184: tier = shop_tier(act=act, fight_number=fight_number)
+   218: def shop_progression_weight(item, *, act: int) -> int:
+   222: def choose_shop_card_offers(
+   230: ) -> list[ShopCardOffer]:
+   231: tier = shop_tier(act=act, fight_number=fight_number)
+   232: cards = eligible_shop_cards(
+   244: item_weight_getter=lambda card: shop_progression_weight(card, act=act),
+   248: ShopCardOffer(
+   250: price=card_shop_price(
+   260: def choose_shop_relic_offers(
+   269: ) -> list[ShopRelicOffer]:
+   270: tier = shop_tier(act=act, fight_number=fight_number)
+   271: relics = eligible_shop_relics(
+   284: item_weight_getter=lambda relic: shop_progression_weight(relic, act=act),
+   288: ShopRelicOffer(
+   290: price=relic_shop_price(
+
+src\bureaucrats_and_broomsticks.egg-info\SOURCES.txt
+    21: src/bab/console/shop_flow.py
+    66: src/bab/systems/gold.py
+    69: src/bab/systems/shop.py
+    96: tests/test_gold_shop_relic_effects.py
+   114: tests/test_shop_flow.py
+   115: tests/test_shop_offer_counts.py
+   116: tests/test_shop_system.py
+
+tests\content\test_act_1_relic_expansion.py
+    46: def test_act_1_has_large_relic_pool_for_shops_and_rewards() -> None:
+
+tests\content\test_class_specific_relics.py
+    32: def test_choose_random_unowned_relic_does_not_offer_wrong_class_specific_relics():
+    47: def test_choose_random_unowned_relic_can_offer_matching_class_specific_relics_when_general_pool_removed():
+
+tests\content\test_discworld_character_expansion.py
+     7: from bab.systems.shop import (
+     9: eligible_shop_cards,
+    40: def test_new_classes_have_shop_eligible_reward_cards() -> None:
+    44: eligible_cards = eligible_shop_cards(
+
+tests\content\test_gold_shop_relic_content.py
+    14: def test_gold_and_shop_relics_are_available() -> None:
+    20: def test_relic_content_uses_gold_and_shop_effects() -> None:
+    29: assert "gain_gold_on_pickup" in used_effect_types
+    30: assert "increase_gold_rewards" in used_effect_types
+    31: assert "shop_price_discount" in used_effect_types
+
+tests\content\test_shop_events.py
+     5: def test_each_act_has_shop_event() -> None:
+     9: shop_events = [
+    12: if "shop" in event.tags
+    15: assert shop_events, f"{catalog.act_manifest.id} has no shop event."
+    18: def test_each_shop_event_can_open_shop() -> None:
+    22: shop_events = [
+    25: if "shop" in event.tags
+    28: for event in shop_events:
+    35: assert "open_shop" in effect_types
+
+tests\test_act_2_archives_events.py
+    10: "open_shop",
+    72: def test_act_2_has_shop_and_deck_events() -> None:
+    75: has_shop_event = False
+    85: if effect.type == "open_shop":
+    86: has_shop_event = True
+    92: assert has_shop_event
+
+tests\test_act_2_archives_rewards_and_relics.py
+     3: from bab.systems.shop import eligible_shop_cards, eligible_shop_relics
+    57: def test_act_2_shop_card_pool_can_offer_act_2_cards_but_not_epics() -> None:
+    61: shop_pool = eligible_shop_cards(
+    68: assert any("act_2" in card.tags for card in shop_pool)
+    69: assert all(card.rarity != "starter" for card in shop_pool)
+    70: assert all(card.rarity != "boss" for card in shop_pool)
+    71: assert all(card.rarity != "epic" for card in shop_pool)
+    89: def test_act_2_shop_relic_pool_includes_act_2_relics() -> None:
+    92: shop_relics = eligible_shop_relics(
+    99: assert any("act_2" in relic.tags for relic in shop_relics)
+   100: assert all(relic.rarity != "boss" for relic in shop_relics)
+   116: "gain_gold_on_pickup",
+   117: "increase_gold_rewards",
+   118: "shop_price_discount",
+
+tests\test_act_2_class_relics_batch_1.py
+    23: "gain_gold_on_pickup",
+    24: "increase_gold_rewards",
+    25: "shop_price_discount",
+
+tests\test_act_2_class_relics_batch_2.py
+    23: "gain_gold_on_pickup",
+    24: "increase_gold_rewards",
+    25: "shop_price_discount",
+
+tests\test_act_2_class_relics_batch_3.py
+    23: "gain_gold_on_pickup",
+    24: "increase_gold_rewards",
+    25: "shop_price_discount",
+
+tests\test_act_2_events_and_shop_polish.py
+     6: from bab.systems.shop import (
+     9: choose_shop_card_offers,
+    10: choose_shop_relic_offers,
+    11: eligible_shop_cards,
+    12: eligible_shop_relics,
+    36: "open_shop",
+   108: def test_act_2_shop_explicitly_excludes_epic_cards() -> None:
+   112: cards = eligible_shop_cards(
+   118: offers = choose_shop_card_offers(
+   128: assert len(offers) == DEFAULT_SHOP_CARD_OFFER_COUNT
+   129: assert all(offer.card.rarity != "epic" for offer in offers)
+   132: def test_act_2_shop_filters_class_specific_relics_by_character() -> None:
+   136: relics = eligible_shop_relics(
+   143: offers = choose_shop_relic_offers(
+   152: assert len(offers) == DEFAULT_SHOP_RELIC_OFFER_COUNT
+   157: for offer in offers:
+   158: relic = offer.relic
+   162: def test_act_2_shop_prefers_act_2_content_available_for_each_class() -> None:
+   166: cards = eligible_shop_cards(
+   172: relics = eligible_shop_relics(
+
+tests\test_act_2_general_relic_pool.py
+     4: from bab.systems.shop import eligible_shop_relics
+    24: "gain_gold_on_pickup",
+    25: "increase_gold_rewards",
+    26: "shop_price_discount",
+    48: def test_general_act_2_relics_are_shop_eligible_and_supported() -> None:
+    51: shop_relics = eligible_shop_relics(
+    57: shop_ids = {relic.id for relic in shop_relics}
+    68: assert relic.id in shop_ids
+
+tests\test_act_2_reward_and_shop_weighting.py
+     6: card_progression_weight,
+     9: from bab.systems.shop import (
+    10: choose_shop_card_offers,
+    11: choose_shop_relic_offers,
+    12: eligible_shop_cards,
+    13: eligible_shop_relics,
+    14: shop_progression_weight,
+    46: card_progression_weight(card, act=2) == 4
+    50: card_progression_weight(card, act=2) == 1
+    72: def test_act_2_shop_cards_weight_act_specific_cards_higher_and_exclude_epics() -> None:
+    76: shop_cards = eligible_shop_cards(
+    83: act_2_cards = [card for card in shop_cards if "act_2" in card.tags]
+    84: older_cards = [card for card in shop_cards if "act_2" not in card.tags]
+    88: assert all(card.rarity != "epic" for card in shop_cards)
+    90: assert all(shop_progression_weight(card, act=2) == 4 for card in act_2_cards)
+    91: assert all(shop_progression_weight(card, act=2) == 1 for card in older_cards)
+    93: offers = choose_shop_card_offers(
+   102: assert offers
+   103: assert all(offer.card.rarity != "epic" for offer in offers)
+   106: def test_act_2_shop_relics_weight_act_specific_relics_higher() -> None:
+   109: shop_relics = eligible_shop_relics(
+   116: act_2_relics = [relic for relic in shop_relics if "act_2" in relic.tags]
+   117: older_relics = [relic for relic in shop_relics if "act_2" not in relic.tags]
+   122: assert all(shop_progression_weight(relic, act=2) == 4 for relic in act_2_relics)
+   123: assert all(shop_progression_weight(relic, act=2) == 1 for relic in older_relics)
+   125: offers = choose_shop_relic_offers(
+   134: assert offers
+   135: assert all(offer.relic.rarity != "boss" for offer in offers)
+
+tests\test_act_2_reward_cards_batch_1.py
+     5: from bab.systems.shop import eligible_shop_cards
+    38: def test_batch_1_cards_are_in_rewards_and_shop_but_not_epic() -> None:
+    46: shop_pool = eligible_shop_cards(
+    54: shop_ids = {card.id for card in shop_pool}
+    58: assert card.id in shop_ids
+
+tests\test_act_2_reward_cards_batch_2.py
+     5: from bab.systems.shop import eligible_shop_cards
+    38: def test_batch_2_cards_are_in_rewards_and_shop_but_not_epic() -> None:
+    46: shop_pool = eligible_shop_cards(
+    54: shop_ids = {card.id for card in shop_pool}
+    58: assert card.id in shop_ids
+
+tests\test_act_2_reward_cards_batch_3.py
+     5: from bab.systems.shop import eligible_shop_cards
+    38: def test_batch_3_cards_are_in_rewards_and_shop_but_not_epic() -> None:
+    46: shop_pool = eligible_shop_cards(
+    54: shop_ids = {card.id for card in shop_pool}
+    58: assert card.id in shop_ids
+
+tests\test_act_2_runtime_smoke.py
+     7: from bab.systems.shop import choose_shop_card_offers, choose_shop_relic_offers
+    51: shop_leave_chance=0.20,
+    62: def test_act_2_reward_and_shop_pools_do_not_offer_epic_transition_cards() -> None:
+    70: shop_card_offers = choose_shop_card_offers(
+    80: assert shop_card_offers
+    85: assert all(offer.card.rarity != "epic" for offer in shop_card_offers)
+    86: assert all("epic" not in offer.card.tags for offer in shop_card_offers)
+   105: def test_act_2_shop_relic_offers_are_valid_and_non_boss() -> None:
+   113: offers = choose_shop_relic_offers(
+   122: assert offers
+   123: assert all(offer.relic.id in catalog.relic_database for offer in offers)
+   124: assert all(offer.relic.rarity != "boss" for offer in offers)
+
+tests\test_act_3_green_docket_events.py
+    91: "open_shop",
+   108: "open_shop",
+
+tests\test_act_3_green_docket_relics.py
+     5: from bab.systems.shop import (
+     6: choose_shop_relic_offers,
+     7: eligible_shop_relics,
+     8: shop_progression_weight,
+    69: def test_act_3_class_specific_relics_only_offer_to_matching_class() -> None:
+    73: relic_pool = eligible_shop_relics(
+    91: def test_act_3_relic_shop_uses_progression_weights() -> None:
+    94: relic_pool = eligible_shop_relics(
+   114: assert all(shop_progression_weight(relic, act=3) == 6 for relic in act_3_relics)
+   115: assert all(shop_progression_weight(relic, act=3) == 2 for relic in act_2_relics)
+   116: assert all(shop_progression_weight(relic, act=3) == 1 for relic in older_relics)
+   119: def test_act_3_relic_shop_can_offer_green_docket_relics() -> None:
+   122: offers = choose_shop_relic_offers(
+   132: assert offers
+   133: assert all(offer.relic.rarity != "boss" for offer in offers)
+   135: eligible = eligible_shop_relics(
+
+tests\test_act_3_green_docket_reward_cards.py
+     4: from bab.systems.rewards import build_card_reward_pool, card_progression_weight
+     5: from bab.systems.shop import eligible_shop_cards, shop_progression_weight
+    99: assert all(card_progression_weight(card, act=3) == 6 for card in act_3_cards)
+   100: assert all(card_progression_weight(card, act=3) == 2 for card in act_2_cards)
+   101: assert all(card_progression_weight(card, act=3) == 1 for card in older_cards)
+   104: def test_act_3_shop_cards_can_offer_green_docket_cards() -> None:
+   108: shop_pool = eligible_shop_cards(
+   114: act_3_shop_cards = [
+   116: for card in shop_pool
+   120: assert act_3_shop_cards
+   121: assert all(shop_progression_weight(card, act=3) == 6 for card in act_3_shop_cards)
+   122: assert all(card.rarity != "epic" for card in shop_pool)
+   123: assert all("upgraded" not in card.tags for card in shop_pool)
+
+tests\test_act_3_reward_and_shop_weighting.py
+     6: card_progression_weight,
+     9: from bab.systems.shop import (
+    10: choose_shop_card_offers,
+    11: choose_shop_relic_offers,
+    12: eligible_shop_cards,
+    13: eligible_shop_relics,
+    14: shop_progression_weight,
+    40: def test_act_3_card_progression_weights_prefer_act_3_then_act_2_then_older() -> None:
+    67: assert card_progression_weight(synthetic_act_3_card, act=3) == 6
+    68: assert card_progression_weight(act_2_card, act=3) == 2
+    69: assert card_progression_weight(older_card, act=3) == 1
+    72: def test_act_3_shop_progression_weights_prefer_act_3_then_act_2_then_older() -> None:
+    91: assert shop_progression_weight(synthetic_act_3_relic, act=3) == 6
+    92: assert shop_progression_weight(act_2_relic, act=3) == 2
+    93: assert shop_progression_weight(older_relic, act=3) == 1
+   119: def test_act_3_shop_cards_and_relics_use_weighted_progression_without_epics() -> None:
+   123: shop_cards = eligible_shop_cards(
+   129: card_offers = choose_shop_card_offers(
+   138: assert shop_cards
+   139: assert card_offers
+   140: assert all(card.rarity != "epic" for card in shop_cards)
+   141: assert all(offer.card.rarity != "epic" for offer in card_offers)
+   143: shop_relics = eligible_shop_relics(
+   150: relic_offers = choose_shop_relic_offers(
+   160: assert shop_relics
+   161: assert relic_offers
+   162: assert all(relic.rarity != "boss" for relic in shop_relics)
+   163: assert all(offer.relic.rarity != "boss" for offer in relic_offers)
+
+tests\test_class_runners.py
+    22: gold=100,
+
+tests\test_epic_transition_pool.py
+     5: from bab.systems.shop import eligible_shop_cards
+    57: def test_epic_cards_stay_out_of_normal_rewards_and_shops() -> None:
+    65: shop_pool = eligible_shop_cards(
+    73: assert all(card.rarity != "epic" for card in shop_pool)
+
+tests\test_event_card_removal.py
+     8: def fake_offer_card_removal(run_state, *, card_id=None, tag=None):
+    13: "offer_card_removal",
+    14: fake_offer_card_removal,
+    33: def fake_offer_card_removal(run_state, *, card_id=None, tag=None):
+    38: "offer_card_removal",
+    39: fake_offer_card_removal,
+
+tests\test_full_act_scaffold_runtime.py
+     8: from bab.systems.shop import (
+     9: choose_shop_card_offers,
+    10: choose_shop_relic_offers,
+    82: def test_late_act_catalogs_load_and_have_runtime_offer_sources() -> None:
+   103: def test_late_act_card_rewards_and_shops_are_available_for_each_class() -> None:
+   123: shop_cards = choose_shop_card_offers(
+   131: shop_relics = choose_shop_relic_offers(
+   143: assert shop_cards
+   144: assert shop_relics
+   150: assert all(offer.card.class_ == character_id for offer in shop_cards)
+   151: assert all(offer.card.rarity != "epic" for offer in shop_cards)
+   153: for offer in shop_relics:
+   154: relic = offer.relic
+
+tests\test_gold_shop_relic_effects.py
+     8: gold_reward_bonus,
+     9: shop_price_discount_percent,
+    11: from bab.systems.shop import discounted_shop_price
+    27: def test_gain_gold_on_pickup_effect_adds_gold_to_run_state() -> None:
+    29: relic = make_relic({"type": "gain_gold_on_pickup", "amount": 40})
+    33: assert run_state.gold == 40
+    37: def test_increase_gold_rewards_effect_adds_bonus_after_combat() -> None:
+    39: relic = make_relic({"type": "increase_gold_rewards", "amount": 10})
+    52: assert run_state.gold == reward
+    53: assert gold_reward_bonus(run_state.relics) == 10
+    56: def test_shop_price_discount_effect_reduces_prices() -> None:
+    57: relic = make_relic({"type": "shop_price_discount", "amount": 10})
+    59: assert shop_price_discount_percent([relic]) == 10
+    60: assert discounted_shop_price(100, 10) == 90
+    63: def test_shop_price_discount_is_capped() -> None:
+    65: make_relic({"type": "shop_price_discount", "amount": 50}),
+    66: make_relic({"type": "shop_price_discount", "amount": 50}),
+    69: assert shop_price_discount_percent(relics) == 75
+    70: assert discounted_shop_price(100, 75) == 25
+
+tests\test_late_act_runtime_smoke.py
+     6: from bab.systems.shop import (
+     7: choose_shop_card_offers,
+     8: choose_shop_relic_offers,
+     9: eligible_shop_cards,
+    10: eligible_shop_relics,
+    70: def test_act_3_shop_can_generate_card_and_relic_offers_for_each_class() -> None:
+    74: card_offers = choose_shop_card_offers(
+    82: relic_offers = choose_shop_relic_offers(
+    92: assert card_offers
+    93: assert relic_offers
+    95: assert all(offer.card.class_ == character_id for offer in card_offers)
+    96: assert all(offer.card.rarity != "epic" for offer in card_offers)
+    97: assert all("upgraded" not in offer.card.tags for offer in card_offers)
+    99: for offer in relic_offers:
+   100: relic = offer.relic
+   105: def test_act_3_shop_pools_contain_current_previous_and_older_content() -> None:
+   108: card_pool = eligible_shop_cards(
+   114: relic_pool = eligible_shop_relics(
+
+tests\test_progression_weights.py
+     2: from bab.systems.rewards import card_progression_weight
+     3: from bab.systems.shop import shop_progression_weight
+    34: def test_reward_and_shop_weight_wrappers_use_shared_progression_logic() -> None:
+    39: assert card_progression_weight(act_4_item, act=4) == 6
+    40: assert card_progression_weight(act_3_item, act=4) == 2
+    41: assert card_progression_weight(older_item, act=4) == 1
+    43: assert shop_progression_weight(act_4_item, act=4) == 6
+    44: assert shop_progression_weight(act_3_item, act=4) == 2
+    45: assert shop_progression_weight(older_item, act=4) == 1
+
+tests\test_rl_benchmark.py
+    41: "gold": 20,
+    54: "gold": 200,
+
+tests\test_shop_flow.py
+     4: from bab.console.shop_flow import buy_shop_card_offer
+     7: from bab.systems.shop import choose_shop_card_offers, choose_shop_relic_offers
+    10: def test_shop_card_offers_are_drawn_from_current_act_catalog() -> None:
+    15: offers = choose_shop_card_offers(
+    24: assert offers
+    25: assert all(offer.card.id in run_state.card_database for offer in offers)
+    26: assert all(offer.card.class_ == run_state.character_class.id for offer in offers)
+    29: def test_shop_relic_offers_are_drawn_from_current_act_catalog() -> None:
+    34: offers = choose_shop_relic_offers(
+    43: assert offers
+    44: assert all(offer.relic.id in run_state.relic_database for offer in offers)
+    47: def test_buy_shop_card_offer_spends_gold_and_adds_card_to_deck() -> None:
+    50: offer = choose_shop_card_offers(
+    59: run_state.gold = offer.price
+    62: bought = buy_shop_card_offer(run_state, offer)
+    65: assert run_state.gold == 0
+    67: assert run_state.run_deck[-1].id == offer.card.id
+    70: def test_buy_shop_card_offer_rejects_insufficient_gold() -> None:
+    73: offer = choose_shop_card_offers(
+    82: run_state.gold = offer.price - 1
+    85: bought = buy_shop_card_offer(run_state, offer)
+    88: assert run_state.gold == offer.price - 1
+
+tests\test_shop_offer_counts.py
+     6: from bab.systems.shop import (
+     9: choose_shop_card_offers,
+    10: choose_shop_relic_offers,
+    11: eligible_shop_cards,
+    12: eligible_shop_relics,
+    16: def test_each_act_has_enough_eligible_shop_cards_for_default_offer_count() -> None:
+    21: eligible_cards = eligible_shop_cards(
+    30: f"{len(eligible_cards)} eligible shop cards."
+    34: def test_each_act_has_enough_eligible_shop_relics_for_default_offer_count() -> None:
+    38: eligible_relics = eligible_shop_relics(
+    47: f"{len(eligible_relics)} eligible shop relics."
+    51: def test_shop_generates_default_number_of_card_and_relic_offers() -> None:
+    56: card_offers = choose_shop_card_offers(
+    64: relic_offers = choose_shop_relic_offers(
+    73: assert len(card_offers) == DEFAULT_SHOP_CARD_OFFER_COUNT
+    74: assert len(relic_offers) == DEFAULT_SHOP_RELIC_OFFER_COUNT
+
+tests\test_shop_system.py
+     4: from bab.systems.shop import (
+     5: card_removal_price,
+     6: card_shop_price,
+     7: choose_shop_card_offers,
+     8: choose_shop_relic_offers,
+     9: relic_shop_price,
+    10: shop_tier,
+    14: def test_shop_tier_increases_with_run_progress() -> None:
+    15: assert shop_tier(act=1, fight_number=1) == 0
+    16: assert shop_tier(act=5, fight_number=12) > shop_tier(act=1, fight_number=1)
+    19: def test_card_shop_price_increases_with_run_progress() -> None:
+    29: early_price = card_shop_price(card, act=1, fight_number=1)
+    30: late_price = card_shop_price(card, act=5, fight_number=12)
+    32: assert late_price > early_price
+    35: def test_card_removal_price_increases_with_run_progress_and_repeat_removals() -> None:
+    36: early_price = card_removal_price(act=1, fight_number=1)
+    37: late_price = card_removal_price(act=5, fight_number=12)
+    38: repeated_price = card_removal_price(
+    44: assert late_price > early_price
+    45: assert repeated_price > early_price
+    48: def test_shop_card_offers_are_class_specific_and_exclude_starters_and_upgrades() -> None:
+    51: offers = choose_shop_card_offers(
+    60: assert offers
+    61: assert {offer.card.class_ for offer in offers} == {"witch_clerk"}
+    62: assert all(offer.card.rarity != "starter" for offer in offers)
+    63: assert all("upgraded" not in offer.card.tags for offer in offers)
+    64: assert all(offer.price > 0 for offer in offers)
+    67: def test_shop_relic_offers_exclude_owned_relics() -> None:
+    71: offers = choose_shop_relic_offers(
+    80: assert all(offer.relic.id != owned_relic.id for offer in offers)
+    81: assert all(offer.price > 0 for offer in offers)
+    84: def test_relic_shop_price_increases_with_run_progress() -> None:
+    88: early_price = relic_shop_price(relic, act=1, fight_number=1)
+    89: late_price = relic_shop_price(relic, act=5, fight_number=12)
+    91: assert late_price > early_price
+
+data\enemies\act_3_green_docket_enemies.json
+  1244: "id": "offer_tea_and_terms",
+  3071: "id": "offer_a_blanket_and_a_form",
+
+data\enemies\city_enemies.json
+  1338: "gold",
+
+data\events\act_1_city_events.json
+   140: "id": "act_1_shop",
+   150: "result_text": "The prices are official, which somehow makes them worse.",
+   153: "type": "open_shop"
+   169: "shop"
+
+data\events\act_2_archives_events.json
+   140: "id": "act_2_shop",
+   150: "result_text": "The prices are official, which somehow makes them worse.",
+   153: "type": "open_shop"
+   170: "shop"
+   453: "result_text": "The cart unfolds into a shop with entirely too many small drawers.",
+   456: "type": "open_shop"
+   473: "shop"
+   515: "type": "open_shop"
+   525: "shop"
+   626: "text": "A shelf creaks your name in a voice like old varnish. It offers to put one part of you somewhere tidier.",
+   688: "id": "offer_a_quiet_signature",
+   790: "result_text": "The pass is temporary, the shop is not, and the prices look almost reasonable.",
+   793: "type": "open_shop"
+   809: "shop"
+   866: "text": "A footnote detaches itself from a nearby page and scurries after you, offering context nobody asked for.",
+   929: "type": "open_shop"
+   944: "shop"
+
+data\events\act_3_green_docket_events.json
+    58: "result_text": "The stars offer guidance. They do not apologize for the handwriting.",
+   255: "type": "open_shop"
+   281: "shop",
+   493: "result_text": "The cart unfolds into a small shop with far too many drawers.",
+   496: "type": "open_shop"
+   521: "shop",
+   545: "id": "offer_a_bad_memory",
+   819: "text": "A notice board stands at a crossroads. Its notices include warnings, missing goats, forbidden shortcuts, and a surprisingly detailed shop inventory.",
+   835: "result_text": "Behind the board waits a small, legal-looking shop.",
+   838: "type": "open_shop"
+   858: "shop",
+
+data\events\act_4_licensing_labyrinth_events.json
+   140: "id": "act_4_shop",
+   150: "result_text": "The prices are official, which somehow makes them worse.",
+   153: "type": "open_shop"
+   169: "shop"
+
+data\events\act_5_ministry_spire_events.json
+   140: "id": "act_5_shop",
+   150: "result_text": "The prices are official, which somehow makes them worse.",
+   153: "type": "open_shop"
+   169: "shop"
+
+data\relics\act_1_relics.json
+   660: "type": "gain_gold_on_pickup",
+   666: "gold"
+   676: "type": "increase_gold_rewards",
+   682: "gold",
+   689: "description": "Shop prices are reduced by 10%.",
+   693: "type": "shop_price_discount",
+   699: "shop",
+   710: "type": "increase_gold_rewards",
+   716: "gold",
+   723: "description": "Shop prices are reduced by 15%. When picked up, gain 25 Gold.",
+   727: "type": "shop_price_discount",
+   731: "type": "gain_gold_on_pickup",
+   737: "shop",
+   738: "gold",
+   749: "type": "gain_gold_on_pickup",
+   755: "gold"
+
+data\relics\act_2_class_relics.json
+    54: "type": "increase_gold_rewards",
+    63: "gold"
+   179: "description": "Shop prices are reduced by 20%. At the start of each combat, gain 8 Block.",
+   183: "type": "shop_price_discount",
+   197: "shop"
+   284: "type": "gain_gold_on_pickup",
+   292: "gold",
+   543: "type": "increase_gold_rewards",
+   552: "gold"
+   640: "description": "Shop prices are reduced by 12%. When picked up, gain 15 Gold.",
+   644: "type": "shop_price_discount",
+   648: "type": "gain_gold_on_pickup",
+   657: "gold",
+   658: "shop"
+  1083: "type": "gain_gold_on_pickup",
+  1091: "gold",
+  1155: "type": "increase_gold_rewards",
+  1163: "gold",
+  1379: "type": "increase_gold_rewards",
+  1387: "gold",
+  1630: "type": "increase_gold_rewards",
+  1638: "gold",
+  1743: "description": "Shop prices are reduced by 12%. When picked up, gain 15 Gold.",
+  1747: "type": "shop_price_discount",
+  1751: "type": "gain_gold_on_pickup",
+  1759: "gold",
+  1761: "shop"
+  1855: "description": "Shop prices are reduced by 20%. At the start of each combat, apply 1 Poison to all enemies.",
+  1859: "type": "shop_price_discount",
+  1874: "shop"
+  1983: "type": "increase_gold_rewards",
+  1991: "gold",
+  2468: "description": "Shop prices are reduced by 20%. At the start of each combat, gain 8 Block.",
+  2472: "type": "shop_price_discount",
+  2486: "shop",
+
+data\relics\act_2_relics.json
+    27: "type": "increase_gold_rewards",
+    34: "gold"
+   207: "type": "increase_gold_rewards",
+   214: "gold"
+   221: "description": "Shop prices are reduced by 20%. When picked up, gain 25 Gold.",
+   225: "type": "shop_price_discount",
+   229: "type": "gain_gold_on_pickup",
+   236: "gold",
+   237: "shop"
+   295: "type": "gain_gold_on_pickup",
+   303: "gold"
+   332: "type": "gain_gold_on_pickup",
+   339: "gold"
+   424: "type": "increase_gold_rewards",
+   431: "gold"
+   446: "type": "gain_gold_on_pickup",
+   454: "gold"
+   469: "type": "gain_gold_on_pickup",
+   476: "gold",
+   503: "description": "Shop prices are reduced by 10%.",
+   507: "type": "shop_price_discount",
+   514: "shop"
+   650: "type": "gain_gold_on_pickup",
+   657: "gold",
+   706: "description": "Shop prices are reduced by 25%.",
+   710: "type": "shop_price_discount",
+   717: "shop"
+   775: "type": "increase_gold_rewards",
+   782: "gold",
+
+data\relics\act_3_green_docket_class_relics.json
+   350: "description": "Shop prices are reduced by 20%. When picked up, gain 15 Gold.",
+   354: "type": "shop_price_discount",
+   358: "type": "gain_gold_on_pickup",
+   367: "shop",
+   368: "gold"
+
+data\relics\act_3_green_docket_relics.json
+    51: "type": "gain_gold_on_pickup",
+    60: "gold"
+    71: "type": "increase_gold_rewards",
+    79: "gold"
+   189: "description": "Shop prices are reduced by 15%.",
+   193: "type": "shop_price_discount",
+   201: "shop"
+   332: "type": "increase_gold_rewards",
+   336: "type": "gain_gold_on_pickup",
+   344: "gold"
+   376: "description": "Card rewards contain 1 additional card. Shop prices are reduced by 10%.",
+   384: "type": "shop_price_discount",
+   393: "shop"

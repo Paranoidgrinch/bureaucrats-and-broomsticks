@@ -32,7 +32,10 @@
     "data/cards/mortuary_apprentice_starter.json",
     "data/cards/mortuary_apprentice_rewards.json",
     "data/cards/shroomancer_starter.json",
-    "data/cards/shroomancer_rewards.json"
+    "data/cards/shroomancer_rewards.json",
+    "data/cards/epic_transition_rewards.json",
+    "data/cards/act_2_archive_rewards.json",
+    "data/cards/act_3_green_docket_rewards.json"
   ],
   "enemy_files": [
     "data/enemies/city_enemies.json"
@@ -47,14 +50,29 @@
     "data/events/act_5_ministry_spire_events.json"
   ],
   "relic_files": [
-    "data/relics/act_1_relics.json"
+    "data/relics/act_1_relics.json",
+    "data/relics/act_2_relics.json",
+    "data/relics/bureaucrat_relics.json",
+    "data/relics/witch_clerk_relics.json",
+    "data/relics/night_watch_recruit_relics.json",
+    "data/relics/hedge_witch_relics.json",
+    "data/relics/guild_assassin_apprentice_relics.json",
+    "data/relics/failed_wizard_relics.json",
+    "data/relics/sewer_diplomat_relics.json",
+    "data/relics/mortuary_apprentice_relics.json",
+    "data/relics/shroomancer_relics.json",
+    "data/relics/act_2_class_relics.json",
+    "data/relics/act_3_green_docket_relics.json",
+    "data/relics/act_3_green_docket_class_relics.json"
   ],
   "map": {
-    "steps_before_boss": 12,
-    "width": 5
+    "steps_before_boss": 20,
+    "width": 5,
+    "first_elite_depth": 3,
+    "elite_weight_multiplier": 1.6
   },
   "treasure": {
-    "mimic_chance": 0.28,
+    "mimic_chance": 0.1,
     "mimic_encounter_id": "act_5_elite_02"
   },
   "waiting_room": {

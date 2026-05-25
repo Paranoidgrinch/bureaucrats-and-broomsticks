@@ -7,7 +7,7 @@ from bab.run.map import generate_act_map
 from bab.run.state import RunState
 
 
-MAX_IMPLEMENTED_ACT = 3
+MAX_IMPLEMENTED_ACT = 5
 
 
 def next_act_manifest_file(current_act: int) -> str | None:

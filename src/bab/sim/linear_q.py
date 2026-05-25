@@ -729,37 +729,110 @@ def evaluate_linear_checkpoint(
         max_steps=max_steps,
         character_id=character_id,
     )
-    q_summary = summarize_policy_rollouts(evaluation["linear_q"])
+
     q_results = evaluation["linear_q"]
+    q_summary = summarize_policy_rollouts(q_results)
 
-    average_damage_dealt = (
-        sum(result.damage_dealt for result in q_results) / len(q_results)
-        if q_results
-        else 0.0
+    zero_completed_nodes_runs = sum(
+        1 for result in q_results if result.completed_nodes <= 0
     )
-    average_damage_taken = (
-        sum(result.damage_taken for result in q_results) / len(q_results)
-        if q_results
-        else 0.0
+    min_completed_nodes = min(
+        (result.completed_nodes for result in q_results),
+        default=0,
     )
 
-    return {
+    checkpoint = {
         "episode": episode,
         "evaluation_summary": {
             policy_name: summarize_policy_rollouts(results)
             for policy_name, results in evaluation.items()
         },
         "linear_wins": q_summary["wins"],
+        "linear_stalls": q_summary["stalls"],
+        "linear_truncated": q_summary["truncated"],
+        "linear_zero_damage_runs": q_summary["zero_damage_runs"],
+        "linear_first_combat_zero_damage_runs": q_summary[
+            "first_combat_zero_damage_runs"
+        ],
+        "linear_zero_completed_nodes_runs": zero_completed_nodes_runs,
+        "linear_min_completed_nodes": min_completed_nodes,
         "linear_average_reward": q_summary["average_reward"],
         "linear_average_completed_nodes": q_summary["average_completed_nodes"],
         "linear_average_fights_won": q_summary["average_fights_won"],
-        "linear_average_damage_dealt": average_damage_dealt,
-        "linear_average_damage_taken": average_damage_taken,
+        "linear_average_damage_dealt": q_summary["average_damage_dealt"],
+        "linear_average_damage_taken": q_summary["average_damage_taken"],
+        "linear_average_first_combat_damage_dealt": q_summary[
+            "average_first_combat_damage_dealt"
+        ],
+        "linear_average_first_combat_turns": q_summary[
+            "average_first_combat_turns"
+        ],
     }
+    checkpoint["linear_disqualification_reasons"] = (
+        linear_checkpoint_disqualification_reasons(checkpoint)
+    )
+    checkpoint["linear_valid"] = not checkpoint["linear_disqualification_reasons"]
+    return checkpoint
 
 
-def linear_checkpoint_score(checkpoint: dict[str, Any]) -> tuple[int, float, float, float]:
+def linear_checkpoint_disqualification_reasons(
+    checkpoint: dict[str, Any],
+) -> list[str]:
+    summary = (checkpoint.get("evaluation_summary") or {}).get("linear_q") or {}
+
+    def int_metric(top_level_key: str, summary_key: str) -> int:
+        if top_level_key in checkpoint:
+            return int(checkpoint.get(top_level_key) or 0)
+        return int(summary.get(summary_key) or 0)
+
+    def float_metric(top_level_key: str, summary_key: str) -> float:
+        if top_level_key in checkpoint:
+            return float(checkpoint.get(top_level_key) or 0.0)
+        return float(summary.get(summary_key) or 0.0)
+
+    def has_metric(top_level_key: str, summary_key: str) -> bool:
+        return top_level_key in checkpoint or summary_key in summary
+
+    reasons: list[str] = []
+
+    if int_metric("linear_stalls", "stalls") > 0:
+        reasons.append("stalls")
+    if int_metric("linear_truncated", "truncated") > 0:
+        reasons.append("truncated")
+    if int_metric("linear_zero_damage_runs", "zero_damage_runs") > 0:
+        reasons.append("zero_damage_runs")
+    if int_metric(
+        "linear_first_combat_zero_damage_runs",
+        "first_combat_zero_damage_runs",
+    ) > 0:
+        reasons.append("first_combat_zero_damage_runs")
+    if int_metric("linear_zero_completed_nodes_runs", "zero_completed_nodes_runs") > 0:
+        reasons.append("zero_completed_nodes_runs")
+    if has_metric(
+        "linear_average_first_combat_damage_dealt",
+        "average_first_combat_damage_dealt",
+    ) and float_metric(
+        "linear_average_first_combat_damage_dealt",
+        "average_first_combat_damage_dealt",
+    ) <= 0.0:
+        reasons.append("average_first_combat_damage_dealt_non_positive")
+
+    return reasons
+
+
+def linear_checkpoint_is_valid(checkpoint: dict[str, Any]) -> bool:
+    return not linear_checkpoint_disqualification_reasons(checkpoint)
+
+
+def linear_checkpoint_score(
+    checkpoint: dict[str, Any],
+) -> tuple[int, int, int, float, float, float]:
+    reasons = linear_checkpoint_disqualification_reasons(checkpoint)
+    is_valid = not reasons
+
     return (
+        1 if is_valid else 0,
+        -len(reasons),
         int(checkpoint.get("linear_wins", 0)),
         float(checkpoint.get("linear_average_reward", 0.0)),
         float(checkpoint.get("linear_average_damage_dealt", 0.0)),
@@ -927,6 +1000,10 @@ def linear_best_model_paths(
         character_id = character.get("character_id")
         value = character.get("best_model_path")
         if not character_id or not value:
+            continue
+
+        best_checkpoint = character.get("best_checkpoint") or {}
+        if not linear_checkpoint_is_valid(best_checkpoint):
             continue
 
         model_path = Path(value)

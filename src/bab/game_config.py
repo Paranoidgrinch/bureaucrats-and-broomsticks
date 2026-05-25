@@ -10,7 +10,7 @@ ACT_MANIFEST_FILES: tuple[str, ...] = (
     "data/acts/act_2_archives.json",
     "data/acts/act_3_green_docket.json",
     "data/acts/act_4_licensing_labyrinth.json",
-    "data/acts/act_5_ministry_spire.json",
+    "data/acts/act_5_divine_ledger.json",
 )
 
 DEFAULT_ACT_MANIFEST_FILE = ACT_MANIFEST_FILES[0]

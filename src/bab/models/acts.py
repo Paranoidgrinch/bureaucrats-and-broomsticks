@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Literal
+
 from pydantic import BaseModel, ConfigDict, Field
 
 
@@ -12,13 +14,16 @@ class ActMapConfig(BaseModel):
     width: int = Field(gt=0)
     first_elite_depth: int = Field(default=6, ge=1)
     elite_weight_multiplier: float = Field(default=1.0, gt=0)
+    layout: Literal["standard", "boss_gauntlet"] = "standard"
+    boss_count: int = Field(default=1, ge=1)
+    boss_encounter_ids: list[str] = Field(default_factory=list)
 
 
 class ActTreasureConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     mimic_chance: float = Field(ge=0.0, le=1.0)
-    mimic_encounter_id: str
+    mimic_encounter_id: str | None = None
 
 
 class ActWaitingRoomConfig(BaseModel):
@@ -54,7 +59,7 @@ class ActManifest(BaseModel):
     enemy_files: list[str] = Field(min_length=1)
     encounter_files: list[str] = Field(min_length=1)
     status_files: list[str] = Field(min_length=1)
-    event_files: list[str] = Field(min_length=1)
+    event_files: list[str] = Field(default_factory=list)
     relic_files: list[str] = Field(min_length=1)
     map: ActMapConfig
     treasure: ActTreasureConfig

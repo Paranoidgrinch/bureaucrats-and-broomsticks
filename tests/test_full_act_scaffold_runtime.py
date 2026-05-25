@@ -65,9 +65,13 @@ def test_run_can_advance_through_all_five_implemented_acts() -> None:
 
         assert run_state.act == expected_next_act
         assert run_state.run_map.act == expected_next_act
-        assert run_state.run_map.get_node(run_state.run_map.boss_node_id).depth == (
-            manifest.map.steps_before_boss + 1
-        )
+        boss_node = run_state.run_map.get_node(run_state.run_map.boss_node_id)
+        if manifest.map.layout == "boss_gauntlet":
+            assert boss_node.depth == manifest.map.boss_count
+            assert len(run_state.run_map.nodes) == manifest.map.boss_count
+            assert {node.node_type for node in run_state.run_map.nodes.values()} == {"boss"}
+        else:
+            assert boss_node.depth == manifest.map.steps_before_boss + 1
         assert run_state.current_hp == run_state.character_class.max_hp
         assert run_state.card_reward_choices == manifest.rewards.card_choices
         assert run_state.current_node_id is None
@@ -83,32 +87,42 @@ def test_run_can_advance_through_all_five_implemented_acts() -> None:
 def test_late_act_catalogs_load_and_have_runtime_offer_sources() -> None:
     for manifest_path in [
         "data/acts/act_4_licensing_labyrinth.json",
-        "data/acts/act_5_ministry_spire.json",
+        "data/acts/act_5_divine_ledger.json",
     ]:
         catalog = load_content_catalog_from_act_manifest(manifest_path)
         manifest = catalog.act_manifest
-
         assert manifest.act in {4, 5}
-        expected_min_steps = {
-            "act_4_licensing_labyrinth": 17,
-            "act_5_ministry_spire": 18,
-        }
-        assert manifest.map.steps_before_boss >= expected_min_steps[manifest.id]
-        assert manifest.map.width >= 5
-        assert manifest.map.first_elite_depth <= 3
-        assert manifest.map.elite_weight_multiplier > 1
-
         assert catalog.card_database
         assert catalog.relic_database
         assert catalog.enemy_database
         assert catalog.encounter_database
+
+        if manifest.id == "act_5_divine_ledger":
+            assert manifest.map.layout == "boss_gauntlet"
+            assert manifest.map.boss_count == 3
+            assert len(manifest.map.boss_encounter_ids) >= manifest.map.boss_count
+            assert manifest.event_files == []
+            assert catalog.event_database == {}
+            assert manifest.treasure.mimic_chance == 0
+            assert manifest.treasure.mimic_encounter_id is None
+            assert all(
+                catalog.encounter_database[encounter_id].difficulty == "boss"
+                for encounter_id in manifest.map.boss_encounter_ids
+            )
+            continue
+
+        assert manifest.map.layout == "standard"
+        assert manifest.map.steps_before_boss >= 17
+        assert manifest.map.width >= 5
+        assert manifest.map.first_elite_depth <= 3
+        assert manifest.map.elite_weight_multiplier > 1
         assert catalog.event_database
+
 
 
 def test_late_act_card_rewards_and_shops_are_available_for_each_class() -> None:
     for manifest_path in [
         "data/acts/act_4_licensing_labyrinth.json",
-        "data/acts/act_5_ministry_spire.json",
     ]:
         catalog = load_content_catalog_from_act_manifest(manifest_path)
         act = catalog.act_manifest.act

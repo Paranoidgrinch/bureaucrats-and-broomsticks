@@ -10,11 +10,11 @@ LATE_ACT_TARGETS = {
         "relics": "data/relics/act_4_licensing_labyrinth_relics.json",
         "class_relics": "data/relics/act_4_licensing_labyrinth_class_relics.json",
     },
-    "data/acts/act_5_ministry_spire.json": {
-        "enemy": "data/enemies/act_5_ministry_spire_enemies.json",
-        "cards": "data/cards/act_5_ministry_spire_rewards.json",
-        "relics": "data/relics/act_5_ministry_spire_relics.json",
-        "class_relics": "data/relics/act_5_ministry_spire_class_relics.json",
+    "data/acts/act_5_divine_ledger.json": {
+        "enemy": "data/enemies/act_5_divine_ledger_enemies.json",
+        "cards": "data/cards/act_5_divine_ledger_rewards.json",
+        "relics": "data/relics/act_5_divine_ledger_relics.json",
+        "class_relics": "data/relics/act_5_divine_ledger_class_relics.json",
     },
 }
 

@@ -17,7 +17,7 @@ if str(SRC_ROOT) not in sys.path:
 
 from bab.content.catalog import load_content_catalog_from_act_manifest
 from bab.game_config import ACT_MANIFEST_FILES
-from bab.run.map import generate_act_map
+from bab.run.map import generate_act_map, generate_boss_gauntlet_map
 from bab.systems.rewards import build_card_reward_pool, choose_card_rewards
 from bab.systems.shop import choose_shop_card_offers, choose_shop_relic_offers
 
@@ -33,14 +33,22 @@ def audit_act(manifest_path: str, *, seeds: int) -> dict[str, object]:
     node_type_counts: Counter[str] = Counter()
 
     for seed in range(seeds):
-        run_map = generate_act_map(
-            Random(seed),
-            act=manifest.act,
-            steps_before_boss=map_config.steps_before_boss,
-            width=map_config.width,
-            first_elite_depth=map_config.first_elite_depth,
-            elite_weight_multiplier=map_config.elite_weight_multiplier,
-        )
+        if map_config.layout == "boss_gauntlet":
+            run_map = generate_boss_gauntlet_map(
+                Random(seed),
+                act=manifest.act,
+                boss_count=map_config.boss_count,
+                boss_encounter_ids=map_config.boss_encounter_ids,
+            )
+        else:
+            run_map = generate_act_map(
+                Random(seed),
+                act=manifest.act,
+                steps_before_boss=map_config.steps_before_boss,
+                width=map_config.width,
+                first_elite_depth=map_config.first_elite_depth,
+                elite_weight_multiplier=map_config.elite_weight_multiplier,
+            )
 
         boss = run_map.get_node(run_map.boss_node_id)
         boss_depths.append(boss.depth)
@@ -61,6 +69,7 @@ def audit_act(manifest_path: str, *, seeds: int) -> dict[str, object]:
     reward_offer_counts: dict[str, int] = {}
     shop_card_offer_counts: dict[str, int] = {}
     shop_relic_offer_counts: dict[str, int] = {}
+    has_shop = any("shop" in event.tags for event in catalog.event_database.values())
 
     for index, character_id in enumerate(sorted(catalog.character_classes)):
         reward_pool = build_card_reward_pool(
@@ -74,23 +83,27 @@ def audit_act(manifest_path: str, *, seeds: int) -> dict[str, object]:
             card_class=character_id,
             act=manifest.act,
         )
-        shop_cards = choose_shop_card_offers(
-            catalog.card_database,
-            Random(20_000 + manifest.act * 100 + index),
-            card_class=character_id,
-            act=manifest.act,
-            fight_number=max(1, map_config.steps_before_boss // 2),
-            count=5,
-        )
-        shop_relics = choose_shop_relic_offers(
-            catalog.relic_database,
-            owned_relics=[],
-            rng=Random(30_000 + manifest.act * 100 + index),
-            act=manifest.act,
-            fight_number=max(1, map_config.steps_before_boss // 2),
-            card_class=character_id,
-            count=3,
-        )
+        if has_shop:
+            shop_cards = choose_shop_card_offers(
+                catalog.card_database,
+                Random(20_000 + manifest.act * 100 + index),
+                card_class=character_id,
+                act=manifest.act,
+                fight_number=max(1, map_config.steps_before_boss // 2),
+                count=5,
+            )
+            shop_relics = choose_shop_relic_offers(
+                catalog.relic_database,
+                owned_relics=[],
+                rng=Random(30_000 + manifest.act * 100 + index),
+                act=manifest.act,
+                fight_number=max(1, map_config.steps_before_boss // 2),
+                card_class=character_id,
+                count=3,
+            )
+        else:
+            shop_cards = []
+            shop_relics = []
 
         if any(card.rarity == "epic" for card in reward_pool):
             raise AssertionError(f"{manifest.id}: epic card leaked into normal reward pool.")

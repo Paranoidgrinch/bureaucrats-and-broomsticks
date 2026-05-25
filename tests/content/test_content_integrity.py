@@ -192,12 +192,17 @@ def test_treasure_mimic_encounter_exists_in_each_act_catalog() -> None:
     for manifest_path in ACT_MANIFEST_FILES:
         catalog = load_content_catalog_from_act_manifest(manifest_path)
         mimic_encounter_id = catalog.act_manifest.treasure.mimic_encounter_id
+        mimic_chance = catalog.act_manifest.treasure.mimic_chance
 
+        if mimic_chance <= 0:
+            assert mimic_encounter_id is None
+            continue
+
+        assert mimic_encounter_id is not None
         assert mimic_encounter_id in catalog.encounter_database, (
             f"{catalog.act_manifest.id} treasure mimic encounter does not exist: "
             f"{mimic_encounter_id!r}"
         )
-
 
 def test_event_effect_card_references_exist() -> None:
     for manifest_path in ACT_MANIFEST_FILES:

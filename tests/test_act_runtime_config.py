@@ -19,9 +19,14 @@ def test_run_state_uses_act_manifest_runtime_config() -> None:
         )
 
 
-def test_run_state_treasure_mimic_encounter_id_exists() -> None:
+def test_run_state_treasure_mimic_encounter_id_exists_when_enabled() -> None:
     for manifest_path in ACT_MANIFEST_FILES:
         catalog = load_content_catalog_from_act_manifest(manifest_path)
         run_state = create_run_state(catalog=catalog)
 
+        if catalog.act_manifest.treasure.mimic_chance <= 0:
+            assert run_state.treasure_mimic_encounter_id is None
+            continue
+
+        assert run_state.treasure_mimic_encounter_id is not None
         assert run_state.treasure_mimic_encounter_id in run_state.encounter_database

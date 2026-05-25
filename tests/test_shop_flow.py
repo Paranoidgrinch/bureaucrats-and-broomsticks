@@ -7,9 +7,16 @@ from bab.game_config import ACT_MANIFEST_FILES
 from bab.systems.shop import choose_shop_card_offers, choose_shop_relic_offers
 
 
+def _catalog_has_shop(catalog) -> bool:
+    return any("shop" in event.tags for event in catalog.event_database.values())
+
+
 def test_shop_card_offers_are_drawn_from_current_act_catalog() -> None:
     for manifest_path in ACT_MANIFEST_FILES:
         catalog = load_content_catalog_from_act_manifest(manifest_path)
+        if not _catalog_has_shop(catalog):
+            continue
+
         run_state = create_run_state(catalog=catalog, rng=Random(1))
 
         offers = choose_shop_card_offers(
@@ -29,6 +36,9 @@ def test_shop_card_offers_are_drawn_from_current_act_catalog() -> None:
 def test_shop_relic_offers_are_drawn_from_current_act_catalog() -> None:
     for manifest_path in ACT_MANIFEST_FILES:
         catalog = load_content_catalog_from_act_manifest(manifest_path)
+        if not _catalog_has_shop(catalog):
+            continue
+
         run_state = create_run_state(catalog=catalog, rng=Random(1))
 
         offers = choose_shop_relic_offers(
@@ -46,7 +56,6 @@ def test_shop_relic_offers_are_drawn_from_current_act_catalog() -> None:
 
 def test_buy_shop_card_offer_spends_gold_and_adds_card_to_deck() -> None:
     run_state = create_run_state(rng=Random(1))
-
     offer = choose_shop_card_offers(
         run_state.card_database,
         run_state.rng,
@@ -57,8 +66,8 @@ def test_buy_shop_card_offer_spends_gold_and_adds_card_to_deck() -> None:
     )[0]
 
     run_state.gold = offer.price
-
     deck_size_before = len(run_state.run_deck)
+
     bought = buy_shop_card_offer(run_state, offer)
 
     assert bought is True
@@ -69,7 +78,6 @@ def test_buy_shop_card_offer_spends_gold_and_adds_card_to_deck() -> None:
 
 def test_buy_shop_card_offer_rejects_insufficient_gold() -> None:
     run_state = create_run_state(rng=Random(1))
-
     offer = choose_shop_card_offers(
         run_state.card_database,
         run_state.rng,
@@ -80,8 +88,8 @@ def test_buy_shop_card_offer_rejects_insufficient_gold() -> None:
     )[0]
 
     run_state.gold = offer.price - 1
-
     deck_size_before = len(run_state.run_deck)
+
     bought = buy_shop_card_offer(run_state, offer)
 
     assert bought is False

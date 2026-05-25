@@ -24,6 +24,7 @@ class MapNode:
     node_type: MapNodeType
     encounter_difficulty: EncounterDifficulty | None = None
     event_type: EventType | None = None
+    encounter_id: str | None = None
     next_node_ids: tuple[str, ...] = ()
 
 
@@ -409,4 +410,59 @@ def generate_act_map(
         nodes=nodes,
         start_node_ids=start_node_ids,
         boss_node_id=boss_node.id,
+    )
+
+
+def generate_boss_gauntlet_map(
+    rng: Random,
+    *,
+    act: int = 1,
+    boss_count: int = 3,
+    boss_encounter_ids: tuple[str, ...] | list[str] | None = None,
+) -> RunMap:
+    if act < 1:
+        raise ValueError("Act must be at least 1.")
+    if boss_count < 1:
+        raise ValueError("Boss gauntlet must contain at least one boss.")
+
+    available_encounter_ids = list(boss_encounter_ids or [])
+    if available_encounter_ids:
+        if len(set(available_encounter_ids)) != len(available_encounter_ids):
+            raise ValueError("Boss gauntlet encounter ids must be unique.")
+        if len(available_encounter_ids) < boss_count:
+            raise ValueError(
+                "Boss gauntlet needs at least as many encounter ids as bosses."
+            )
+        selected_encounter_ids: tuple[str | None, ...] = tuple(
+            rng.sample(available_encounter_ids, k=boss_count)
+        )
+    else:
+        selected_encounter_ids = tuple(None for _ in range(boss_count))
+
+    nodes: dict[str, MapNode] = {}
+    for index in range(boss_count):
+        boss_number = index + 1
+        node_id = f"act_{act}_boss_{boss_number:02d}"
+        next_node_ids = (
+            (f"act_{act}_boss_{boss_number + 1:02d}",)
+            if boss_number < boss_count
+            else ()
+        )
+        nodes[node_id] = MapNode(
+            id=node_id,
+            act=act,
+            depth=boss_number,
+            node_type="boss",
+            encounter_difficulty="boss",
+            encounter_id=selected_encounter_ids[index],
+            next_node_ids=next_node_ids,
+        )
+
+    start_node_id = f"act_{act}_boss_01"
+    final_boss_node_id = f"act_{act}_boss_{boss_count:02d}"
+    return RunMap(
+        act=act,
+        nodes=nodes,
+        start_node_ids=(start_node_id,),
+        boss_node_id=final_boss_node_id,
     )

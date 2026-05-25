@@ -17,7 +17,7 @@ from bab.models import (
 )
 from bab.systems.gold import gold_reward_for_map_node
 from bab.systems.relics import apply_combat_start_relics, gold_reward_bonus
-from bab.run.map import MapNode, RunMap, generate_act_map
+from bab.run.map import MapNode, RunMap, generate_act_map, generate_boss_gauntlet_map
 
 
 @dataclass
@@ -42,7 +42,7 @@ class RunState:
     max_fights: int = 99
     gold: int = 0
     mimic_chance: float = 0.20
-    treasure_mimic_encounter_id: str = "city_elite_02"
+    treasure_mimic_encounter_id: str | None = "city_elite_02"
     waiting_room_heal_percent: int = 25
     card_reward_choices: int = 3
     card_reward_chance: float = 1.0
@@ -94,8 +94,11 @@ def create_new_run(
     map_width: int = 4,
     map_first_elite_depth: int = 6,
     map_elite_weight_multiplier: float = 1.0,
+    map_layout: str = "standard",
+    map_boss_count: int = 1,
+    map_boss_encounter_ids: tuple[str, ...] | list[str] | None = None,
     mimic_chance: float = 0.20,
-    treasure_mimic_encounter_id: str = "city_elite_02",
+    treasure_mimic_encounter_id: str | None = "city_elite_02",
     waiting_room_heal_percent: int = 25,
     card_reward_choices: int = 3,
     card_reward_chance: float = 1.0,
@@ -112,14 +115,24 @@ def create_new_run(
         card_database,
     )
 
-    run_map = generate_act_map(
-        rng,
-        act=act,
-        steps_before_boss=map_steps_before_boss,
-        width=map_width,
-        first_elite_depth=map_first_elite_depth,
-        elite_weight_multiplier=map_elite_weight_multiplier,
-    )
+    if map_layout == "boss_gauntlet":
+        run_map = generate_boss_gauntlet_map(
+            rng,
+            act=act,
+            boss_count=map_boss_count,
+            boss_encounter_ids=map_boss_encounter_ids,
+        )
+    elif map_layout == "standard":
+        run_map = generate_act_map(
+            rng,
+            act=act,
+            steps_before_boss=map_steps_before_boss,
+            width=map_width,
+            first_elite_depth=map_first_elite_depth,
+            elite_weight_multiplier=map_elite_weight_multiplier,
+        )
+    else:
+        raise ValueError(f"Unsupported map layout: {map_layout}")
 
     return RunState(
         character_class=character_class,
@@ -212,12 +225,21 @@ def create_combat_state_for_next_encounter(
         difficulty,
     )
 
-    encounter = choose_random_encounter(
-        run_state.encounter_database,
-        run_state.rng,
-        act=run_state.act,
-        difficulty=encounter_difficulty,
-    )
+    current_node = run_state.current_node()
+    if current_node is not None and current_node.encounter_id is not None:
+        try:
+            encounter = run_state.encounter_database[current_node.encounter_id]
+        except KeyError as error:
+            raise ValueError(
+                f"Map node references unknown encounter: {current_node.encounter_id}"
+            ) from error
+    else:
+        encounter = choose_random_encounter(
+            run_state.encounter_database,
+            run_state.rng,
+            act=run_state.act,
+            difficulty=encounter_difficulty,
+        )
 
     enemies = create_enemies_for_encounter(
         encounter.id,

@@ -3,7 +3,7 @@ from __future__ import annotations
 from bab.content.catalog import load_content_catalog_from_act_manifest
 from bab.content.data_loader import load_act_manifest
 from bab.game_config import ACT_MANIFEST_FILES
-from bab.run.map import generate_act_map
+from bab.run.map import generate_act_map, generate_boss_gauntlet_map
 from bab.run.state import RunState
 
 
@@ -57,14 +57,22 @@ def advance_to_next_act(run_state: RunState) -> bool:
     run_state.relic_database = next_catalog.relic_database
 
     run_state.act = next_catalog.act_manifest.act
-    run_state.run_map = generate_act_map(
-        run_state.rng,
-        act=next_catalog.act_manifest.act,
-        steps_before_boss=next_catalog.act_manifest.map.steps_before_boss,
-        width=next_catalog.act_manifest.map.width,
-        first_elite_depth=next_catalog.act_manifest.map.first_elite_depth,
-        elite_weight_multiplier=next_catalog.act_manifest.map.elite_weight_multiplier,
-    )
+    if next_catalog.act_manifest.map.layout == "boss_gauntlet":
+        run_state.run_map = generate_boss_gauntlet_map(
+            run_state.rng,
+            act=next_catalog.act_manifest.act,
+            boss_count=next_catalog.act_manifest.map.boss_count,
+            boss_encounter_ids=next_catalog.act_manifest.map.boss_encounter_ids,
+        )
+    else:
+        run_state.run_map = generate_act_map(
+            run_state.rng,
+            act=next_catalog.act_manifest.act,
+            steps_before_boss=next_catalog.act_manifest.map.steps_before_boss,
+            width=next_catalog.act_manifest.map.width,
+            first_elite_depth=next_catalog.act_manifest.map.first_elite_depth,
+            elite_weight_multiplier=next_catalog.act_manifest.map.elite_weight_multiplier,
+        )
     run_state.current_node_id = None
     run_state.current_hp = run_state.character_class.max_hp
     run_state.mimic_chance = next_catalog.act_manifest.treasure.mimic_chance

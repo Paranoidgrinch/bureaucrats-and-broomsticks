@@ -13,9 +13,15 @@ from bab.systems.shop import (
 )
 
 
-def test_each_act_has_enough_eligible_shop_cards_for_default_offer_count() -> None:
+def _catalog_has_shop(catalog) -> bool:
+    return any("shop" in event.tags for event in catalog.event_database.values())
+
+
+def test_each_act_with_shop_has_enough_eligible_shop_cards_for_default_offer_count() -> None:
     for manifest_path in ACT_MANIFEST_FILES:
         catalog = load_content_catalog_from_act_manifest(manifest_path)
+        if not _catalog_has_shop(catalog):
+            continue
 
         for character_class_id in catalog.character_classes:
             eligible_cards = eligible_shop_cards(
@@ -31,9 +37,11 @@ def test_each_act_has_enough_eligible_shop_cards_for_default_offer_count() -> No
             )
 
 
-def test_each_act_has_enough_eligible_shop_relics_for_default_offer_count() -> None:
+def test_each_act_with_shop_has_enough_eligible_shop_relics_for_default_offer_count() -> None:
     for manifest_path in ACT_MANIFEST_FILES:
         catalog = load_content_catalog_from_act_manifest(manifest_path)
+        if not _catalog_has_shop(catalog):
+            continue
 
         eligible_relics = eligible_shop_relics(
             catalog.relic_database,
@@ -51,6 +59,9 @@ def test_each_act_has_enough_eligible_shop_relics_for_default_offer_count() -> N
 def test_shop_generates_default_number_of_card_and_relic_offers() -> None:
     for manifest_path in ACT_MANIFEST_FILES:
         catalog = load_content_catalog_from_act_manifest(manifest_path)
+        if not _catalog_has_shop(catalog):
+            continue
+
         run_state = create_run_state(catalog=catalog, rng=Random(1))
 
         card_offers = choose_shop_card_offers(

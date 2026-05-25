@@ -2,9 +2,13 @@ from bab.content.catalog import load_content_catalog_from_act_manifest
 from bab.game_config import ACT_MANIFEST_FILES
 
 
-def test_each_act_has_shop_event() -> None:
+def test_each_act_with_events_has_shop_event() -> None:
     for manifest_path in ACT_MANIFEST_FILES:
         catalog = load_content_catalog_from_act_manifest(manifest_path)
+
+        if not catalog.act_manifest.event_files:
+            assert catalog.event_database == {}
+            continue
 
         shop_events = [
             event
@@ -31,5 +35,4 @@ def test_each_shop_event_can_open_shop() -> None:
                 for choice in event.choices
                 for effect in choice.effects
             }
-
             assert "open_shop" in effect_types

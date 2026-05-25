@@ -20,7 +20,10 @@ def test_all_configured_act_catalogs_load() -> None:
         assert catalog.enemy_database
         assert catalog.encounter_database
         assert catalog.status_database
-        assert catalog.event_database
+        if catalog.act_manifest.event_files:
+            assert catalog.event_database
+        else:
+            assert catalog.event_database == {}
         assert catalog.relic_database
 
 

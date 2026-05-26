@@ -32,3 +32,16 @@ runs/campaign_sanity/
 # Local/generated audit outputs
 runs/*_audit.txt
 runs/event_shop_audit.txt
+# Local benchmark and diagnostic outputs
+runs/heuristic_*/
+runs/heuristic_v2_*/
+runs/rl_*/
+runs/*_benchmark*/
+runs/*_full_game*/
+runs/*_by_character*/
+runs/run_heuristic_v2_character_benchmark.py
+
+# Keep stable curated runner references and docs trackable
+!runs/README.md
+!runs/good_runners/
+!runs/good_runners/**

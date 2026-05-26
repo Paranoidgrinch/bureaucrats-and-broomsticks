@@ -11,6 +11,7 @@ if str(SRC) not in sys.path:
 
 from bab.content.catalog import load_default_content_catalog  # noqa: E402
 from bab.sim.agents import HeuristicPolicy, RandomPolicy  # noqa: E402
+from bab.sim.heuristic_v2 import HeuristicV2Policy  # noqa: E402
 from bab.sim.benchmark import (  # noqa: E402
     benchmark_policies_across_characters,
     format_benchmark_summary,
@@ -54,6 +55,11 @@ def main() -> None:
         action="store_true",
         help="Do not include HeuristicPolicy.",
     )
+    parser.add_argument(
+        "--heuristic-v2",
+        action="store_true",
+        help="Include the stronger effect-aware HeuristicV2Policy.",
+    )
     args = parser.parse_args()
 
     if args.characters:
@@ -69,6 +75,9 @@ def main() -> None:
 
     if not args.no_heuristic:
         policy_factories["heuristic"] = lambda seed: HeuristicPolicy(seed=seed)
+
+    if args.heuristic_v2:
+        policy_factories["heuristic_v2"] = lambda seed: HeuristicV2Policy(seed=seed)
 
     if args.model is not None:
         model_path = args.model

@@ -75,6 +75,14 @@ class Observation:
     enemy_intents: tuple[str, ...] = ()
     incoming_damage: int = 0
     deck_card_ids: tuple[str, ...] = ()
+    relic_ids: tuple[str, ...] = ()
+    player_status_ids: tuple[str, ...] = ()
+    player_status_amounts: tuple[int, ...] = ()
+    enemy_status_ids: tuple[tuple[str, ...], ...] = ()
+    enemy_status_amounts: tuple[tuple[int, ...], ...] = ()
+    draw_pile_size: int = 0
+    discard_pile_size: int = 0
+    exhaust_pile_size: int = 0
     done: bool = False
     outcome: str | None = None
 
@@ -237,6 +245,13 @@ class RoguelikeEnv:
         enemy_block: tuple[int, ...] = ()
         enemy_intents: tuple[str, ...] = ()
         incoming_damage = 0
+        player_status_ids: tuple[str, ...] = ()
+        player_status_amounts: tuple[int, ...] = ()
+        enemy_status_ids: tuple[tuple[str, ...], ...] = ()
+        enemy_status_amounts: tuple[tuple[int, ...], ...] = ()
+        draw_pile_size = 0
+        discard_pile_size = 0
+        exhaust_pile_size = 0
 
         if self.combat_state is not None:
             combat_turn = self.combat_state.turn
@@ -248,6 +263,28 @@ class RoguelikeEnv:
             enemy_block = tuple(enemy.block for enemy in self.combat_state.enemies)
             enemy_intents = tuple(self._enemy_intent_label(enemy) for enemy in self.combat_state.enemies)
             incoming_damage = self._incoming_damage()
+
+            player_status_items = tuple(
+                sorted(
+                    self.combat_state.player.statuses.items(),
+                    key=lambda item: item[0],
+                )
+            )
+            player_status_ids = tuple(status_id for status_id, _stack in player_status_items)
+            player_status_amounts = tuple(stack.amount for _status_id, stack in player_status_items)
+
+            enemy_status_id_rows: list[tuple[str, ...]] = []
+            enemy_status_amount_rows: list[tuple[int, ...]] = []
+            for enemy in self.combat_state.enemies:
+                status_items = tuple(sorted(enemy.statuses.items(), key=lambda item: item[0]))
+                enemy_status_id_rows.append(tuple(status_id for status_id, _stack in status_items))
+                enemy_status_amount_rows.append(tuple(stack.amount for _status_id, stack in status_items))
+            enemy_status_ids = tuple(enemy_status_id_rows)
+            enemy_status_amounts = tuple(enemy_status_amount_rows)
+
+            draw_pile_size = len(self.combat_state.draw_pile)
+            discard_pile_size = len(self.combat_state.discard_pile)
+            exhaust_pile_size = len(self.combat_state.exhaust_pile)
 
         return Observation(
             phase=self.phase,
@@ -276,6 +313,14 @@ class RoguelikeEnv:
             enemy_intents=enemy_intents,
             incoming_damage=incoming_damage,
             deck_card_ids=tuple(card.id for card in self.run_state.run_deck),
+            relic_ids=tuple(relic.id for relic in self.run_state.relics),
+            player_status_ids=player_status_ids,
+            player_status_amounts=player_status_amounts,
+            enemy_status_ids=enemy_status_ids,
+            enemy_status_amounts=enemy_status_amounts,
+            draw_pile_size=draw_pile_size,
+            discard_pile_size=discard_pile_size,
+            exhaust_pile_size=exhaust_pile_size,
             done=self.done,
             outcome=self.outcome,
         )
